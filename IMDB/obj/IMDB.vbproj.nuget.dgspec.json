@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pitka\\Desktop\\IMDB\\IMDB\\IMDB.vbproj": {}
+    "D:\\GitHub\\IMDB\\IMDB\\IMDB.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\pitka\\Desktop\\IMDB\\IMDB\\IMDB.vbproj": {
+    "D:\\GitHub\\IMDB\\IMDB\\IMDB.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pitka\\Desktop\\IMDB\\IMDB\\IMDB.vbproj",
+        "projectUniqueName": "D:\\GitHub\\IMDB\\IMDB\\IMDB.vbproj",
         "projectName": "IMDB",
-        "projectPath": "C:\\Users\\pitka\\Desktop\\IMDB\\IMDB\\IMDB.vbproj",
-        "packagesPath": "C:\\Users\\pitka\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pitka\\Desktop\\IMDB\\IMDB\\obj\\",
+        "projectPath": "D:\\GitHub\\IMDB\\IMDB\\IMDB.vbproj",
+        "packagesPath": "C:\\Users\\Nikolas\\.nuget\\packages\\",
+        "outputPath": "D:\\GitHub\\IMDB\\IMDB\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\pitka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nikolas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
