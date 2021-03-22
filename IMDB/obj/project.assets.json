@@ -8,19 +8,19 @@
     "net5.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Nikolas\\.nuget\\packages\\": {}
+    "C:\\Users\\pitka\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nikolas\\source\\repos\\IMDB\\IMDB\\IMDB.vbproj",
+      "projectUniqueName": "C:\\Users\\pitka\\Desktop\\IMDB\\IMDB\\IMDB.vbproj",
       "projectName": "IMDB",
-      "projectPath": "C:\\Users\\Nikolas\\source\\repos\\IMDB\\IMDB\\IMDB.vbproj",
-      "packagesPath": "C:\\Users\\Nikolas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nikolas\\source\\repos\\IMDB\\IMDB\\obj\\",
+      "projectPath": "C:\\Users\\pitka\\Desktop\\IMDB\\IMDB\\IMDB.vbproj",
+      "packagesPath": "C:\\Users\\pitka\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pitka\\Desktop\\IMDB\\IMDB\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Nikolas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pitka\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
