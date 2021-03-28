@@ -58,7 +58,7 @@ Partial Class Register
         '
         'CloseApp
         '
-        Me.CloseApp.Location = New System.Drawing.Point(663, 9)
+        Me.CloseApp.Location = New System.Drawing.Point(495, 12)
         Me.CloseApp.Name = "CloseApp"
         Me.CloseApp.Size = New System.Drawing.Size(30, 30)
         Me.CloseApp.TabIndex = 3
