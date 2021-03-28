@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\IMDB\\IMDB\\IMDB.vbproj": {}
+    "D:\\Desktop\\IMDB\\IMDB\\IMDB.vbproj": {}
   },
   "projects": {
-    "D:\\GitHub\\IMDB\\IMDB\\IMDB.vbproj": {
+    "D:\\Desktop\\IMDB\\IMDB\\IMDB.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\IMDB\\IMDB\\IMDB.vbproj",
+        "projectUniqueName": "D:\\Desktop\\IMDB\\IMDB\\IMDB.vbproj",
         "projectName": "IMDB",
-        "projectPath": "D:\\GitHub\\IMDB\\IMDB\\IMDB.vbproj",
-        "packagesPath": "C:\\Users\\Nikolas\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\IMDB\\IMDB\\obj\\",
+        "projectPath": "D:\\Desktop\\IMDB\\IMDB\\IMDB.vbproj",
+        "packagesPath": "C:\\Users\\Δημήτρης\\.nuget\\packages\\",
+        "outputPath": "D:\\Desktop\\IMDB\\IMDB\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nikolas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Δημήτρης\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
