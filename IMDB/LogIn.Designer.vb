@@ -23,6 +23,7 @@ Partial Class LogIn
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LogIn))
         Me.LogInTitle = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.ErrorLabel = New System.Windows.Forms.Label()
@@ -42,6 +43,8 @@ Partial Class LogIn
         'LogInTitle
         '
         Me.LogInTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.LogInTitle.Image = CType(resources.GetObject("LogInTitle.Image"), System.Drawing.Image)
+        Me.LogInTitle.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.LogInTitle.Location = New System.Drawing.Point(0, 9)
         Me.LogInTitle.Name = "LogInTitle"
         Me.LogInTitle.Size = New System.Drawing.Size(300, 50)
