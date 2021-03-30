@@ -1,7 +1,7 @@
 ﻿Public Class Register
 
     Private Sub CloseApp_Click(sender As Object, e As EventArgs) Handles CloseApp.Click
-        Me.Close()
+        Close()
 
     End Sub
 
@@ -75,9 +75,8 @@
     End Sub
 
     Private Sub LogInLink_Click(sender As Object, e As EventArgs) Handles LogInLink.Click
-        Me.Close()
-
         LogIn.Show()
+        Close()
     End Sub
 
 End Class

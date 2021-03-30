@@ -1,10 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="Favorite.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="LogIn.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MoviesMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Profile.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Register.vb">

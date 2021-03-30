@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "cr2KTMuAHlzXXuCAcwvSZX1vJpb3RC262FJodJ2Yz7gKqBznC8VrmslbW8587b0iF4hobfuVL6weXRa3k+zPEw==",
+  "dgSpecHash": "gU6imlN83iSYdhrAI7rqHPUWtc2Qo9Gs94YkvC6fuKAVY2Cr1issgqtbQDwnQ56uQdfVKbLMfCy2NApOAi5cmw==",
   "success": true,
-  "projectFilePath": "D:\\Desktop\\IMDB\\IMDB\\IMDB.vbproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\AlexPap\\Desktop\\TEI\\Adopse\\IMDB\\IMDB\\IMDB.vbproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\AlexPap\\.nuget\\packages\\fontawesome.sharp\\5.15.3\\fontawesome.sharp.5.15.3.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -62,18 +62,19 @@ Partial Class LogIn
         Me.Panel3.Controls.Add(Me.PasswordL)
         Me.Panel3.Controls.Add(Me.UsernameTB)
         Me.Panel3.Controls.Add(Me.UsernameL)
-        Me.Panel3.Location = New System.Drawing.Point(0, 68)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel3.Location = New System.Drawing.Point(0, 70)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(300, 230)
         Me.Panel3.TabIndex = 2
         '
         'ErrorLabel
         '
-        Me.ErrorLabel.Location = New System.Drawing.Point(50, 178)
+        Me.ErrorLabel.Location = New System.Drawing.Point(50, 180)
         Me.ErrorLabel.Name = "ErrorLabel"
         Me.ErrorLabel.Size = New System.Drawing.Size(200, 15)
         Me.ErrorLabel.TabIndex = 7
-        Me.ErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ErrorLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'RememberMe
         '
@@ -89,7 +90,7 @@ Partial Class LogIn
         Me.LogInB.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LogInB.Location = New System.Drawing.Point(90, 150)
         Me.LogInB.Name = "LogInB"
-        Me.LogInB.Size = New System.Drawing.Size(120, 25)
+        Me.LogInB.Size = New System.Drawing.Size(120, 30)
         Me.LogInB.TabIndex = 5
         Me.LogInB.Text = "Log In"
         Me.LogInB.UseVisualStyleBackColor = True
@@ -168,6 +169,7 @@ Partial Class LogIn
         '
         'LogIn
         '
+        Me.AcceptButton = Me.LogInB
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(300, 300)
