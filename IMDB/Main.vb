@@ -5,6 +5,7 @@ Public Class Main
 
     'Opens Main Movies form in main form
     Private Sub On_Load(sender As Object, e As EventArgs) Handles Me.Load
+        DropPanel.BackColor = Color.FromArgb(50, 0, 0, 0)
         MoviesMain.TopLevel = False
         MainPanel.Controls.Add(MoviesMain)
         MoviesMain.Show()
@@ -24,6 +25,7 @@ Public Class Main
         MoviesMain.TopLevel = False
         MainPanel.Controls.Add(MoviesMain)
         MoviesMain.Show()
+        Timer.Start()
     End Sub
 
     'Open list in main form and close all other forms

@@ -52,7 +52,7 @@ Partial Class Main
         Me.TopPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.TopPanel.Location = New System.Drawing.Point(0, 0)
         Me.TopPanel.Name = "TopPanel"
-        Me.TopPanel.Size = New System.Drawing.Size(1264, 36)
+        Me.TopPanel.Size = New System.Drawing.Size(1280, 36)
         Me.TopPanel.TabIndex = 0
         '
         'SearchPanel
@@ -61,7 +61,7 @@ Partial Class Main
         Me.SearchPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SearchPanel.Location = New System.Drawing.Point(56, 0)
         Me.SearchPanel.Name = "SearchPanel"
-        Me.SearchPanel.Size = New System.Drawing.Size(1008, 36)
+        Me.SearchPanel.Size = New System.Drawing.Size(1024, 36)
         Me.SearchPanel.TabIndex = 1
         '
         'TextBox1
@@ -69,7 +69,7 @@ Partial Class Main
         Me.TextBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox1.Location = New System.Drawing.Point(451, 7)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(250, 23)
+        Me.TextBox1.Size = New System.Drawing.Size(266, 23)
         Me.TextBox1.TabIndex = 0
         '
         'BtnPanel
@@ -77,7 +77,7 @@ Partial Class Main
         Me.BtnPanel.Controls.Add(Me.ListBtn)
         Me.BtnPanel.Controls.Add(Me.NameBtn)
         Me.BtnPanel.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BtnPanel.Location = New System.Drawing.Point(1064, 0)
+        Me.BtnPanel.Location = New System.Drawing.Point(1080, 0)
         Me.BtnPanel.Name = "BtnPanel"
         Me.BtnPanel.Size = New System.Drawing.Size(200, 36)
         Me.BtnPanel.TabIndex = 1
@@ -124,23 +124,24 @@ Partial Class Main
         Me.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MainPanel.Location = New System.Drawing.Point(0, 36)
         Me.MainPanel.Name = "MainPanel"
-        Me.MainPanel.Size = New System.Drawing.Size(1264, 645)
+        Me.MainPanel.Size = New System.Drawing.Size(1280, 720)
         Me.MainPanel.TabIndex = 1
         '
         'DropPanel
         '
+        Me.DropPanel.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.DropPanel.Controls.Add(Me.OpenProfile)
         Me.DropPanel.Controls.Add(Me.LogOut)
-        Me.DropPanel.Location = New System.Drawing.Point(1169, 0)
-        Me.DropPanel.MaximumSize = New System.Drawing.Size(95, 60)
-        Me.DropPanel.MinimumSize = New System.Drawing.Size(95, 0)
+        Me.DropPanel.Location = New System.Drawing.Point(1174, 0)
+        Me.DropPanel.MaximumSize = New System.Drawing.Size(75, 60)
+        Me.DropPanel.MinimumSize = New System.Drawing.Size(75, 0)
         Me.DropPanel.Name = "DropPanel"
-        Me.DropPanel.Size = New System.Drawing.Size(95, 0)
+        Me.DropPanel.Size = New System.Drawing.Size(75, 0)
         Me.DropPanel.TabIndex = 0
         '
         'OpenProfile
         '
-        Me.OpenProfile.Location = New System.Drawing.Point(8, 6)
+        Me.OpenProfile.Location = New System.Drawing.Point(0, 6)
         Me.OpenProfile.Name = "OpenProfile"
         Me.OpenProfile.Size = New System.Drawing.Size(75, 23)
         Me.OpenProfile.TabIndex = 1
@@ -149,7 +150,7 @@ Partial Class Main
         '
         'LogOut
         '
-        Me.LogOut.Location = New System.Drawing.Point(8, 35)
+        Me.LogOut.Location = New System.Drawing.Point(0, 35)
         Me.LogOut.Name = "LogOut"
         Me.LogOut.Size = New System.Drawing.Size(75, 23)
         Me.LogOut.TabIndex = 0
@@ -165,7 +166,7 @@ Partial Class Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1264, 681)
+        Me.ClientSize = New System.Drawing.Size(1280, 756)
         Me.Controls.Add(Me.MainPanel)
         Me.Controls.Add(Me.TopPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle

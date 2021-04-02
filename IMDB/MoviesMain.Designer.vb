@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MoviesMain
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class MoviesMain
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Top1 = New System.Windows.Forms.Label()
         Me.Top2 = New System.Windows.Forms.Label()
@@ -51,7 +51,7 @@ Partial Class MoviesMain
         'Top1
         '
         Me.Top1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Top1.Location = New System.Drawing.Point(20, 50)
+        Me.Top1.Location = New System.Drawing.Point(55, 50)
         Me.Top1.Name = "Top1"
         Me.Top1.Size = New System.Drawing.Size(190, 250)
         Me.Top1.TabIndex = 0
@@ -59,7 +59,7 @@ Partial Class MoviesMain
         'Top2
         '
         Me.Top2.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Top2.Location = New System.Drawing.Point(270, 50)
+        Me.Top2.Location = New System.Drawing.Point(300, 50)
         Me.Top2.Margin = New System.Windows.Forms.Padding(3)
         Me.Top2.Name = "Top2"
         Me.Top2.Size = New System.Drawing.Size(190, 250)
@@ -68,47 +68,47 @@ Partial Class MoviesMain
         'Top3
         '
         Me.Top3.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Top3.Location = New System.Drawing.Point(520, 50)
+        Me.Top3.Location = New System.Drawing.Point(545, 50)
         Me.Top3.Name = "Top3"
-        Me.Top3.Size = New System.Drawing.Size(200, 250)
+        Me.Top3.Size = New System.Drawing.Size(190, 250)
         Me.Top3.TabIndex = 2
         '
         'Top4
         '
         Me.Top4.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Top4.Location = New System.Drawing.Point(770, 50)
+        Me.Top4.Location = New System.Drawing.Point(790, 50)
         Me.Top4.Name = "Top4"
-        Me.Top4.Size = New System.Drawing.Size(200, 250)
+        Me.Top4.Size = New System.Drawing.Size(190, 250)
         Me.Top4.TabIndex = 3
         '
         'Top5
         '
         Me.Top5.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Top5.Location = New System.Drawing.Point(1020, 50)
+        Me.Top5.Location = New System.Drawing.Point(1035, 50)
         Me.Top5.Name = "Top5"
-        Me.Top5.Size = New System.Drawing.Size(200, 250)
+        Me.Top5.Size = New System.Drawing.Size(190, 250)
         Me.Top5.TabIndex = 4
         '
         'Top9
         '
         Me.Top9.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Top9.Location = New System.Drawing.Point(770, 325)
+        Me.Top9.Location = New System.Drawing.Point(790, 325)
         Me.Top9.Name = "Top9"
-        Me.Top9.Size = New System.Drawing.Size(200, 250)
+        Me.Top9.Size = New System.Drawing.Size(190, 250)
         Me.Top9.TabIndex = 8
         '
         'Top8
         '
         Me.Top8.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Top8.Location = New System.Drawing.Point(520, 325)
+        Me.Top8.Location = New System.Drawing.Point(545, 325)
         Me.Top8.Name = "Top8"
-        Me.Top8.Size = New System.Drawing.Size(200, 250)
+        Me.Top8.Size = New System.Drawing.Size(190, 250)
         Me.Top8.TabIndex = 7
         '
         'Top7
         '
         Me.Top7.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Top7.Location = New System.Drawing.Point(270, 325)
+        Me.Top7.Location = New System.Drawing.Point(300, 328)
         Me.Top7.Margin = New System.Windows.Forms.Padding(3)
         Me.Top7.Name = "Top7"
         Me.Top7.Size = New System.Drawing.Size(190, 250)
@@ -117,7 +117,7 @@ Partial Class MoviesMain
         'Top6
         '
         Me.Top6.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Top6.Location = New System.Drawing.Point(20, 325)
+        Me.Top6.Location = New System.Drawing.Point(55, 325)
         Me.Top6.Name = "Top6"
         Me.Top6.Size = New System.Drawing.Size(190, 250)
         Me.Top6.TabIndex = 5
@@ -125,9 +125,9 @@ Partial Class MoviesMain
         'Top10
         '
         Me.Top10.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Top10.Location = New System.Drawing.Point(1020, 325)
+        Me.Top10.Location = New System.Drawing.Point(1035, 325)
         Me.Top10.Name = "Top10"
-        Me.Top10.Size = New System.Drawing.Size(200, 250)
+        Me.Top10.Size = New System.Drawing.Size(190, 250)
         Me.Top10.TabIndex = 9
         '
         'TopMoviesPanel
@@ -147,7 +147,7 @@ Partial Class MoviesMain
         Me.TopMoviesPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.TopMoviesPanel.Location = New System.Drawing.Point(0, 0)
         Me.TopMoviesPanel.Name = "TopMoviesPanel"
-        Me.TopMoviesPanel.Size = New System.Drawing.Size(1316, 578)
+        Me.TopMoviesPanel.Size = New System.Drawing.Size(1280, 581)
         Me.TopMoviesPanel.TabIndex = 10
         '
         'Panel1
@@ -156,7 +156,7 @@ Partial Class MoviesMain
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1316, 45)
+        Me.Panel1.Size = New System.Drawing.Size(1280, 45)
         Me.Panel1.TabIndex = 10
         '
         'TopMoviesLabel
@@ -173,14 +173,13 @@ Partial Class MoviesMain
         '
         Me.AllMoviesPanel.Controls.Add(Me.FilterPanel)
         Me.AllMoviesPanel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.AllMoviesPanel.Location = New System.Drawing.Point(0, 578)
+        Me.AllMoviesPanel.Location = New System.Drawing.Point(0, 581)
         Me.AllMoviesPanel.Name = "AllMoviesPanel"
-        Me.AllMoviesPanel.Size = New System.Drawing.Size(1316, 500)
+        Me.AllMoviesPanel.Size = New System.Drawing.Size(1280, 80)
         Me.AllMoviesPanel.TabIndex = 11
         '
         'FilterPanel
         '
-        Me.FilterPanel.AutoScroll = True
         Me.FilterPanel.Controls.Add(Me.sortRate)
         Me.FilterPanel.Controls.Add(Me.sortDate)
         Me.FilterPanel.Controls.Add(Me.SortLabel)
@@ -189,7 +188,7 @@ Partial Class MoviesMain
         Me.FilterPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.FilterPanel.Location = New System.Drawing.Point(0, 0)
         Me.FilterPanel.Name = "FilterPanel"
-        Me.FilterPanel.Size = New System.Drawing.Size(1316, 81)
+        Me.FilterPanel.Size = New System.Drawing.Size(1280, 80)
         Me.FilterPanel.TabIndex = 2
         '
         'sortRate
@@ -230,11 +229,12 @@ Partial Class MoviesMain
         '
         'AllMoviesLabel
         '
+        Me.AllMoviesLabel.Cursor = System.Windows.Forms.Cursors.WaitCursor
         Me.AllMoviesLabel.Dock = System.Windows.Forms.DockStyle.Top
         Me.AllMoviesLabel.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.AllMoviesLabel.Location = New System.Drawing.Point(0, 0)
         Me.AllMoviesLabel.Name = "AllMoviesLabel"
-        Me.AllMoviesLabel.Size = New System.Drawing.Size(1316, 49)
+        Me.AllMoviesLabel.Size = New System.Drawing.Size(1280, 49)
         Me.AllMoviesLabel.TabIndex = 0
         Me.AllMoviesLabel.Text = "More movies"
         Me.AllMoviesLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -245,7 +245,7 @@ Partial Class MoviesMain
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1333, 609)
+        Me.ClientSize = New System.Drawing.Size(1280, 720)
         Me.Controls.Add(Me.AllMoviesPanel)
         Me.Controls.Add(Me.TopMoviesPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
