@@ -63,3 +63,4 @@ C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.Main
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.MoviesMain.resources
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.Profile.resources
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.Favorite.resources
+C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.CurrentMovie.resources

@@ -18,23 +18,20 @@ Public Class Main
 
     'Open MoviesMain in main form and close all other forms
     Private Sub AppName_Click(sender As Object, e As EventArgs) Handles AppName.Click
-        My.Application.OpenForms.Cast(Of Form)() _
-              .Except({Me}) _
-              .ToList() _
-              .ForEach(Sub(form) form.Close())
+        Close_forms(Me)
         MoviesMain.TopLevel = False
         MainPanel.Controls.Add(MoviesMain)
         MoviesMain.Show()
-        Timer.Start()
+
     End Sub
 
     'Open list in main form and close all other forms
     Private Sub ListBtn_Click(sender As Object, e As EventArgs) Handles ListBtn.Click
-        My.Application.OpenForms.Cast(Of Form)() _
-              .Except({Me}) _
-              .ToList() _
-              .ForEach(Sub(form) form.Close())
+        Close_forms(Me)
     End Sub
+
+
+
 
     'Opens DropDown menu
     Private Sub NameBtn_Click(sender As Object, e As EventArgs) Handles NameBtn.Click
@@ -51,18 +48,14 @@ Public Class Main
 
     'Open profile on main form and close all other forms
     Private Sub OpenProfile_Click(sender As Object, e As EventArgs) Handles OpenProfile.Click
-        My.Application.OpenForms.Cast(Of Form)() _
-              .Except({Me}) _
-              .ToList() _
-              .ForEach(Sub(form) form.Close())
+        Close_forms(Me)
+        Panel1.Visible = True
+
     End Sub
 
     'Close all forms and open Log In form
     Private Sub LogOut_Click(sender As Object, e As EventArgs) Handles LogOut.Click
-        My.Application.OpenForms.Cast(Of Form)() _
-              .Except({Me}) _
-              .ToList() _
-              .ForEach(Sub(form) form.Close())
+        Close_forms(Me)
         LogIn.Show()
         Me.Close()
     End Sub
@@ -84,5 +77,12 @@ Public Class Main
                 isCollapsed = True
             End If
         End If
+    End Sub
+
+    Public Shared Sub Close_forms(ex)
+        My.Application.OpenForms.Cast(Of Form)() _
+              .Except({ex}) _
+              .ToList() _
+              .ForEach(Sub(form) form.Close())
     End Sub
 End Class

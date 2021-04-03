@@ -32,6 +32,7 @@ Partial Class Main
         Me.HomePanel = New System.Windows.Forms.Panel()
         Me.AppName = New System.Windows.Forms.Label()
         Me.MainPanel = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DropPanel = New System.Windows.Forms.Panel()
         Me.OpenProfile = New System.Windows.Forms.Button()
         Me.LogOut = New System.Windows.Forms.Button()
@@ -120,12 +121,24 @@ Partial Class Main
         '
         'MainPanel
         '
+        Me.MainPanel.Controls.Add(Me.Panel1)
         Me.MainPanel.Controls.Add(Me.DropPanel)
         Me.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MainPanel.Location = New System.Drawing.Point(0, 36)
         Me.MainPanel.Name = "MainPanel"
         Me.MainPanel.Size = New System.Drawing.Size(1280, 720)
         Me.MainPanel.TabIndex = 1
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Panel1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Panel1.Location = New System.Drawing.Point(340, 6)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(600, 702)
+        Me.Panel1.TabIndex = 1
+        Me.Panel1.Visible = False
         '
         'DropPanel
         '
@@ -197,4 +210,5 @@ Partial Class Main
     Friend WithEvents OpenProfile As Button
     Friend WithEvents LogOut As Button
     Friend WithEvents Timer As Timer
+    Friend WithEvents Panel1 As Panel
 End Class

@@ -229,7 +229,7 @@ Partial Class MoviesMain
         '
         'AllMoviesLabel
         '
-        Me.AllMoviesLabel.Cursor = System.Windows.Forms.Cursors.WaitCursor
+        Me.AllMoviesLabel.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.AllMoviesLabel.Dock = System.Windows.Forms.DockStyle.Top
         Me.AllMoviesLabel.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.AllMoviesLabel.Location = New System.Drawing.Point(0, 0)
@@ -238,7 +238,6 @@ Partial Class MoviesMain
         Me.AllMoviesLabel.TabIndex = 0
         Me.AllMoviesLabel.Text = "More movies"
         Me.AllMoviesLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.AllMoviesLabel.UseWaitCursor = True
         '
         'MoviesMain
         '
