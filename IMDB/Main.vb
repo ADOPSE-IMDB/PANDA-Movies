@@ -12,8 +12,10 @@ Public Class Main
     End Sub
 
     'Closes all forms on exiting main form 
-    Private Sub Closing_Main(sender As Object, e As EventArgs) Handles Me.Closing
-        MoviesMain.Close()
+    Private Sub Closing_Main(sender As Object, e As EventArgs) Handles Me.Closed
+        If Not Application.OpenForms().OfType(Of LogIn).Any Then
+            Application.Exit()
+        End If
     End Sub
 
     'Open MoviesMain in main form and close all other forms
@@ -27,7 +29,7 @@ Public Class Main
 
     'Open list in main form and close all other forms
     Private Sub ListBtn_Click(sender As Object, e As EventArgs) Handles ListBtn.Click
-        Close_forms(Me)
+
     End Sub
 
 
@@ -50,14 +52,15 @@ Public Class Main
     Private Sub OpenProfile_Click(sender As Object, e As EventArgs) Handles OpenProfile.Click
         Close_forms(Me)
         Panel1.Visible = True
-
+        Profile.TopLevel = False
+        Panel1.Controls.Add(Profile)
+        Profile.Show()
     End Sub
 
     'Close all forms and open Log In form
     Private Sub LogOut_Click(sender As Object, e As EventArgs) Handles LogOut.Click
-        Close_forms(Me)
         LogIn.Show()
-        Me.Close()
+        Close_forms(LogIn)
     End Sub
 
 

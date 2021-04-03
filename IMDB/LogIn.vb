@@ -48,7 +48,6 @@
     Private Sub RegisterLink_Click(sender As Object, e As EventArgs) Handles RegisterLink.Click
         Register.Show()
         Me.Close()
-
     End Sub
 
 End Class
