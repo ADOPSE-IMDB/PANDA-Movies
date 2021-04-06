@@ -3,7 +3,7 @@ Partial Class Profile
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -25,16 +25,16 @@ Partial Class Profile
         Me.ProfilePL = New System.Windows.Forms.Label()
         Me.UploadB = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.NameL = New System.Windows.Forms.Label()
-        Me.SurnameL = New System.Windows.Forms.Label()
-        Me.EmailL = New System.Windows.Forms.Label()
+        Me.Na = New System.Windows.Forms.Label()
+        Me.Su = New System.Windows.Forms.Label()
+        Me.EL = New System.Windows.Forms.Label()
         Me.PasswordL = New System.Windows.Forms.Label()
         Me.EditB = New System.Windows.Forms.Button()
-        Me.Name = New System.Windows.Forms.Label()
+        Me.NameL = New System.Windows.Forms.Label()
         Me.Surname = New System.Windows.Forms.Label()
         Me.Email = New System.Windows.Forms.Label()
         Me.Password = New System.Windows.Forms.Label()
-        Me.Update = New System.Windows.Forms.Button()
+        Me.UpdateB = New System.Windows.Forms.Button()
         Me.NameTB = New System.Windows.Forms.TextBox()
         Me.SurnameTB = New System.Windows.Forms.TextBox()
         Me.EmailTB = New System.Windows.Forms.TextBox()
@@ -70,35 +70,35 @@ Partial Class Profile
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
-        'NameL
+        'Na
         '
-        Me.NameL.AutoSize = True
-        Me.NameL.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.NameL.Location = New System.Drawing.Point(202, 269)
-        Me.NameL.Name = "NameL"
-        Me.NameL.Size = New System.Drawing.Size(72, 25)
-        Me.NameL.TabIndex = 4
-        Me.NameL.Text = "Name :"
+        Me.Na.AutoSize = True
+        Me.Na.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Na.Location = New System.Drawing.Point(202, 269)
+        Me.Na.Name = "Na"
+        Me.Na.Size = New System.Drawing.Size(72, 25)
+        Me.Na.TabIndex = 4
+        Me.Na.Text = "Name :"
         '
-        'SurnameL
+        'Su
         '
-        Me.SurnameL.AutoSize = True
-        Me.SurnameL.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.SurnameL.Location = New System.Drawing.Point(202, 326)
-        Me.SurnameL.Name = "SurnameL"
-        Me.SurnameL.Size = New System.Drawing.Size(97, 25)
-        Me.SurnameL.TabIndex = 5
-        Me.SurnameL.Text = "Surname :"
+        Me.Su.AutoSize = True
+        Me.Su.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Su.Location = New System.Drawing.Point(202, 326)
+        Me.Su.Name = "Su"
+        Me.Su.Size = New System.Drawing.Size(97, 25)
+        Me.Su.TabIndex = 5
+        Me.Su.Text = "Surname :"
         '
-        'EmailL
+        'EL
         '
-        Me.EmailL.AutoSize = True
-        Me.EmailL.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.EmailL.Location = New System.Drawing.Point(202, 386)
-        Me.EmailL.Name = "EmailL"
-        Me.EmailL.Size = New System.Drawing.Size(75, 25)
-        Me.EmailL.TabIndex = 6
-        Me.EmailL.Text = "E-mail :"
+        Me.EL.AutoSize = True
+        Me.EL.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.EL.Location = New System.Drawing.Point(202, 386)
+        Me.EL.Name = "EL"
+        Me.EL.Size = New System.Drawing.Size(75, 25)
+        Me.EL.TabIndex = 6
+        Me.EL.Text = "E-mail :"
         '
         'PasswordL
         '
@@ -120,14 +120,14 @@ Partial Class Profile
         Me.EditB.Text = "Edit"
         Me.EditB.UseVisualStyleBackColor = True
         '
-        'Name
+        'NameL
         '
-        Me.Name.AutoSize = True
-        Me.Name.Location = New System.Drawing.Point(399, 275)
-        Me.Name.Name = "Name"
-        Me.Name.Size = New System.Drawing.Size(41, 15)
-        Me.Name.TabIndex = 9
-        Me.Name.Text = "Label1"
+        Me.NameL.AutoSize = True
+        Me.NameL.Location = New System.Drawing.Point(399, 275)
+        Me.NameL.Name = "NameL"
+        Me.NameL.Size = New System.Drawing.Size(41, 15)
+        Me.NameL.TabIndex = 9
+        Me.NameL.Text = "Label1"
         '
         'Surname
         '
@@ -156,16 +156,16 @@ Partial Class Profile
         Me.Password.TabIndex = 12
         Me.Password.Text = "Label4"
         '
-        'Update
+        'UpdateB
         '
-        Me.Update.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Update.Location = New System.Drawing.Point(365, 516)
-        Me.Update.Name = "Update"
-        Me.Update.Size = New System.Drawing.Size(75, 23)
-        Me.Update.TabIndex = 13
-        Me.Update.Text = "Update"
-        Me.Update.UseVisualStyleBackColor = True
-        Me.Update.Visible = False
+        Me.UpdateB.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.UpdateB.Location = New System.Drawing.Point(365, 516)
+        Me.UpdateB.Name = "UpdateB"
+        Me.UpdateB.Size = New System.Drawing.Size(75, 23)
+        Me.UpdateB.TabIndex = 13
+        Me.UpdateB.Text = "Update"
+        Me.UpdateB.UseVisualStyleBackColor = True
+        Me.UpdateB.Visible = False
         '
         'NameTB
         '
@@ -203,21 +203,22 @@ Partial Class Profile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.DarkGray
         Me.ClientSize = New System.Drawing.Size(600, 702)
         Me.Controls.Add(Me.NewPasswordTB)
         Me.Controls.Add(Me.EmailTB)
         Me.Controls.Add(Me.SurnameTB)
         Me.Controls.Add(Me.NameTB)
-        Me.Controls.Add(Me.Update)
+        Me.Controls.Add(Me.UpdateB)
         Me.Controls.Add(Me.Password)
         Me.Controls.Add(Me.Email)
         Me.Controls.Add(Me.Surname)
-        Me.Controls.Add(Me.Name)
+        Me.Controls.Add(Me.NameL)
         Me.Controls.Add(Me.EditB)
         Me.Controls.Add(Me.PasswordL)
-        Me.Controls.Add(Me.EmailL)
-        Me.Controls.Add(Me.SurnameL)
-        Me.Controls.Add(Me.NameL)
+        Me.Controls.Add(Me.EL)
+        Me.Controls.Add(Me.Su)
+        Me.Controls.Add(Me.Na)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.UploadB)
         Me.Controls.Add(Me.ProfilePL)
@@ -233,16 +234,16 @@ Partial Class Profile
     Friend WithEvents ProfilePL As Label
     Friend WithEvents UploadB As Button
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents NameL As Label
-    Friend WithEvents SurnameL As Label
-    Friend WithEvents EmailL As Label
+    Friend WithEvents Na As Label
+    Friend WithEvents Su As Label
+    Friend WithEvents EL As Label
     Friend WithEvents PasswordL As Label
     Friend WithEvents EditB As Button
-    Friend WithEvents Name As Label
+    Friend WithEvents NameL As Label
     Friend WithEvents Surname As Label
     Friend WithEvents Email As Label
     Friend WithEvents Password As Label
-    Friend WithEvents Update As Button
+    Friend WithEvents UpdateB As Button
     Friend WithEvents NameTB As TextBox
     Friend WithEvents SurnameTB As TextBox
     Friend WithEvents EmailTB As TextBox

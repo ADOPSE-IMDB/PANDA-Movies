@@ -22,22 +22,22 @@ Partial Class CurrentMovie
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.MoPic = New System.Windows.Forms.PictureBox()
         Me.MovieName = New System.Windows.Forms.Label()
         Me.Description = New System.Windows.Forms.Label()
         Me.TopPanel = New System.Windows.Forms.Panel()
         Me.CloseMovie = New System.Windows.Forms.Button()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MoPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TopPanel.SuspendLayout()
         Me.SuspendLayout()
         '
-        'PictureBox1
+        'MoPic
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(30, 30)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(190, 250)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.MoPic.Location = New System.Drawing.Point(30, 30)
+        Me.MoPic.Name = "MoPic"
+        Me.MoPic.Size = New System.Drawing.Size(190, 250)
+        Me.MoPic.TabIndex = 0
+        Me.MoPic.TabStop = False
         '
         'MovieName
         '
@@ -83,17 +83,17 @@ Partial Class CurrentMovie
         Me.Controls.Add(Me.TopPanel)
         Me.Controls.Add(Me.Description)
         Me.Controls.Add(Me.MovieName)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.MoPic)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "CurrentMovie"
         Me.Text = "CurrentMovie"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MoPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TopPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents MoPic As PictureBox
     Friend WithEvents MovieName As Label
     Friend WithEvents Description As Label
     Friend WithEvents TopPanel As Panel

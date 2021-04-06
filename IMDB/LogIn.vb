@@ -5,7 +5,7 @@
 
 
     Private Sub CloseApp_Click(sender As Object, e As EventArgs) Handles CloseApp.Click
-        Me.Close()
+        Application.Exit()
     End Sub
 
     'Check Username and Password to log in

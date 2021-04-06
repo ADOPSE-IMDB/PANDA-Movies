@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>IMDB</id>
+    <version>1.0.0</version>
+    <authors>IMDB</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net5.0-windows7.0">
+        <dependency id="FontAwesome.Sharp" version="5.15.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net5.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\IMDB.runtimeconfig.json" target="lib\net5.0-windows7.0\IMDB.runtimeconfig.json" />
+    <file src="C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\IMDB.dll" target="lib\net5.0-windows7.0\IMDB.dll" />
+  </files>
+</package>

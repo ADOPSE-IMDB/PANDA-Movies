@@ -1,8 +1,7 @@
 ﻿Public Class Register
 
     Private Sub CloseApp_Click(sender As Object, e As EventArgs) Handles CloseApp.Click
-        Close()
-
+        Application.Exit()
     End Sub
 
     Private Sub SignUpB_Click(sender As Object, e As EventArgs) Handles SignUpB.Click

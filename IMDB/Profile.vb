@@ -1,6 +1,9 @@
 ﻿Public Class Profile
+    Private Sub On_load(sender As Object, e As EventArgs) Handles Me.Load
+
+    End Sub
     Private Sub EditB_Click(sender As Object, e As EventArgs) Handles EditB.Click
-        Name.Visible = False
+        NameL.Visible = False
         Surname.Visible = False
         Email.Visible = False
         Password.Visible = False
@@ -14,7 +17,8 @@
 
     End Sub
 
-    Private Sub Update_Click(sender As Object, e As EventArgs) Handles Update.Click
+    Private Sub Update_Click(sender As Object, e As EventArgs) Handles UpdateB.Click
 
     End Sub
+
 End Class
