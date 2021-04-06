@@ -1,4 +1,7 @@
-﻿Public Class LogIn
+﻿Imports MySql.Data.MySqlClient
+Public Class LogIn
+    Dim MySqlConn As MySqlConnection
+
 
     Public Connected As Boolean
     Private ReadOnly e As EventArgs
@@ -50,4 +53,21 @@
         Me.Close()
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        MySqlConn = New MySqlConnection
+        MySqlConn.ConnectionString = "Server=localhost;Port=3306;Database=database;Uid=root;Pwd=root;"
+        Try
+            MySqlConn.Open()
+            MessageBox.Show("Connection Succesfull")
+            MySqlConn.Close()
+
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+
+        Finally
+            MySqlConn.Dispose()
+
+        End Try
+
+    End Sub
 End Class

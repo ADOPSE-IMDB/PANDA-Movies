@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <PackageReference Include="FontAwesome.Sharp" Version="5.15.3" />
+    <PackageReference Include="MySql.Data" Version="8.0.23" />
   </ItemGroup>
 
   <ItemGroup>
