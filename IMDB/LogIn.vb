@@ -55,7 +55,7 @@ Public Class LogIn
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         MySqlConn = New MySqlConnection
-        MySqlConn.ConnectionString = "Server=localhost;Port=3306;Database=database;Uid=root;Pwd=root;"
+        MySqlConn.ConnectionString = "Server=dblabs.it.teithe.gr;Port=3306;Database=mySQL;Uid=it185223;Pwd=spider22;"
         Try
             MySqlConn.Open()
             MessageBox.Show("Connection Succesfull")
