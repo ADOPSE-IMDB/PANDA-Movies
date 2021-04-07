@@ -26,6 +26,7 @@ Partial Class LogIn
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LogIn))
         Me.LogInTitle = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.ErrorLabel = New System.Windows.Forms.Label()
         Me.RememberMe = New System.Windows.Forms.CheckBox()
         Me.LogInB = New System.Windows.Forms.Button()
@@ -36,7 +37,7 @@ Partial Class LogIn
         Me.UsernameL = New System.Windows.Forms.Label()
         Me.CloseApp = New System.Windows.Forms.Button()
         Me.XError = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Panel3.SuspendLayout()
         CType(Me.XError, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -55,6 +56,7 @@ Partial Class LogIn
         '
         'Panel3
         '
+        Me.Panel3.Controls.Add(Me.TextBox2)
         Me.Panel3.Controls.Add(Me.Button1)
         Me.Panel3.Controls.Add(Me.ErrorLabel)
         Me.Panel3.Controls.Add(Me.RememberMe)
@@ -70,6 +72,16 @@ Partial Class LogIn
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(343, 307)
         Me.Panel3.TabIndex = 2
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Button1.Location = New System.Drawing.Point(12, 247)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(157, 29)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Check Connection"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'ErrorLabel
         '
@@ -175,15 +187,17 @@ Partial Class LogIn
         Me.XError.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
         Me.XError.ContainerControl = Me
         '
-        'Button1
+        'TextBox2
         '
-        Me.Button1.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Button1.Location = New System.Drawing.Point(100, 245)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(157, 29)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Check Connection"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.TextBox2.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.TextBox2.Location = New System.Drawing.Point(190, 247)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(125, 27)
+        Me.TextBox2.TabIndex = 9
+        Me.TextBox2.Text = "Create Table"
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'LogIn
         '
@@ -222,4 +236,5 @@ Partial Class LogIn
     Friend WithEvents XError As ErrorProvider
     Friend WithEvents ErrorLabel As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents TextBox2 As TextBox
 End Class
