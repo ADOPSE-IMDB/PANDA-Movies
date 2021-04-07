@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class LogIn
-    Dim connection As New MySqlConnection("Server=localhost;Port=3306;Database=database;Uid=root;Pwd=root;")
+    Dim MySqlConn As New MySqlConnection("Server=localhost;Port=3306;Database=database;Uid=root;Pwd=root;")
+    Dim COMMAND As MySqlCommand
 
 
     Public Connected As Boolean
@@ -13,6 +14,7 @@ Public Class LogIn
 
     'Check Username and Password to log in
     Private Sub LogInB_Click(sender As Object, e As EventArgs) Handles LogInB.Click
+
 
         Connected = False
 
@@ -55,15 +57,15 @@ Public Class LogIn
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-            connection.Open()
+            MySqlConn.Open()
             MessageBox.Show("Connection Succesfull")
-            connection.Close()
+            MySqlConn.Close()
 
         Catch ex As MySqlException
             MessageBox.Show(ex.Message)
 
         Finally
-            connection.Dispose()
+            MySqlConn.Dispose()
 
         End Try
 
@@ -72,17 +74,17 @@ Public Class LogIn
     Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
         Dim createSql As String
         Try
-            connection = connection
-            connection.Open()
+            MySqlConn = MySqlConn
+            MySqlConn.Open()
             Dim tblname = "test"
             createSql = "CREATE TABLE " & tblname & " (id INT(6) NOT NULL AUTO_INCREMENT,otherField TEXT NOT NULL,PRIMARY KEY (id));"
-            Dim cmd As New MySqlCommand(createSql, connection)
+            Dim cmd As New MySqlCommand(createSql, MySqlConn)
             cmd.ExecuteNonQuery()
             cmd.Dispose()
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            connection.Close()
+            MySqlConn.Close()
         End Try
 
     End Sub
