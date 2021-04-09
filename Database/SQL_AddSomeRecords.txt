@@ -1,8 +1,8 @@
-INSERT INTO `Movies` (`title`, `year`, `description`) VALUES ('Inception', '2010', 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.');
-INSERT INTO `Movies` (`title`, `year`, `description`) VALUES ('Parasite', '2019', 'Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.');
-INSERT INTO `Movies` (`title`, `year`, `description`) VALUES ('Interstellar', '2014', 'A team of explorers travel through a wormhole in space in an attempt to ensure the survival of humanity.');
-INSERT INTO `Movies` (`title`, `year`, `description`) VALUES ('Joker', '2019', 'In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.');
-INSERT INTO `Movies` (`title`, `year`, `description`) VALUES ('A Beautiful Mind', '2001', 'After John Nash, a brilliant but asocial mathematician, accepts secret work in cryptography, his life takes a turn for the nightmarish.');
+INSERT INTO `Movies` (`title`, `year`, `description`) VALUES ('Inception', '2010-03-06', 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.');
+INSERT INTO `Movies` (`title`, `year`, `description`) VALUES ('Parasite', '2019-12-02', 'Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.');
+INSERT INTO `Movies` (`title`, `year`, `description`) VALUES ('Interstellar', '2014-10-03', 'A team of explorers travel through a wormhole in space in an attempt to ensure the survival of humanity.');
+INSERT INTO `Movies` (`title`, `year`, `description`) VALUES ('Joker', '2019-05-06', 'In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.');
+INSERT INTO `Movies` (`title`, `year`, `description`) VALUES ('A Beautiful Mind', '2001-02-05', 'After John Nash, a brilliant but asocial mathematician, accepts secret work in cryptography, his life takes a turn for the nightmarish.');
 
 INSERT INTO `Users` (`email`, `password`, `name`, `surname`) VALUES ('user1@gmail.com', 'password1', 'John', 'Duck');
 INSERT INTO `Users` (`email`, `password`, `name`, `surname`) VALUES ('user2@gmail.com', 'password2', 'Mary', 'Joe');
