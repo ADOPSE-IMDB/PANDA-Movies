@@ -9,7 +9,7 @@
         Password.Visible = False
         EditB.Visible = False
 
-        UploadB.Visible = True
+        UpdateB.Visible = True
         NameTB.Visible = True
         SurnameTB.Visible = True
         EmailTB.Visible = True
@@ -18,6 +18,17 @@
     End Sub
 
     Private Sub Update_Click(sender As Object, e As EventArgs) Handles UpdateB.Click
+        NameL.Visible = True
+        Surname.Visible = True
+        Email.Visible = True
+        Password.Visible = True
+        EditB.Visible = True
+
+        UpdateB.Visible = False
+        NameTB.Visible = False
+        SurnameTB.Visible = False
+        EmailTB.Visible = False
+        NewPasswordTB.Visible = False
 
     End Sub
 
