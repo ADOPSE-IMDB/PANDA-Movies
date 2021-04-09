@@ -1,0 +1,6 @@
+Steps to run this project locally as for the Database:
+
+1) Open your preferred mySQL client
+2) Create a new database ("adopse_db")
+3) Import or run the queries of SQL_Creation.txt file to create the tables
+4) Import or run the queries of SQL_AddSomeRecords.txt file to add some records to the tables
