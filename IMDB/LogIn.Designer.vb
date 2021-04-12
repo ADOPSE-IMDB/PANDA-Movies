@@ -26,18 +26,18 @@ Partial Class LogIn
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LogIn))
         Me.LogInTitle = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ButtonLogin = New System.Windows.Forms.Button()
+        Me.CreateTable = New System.Windows.Forms.TextBox()
+        Me.CheckConnection = New System.Windows.Forms.Button()
         Me.ErrorLabel = New System.Windows.Forms.Label()
         Me.RememberMe = New System.Windows.Forms.CheckBox()
-        Me.LogInB = New System.Windows.Forms.Button()
         Me.RegisterLink = New System.Windows.Forms.LinkLabel()
-        Me.PasswordTB = New System.Windows.Forms.TextBox()
+        Me.TextBoxPassword = New System.Windows.Forms.TextBox()
         Me.PasswordL = New System.Windows.Forms.Label()
-        Me.UsernameTB = New System.Windows.Forms.TextBox()
+        Me.TextBoxUsername = New System.Windows.Forms.TextBox()
         Me.UsernameL = New System.Windows.Forms.Label()
         Me.CloseApp = New System.Windows.Forms.Button()
         Me.XError = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Panel3.SuspendLayout()
         CType(Me.XError, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -56,15 +56,15 @@ Partial Class LogIn
         '
         'Panel3
         '
-        Me.Panel3.Controls.Add(Me.TextBox2)
-        Me.Panel3.Controls.Add(Me.Button1)
+        Me.Panel3.Controls.Add(Me.ButtonLogin)
+        Me.Panel3.Controls.Add(Me.CreateTable)
+        Me.Panel3.Controls.Add(Me.CheckConnection)
         Me.Panel3.Controls.Add(Me.ErrorLabel)
         Me.Panel3.Controls.Add(Me.RememberMe)
-        Me.Panel3.Controls.Add(Me.LogInB)
         Me.Panel3.Controls.Add(Me.RegisterLink)
-        Me.Panel3.Controls.Add(Me.PasswordTB)
+        Me.Panel3.Controls.Add(Me.TextBoxPassword)
         Me.Panel3.Controls.Add(Me.PasswordL)
-        Me.Panel3.Controls.Add(Me.UsernameTB)
+        Me.Panel3.Controls.Add(Me.TextBoxUsername)
         Me.Panel3.Controls.Add(Me.UsernameL)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel3.Location = New System.Drawing.Point(0, 93)
@@ -73,15 +73,39 @@ Partial Class LogIn
         Me.Panel3.Size = New System.Drawing.Size(343, 307)
         Me.Panel3.TabIndex = 2
         '
-        'Button1
+        'ButtonLogin
         '
-        Me.Button1.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Button1.Location = New System.Drawing.Point(12, 247)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(157, 29)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Check Connection"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.ButtonLogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.ButtonLogin.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.ButtonLogin.ForeColor = System.Drawing.Color.Black
+        Me.ButtonLogin.Location = New System.Drawing.Point(57, 193)
+        Me.ButtonLogin.Name = "ButtonLogin"
+        Me.ButtonLogin.Size = New System.Drawing.Size(229, 44)
+        Me.ButtonLogin.TabIndex = 10
+        Me.ButtonLogin.Text = "Sign In"
+        Me.ButtonLogin.UseVisualStyleBackColor = False
+        '
+        'CreateTable
+        '
+        Me.CreateTable.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.CreateTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CreateTable.Cursor = System.Windows.Forms.Cursors.Default
+        Me.CreateTable.Location = New System.Drawing.Point(190, 247)
+        Me.CreateTable.Name = "CreateTable"
+        Me.CreateTable.Size = New System.Drawing.Size(125, 27)
+        Me.CreateTable.TabIndex = 9
+        Me.CreateTable.Text = "Create Table"
+        Me.CreateTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'CheckConnection
+        '
+        Me.CheckConnection.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.CheckConnection.Location = New System.Drawing.Point(12, 247)
+        Me.CheckConnection.Name = "CheckConnection"
+        Me.CheckConnection.Size = New System.Drawing.Size(157, 29)
+        Me.CheckConnection.TabIndex = 8
+        Me.CheckConnection.Text = "Check Connection"
+        Me.CheckConnection.UseVisualStyleBackColor = True
         '
         'ErrorLabel
         '
@@ -101,17 +125,6 @@ Partial Class LogIn
         Me.RememberMe.Text = "Remember Me"
         Me.RememberMe.UseVisualStyleBackColor = True
         '
-        'LogInB
-        '
-        Me.LogInB.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LogInB.Location = New System.Drawing.Point(103, 200)
-        Me.LogInB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.LogInB.Name = "LogInB"
-        Me.LogInB.Size = New System.Drawing.Size(137, 40)
-        Me.LogInB.TabIndex = 5
-        Me.LogInB.Text = "Log In"
-        Me.LogInB.UseVisualStyleBackColor = True
-        '
         'RegisterLink
         '
         Me.RegisterLink.ActiveLinkColor = System.Drawing.Color.BlueViolet
@@ -124,19 +137,21 @@ Partial Class LogIn
         Me.RegisterLink.Text = "Create your IMDB account"
         Me.RegisterLink.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'PasswordTB
+        'TextBoxPassword
         '
-        Me.PasswordTB.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.TextBoxPassword.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PasswordTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.PasswordTB.Location = New System.Drawing.Point(57, 115)
-        Me.PasswordTB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.PasswordTB.Name = "PasswordTB"
-        Me.PasswordTB.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.PasswordTB.Size = New System.Drawing.Size(228, 24)
-        Me.PasswordTB.TabIndex = 3
-        Me.PasswordTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBoxPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.TextBoxPassword.ForeColor = System.Drawing.Color.DarkGray
+        Me.TextBoxPassword.Location = New System.Drawing.Point(57, 115)
+        Me.TextBoxPassword.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBoxPassword.Name = "TextBoxPassword"
+        Me.TextBoxPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TextBoxPassword.Size = New System.Drawing.Size(228, 24)
+        Me.TextBoxPassword.TabIndex = 3
+        Me.TextBoxPassword.Text = "password"
+        Me.TextBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'PasswordL
         '
@@ -148,18 +163,20 @@ Partial Class LogIn
         Me.PasswordL.Text = "Password"
         Me.PasswordL.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'UsernameTB
+        'TextBoxUsername
         '
-        Me.UsernameTB.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.TextBoxUsername.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.UsernameTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.UsernameTB.Location = New System.Drawing.Point(57, 35)
-        Me.UsernameTB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.UsernameTB.Name = "UsernameTB"
-        Me.UsernameTB.Size = New System.Drawing.Size(228, 24)
-        Me.UsernameTB.TabIndex = 1
-        Me.UsernameTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBoxUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.TextBoxUsername.ForeColor = System.Drawing.Color.DarkGray
+        Me.TextBoxUsername.Location = New System.Drawing.Point(57, 35)
+        Me.TextBoxUsername.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBoxUsername.Name = "TextBoxUsername"
+        Me.TextBoxUsername.Size = New System.Drawing.Size(228, 24)
+        Me.TextBoxUsername.TabIndex = 1
+        Me.TextBoxUsername.Text = "username"
+        Me.TextBoxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'UsernameL
         '
@@ -187,21 +204,8 @@ Partial Class LogIn
         Me.XError.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
         Me.XError.ContainerControl = Me
         '
-        'TextBox2
-        '
-        Me.TextBox2.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.TextBox2.Location = New System.Drawing.Point(190, 247)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(125, 27)
-        Me.TextBox2.TabIndex = 9
-        Me.TextBox2.Text = "Create Table"
-        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'LogIn
         '
-        Me.AcceptButton = Me.LogInB
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(343, 400)
@@ -226,15 +230,15 @@ Partial Class LogIn
     Friend WithEvents UsernameL As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents PasswordL As Label
-    Friend WithEvents UsernameTB As TextBox
+    Friend WithEvents TextBoxUsername As TextBox
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents CloseApp As Button
     Friend WithEvents RememberMe As CheckBox
-    Friend WithEvents LogInB As Button
     Friend WithEvents RegisterLink As LinkLabel
-    Friend WithEvents PasswordTB As TextBox
+    Friend WithEvents TextBoxPassword As TextBox
     Friend WithEvents XError As ErrorProvider
     Friend WithEvents ErrorLabel As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents CheckConnection As Button
+    Friend WithEvents CreateTable As TextBox
+    Friend WithEvents ButtonLogin As Button
 End Class

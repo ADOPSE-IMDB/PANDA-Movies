@@ -4,7 +4,7 @@
         Application.Exit()
     End Sub
 
-    Private Sub SignUpB_Click(sender As Object, e As EventArgs) Handles SignUpB.Click
+    Private Sub SignUpB_Click(sender As Object, e As EventArgs)
 
         If FirstNameTB.Text = "" Then
 
@@ -78,4 +78,7 @@
         Close()
     End Sub
 
+    Private Sub ButtonLogin_Click(sender As Object, e As EventArgs) Handles ButtonRegister.Click
+
+    End Sub
 End Class

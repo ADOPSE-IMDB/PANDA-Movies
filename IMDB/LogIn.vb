@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class LogIn
-    Dim MySqlConn As New MySqlConnection("Server=localhost;Port=3306;Database=database;Uid=root;Pwd=root;")
+    Dim MySqlConn As New MySqlConnection("Server=dblabs.it.teithe.gr;Port=3306;Database=it185223;Uid=it185223;Pwd=chilli123;")
     Dim COMMAND As MySqlCommand
 
 
@@ -13,41 +13,7 @@ Public Class LogIn
     End Sub
 
     'Check Username and Password to log in
-    Private Sub LogInB_Click(sender As Object, e As EventArgs) Handles LogInB.Click
 
-
-        Connected = False
-
-        If UsernameTB.Text = "" Then
-            Me.XError.SetError(Me.UsernameTB, "Please enter a Username.")
-        Else
-            Me.XError.SetError(Me.UsernameTB, "")
-        End If
-
-        If PasswordTB.Text = "" Then
-            Me.XError.SetError(Me.PasswordTB, "Please enter Password.")
-        Else
-            Me.XError.SetError(Me.PasswordTB, "")
-        End If
-
-        If UsernameTB.Text <> "" Or PasswordTB.Text <> "" Then
-            If UsernameTB.Text <> "Admin" Then
-                ErrorLabel.Text = "Username not found."
-                UsernameTB.Text = ""
-                PasswordTB.Text = ""
-            Else
-                If PasswordTB.Text = "Admin" Then
-                    Connected = True
-                    Main.Show()
-                    Me.Close()
-                    ErrorLabel.Text = ""
-                Else
-                    ErrorLabel.Text = "Wrong Password."
-                    PasswordTB.Text = ""
-                End If
-            End If
-        End If
-    End Sub
 
     'Close Log in and open Register form 
     Private Sub RegisterLink_Click(sender As Object, e As EventArgs) Handles RegisterLink.Click
@@ -55,7 +21,7 @@ Public Class LogIn
         Me.Close()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles CheckConnection.Click
         Try
             MySqlConn.Open()
             MessageBox.Show("Connection Succesfull")
@@ -71,7 +37,7 @@ Public Class LogIn
 
     End Sub
 
-    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles CreateTable.TextChanged
         Dim createSql As String
         Try
             MySqlConn = MySqlConn
@@ -86,6 +52,40 @@ Public Class LogIn
         Finally
             MySqlConn.Close()
         End Try
+
+    End Sub
+
+    Private Sub RegisterLink_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles RegisterLink.LinkClicked
+
+    End Sub
+
+    Private Sub ButtonLogin_Click(sender As Object, e As EventArgs) Handles ButtonLogin.Click
+        Dim conn As New MY_CONNECTION()
+        Dim adapter As New MySqlDataAdapter()
+        Dim table As New DataTable()
+        Dim command As New MySqlCommand("SELECT 
+    `users`.`username`,
+    `users`.`password`
+FROM `it185223`.`users` where `username`=@usn and `password`=@pass", conn.getConnection())
+        command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = TextBoxUsername.Text
+        command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = TextBoxPassword.Text
+
+        If TextBoxUsername.Text.Trim() = "" Or TextBoxUsername.Text.Trim().ToLower() = "username" Then
+            MsgBox("Enter your Username")
+
+        ElseIf TextBoxPassword.Text.Trim() = "" Or TextBoxPassword.Text.Trim().ToLower() = "password" Then
+            MsgBox("Enter your Password")
+
+        Else
+            adapter.SelectCommand = command
+            adapter.Fill(table)
+            If table.Rows.Count > 0 Then
+                MsgBox("LOGGED")
+            Else
+                MsgBox("NOT LOGGED")
+            End If
+
+        End If
 
     End Sub
 End Class
