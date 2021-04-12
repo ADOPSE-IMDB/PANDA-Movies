@@ -16,7 +16,7 @@ Public Class LogIn
 
 
     'Close Log in and open Register form 
-    Private Sub RegisterLink_Click(sender As Object, e As EventArgs) Handles RegisterLink.Click
+    Private Sub RegisterLink_Click(sender As Object, e As EventArgs) Handles LabelGoToSignup.Click
         Register.Show()
         Me.Close()
     End Sub
@@ -37,7 +37,7 @@ Public Class LogIn
 
     End Sub
 
-    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles CreateTable.TextChanged
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs)
         Dim createSql As String
         Try
             MySqlConn = MySqlConn
@@ -55,37 +55,41 @@ Public Class LogIn
 
     End Sub
 
-    Private Sub RegisterLink_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles RegisterLink.LinkClicked
 
-    End Sub
 
     Private Sub ButtonLogin_Click(sender As Object, e As EventArgs) Handles ButtonLogin.Click
         Dim conn As New MY_CONNECTION()
         Dim adapter As New MySqlDataAdapter()
         Dim table As New DataTable()
         Dim command As New MySqlCommand("SELECT 
-    `users`.`username`,
-    `users`.`password`
-FROM `it185223`.`users` where `username`=@usn and `password`=@pass", conn.getConnection())
+    `Users`.`username`,
+    `Users`.`password`
+FROM `it185223`.`Users` where `username`=@usn and `password`=@pass", conn.getConnection())
         command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = TextBoxUsername.Text
         command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = TextBoxPassword.Text
 
         If TextBoxUsername.Text.Trim() = "" Or TextBoxUsername.Text.Trim().ToLower() = "username" Then
-            MsgBox("Enter your Username")
+            MessageBox.Show("Enter your Username To Log In", "Missing Username", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
 
         ElseIf TextBoxPassword.Text.Trim() = "" Or TextBoxPassword.Text.Trim().ToLower() = "password" Then
-            MsgBox("Enter your Password")
+            MessageBox.Show("Enter your Password To Log In", "Missing Password", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
 
         Else
             adapter.SelectCommand = command
             adapter.Fill(table)
             If table.Rows.Count > 0 Then
-                MsgBox("LOGGED")
+                MessageBox.Show("LOGGED", "LOGGED", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
             Else
-                MsgBox("NOT LOGGED")
+                MessageBox.Show("This Username Or/And Password Doesn't Exists", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
             End If
 
         End If
 
     End Sub
+
+
 End Class

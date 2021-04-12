@@ -26,22 +26,22 @@ Partial Class Register
         Me.RegisterTitle = New System.Windows.Forms.Label()
         Me.CloseApp = New System.Windows.Forms.Button()
         Me.XError = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.UsernameL = New System.Windows.Forms.Label()
-        Me.UsernameTB = New System.Windows.Forms.TextBox()
-        Me.PasswordL = New System.Windows.Forms.Label()
-        Me.PasswordTB = New System.Windows.Forms.TextBox()
+        Me.LabelUN = New System.Windows.Forms.Label()
+        Me.TextBoxUsername = New System.Windows.Forms.TextBox()
+        Me.LabelPASS1 = New System.Windows.Forms.Label()
+        Me.TextBoxPassword = New System.Windows.Forms.TextBox()
         Me.LogInLink = New System.Windows.Forms.LinkLabel()
         Me.ErrorLabel = New System.Windows.Forms.Label()
-        Me.EmailTB = New System.Windows.Forms.TextBox()
-        Me.FirstNameTB = New System.Windows.Forms.TextBox()
-        Me.ConfirmPasswordTB = New System.Windows.Forms.TextBox()
-        Me.LastNameTB = New System.Windows.Forms.TextBox()
+        Me.TextBoxEmail = New System.Windows.Forms.TextBox()
+        Me.TextBoxFirstname = New System.Windows.Forms.TextBox()
+        Me.TextBoxConfirmPassword = New System.Windows.Forms.TextBox()
+        Me.TextBoxLastname = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.ButtonRegister = New System.Windows.Forms.Button()
-        Me.ConfirmPasswordLabel = New System.Windows.Forms.Label()
-        Me.FirstNameL = New System.Windows.Forms.Label()
-        Me.LastNameL = New System.Windows.Forms.Label()
-        Me.EmailL = New System.Windows.Forms.Label()
+        Me.LabelPASS2 = New System.Windows.Forms.Label()
+        Me.LabelFN = New System.Windows.Forms.Label()
+        Me.LabelLN = New System.Windows.Forms.Label()
+        Me.LabelEM = New System.Windows.Forms.Label()
         CType(Me.XError, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
@@ -51,7 +51,7 @@ Partial Class Register
         Me.RegisterTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.RegisterTitle.Location = New System.Drawing.Point(14, 20)
         Me.RegisterTitle.Name = "RegisterTitle"
-        Me.RegisterTitle.Size = New System.Drawing.Size(586, 67)
+        Me.RegisterTitle.Size = New System.Drawing.Size(586, 53)
         Me.RegisterTitle.TabIndex = 0
         Me.RegisterTitle.Text = "REGISTER"
         Me.RegisterTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -71,58 +71,58 @@ Partial Class Register
         Me.XError.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
         Me.XError.ContainerControl = Me
         '
-        'UsernameL
+        'LabelUN
         '
-        Me.UsernameL.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.UsernameL.Location = New System.Drawing.Point(31, 161)
-        Me.UsernameL.Name = "UsernameL"
-        Me.UsernameL.Size = New System.Drawing.Size(230, 31)
-        Me.UsernameL.TabIndex = 0
-        Me.UsernameL.Text = "Username"
-        Me.UsernameL.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.LabelUN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.LabelUN.Location = New System.Drawing.Point(33, 133)
+        Me.LabelUN.Name = "LabelUN"
+        Me.LabelUN.Size = New System.Drawing.Size(230, 31)
+        Me.LabelUN.TabIndex = 0
+        Me.LabelUN.Text = "Username"
+        Me.LabelUN.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'UsernameTB
+        'TextBoxUsername
         '
-        Me.UsernameTB.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.TextBoxUsername.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.UsernameTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.UsernameTB.Location = New System.Drawing.Point(31, 221)
-        Me.UsernameTB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.UsernameTB.Name = "UsernameTB"
-        Me.UsernameTB.Size = New System.Drawing.Size(229, 24)
-        Me.UsernameTB.TabIndex = 1
-        Me.UsernameTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBoxUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.TextBoxUsername.Location = New System.Drawing.Point(33, 168)
+        Me.TextBoxUsername.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBoxUsername.Name = "TextBoxUsername"
+        Me.TextBoxUsername.Size = New System.Drawing.Size(538, 24)
+        Me.TextBoxUsername.TabIndex = 1
+        Me.TextBoxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'PasswordL
+        'LabelPASS1
         '
-        Me.PasswordL.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.PasswordL.Location = New System.Drawing.Point(31, 271)
-        Me.PasswordL.Name = "PasswordL"
-        Me.PasswordL.Size = New System.Drawing.Size(230, 32)
-        Me.PasswordL.TabIndex = 2
-        Me.PasswordL.Text = "Password"
-        Me.PasswordL.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.LabelPASS1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.LabelPASS1.Location = New System.Drawing.Point(30, 335)
+        Me.LabelPASS1.Name = "LabelPASS1"
+        Me.LabelPASS1.Size = New System.Drawing.Size(230, 32)
+        Me.LabelPASS1.TabIndex = 2
+        Me.LabelPASS1.Text = "Password"
+        Me.LabelPASS1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'PasswordTB
+        'TextBoxPassword
         '
-        Me.PasswordTB.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.TextBoxPassword.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PasswordTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.PasswordTB.Location = New System.Drawing.Point(31, 325)
-        Me.PasswordTB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.PasswordTB.Name = "PasswordTB"
-        Me.PasswordTB.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.PasswordTB.Size = New System.Drawing.Size(229, 24)
-        Me.PasswordTB.TabIndex = 3
-        Me.PasswordTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBoxPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.TextBoxPassword.Location = New System.Drawing.Point(31, 371)
+        Me.TextBoxPassword.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBoxPassword.Name = "TextBoxPassword"
+        Me.TextBoxPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TextBoxPassword.Size = New System.Drawing.Size(229, 24)
+        Me.TextBoxPassword.TabIndex = 3
+        Me.TextBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'LogInLink
         '
         Me.LogInLink.ActiveLinkColor = System.Drawing.Color.BlueViolet
         Me.LogInLink.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LogInLink.Location = New System.Drawing.Point(0, 468)
+        Me.LogInLink.Location = New System.Drawing.Point(0, 485)
         Me.LogInLink.Name = "LogInLink"
         Me.LogInLink.Size = New System.Drawing.Size(613, 28)
         Me.LogInLink.TabIndex = 4
@@ -138,80 +138,80 @@ Partial Class Register
         Me.ErrorLabel.TabIndex = 7
         Me.ErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'EmailTB
+        'TextBoxEmail
         '
-        Me.EmailTB.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.TextBoxEmail.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.EmailTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.EmailTB.Location = New System.Drawing.Point(341, 221)
-        Me.EmailTB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.EmailTB.Name = "EmailTB"
-        Me.EmailTB.Size = New System.Drawing.Size(229, 24)
-        Me.EmailTB.TabIndex = 8
-        Me.EmailTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBoxEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.TextBoxEmail.Location = New System.Drawing.Point(32, 276)
+        Me.TextBoxEmail.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBoxEmail.Name = "TextBoxEmail"
+        Me.TextBoxEmail.Size = New System.Drawing.Size(538, 24)
+        Me.TextBoxEmail.TabIndex = 8
+        Me.TextBoxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'FirstNameTB
+        'TextBoxFirstname
         '
-        Me.FirstNameTB.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.TextBoxFirstname.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FirstNameTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.FirstNameTB.Location = New System.Drawing.Point(31, 111)
-        Me.FirstNameTB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.FirstNameTB.Name = "FirstNameTB"
-        Me.FirstNameTB.Size = New System.Drawing.Size(229, 24)
-        Me.FirstNameTB.TabIndex = 9
-        Me.FirstNameTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBoxFirstname.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.TextBoxFirstname.Location = New System.Drawing.Point(32, 60)
+        Me.TextBoxFirstname.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBoxFirstname.Name = "TextBoxFirstname"
+        Me.TextBoxFirstname.Size = New System.Drawing.Size(229, 24)
+        Me.TextBoxFirstname.TabIndex = 9
+        Me.TextBoxFirstname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'ConfirmPasswordTB
+        'TextBoxConfirmPassword
         '
-        Me.ConfirmPasswordTB.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.TextBoxConfirmPassword.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ConfirmPasswordTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.ConfirmPasswordTB.Location = New System.Drawing.Point(341, 325)
-        Me.ConfirmPasswordTB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.ConfirmPasswordTB.Name = "ConfirmPasswordTB"
-        Me.ConfirmPasswordTB.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.ConfirmPasswordTB.Size = New System.Drawing.Size(229, 24)
-        Me.ConfirmPasswordTB.TabIndex = 10
-        Me.ConfirmPasswordTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBoxConfirmPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.TextBoxConfirmPassword.Location = New System.Drawing.Point(341, 371)
+        Me.TextBoxConfirmPassword.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBoxConfirmPassword.Name = "TextBoxConfirmPassword"
+        Me.TextBoxConfirmPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TextBoxConfirmPassword.Size = New System.Drawing.Size(229, 24)
+        Me.TextBoxConfirmPassword.TabIndex = 10
+        Me.TextBoxConfirmPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'LastNameTB
+        'TextBoxLastname
         '
-        Me.LastNameTB.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.TextBoxLastname.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LastNameTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LastNameTB.Location = New System.Drawing.Point(341, 111)
-        Me.LastNameTB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.LastNameTB.Name = "LastNameTB"
-        Me.LastNameTB.Size = New System.Drawing.Size(229, 24)
-        Me.LastNameTB.TabIndex = 11
-        Me.LastNameTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBoxLastname.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.TextBoxLastname.Location = New System.Drawing.Point(342, 60)
+        Me.TextBoxLastname.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBoxLastname.Name = "TextBoxLastname"
+        Me.TextBoxLastname.Size = New System.Drawing.Size(229, 24)
+        Me.TextBoxLastname.TabIndex = 11
+        Me.TextBoxLastname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.ButtonRegister)
-        Me.Panel3.Controls.Add(Me.ConfirmPasswordLabel)
-        Me.Panel3.Controls.Add(Me.FirstNameL)
-        Me.Panel3.Controls.Add(Me.LastNameL)
-        Me.Panel3.Controls.Add(Me.EmailL)
-        Me.Panel3.Controls.Add(Me.LastNameTB)
-        Me.Panel3.Controls.Add(Me.ConfirmPasswordTB)
-        Me.Panel3.Controls.Add(Me.FirstNameTB)
-        Me.Panel3.Controls.Add(Me.EmailTB)
+        Me.Panel3.Controls.Add(Me.LabelPASS2)
+        Me.Panel3.Controls.Add(Me.LabelFN)
+        Me.Panel3.Controls.Add(Me.LabelLN)
+        Me.Panel3.Controls.Add(Me.LabelEM)
+        Me.Panel3.Controls.Add(Me.TextBoxLastname)
+        Me.Panel3.Controls.Add(Me.TextBoxConfirmPassword)
+        Me.Panel3.Controls.Add(Me.TextBoxFirstname)
+        Me.Panel3.Controls.Add(Me.TextBoxEmail)
         Me.Panel3.Controls.Add(Me.ErrorLabel)
         Me.Panel3.Controls.Add(Me.LogInLink)
-        Me.Panel3.Controls.Add(Me.PasswordTB)
-        Me.Panel3.Controls.Add(Me.PasswordL)
-        Me.Panel3.Controls.Add(Me.UsernameTB)
-        Me.Panel3.Controls.Add(Me.UsernameL)
-        Me.Panel3.Location = New System.Drawing.Point(1, 91)
+        Me.Panel3.Controls.Add(Me.TextBoxPassword)
+        Me.Panel3.Controls.Add(Me.LabelPASS1)
+        Me.Panel3.Controls.Add(Me.TextBoxUsername)
+        Me.Panel3.Controls.Add(Me.LabelUN)
+        Me.Panel3.Location = New System.Drawing.Point(1, 77)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(613, 507)
+        Me.Panel3.Size = New System.Drawing.Size(613, 521)
         Me.Panel3.TabIndex = 2
         '
         'ButtonRegister
@@ -219,52 +219,52 @@ Partial Class Register
         Me.ButtonRegister.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ButtonRegister.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.ButtonRegister.ForeColor = System.Drawing.Color.Black
-        Me.ButtonRegister.Location = New System.Drawing.Point(181, 412)
+        Me.ButtonRegister.Location = New System.Drawing.Point(180, 422)
         Me.ButtonRegister.Name = "ButtonRegister"
         Me.ButtonRegister.Size = New System.Drawing.Size(229, 44)
         Me.ButtonRegister.TabIndex = 16
         Me.ButtonRegister.Text = "Sign Up"
         Me.ButtonRegister.UseVisualStyleBackColor = False
         '
-        'ConfirmPasswordLabel
+        'LabelPASS2
         '
-        Me.ConfirmPasswordLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.ConfirmPasswordLabel.Location = New System.Drawing.Point(341, 271)
-        Me.ConfirmPasswordLabel.Name = "ConfirmPasswordLabel"
-        Me.ConfirmPasswordLabel.Size = New System.Drawing.Size(230, 32)
-        Me.ConfirmPasswordLabel.TabIndex = 15
-        Me.ConfirmPasswordLabel.Text = "Confirm Password"
-        Me.ConfirmPasswordLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.LabelPASS2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.LabelPASS2.Location = New System.Drawing.Point(342, 335)
+        Me.LabelPASS2.Name = "LabelPASS2"
+        Me.LabelPASS2.Size = New System.Drawing.Size(230, 32)
+        Me.LabelPASS2.TabIndex = 15
+        Me.LabelPASS2.Text = "Confirm Password"
+        Me.LabelPASS2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'FirstNameL
+        'LabelFN
         '
-        Me.FirstNameL.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.FirstNameL.Location = New System.Drawing.Point(31, 53)
-        Me.FirstNameL.Name = "FirstNameL"
-        Me.FirstNameL.Size = New System.Drawing.Size(230, 31)
-        Me.FirstNameL.TabIndex = 14
-        Me.FirstNameL.Text = "First Name"
-        Me.FirstNameL.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.LabelFN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.LabelFN.Location = New System.Drawing.Point(30, 25)
+        Me.LabelFN.Name = "LabelFN"
+        Me.LabelFN.Size = New System.Drawing.Size(230, 31)
+        Me.LabelFN.TabIndex = 14
+        Me.LabelFN.Text = "First Name"
+        Me.LabelFN.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'LastNameL
+        'LabelLN
         '
-        Me.LastNameL.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LastNameL.Location = New System.Drawing.Point(341, 53)
-        Me.LastNameL.Name = "LastNameL"
-        Me.LastNameL.Size = New System.Drawing.Size(230, 31)
-        Me.LastNameL.TabIndex = 13
-        Me.LastNameL.Text = "Last Name"
-        Me.LastNameL.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.LabelLN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.LabelLN.Location = New System.Drawing.Point(342, 25)
+        Me.LabelLN.Name = "LabelLN"
+        Me.LabelLN.Size = New System.Drawing.Size(230, 31)
+        Me.LabelLN.TabIndex = 13
+        Me.LabelLN.Text = "Last Name"
+        Me.LabelLN.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'EmailL
+        'LabelEM
         '
-        Me.EmailL.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.EmailL.Location = New System.Drawing.Point(341, 161)
-        Me.EmailL.Name = "EmailL"
-        Me.EmailL.Size = New System.Drawing.Size(230, 31)
-        Me.EmailL.TabIndex = 12
-        Me.EmailL.Text = "Email"
-        Me.EmailL.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.LabelEM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.LabelEM.Location = New System.Drawing.Point(33, 241)
+        Me.LabelEM.Name = "LabelEM"
+        Me.LabelEM.Size = New System.Drawing.Size(230, 31)
+        Me.LabelEM.TabIndex = 12
+        Me.LabelEM.Text = "Email"
+        Me.LabelEM.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'Register
         '
@@ -293,19 +293,19 @@ Partial Class Register
     Friend WithEvents CloseApp As Button
     Friend WithEvents XError As ErrorProvider
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents LastNameTB As TextBox
-    Friend WithEvents ConfirmPasswordTB As TextBox
-    Friend WithEvents FirstNameTB As TextBox
-    Friend WithEvents EmailTB As TextBox
+    Friend WithEvents TextBoxLastname As TextBox
+    Friend WithEvents TextBoxConfirmPassword As TextBox
+    Friend WithEvents TextBoxFirstname As TextBox
+    Friend WithEvents TextBoxEmail As TextBox
     Friend WithEvents ErrorLabel As Label
     Friend WithEvents LogInLink As LinkLabel
-    Friend WithEvents PasswordTB As TextBox
-    Friend WithEvents PasswordL As Label
-    Friend WithEvents UsernameTB As TextBox
-    Friend WithEvents UsernameL As Label
-    Friend WithEvents ConfirmPasswordLabel As Label
-    Friend WithEvents FirstNameL As Label
-    Friend WithEvents LastNameL As Label
-    Friend WithEvents EmailL As Label
+    Friend WithEvents TextBoxPassword As TextBox
+    Friend WithEvents LabelPASS1 As Label
+    Friend WithEvents TextBoxUsername As TextBox
+    Friend WithEvents LabelUN As Label
+    Friend WithEvents LabelPASS2 As Label
+    Friend WithEvents LabelFN As Label
+    Friend WithEvents LabelLN As Label
+    Friend WithEvents LabelEM As Label
     Friend WithEvents ButtonRegister As Button
 End Class
