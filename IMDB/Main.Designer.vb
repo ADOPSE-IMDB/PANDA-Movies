@@ -94,11 +94,11 @@ Partial Class Main
         'AppName
         '
         Me.AppName.BackColor = System.Drawing.Color.White
-        Me.AppName.Image = CType(resources.GetObject("AppName.Image"), System.Drawing.Image)
         Me.AppName.Location = New System.Drawing.Point(0, 0)
         Me.AppName.Name = "AppName"
         Me.AppName.Size = New System.Drawing.Size(107, 36)
         Me.AppName.TabIndex = 0
+        Me.AppName.Text = "Program Name"
         Me.AppName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Search
