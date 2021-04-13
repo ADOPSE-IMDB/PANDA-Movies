@@ -7,7 +7,7 @@
     <Compile Update="Favorite.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="LogIn.vb">
+    <Compile Update="LogIn-Register\LogIn.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Main.vb">
@@ -19,7 +19,7 @@
     <Compile Update="Profile.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Register.vb">
+    <Compile Update="LogIn-Register\Register.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
