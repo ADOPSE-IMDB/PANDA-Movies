@@ -2,6 +2,7 @@
 
 Public Class MY_CONNECTION
     Private connection As New MySqlConnection("Server=dblabs.it.teithe.gr;Port=3306;Database=it185223;Uid=it185223;Pwd=chilli123;")
+
     ReadOnly Property getConnection() As MySqlConnection
         Get
             Return connection

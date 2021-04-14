@@ -30,4 +30,6 @@
             CurrentMovie.MoPic.BackColor = MovieBox.BackColor
         End If
     End Sub
+
+
 End Class

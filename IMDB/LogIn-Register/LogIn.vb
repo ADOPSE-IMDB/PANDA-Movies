@@ -58,6 +58,8 @@ Public Class LogIn
 
 
     Private Sub ButtonLogin_Click(sender As Object, e As EventArgs) Handles ButtonLogin.Click
+        Dim SecondForm As New Main
+
         Dim conn As New MY_CONNECTION()
         Dim adapter As New MySqlDataAdapter()
         Dim table As New DataTable()
@@ -81,6 +83,10 @@ FROM `it185223`.`Users` where `username`=@usn and `password`=@pass", conn.getCon
             adapter.Fill(table)
             If table.Rows.Count > 0 Then
                 MessageBox.Show("LOGGED", "LOGGED", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                SecondForm.Show()
+                Me.Hide()
+
+
 
             Else
                 MessageBox.Show("This Username Or/And Password Doesn't Exists", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
