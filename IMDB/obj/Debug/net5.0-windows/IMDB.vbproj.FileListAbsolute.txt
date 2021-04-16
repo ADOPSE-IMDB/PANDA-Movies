@@ -99,3 +99,13 @@ D:\Desktop\IMDB\IMDB\bin\Debug\net5.0-windows\Zstandard.Net.dll
 D:\Desktop\IMDB\IMDB\bin\Debug\net5.0-windows\Renci.SshNet.dll
 D:\Desktop\IMDB\IMDB\bin\Debug\net5.0-windows\SshNet.Security.Cryptography.dll
 D:\Desktop\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.vbproj.CopyComplete
+C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\Google.Protobuf.dll
+C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\K4os.Compression.LZ4.dll
+C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\K4os.Hash.xxHash.dll
+C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\MySql.Data.dll
+C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
+C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\Zstandard.Net.dll
+C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\Renci.SshNet.dll
+C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\SshNet.Security.Cryptography.dll

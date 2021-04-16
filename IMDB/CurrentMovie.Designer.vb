@@ -27,6 +27,9 @@ Partial Class CurrentMovie
         Me.Description = New System.Windows.Forms.Label()
         Me.TopPanel = New System.Windows.Forms.Panel()
         Me.CloseMovie = New System.Windows.Forms.Button()
+        Me.AddRem = New System.Windows.Forms.Button()
+        Me.MovieDate = New System.Windows.Forms.Label()
+        Me.Rate = New System.Windows.Forms.Label()
         CType(Me.MoPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TopPanel.SuspendLayout()
         Me.SuspendLayout()
@@ -51,7 +54,7 @@ Partial Class CurrentMovie
         '
         'Description
         '
-        Me.Description.Location = New System.Drawing.Point(226, 86)
+        Me.Description.Location = New System.Drawing.Point(30, 348)
         Me.Description.Name = "Description"
         Me.Description.Size = New System.Drawing.Size(362, 194)
         Me.Description.TabIndex = 2
@@ -75,11 +78,41 @@ Partial Class CurrentMovie
         Me.CloseMovie.Text = "X"
         Me.CloseMovie.UseVisualStyleBackColor = True
         '
+        'AddRem
+        '
+        Me.AddRem.Location = New System.Drawing.Point(362, 242)
+        Me.AddRem.Name = "AddRem"
+        Me.AddRem.Size = New System.Drawing.Size(75, 23)
+        Me.AddRem.TabIndex = 4
+        Me.AddRem.Text = "Add/Rem"
+        Me.AddRem.UseVisualStyleBackColor = True
+        '
+        'MovieDate
+        '
+        Me.MovieDate.AutoSize = True
+        Me.MovieDate.Location = New System.Drawing.Point(395, 141)
+        Me.MovieDate.Name = "MovieDate"
+        Me.MovieDate.Size = New System.Drawing.Size(30, 15)
+        Me.MovieDate.TabIndex = 5
+        Me.MovieDate.Text = "date"
+        '
+        'Rate
+        '
+        Me.Rate.AutoSize = True
+        Me.Rate.Location = New System.Drawing.Point(395, 71)
+        Me.Rate.Name = "Rate"
+        Me.Rate.Size = New System.Drawing.Size(27, 15)
+        Me.Rate.TabIndex = 6
+        Me.Rate.Text = "rate"
+        '
         'CurrentMovie
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(600, 702)
+        Me.Controls.Add(Me.Rate)
+        Me.Controls.Add(Me.MovieDate)
+        Me.Controls.Add(Me.AddRem)
         Me.Controls.Add(Me.TopPanel)
         Me.Controls.Add(Me.Description)
         Me.Controls.Add(Me.MovieName)
@@ -90,6 +123,7 @@ Partial Class CurrentMovie
         CType(Me.MoPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TopPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -98,4 +132,8 @@ Partial Class CurrentMovie
     Friend WithEvents Description As Label
     Friend WithEvents TopPanel As Panel
     Friend WithEvents CloseMovie As Button
+    Friend WithEvents AddRem As Button
+    Friend WithEvents MovieDate As Label
+    Friend WithEvents Rate As Label
+
 End Class
