@@ -55,7 +55,7 @@ Partial Class LogIn
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.SystemColors.Control
+        Me.Panel3.BackColor = System.Drawing.Color.Transparent
         Me.Panel3.Controls.Add(Me.UsernameL)
         Me.Panel3.Controls.Add(Me.ButtonLogin)
         Me.Panel3.Controls.Add(Me.CheckConnection)
@@ -143,7 +143,7 @@ Partial Class LogIn
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBoxPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.TextBoxPassword.ForeColor = System.Drawing.Color.DarkGray
+        Me.TextBoxPassword.ForeColor = System.Drawing.Color.Black
         Me.TextBoxPassword.Location = New System.Drawing.Point(415, 149)
         Me.TextBoxPassword.Name = "TextBoxPassword"
         Me.TextBoxPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -166,7 +166,7 @@ Partial Class LogIn
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBoxUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.TextBoxUsername.ForeColor = System.Drawing.Color.DarkGray
+        Me.TextBoxUsername.ForeColor = System.Drawing.Color.Black
         Me.TextBoxUsername.Location = New System.Drawing.Point(415, 68)
         Me.TextBoxUsername.Name = "TextBoxUsername"
         Me.TextBoxUsername.Size = New System.Drawing.Size(183, 21)
@@ -188,6 +188,7 @@ Partial Class LogIn
         '
         'LogIn
         '
+        Me.AcceptButton = Me.ButtonLogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(659, 336)

@@ -218,6 +218,7 @@ Partial Class MoviesMain
         '
         'FilterPanel
         '
+        Me.FilterPanel.BackColor = System.Drawing.Color.Transparent
         Me.FilterPanel.Controls.Add(Me.AllMoviesLabel)
         Me.FilterPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.FilterPanel.Location = New System.Drawing.Point(0, 0)

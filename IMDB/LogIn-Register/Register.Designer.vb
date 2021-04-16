@@ -24,7 +24,7 @@ Partial Class Register
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.RegisterTitle = New System.Windows.Forms.Label()
-        Me.CloseApp = New System.Windows.Forms.Button()
+        Me.ReturnB = New System.Windows.Forms.Button()
         Me.XError = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.LabelUN = New System.Windows.Forms.Label()
         Me.TextBoxUsername = New System.Windows.Forms.TextBox()
@@ -49,22 +49,21 @@ Partial Class Register
         'RegisterTitle
         '
         Me.RegisterTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.RegisterTitle.Location = New System.Drawing.Point(14, 20)
+        Me.RegisterTitle.Location = New System.Drawing.Point(12, 15)
         Me.RegisterTitle.Name = "RegisterTitle"
-        Me.RegisterTitle.Size = New System.Drawing.Size(586, 53)
+        Me.RegisterTitle.Size = New System.Drawing.Size(513, 40)
         Me.RegisterTitle.TabIndex = 0
         Me.RegisterTitle.Text = "REGISTER"
         Me.RegisterTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'CloseApp
+        'ReturnB
         '
-        Me.CloseApp.Location = New System.Drawing.Point(566, 16)
-        Me.CloseApp.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.CloseApp.Name = "CloseApp"
-        Me.CloseApp.Size = New System.Drawing.Size(34, 40)
-        Me.CloseApp.TabIndex = 3
-        Me.CloseApp.Text = "X"
-        Me.CloseApp.UseVisualStyleBackColor = True
+        Me.ReturnB.Location = New System.Drawing.Point(495, 12)
+        Me.ReturnB.Name = "ReturnB"
+        Me.ReturnB.Size = New System.Drawing.Size(30, 30)
+        Me.ReturnB.TabIndex = 3
+        Me.ReturnB.Text = "X"
+        Me.ReturnB.UseVisualStyleBackColor = True
         '
         'XError
         '
@@ -74,9 +73,9 @@ Partial Class Register
         'LabelUN
         '
         Me.LabelUN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LabelUN.Location = New System.Drawing.Point(33, 133)
+        Me.LabelUN.Location = New System.Drawing.Point(29, 100)
         Me.LabelUN.Name = "LabelUN"
-        Me.LabelUN.Size = New System.Drawing.Size(230, 31)
+        Me.LabelUN.Size = New System.Drawing.Size(201, 23)
         Me.LabelUN.TabIndex = 0
         Me.LabelUN.Text = "Username"
         Me.LabelUN.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -87,19 +86,18 @@ Partial Class Register
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBoxUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.TextBoxUsername.Location = New System.Drawing.Point(33, 168)
-        Me.TextBoxUsername.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBoxUsername.Location = New System.Drawing.Point(29, 126)
         Me.TextBoxUsername.Name = "TextBoxUsername"
-        Me.TextBoxUsername.Size = New System.Drawing.Size(538, 24)
-        Me.TextBoxUsername.TabIndex = 1
+        Me.TextBoxUsername.Size = New System.Drawing.Size(471, 21)
+        Me.TextBoxUsername.TabIndex = 3
         Me.TextBoxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'LabelPASS1
         '
         Me.LabelPASS1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LabelPASS1.Location = New System.Drawing.Point(30, 335)
+        Me.LabelPASS1.Location = New System.Drawing.Point(26, 251)
         Me.LabelPASS1.Name = "LabelPASS1"
-        Me.LabelPASS1.Size = New System.Drawing.Size(230, 32)
+        Me.LabelPASS1.Size = New System.Drawing.Size(201, 24)
         Me.LabelPASS1.TabIndex = 2
         Me.LabelPASS1.Text = "Password"
         Me.LabelPASS1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -110,31 +108,30 @@ Partial Class Register
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBoxPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.TextBoxPassword.Location = New System.Drawing.Point(31, 371)
-        Me.TextBoxPassword.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBoxPassword.Location = New System.Drawing.Point(27, 278)
         Me.TextBoxPassword.Name = "TextBoxPassword"
         Me.TextBoxPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBoxPassword.Size = New System.Drawing.Size(229, 24)
-        Me.TextBoxPassword.TabIndex = 3
+        Me.TextBoxPassword.Size = New System.Drawing.Size(201, 21)
+        Me.TextBoxPassword.TabIndex = 5
         Me.TextBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'LogInLink
         '
         Me.LogInLink.ActiveLinkColor = System.Drawing.Color.BlueViolet
         Me.LogInLink.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LogInLink.Location = New System.Drawing.Point(0, 485)
+        Me.LogInLink.Location = New System.Drawing.Point(0, 364)
         Me.LogInLink.Name = "LogInLink"
-        Me.LogInLink.Size = New System.Drawing.Size(613, 28)
-        Me.LogInLink.TabIndex = 4
+        Me.LogInLink.Size = New System.Drawing.Size(536, 21)
+        Me.LogInLink.TabIndex = 11
         Me.LogInLink.TabStop = True
         Me.LogInLink.Text = "Already have an account?"
         Me.LogInLink.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ErrorLabel
         '
-        Me.ErrorLabel.Location = New System.Drawing.Point(473, 436)
+        Me.ErrorLabel.Location = New System.Drawing.Point(414, 327)
         Me.ErrorLabel.Name = "ErrorLabel"
-        Me.ErrorLabel.Size = New System.Drawing.Size(229, 20)
+        Me.ErrorLabel.Size = New System.Drawing.Size(200, 15)
         Me.ErrorLabel.TabIndex = 7
         Me.ErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -144,11 +141,10 @@ Partial Class Register
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBoxEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.TextBoxEmail.Location = New System.Drawing.Point(32, 276)
-        Me.TextBoxEmail.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBoxEmail.Location = New System.Drawing.Point(28, 207)
         Me.TextBoxEmail.Name = "TextBoxEmail"
-        Me.TextBoxEmail.Size = New System.Drawing.Size(538, 24)
-        Me.TextBoxEmail.TabIndex = 8
+        Me.TextBoxEmail.Size = New System.Drawing.Size(471, 21)
+        Me.TextBoxEmail.TabIndex = 4
         Me.TextBoxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBoxFirstname
@@ -157,11 +153,10 @@ Partial Class Register
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBoxFirstname.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.TextBoxFirstname.Location = New System.Drawing.Point(32, 60)
-        Me.TextBoxFirstname.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBoxFirstname.Location = New System.Drawing.Point(28, 45)
         Me.TextBoxFirstname.Name = "TextBoxFirstname"
-        Me.TextBoxFirstname.Size = New System.Drawing.Size(229, 24)
-        Me.TextBoxFirstname.TabIndex = 9
+        Me.TextBoxFirstname.Size = New System.Drawing.Size(201, 21)
+        Me.TextBoxFirstname.TabIndex = 1
         Me.TextBoxFirstname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBoxConfirmPassword
@@ -170,12 +165,11 @@ Partial Class Register
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBoxConfirmPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.TextBoxConfirmPassword.Location = New System.Drawing.Point(341, 371)
-        Me.TextBoxConfirmPassword.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBoxConfirmPassword.Location = New System.Drawing.Point(298, 278)
         Me.TextBoxConfirmPassword.Name = "TextBoxConfirmPassword"
         Me.TextBoxConfirmPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBoxConfirmPassword.Size = New System.Drawing.Size(229, 24)
-        Me.TextBoxConfirmPassword.TabIndex = 10
+        Me.TextBoxConfirmPassword.Size = New System.Drawing.Size(201, 21)
+        Me.TextBoxConfirmPassword.TabIndex = 6
         Me.TextBoxConfirmPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBoxLastname
@@ -184,11 +178,10 @@ Partial Class Register
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBoxLastname.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.TextBoxLastname.Location = New System.Drawing.Point(342, 60)
-        Me.TextBoxLastname.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBoxLastname.Location = New System.Drawing.Point(299, 45)
         Me.TextBoxLastname.Name = "TextBoxLastname"
-        Me.TextBoxLastname.Size = New System.Drawing.Size(229, 24)
-        Me.TextBoxLastname.TabIndex = 11
+        Me.TextBoxLastname.Size = New System.Drawing.Size(201, 21)
+        Me.TextBoxLastname.TabIndex = 2
         Me.TextBoxLastname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Panel3
@@ -208,10 +201,9 @@ Partial Class Register
         Me.Panel3.Controls.Add(Me.LabelPASS1)
         Me.Panel3.Controls.Add(Me.TextBoxUsername)
         Me.Panel3.Controls.Add(Me.LabelUN)
-        Me.Panel3.Location = New System.Drawing.Point(1, 77)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Panel3.Location = New System.Drawing.Point(1, 58)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(613, 521)
+        Me.Panel3.Size = New System.Drawing.Size(536, 391)
         Me.Panel3.TabIndex = 2
         '
         'ButtonRegister
@@ -219,19 +211,20 @@ Partial Class Register
         Me.ButtonRegister.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ButtonRegister.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.ButtonRegister.ForeColor = System.Drawing.Color.Black
-        Me.ButtonRegister.Location = New System.Drawing.Point(180, 422)
+        Me.ButtonRegister.Location = New System.Drawing.Point(158, 316)
+        Me.ButtonRegister.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ButtonRegister.Name = "ButtonRegister"
-        Me.ButtonRegister.Size = New System.Drawing.Size(229, 44)
-        Me.ButtonRegister.TabIndex = 16
+        Me.ButtonRegister.Size = New System.Drawing.Size(200, 33)
+        Me.ButtonRegister.TabIndex = 10
         Me.ButtonRegister.Text = "Sign Up"
         Me.ButtonRegister.UseVisualStyleBackColor = False
         '
         'LabelPASS2
         '
         Me.LabelPASS2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LabelPASS2.Location = New System.Drawing.Point(342, 335)
+        Me.LabelPASS2.Location = New System.Drawing.Point(299, 251)
         Me.LabelPASS2.Name = "LabelPASS2"
-        Me.LabelPASS2.Size = New System.Drawing.Size(230, 32)
+        Me.LabelPASS2.Size = New System.Drawing.Size(201, 24)
         Me.LabelPASS2.TabIndex = 15
         Me.LabelPASS2.Text = "Confirm Password"
         Me.LabelPASS2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -239,9 +232,9 @@ Partial Class Register
         'LabelFN
         '
         Me.LabelFN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LabelFN.Location = New System.Drawing.Point(30, 25)
+        Me.LabelFN.Location = New System.Drawing.Point(26, 19)
         Me.LabelFN.Name = "LabelFN"
-        Me.LabelFN.Size = New System.Drawing.Size(230, 31)
+        Me.LabelFN.Size = New System.Drawing.Size(201, 23)
         Me.LabelFN.TabIndex = 14
         Me.LabelFN.Text = "First Name"
         Me.LabelFN.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -249,9 +242,9 @@ Partial Class Register
         'LabelLN
         '
         Me.LabelLN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LabelLN.Location = New System.Drawing.Point(342, 25)
+        Me.LabelLN.Location = New System.Drawing.Point(299, 19)
         Me.LabelLN.Name = "LabelLN"
-        Me.LabelLN.Size = New System.Drawing.Size(230, 31)
+        Me.LabelLN.Size = New System.Drawing.Size(201, 23)
         Me.LabelLN.TabIndex = 13
         Me.LabelLN.Text = "Last Name"
         Me.LabelLN.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -259,25 +252,26 @@ Partial Class Register
         'LabelEM
         '
         Me.LabelEM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LabelEM.Location = New System.Drawing.Point(33, 241)
+        Me.LabelEM.Location = New System.Drawing.Point(29, 181)
         Me.LabelEM.Name = "LabelEM"
-        Me.LabelEM.Size = New System.Drawing.Size(230, 31)
+        Me.LabelEM.Size = New System.Drawing.Size(201, 23)
         Me.LabelEM.TabIndex = 12
         Me.LabelEM.Text = "Email"
         Me.LabelEM.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'Register
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AcceptButton = Me.ButtonRegister
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(614, 599)
+        Me.CancelButton = Me.LogInLink
+        Me.ClientSize = New System.Drawing.Size(537, 449)
         Me.ControlBox = False
-        Me.Controls.Add(Me.CloseApp)
+        Me.Controls.Add(Me.ReturnB)
         Me.Controls.Add(Me.RegisterTitle)
         Me.Controls.Add(Me.Panel3)
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "Register"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Log In"
@@ -290,7 +284,7 @@ Partial Class Register
     Friend WithEvents RegisterTitle As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents LinkLabel1 As LinkLabel
-    Friend WithEvents CloseApp As Button
+    Friend WithEvents ReturnB As Button
     Friend WithEvents XError As ErrorProvider
     Friend WithEvents Panel3 As Panel
     Friend WithEvents TextBoxLastname As TextBox
