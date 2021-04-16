@@ -150,7 +150,7 @@ Public Class MoviesMain
 
     Dim n = 20
     Dim tainies = 43
-    Dim now As String = "1 -> 10"
+
     Private Sub Pre_Click(sender As Object, e As EventArgs) Handles Pre.Click
         n -= 20
         ne.Enabled = True
@@ -160,14 +160,14 @@ Public Class MoviesMain
         Next
 
         If n = 20 Then
-            ne.Text = now
-            now = Pre.Text
+            ne.Text = curr.Text
+            curr.Text = Pre.Text
             Pre.Text = "Start"
             Pre.Enabled = False
         Else
-            ne.Text = now
-            now = Pre.Text
-            Pre.Text = n - 19 & " -> " & n - 10
+            ne.Text = curr.Text
+            curr.Text = Pre.Text
+            Pre.Text = n - 19 & " -> " & n
 
         End If
 
@@ -187,23 +187,35 @@ Public Class MoviesMain
 
 
         If n > tainies Then
-            Pre.Text = now
-            now = ne.Text
+            Pre.Text = curr.Text
+            curr.Text = ne.Text
             ne.Text = "End"
-            Dim t = tainies Mod 10
+
+            Dim t = tainies Mod 20
             Dim cMovie(t) As PictureBox
             Load_Movies(t, AllMoviesPanel, cMovie, 100)
             ne.Enabled = False
-        Else
-            Pre.Text = now
-            now = ne.Text
-            ne.Text = n + 1 & " -> " & n + 10
+
+        ElseIf n > tainies - 20 Then
+
+            Pre.Text = curr.Text
+            curr.Text = ne.Text
+            Dim t = tainies Mod 20
+            ne.Text = n + 1 & " -> " & tainies
 
             Dim cMovie(20) As PictureBox
             Load_Movies(20, AllMoviesPanel, cMovie, 100)
+        Else
+            Pre.Text = curr.Text
+            curr.Text = ne.Text
+            ne.Text = n + 1 & " -> " & n + 20
+
+            Dim cMovie(20) As PictureBox
+            Load_Movies(20, AllMoviesPanel, cMovie, 100)
+
+
+
         End If
 
     End Sub
-
-
 End Class

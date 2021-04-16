@@ -40,6 +40,7 @@ Partial Class MoviesMain
         Me.AllMoviesLabel = New System.Windows.Forms.Label()
         Me.Pre = New System.Windows.Forms.Button()
         Me.ne = New System.Windows.Forms.Button()
+        Me.curr = New System.Windows.Forms.Label()
         Me.TopMoviesPanel.SuspendLayout()
         CType(Me.Top10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Top9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -259,6 +260,15 @@ Partial Class MoviesMain
         Me.ne.Text = "21-40"
         Me.ne.UseVisualStyleBackColor = True
         '
+        'curr
+        '
+        Me.curr.AutoSize = True
+        Me.curr.Location = New System.Drawing.Point(938, 665)
+        Me.curr.Name = "curr"
+        Me.curr.Size = New System.Drawing.Size(41, 15)
+        Me.curr.TabIndex = 14
+        Me.curr.Text = "Label1"
+        '
         'MoviesMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -267,6 +277,7 @@ Partial Class MoviesMain
         Me.BackColor = System.Drawing.Color.DimGray
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 720)
+        Me.Controls.Add(Me.curr)
         Me.Controls.Add(Me.ne)
         Me.Controls.Add(Me.Pre)
         Me.Controls.Add(Me.AllMoviesPanel)
@@ -310,4 +321,5 @@ Partial Class MoviesMain
     Friend WithEvents Top1 As PictureBox
     Friend WithEvents Pre As Button
     Friend WithEvents ne As Button
+    Friend WithEvents curr As Label
 End Class
