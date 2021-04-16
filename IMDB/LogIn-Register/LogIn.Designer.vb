@@ -48,7 +48,7 @@ Partial Class LogIn
         Me.LogInTitle.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.LogInTitle.Location = New System.Drawing.Point(0, 0)
         Me.LogInTitle.Name = "LogInTitle"
-        Me.LogInTitle.Size = New System.Drawing.Size(708, 67)
+        Me.LogInTitle.Size = New System.Drawing.Size(620, 30)
         Me.LogInTitle.TabIndex = 0
         Me.LogInTitle.Text = "IMDB"
         Me.LogInTitle.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -66,18 +66,17 @@ Partial Class LogIn
         Me.Panel3.Controls.Add(Me.PasswordL)
         Me.Panel3.Controls.Add(Me.TextBoxUsername)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(0, 91)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Panel3.Location = New System.Drawing.Point(0, 33)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(753, 357)
+        Me.Panel3.Size = New System.Drawing.Size(659, 303)
         Me.Panel3.TabIndex = 2
         '
         'UsernameL
         '
         Me.UsernameL.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.UsernameL.Location = New System.Drawing.Point(57, 10)
+        Me.UsernameL.Location = New System.Drawing.Point(463, 45)
         Me.UsernameL.Name = "UsernameL"
-        Me.UsernameL.Size = New System.Drawing.Size(274, 26)
+        Me.UsernameL.Size = New System.Drawing.Size(102, 20)
         Me.UsernameL.TabIndex = 12
         Me.UsernameL.Text = "Username"
         Me.UsernameL.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -87,9 +86,10 @@ Partial Class LogIn
         Me.ButtonLogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ButtonLogin.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.ButtonLogin.ForeColor = System.Drawing.Color.Black
-        Me.ButtonLogin.Location = New System.Drawing.Point(408, 227)
+        Me.ButtonLogin.Location = New System.Drawing.Point(452, 201)
+        Me.ButtonLogin.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ButtonLogin.Name = "ButtonLogin"
-        Me.ButtonLogin.Size = New System.Drawing.Size(217, 44)
+        Me.ButtonLogin.Size = New System.Drawing.Size(113, 33)
         Me.ButtonLogin.TabIndex = 10
         Me.ButtonLogin.Text = "Sign In"
         Me.ButtonLogin.UseVisualStyleBackColor = False
@@ -97,27 +97,27 @@ Partial Class LogIn
         'CheckConnection
         '
         Me.CheckConnection.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.CheckConnection.Location = New System.Drawing.Point(114, 227)
+        Me.CheckConnection.Location = New System.Drawing.Point(12, 269)
+        Me.CheckConnection.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CheckConnection.Name = "CheckConnection"
-        Me.CheckConnection.Size = New System.Drawing.Size(217, 44)
+        Me.CheckConnection.Size = New System.Drawing.Size(110, 23)
         Me.CheckConnection.TabIndex = 8
         Me.CheckConnection.Text = "Check Connection"
         Me.CheckConnection.UseVisualStyleBackColor = True
         '
         'ErrorLabel
         '
-        Me.ErrorLabel.Location = New System.Drawing.Point(57, 240)
+        Me.ErrorLabel.Location = New System.Drawing.Point(50, 180)
         Me.ErrorLabel.Name = "ErrorLabel"
-        Me.ErrorLabel.Size = New System.Drawing.Size(217, 20)
+        Me.ErrorLabel.Size = New System.Drawing.Size(190, 15)
         Me.ErrorLabel.TabIndex = 7
         Me.ErrorLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'RememberMe
         '
-        Me.RememberMe.Location = New System.Drawing.Point(582, 160)
-        Me.RememberMe.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.RememberMe.Location = New System.Drawing.Point(512, 176)
         Me.RememberMe.Name = "RememberMe"
-        Me.RememberMe.Size = New System.Drawing.Size(107, 25)
+        Me.RememberMe.Size = New System.Drawing.Size(86, 19)
         Me.RememberMe.TabIndex = 6
         Me.RememberMe.Text = "Remember Me"
         Me.RememberMe.UseVisualStyleBackColor = True
@@ -129,12 +129,12 @@ Partial Class LogIn
         Me.LabelGoToSignup.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LabelGoToSignup.ForeColor = System.Drawing.Color.DimGray
         Me.LabelGoToSignup.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LabelGoToSignup.Location = New System.Drawing.Point(57, 291)
+        Me.LabelGoToSignup.Location = New System.Drawing.Point(389, 236)
         Me.LabelGoToSignup.Name = "LabelGoToSignup"
-        Me.LabelGoToSignup.Size = New System.Drawing.Size(626, 42)
+        Me.LabelGoToSignup.Size = New System.Drawing.Size(231, 32)
         Me.LabelGoToSignup.TabIndex = 4
         Me.LabelGoToSignup.TabStop = True
-        Me.LabelGoToSignup.Text = "Doesn't have an account? Create one"
+        Me.LabelGoToSignup.Text = "Don't have an account? Create one!"
         Me.LabelGoToSignup.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'TextBoxPassword
@@ -144,21 +144,18 @@ Partial Class LogIn
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBoxPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.TextBoxPassword.ForeColor = System.Drawing.Color.DarkGray
-        Me.TextBoxPassword.Location = New System.Drawing.Point(57, 128)
-        Me.TextBoxPassword.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBoxPassword.Location = New System.Drawing.Point(415, 149)
         Me.TextBoxPassword.Name = "TextBoxPassword"
         Me.TextBoxPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBoxPassword.Size = New System.Drawing.Size(626, 24)
-        Me.TextBoxPassword.TabIndex = 3
-        Me.TextBoxPassword.Text = "password"
-        Me.TextBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBoxPassword.Size = New System.Drawing.Size(183, 21)
+        Me.TextBoxPassword.TabIndex = 2
         '
         'PasswordL
         '
         Me.PasswordL.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.PasswordL.Location = New System.Drawing.Point(57, 98)
+        Me.PasswordL.Location = New System.Drawing.Point(463, 126)
         Me.PasswordL.Name = "PasswordL"
-        Me.PasswordL.Size = New System.Drawing.Size(274, 26)
+        Me.PasswordL.Size = New System.Drawing.Size(89, 20)
         Me.PasswordL.TabIndex = 2
         Me.PasswordL.Text = "Password"
         Me.PasswordL.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -170,20 +167,16 @@ Partial Class LogIn
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBoxUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.TextBoxUsername.ForeColor = System.Drawing.Color.DarkGray
-        Me.TextBoxUsername.Location = New System.Drawing.Point(57, 40)
-        Me.TextBoxUsername.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBoxUsername.Location = New System.Drawing.Point(415, 68)
         Me.TextBoxUsername.Name = "TextBoxUsername"
-        Me.TextBoxUsername.Size = New System.Drawing.Size(626, 24)
+        Me.TextBoxUsername.Size = New System.Drawing.Size(183, 21)
         Me.TextBoxUsername.TabIndex = 1
-        Me.TextBoxUsername.Text = "username"
-        Me.TextBoxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'CloseApp
         '
-        Me.CloseApp.Location = New System.Drawing.Point(706, 0)
-        Me.CloseApp.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.CloseApp.Location = New System.Drawing.Point(618, 0)
         Me.CloseApp.Name = "CloseApp"
-        Me.CloseApp.Size = New System.Drawing.Size(47, 40)
+        Me.CloseApp.Size = New System.Drawing.Size(41, 30)
         Me.CloseApp.TabIndex = 3
         Me.CloseApp.Text = "X"
         Me.CloseApp.UseVisualStyleBackColor = True
@@ -195,16 +188,15 @@ Partial Class LogIn
         '
         'LogIn
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(753, 448)
+        Me.ClientSize = New System.Drawing.Size(659, 336)
         Me.ControlBox = False
         Me.Controls.Add(Me.CloseApp)
         Me.Controls.Add(Me.LogInTitle)
         Me.Controls.Add(Me.Panel3)
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "LogIn"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Log In"
