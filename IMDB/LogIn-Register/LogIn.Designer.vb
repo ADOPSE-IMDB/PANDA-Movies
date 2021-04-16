@@ -26,6 +26,7 @@ Partial Class LogIn
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LogIn))
         Me.LogInTitle = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.testLogin = New System.Windows.Forms.Button()
         Me.UsernameL = New System.Windows.Forms.Label()
         Me.ButtonLogin = New System.Windows.Forms.Button()
         Me.CheckConnection = New System.Windows.Forms.Button()
@@ -56,6 +57,7 @@ Partial Class LogIn
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.Transparent
+        Me.Panel3.Controls.Add(Me.testLogin)
         Me.Panel3.Controls.Add(Me.UsernameL)
         Me.Panel3.Controls.Add(Me.ButtonLogin)
         Me.Panel3.Controls.Add(Me.CheckConnection)
@@ -70,6 +72,15 @@ Partial Class LogIn
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(659, 303)
         Me.Panel3.TabIndex = 2
+        '
+        'testLogin
+        '
+        Me.testLogin.Location = New System.Drawing.Point(66, 136)
+        Me.testLogin.Name = "testLogin"
+        Me.testLogin.Size = New System.Drawing.Size(75, 23)
+        Me.testLogin.TabIndex = 13
+        Me.testLogin.Text = "testLogin"
+        Me.testLogin.UseVisualStyleBackColor = True
         '
         'UsernameL
         '
@@ -96,7 +107,7 @@ Partial Class LogIn
         '
         'CheckConnection
         '
-        Me.CheckConnection.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.CheckConnection.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.CheckConnection.Location = New System.Drawing.Point(12, 269)
         Me.CheckConnection.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CheckConnection.Name = "CheckConnection"
@@ -126,7 +137,7 @@ Partial Class LogIn
         '
         Me.LabelGoToSignup.ActiveLinkColor = System.Drawing.Color.BlueViolet
         Me.LabelGoToSignup.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LabelGoToSignup.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.LabelGoToSignup.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LabelGoToSignup.ForeColor = System.Drawing.Color.DimGray
         Me.LabelGoToSignup.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.LabelGoToSignup.Location = New System.Drawing.Point(389, 236)
@@ -222,4 +233,5 @@ Partial Class LogIn
     Friend WithEvents CheckConnection As Button
     Friend WithEvents ButtonLogin As Button
     Friend WithEvents UsernameL As Label
+    Friend WithEvents testLogin As Button
 End Class

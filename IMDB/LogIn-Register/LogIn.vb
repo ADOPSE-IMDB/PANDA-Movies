@@ -118,5 +118,53 @@ FROM `it185223`.`Users` where `username`=@usn and `password`=@pass", conn.getCon
 
     End Sub
 
+    Public Structure userStruc
+        Public Index As Integer
+        Dim Fname As String
+        Dim Lname As String
+        Dim email As String
+        Dim username As String
+    End Structure
 
+
+    Public Shared user As New userStruc
+    Private Sub testLogin_Click(sender As Object, e As EventArgs) Handles testLogin.Click
+        user.username = TextBoxUsername.Text
+
+
+
+        Dim con As New MY_CONNECTION()
+        Dim table As New DataTable()
+        Dim adapter As New MySqlDataAdapter()
+        Dim command As New MySqlCommand("   Select * from Users WHERE username = @usnl and `password`=@pass", con.getConnection())
+
+        command.Parameters.Add("@usnl", MySqlDbType.VarChar).Value = TextBoxUsername.Text
+        command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = TextBoxPassword.Text
+        con.openConnection()
+        Try
+            Using reader As MySqlDataReader = command.ExecuteReader()
+                If reader.Read() Then
+                    user.Index = reader.GetInt16(0)
+                    user.Fname = reader.GetString(1)
+                    user.Lname = reader.GetString(2)
+                    user.email = reader.GetString(3)
+                End If
+
+                If user.Index = 0 Then
+                    MessageBox.Show("Please check your username or password and try again", "SAD", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+
+                    MessageBox.Show(user.Index & " " & user.Fname & " " & user.Lname & " " & user.email & " " & user.username, "Happ", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    TextBoxPassword.Text = ""
+                    Main.Show()
+                    Close()
+                End If
+
+                con.closeConnection()
+            End Using
+        Catch
+            MessageBox.Show("Couldnt get data", "SAD", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            con.closeConnection()
+        End Try
+    End Sub
 End Class
