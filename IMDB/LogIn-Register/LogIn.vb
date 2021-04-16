@@ -63,10 +63,13 @@ Public Class LogIn
         Dim conn As New MY_CONNECTION()
         Dim adapter As New MySqlDataAdapter()
         Dim table As New DataTable()
+
         Dim command As New MySqlCommand("SELECT 
     `Users`.`username`,
     `Users`.`password`
 FROM `it185223`.`Users` where `username`=@usn and `password`=@pass", conn.getConnection())
+
+
         command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = TextBoxUsername.Text
         command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = TextBoxPassword.Text
 
@@ -83,6 +86,8 @@ FROM `it185223`.`Users` where `username`=@usn and `password`=@pass", conn.getCon
             adapter.Fill(table)
             If table.Rows.Count > 0 Then
                 MessageBox.Show("LOGGED", "LOGGED", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+
                 SecondForm.Show()
                 Me.Hide()
 

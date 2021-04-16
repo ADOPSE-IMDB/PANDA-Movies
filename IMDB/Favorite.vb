@@ -28,13 +28,7 @@ Public Class Favorite
         Try
             MySqlConn.Open()
             Dim Querry As String
-            Querry = "SELECT 
-    `Movies`.`title`,
-    `Movies`.`year`,
-    `Movies`.`description`,
-    `Movies`.`rating`
-FROM `it185223`.`Movies`;
-SELECT * FROM it185223.Movies;"
+            Querry = "select user_id,movie_id,title,year,description,rating from MovieLists inner join Movies on MovieLists.movie_id=Movies.id"
             COMMAND = New MySqlCommand(Querry, MySqlConn)
             SDA.SelectCommand = COMMAND
             SDA.Fill(dbDataSet)
@@ -61,13 +55,8 @@ SELECT * FROM it185223.Movies;"
         Try
             MySqlConn.Open()
             Dim Querry As String
-            Querry = "SELECT 
-    `Movies`.`title`,
-    `Movies`.`year`,
-    `Movies`.`description`,
-    `Movies`.`rating`
-FROM `it185223`.`Movies`;
-SELECT * FROM it185223.Movies;"
+            Querry = "select user_id,movie_id,title,year,description,rating from MovieLists inner join Movies on MovieLists.movie_id=Movies.id
+"
 
             COMMAND = New MySqlCommand(Querry, MySqlConn)
                 SDA.SelectCommand = COMMAND
