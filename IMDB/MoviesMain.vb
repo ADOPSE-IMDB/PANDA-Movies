@@ -64,7 +64,7 @@ Public Class MoviesMain
 
 
         Dim TopArray(11) As PictureBox
-        TopArray = {Nothing, Top2, Top3, Top4, Top5, Top6, Top7, Top8, Top9, Top10, Top10}
+        TopArray = {Nothing, Top1, Top2, Top3, Top4, Top5, Top6, Top7, Top8, Top9, Top10}
 
         For index As Integer = 1 To 10
             AddHandler TopArray(index).Click, AddressOf AllMoviesCLick
@@ -149,10 +149,11 @@ Public Class MoviesMain
 
 
     Dim n = 20
-    Dim tainies = 43
+    Dim tainies = 89
 
     Private Sub Pre_Click(sender As Object, e As EventArgs) Handles Pre.Click
         n -= 20
+        Main.SearchBox.Text = n
         ne.Enabled = True
 
         For Each pb In AllMoviesPanel.Controls.OfType(Of PictureBox)().ToArray()
@@ -167,7 +168,7 @@ Public Class MoviesMain
         Else
             ne.Text = curr.Text
             curr.Text = Pre.Text
-            Pre.Text = n - 19 & " -> " & n
+            Pre.Text = n - 39 & " -> " & n - 20
 
         End If
 
@@ -177,8 +178,8 @@ Public Class MoviesMain
     End Sub
 
     Private Sub ne_Click(sender As Object, e As EventArgs) Handles ne.Click
-
         n += 20
+        Main.SearchBox.Text = n
         Pre.Enabled = True
 
         For Each pb In AllMoviesPanel.Controls.OfType(Of PictureBox)().ToArray()

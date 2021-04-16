@@ -257,17 +257,19 @@ Partial Class MoviesMain
         Me.ne.Name = "ne"
         Me.ne.Size = New System.Drawing.Size(75, 23)
         Me.ne.TabIndex = 13
-        Me.ne.Text = "21-40"
+        Me.ne.Text = "21 -> 40"
         Me.ne.UseVisualStyleBackColor = True
         '
         'curr
         '
-        Me.curr.AutoSize = True
-        Me.curr.Location = New System.Drawing.Point(938, 665)
+        Me.curr.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.curr.BackColor = System.Drawing.Color.DarkGray
+        Me.curr.Location = New System.Drawing.Point(604, 662)
         Me.curr.Name = "curr"
-        Me.curr.Size = New System.Drawing.Size(41, 15)
+        Me.curr.Size = New System.Drawing.Size(74, 20)
         Me.curr.TabIndex = 14
-        Me.curr.Text = "Label1"
+        Me.curr.Text = "1 -> 20"
+        Me.curr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'MoviesMain
         '
