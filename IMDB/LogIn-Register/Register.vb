@@ -6,14 +6,14 @@ Public Class Register
         LogInLink_Click(sender, e)
     End Sub
 
-    Function CheckTB(TB As TextBox, ErrorText As String)
+    Private Sub CheckTB(TB As TextBox, ErrorText As String)
         If TB.Text.Trim() = "" Then
             Me.XError.SetError(TB, ErrorText)
         Else
             Me.XError.SetError(TB, "")
         End If
+    End Sub
 
-    End Function
     Private Sub LogInLink_Click(sender As Object, e As EventArgs) Handles LogInLink.Click
         LogIn.Show()
         Close()
@@ -97,7 +97,7 @@ Public Class Register
             MessageBox.Show("One or More Fields Are Empty", "Missing Data", MessageBoxButtons.OK, MessageBoxIcon.Stop)
         ElseIf Not String.Equals(password, cpassword) Then
             MessageBox.Show("Wrong Confirmation Password", "Password Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        ElseIf usernameExist(username) Then
+        ElseIf UsernameExist(username) Then
             MessageBox.Show("This Username Already Exists, Choose Another One", "Duplicate Username", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
             'add the new user 
@@ -123,12 +123,12 @@ Public Class Register
     End Sub
 
     'create a function to check if username already exists
-    Public Function usernameExist(ByVal username As String) As Boolean
+    Public Shared Function UsernameExist(ByVal username As String) As Boolean
         Dim con As New MY_CONNECTION()
         Dim table As New DataTable()
         Dim adapter As New MySqlDataAdapter()
         Dim command As New MySqlCommand("	Select * from Users where 'username'=@usn", con.getConnection())
-            command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username
+        command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username
         adapter.SelectCommand = command
         adapter.Fill(table)
         'if the username  exists return true 

@@ -4,19 +4,19 @@
     <Compile Update="CurrentMovie.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Favorite.vb">
+    <Compile Update="Profile\Favorite.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="LogIn-Register\LogIn.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Main.vb">
+    <Compile Update="Main\Main.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="MoviesMain.vb">
+    <Compile Update="Main\MoviesMain.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Profile.vb">
+    <Compile Update="Profile\Profile.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="LogIn-Register\Register.vb">

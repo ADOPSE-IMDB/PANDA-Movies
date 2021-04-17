@@ -80,7 +80,7 @@ Partial Class MoviesMain
         '
         'Top10
         '
-        Me.Top10.AccessibleName = "top10"
+        Me.Top10.AccessibleName = "top"
         Me.Top10.BackColor = System.Drawing.Color.DarkMagenta
         Me.Top10.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Top10.Location = New System.Drawing.Point(1035, 325)
@@ -91,7 +91,7 @@ Partial Class MoviesMain
         '
         'Top9
         '
-        Me.Top9.AccessibleName = "top9"
+        Me.Top9.AccessibleName = "top"
         Me.Top9.BackColor = System.Drawing.Color.DarkMagenta
         Me.Top9.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Top9.Location = New System.Drawing.Point(790, 325)
@@ -102,7 +102,7 @@ Partial Class MoviesMain
         '
         'Top8
         '
-        Me.Top8.AccessibleName = "top8"
+        Me.Top8.AccessibleName = "top"
         Me.Top8.BackColor = System.Drawing.Color.DarkMagenta
         Me.Top8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Top8.Location = New System.Drawing.Point(545, 325)
@@ -113,7 +113,7 @@ Partial Class MoviesMain
         '
         'Top7
         '
-        Me.Top7.AccessibleName = "top7"
+        Me.Top7.AccessibleName = "top"
         Me.Top7.BackColor = System.Drawing.Color.DarkMagenta
         Me.Top7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Top7.Location = New System.Drawing.Point(300, 325)
@@ -124,7 +124,7 @@ Partial Class MoviesMain
         '
         'Top6
         '
-        Me.Top6.AccessibleName = "top6"
+        Me.Top6.AccessibleName = "top"
         Me.Top6.BackColor = System.Drawing.Color.DarkMagenta
         Me.Top6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Top6.Location = New System.Drawing.Point(55, 325)
@@ -135,7 +135,7 @@ Partial Class MoviesMain
         '
         'Top5
         '
-        Me.Top5.AccessibleName = "top5"
+        Me.Top5.AccessibleName = "top"
         Me.Top5.BackColor = System.Drawing.Color.DarkMagenta
         Me.Top5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Top5.Location = New System.Drawing.Point(1035, 50)
@@ -146,7 +146,7 @@ Partial Class MoviesMain
         '
         'Top4
         '
-        Me.Top4.AccessibleName = "top4"
+        Me.Top4.AccessibleName = "top"
         Me.Top4.BackColor = System.Drawing.Color.DarkMagenta
         Me.Top4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Top4.Location = New System.Drawing.Point(790, 50)
@@ -157,7 +157,7 @@ Partial Class MoviesMain
         '
         'Top3
         '
-        Me.Top3.AccessibleName = "top3"
+        Me.Top3.AccessibleName = "top"
         Me.Top3.BackColor = System.Drawing.Color.DarkMagenta
         Me.Top3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Top3.Location = New System.Drawing.Point(545, 50)
@@ -168,7 +168,7 @@ Partial Class MoviesMain
         '
         'Top2
         '
-        Me.Top2.AccessibleName = "top2"
+        Me.Top2.AccessibleName = "top"
         Me.Top2.BackColor = System.Drawing.Color.DarkMagenta
         Me.Top2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Top2.Location = New System.Drawing.Point(300, 50)
@@ -179,7 +179,7 @@ Partial Class MoviesMain
         '
         'Top1
         '
-        Me.Top1.AccessibleName = "top1"
+        Me.Top1.AccessibleName = "top"
         Me.Top1.BackColor = System.Drawing.Color.DarkMagenta
         Me.Top1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Top1.Location = New System.Drawing.Point(55, 50)

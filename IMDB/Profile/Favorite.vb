@@ -13,8 +13,6 @@ Public Class Favorite
         Dim h = 10
         'Create Array for every PictureBox
 
-        Dim Favorite(h) As PictureBox
-        Main.Load_Movies(h, FavoritePanel, Favorite, 50)
 
     End Sub
 

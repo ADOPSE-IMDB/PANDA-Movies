@@ -1,18 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class LogIn
 
-    Inherits Form
-    Private Sub DrawFormGradient(ByVal TopColor As Color, ByVal BottomColor As Color)
-        Dim objBrush As New Drawing2D.LinearGradientBrush(Me.DisplayRectangle, TopColor, BottomColor, Drawing2D.LinearGradientMode.Vertical)
-        Dim objGraphics As Graphics = Me.CreateGraphics
-        objGraphics.FillRectangle(objBrush, Me.DisplayRectangle)
-        objBrush.Dispose()
-        objGraphics.Dispose()
-    End Sub
-
-    Private Sub paintMe(sender As Object, e As PaintEventArgs) Handles Me.Paint
-        DrawFormGradient(Color.Black, Color.White)
-    End Sub
 
     Dim MySqlConn As New MySqlConnection("Server=dblabs.it.teithe.gr;Port=3306;Database=it185223;Uid=it185223;Pwd=chilli123;")
     Dim COMMAND As MySqlCommand
@@ -118,7 +106,7 @@ FROM `it185223`.`Users` where `username`=@usn and `password`=@pass", conn.getCon
 
     End Sub
 
-    Public Structure userStruc
+    Public Structure UserStruc
         Public Index As Integer
         Dim Fname As String
         Dim Lname As String
@@ -127,8 +115,8 @@ FROM `it185223`.`Users` where `username`=@usn and `password`=@pass", conn.getCon
     End Structure
 
 
-    Public Shared user As New userStruc
-    Private Sub testLogin_Click(sender As Object, e As EventArgs) Handles testLogin.Click
+    Public user As New UserStruc
+    Private Sub TestLogin_Click(sender As Object, e As EventArgs) Handles testLogin.Click
         user.username = TextBoxUsername.Text
 
 

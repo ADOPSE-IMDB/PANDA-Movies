@@ -2,7 +2,7 @@ Imports System
 Imports System.Data
 
 Module Program
-    Sub Main(args As String())
+    Sub pro(args As String())
         'Get and Print Users table then show Column Types
         Dim table As New DataTable
         Dim user As New User

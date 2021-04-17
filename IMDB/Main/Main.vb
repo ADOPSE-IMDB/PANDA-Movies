@@ -46,7 +46,9 @@ Public Class Main
 
     'Opens DropDown menu
     Private Sub NameBtn_Click(sender As Object, e As EventArgs) Handles NameBtn.Click
-        Timer.Start()
+        If Not isCollapsed Then
+            Timer.Start()
+        End If
     End Sub
 
     'Open Profile
@@ -72,43 +74,7 @@ Public Class Main
     End Sub
 #End Region
 
-#Region "Loads all movies"
-    Public Shared Sub Load_Movies(h As Integer, panel As Panel, array() As PictureBox, PosY As Integer)
 
-        'Check height of the Movies Panel
-        If h Mod 5 = 0 Then
-            panel.Height = (h / 5) * 275 + 100
-        Else
-            panel.Height = (h \ 5) * 275 + 375
-        End If
-
-        'Places Labels for each movie
-        Dim PosX = 55
-
-        For index As Integer = 1 To h
-            Dim MovieBox As New PictureBox With {
-                .Size = New Size(190, 250),
-                .Location = New Point(PosX, PosY),
-                .BackColor = Color.Red,
-                .Text = index,
-                .Cursor = Cursors.Hand
-            }
-            panel.Controls.Add(MovieBox)
-            MovieBox.AccessibleName = index
-            'Add Labels on array
-            array(index) = MovieBox
-            'Adds click even for every label
-            AddHandler array(index).Click, AddressOf MoviesMain.AllMoviesCLick
-
-
-            PosX += 245
-            If index Mod 5 = 0 Then
-                PosY += 275
-                PosX = 55
-            End If
-        Next
-    End Sub
-#End Region
 
 #Region "Timer for drop menu"
     Private Sub Timer_Tick(sender As Object, e As EventArgs) Handles Timer.Tick
@@ -136,7 +102,6 @@ Public Class Main
 #End Region
 
 #Region "Change Form "
-
 
     Private Sub ChnageWindow(newform, panel, flag)
         Close_forms(Me)
