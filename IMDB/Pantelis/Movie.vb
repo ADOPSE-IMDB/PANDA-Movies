@@ -2,47 +2,76 @@
 Imports MySql.Data.MySqlClient
 
 Public Class Movie
-    Private id As Integer
-    Private title As String
-    Private year As Date
-    Private description As String
-    Private rating As Double
+    ReadOnly con As New Connection
+
+    Private mid As Integer
+    Private mtitle As String
+    Private myear As Date
+    Private mdescription As String
+    Private mrating As Double
+
+    Public Property Id() As Integer
+        Get
+            Return mid
+        End Get
+        Set(ByVal value As Integer)
+            mid = value
+        End Set
+    End Property
+
+    Public Property Title() As String
+        Get
+            Return mtitle
+        End Get
+        Set(ByVal value As String)
+            mtitle = value
+        End Set
+    End Property
+
+    Public Property Year() As String
+        Get
+            Return myear
+        End Get
+        Set(ByVal value As String)
+            myear = value
+        End Set
+    End Property
+
+    Public Property Description() As String
+        Get
+            Return mdescription
+        End Get
+        Set(ByVal value As String)
+            mdescription = value
+        End Set
+    End Property
+
+    Public Property Rating() As String
+        Get
+            Return mrating
+        End Get
+        Set(ByVal value As String)
+            mrating = value
+        End Set
+    End Property
 
     Sub GetAllMovies(ByRef results As DataTable)
-        Dim con As New Connection
         con.RunQuery("select * from Movies", results)
     End Sub
 
     Sub GetTopMovies(ByRef results As DataTable)
-        Dim con As New Connection
-        con.RunQuery("select * from Movies where rating > 9.0 limit 10", results)
+        con.RunQuery("select * from Movies order by rating limit 10", results)
     End Sub
 
-    Sub CountMovies(ByRef results As DataTable)
-        Dim con As New Connection
-        con.RunQuery("select MAX(id) as TotalMovies from Movies", results)
-    End Sub
+    Public Function CountMovies()
+        Dim results As New DataTable
+        con.RunQuery("select count(*) as num from Movies", results)
+        Return results.Rows(0)("num").ToString()
+    End Function
 
     Sub GetMoviesFromTo(ByVal fromNum As Integer, ByVal toNum As Integer, ByRef results As DataTable)
-        Dim con As New Connection
-        Dim DReader As MySqlDataReader
-        Dim cmd As MySqlCommand = New MySqlCommand()
+        Dim args() As String = {fromNum, toNum}
 
-        Try
-            con.Connect()
-            cmd.Connection = con.getConnection
-            cmd.CommandText = "select * from Movies where id between @fromNum and @toNum"
-            cmd.Parameters.Add("@fromNum", MySqlDbType.Int32).Value = fromNum
-            cmd.Parameters.Add("@toNum", MySqlDbType.Int32).Value = toNum
-            DReader = cmd.ExecuteReader
-            results.Clear()
-            results.Constraints.Clear()
-            results.Load(DReader)
-        Catch ex As Exception
-            Console.WriteLine("Problem with Query Execution (GetMoviesFromTo)")
-        Finally
-            DReader.Close()
-            con.Disconnect()
-        End Try
+        con.RunQuery("select * from Movies where id between @0 and @1", args, results)
     End Sub
 End Class
