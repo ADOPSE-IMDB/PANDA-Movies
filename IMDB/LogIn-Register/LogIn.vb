@@ -115,44 +115,27 @@ FROM `it185223`.`Users` where `username`=@usn and `password`=@pass", conn.getCon
     End Structure
 
 
-    Public user As New UserStruc
+
     Private Sub TestLogin_Click(sender As Object, e As EventArgs) Handles testLogin.Click
-        user.username = TextBoxUsername.Text
 
 
+        If TextBoxUsername.Text = "" Or TextBoxPassword.Text = "" Then
 
-        Dim con As New MY_CONNECTION()
-        Dim table As New DataTable()
-        Dim adapter As New MySqlDataAdapter()
-        Dim command As New MySqlCommand("   Select * from Users WHERE username = @usnl and `password`=@pass", con.getConnection())
+        Else
+            Dim u As New User
+            u.LogIn(TextBoxUsername.Text, TextBoxPassword.Text)
 
-        command.Parameters.Add("@usnl", MySqlDbType.VarChar).Value = TextBoxUsername.Text
-        command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = TextBoxPassword.Text
-        con.openConnection()
-        Try
-            Using reader As MySqlDataReader = command.ExecuteReader()
-                If reader.Read() Then
-                    user.Index = reader.GetInt16(0)
-                    user.Fname = reader.GetString(1)
-                    user.Lname = reader.GetString(2)
-                    user.email = reader.GetString(3)
-                End If
 
-                If user.Index = 0 Then
-                    MessageBox.Show("Please check your username or password and try again", "SAD", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Else
-
-                    MessageBox.Show(user.Index & " " & user.Fname & " " & user.Lname & " " & user.email & " " & user.username, "Happ", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    TextBoxPassword.Text = ""
-                    Main.Show()
-                    Close()
-                End If
-
-                con.closeConnection()
-            End Using
-        Catch
-            MessageBox.Show("Couldnt get data", "SAD", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            con.closeConnection()
-        End Try
+            If u.Id = 0 Then
+                MessageBox.Show("Please check your username or password and try again", "SAD", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ElseIf u.Id = -1 Then
+                MessageBox.Show("Cant Connect to the Data Base", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                MessageBox.Show(u.Id & " " & u.First_name & " " & u.Last_name & " " & u.Email & " " & u.Username, "Happ", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                TextBoxPassword.Text = ""
+                Main.Show()
+                Close()
+            End If
+        End If
     End Sub
 End Class

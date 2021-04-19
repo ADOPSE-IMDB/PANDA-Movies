@@ -5,13 +5,11 @@ Public Class Main
 
     'Load Main Page
     Private Sub On_Load(sender As Object, e As EventArgs) Handles Me.Load
+
         DropPanel.Height = 0
         MoviesMain.TopLevel = False
         MainPanel.Controls.Add(MoviesMain)
         MoviesMain.Show()
-        For Each c As Control In Me.Controls
-            AddHandler c.MouseDown, AddressOf c_MouseDown
-        Next
     End Sub
 
 #Region "Open Main page"
@@ -46,9 +44,7 @@ Public Class Main
 
     'Opens DropDown menu
     Private Sub NameBtn_Click(sender As Object, e As EventArgs) Handles NameBtn.Click
-        If Not isCollapsed Then
-            Timer.Start()
-        End If
+        Timer.Start()
     End Sub
 
     'Open Profile
@@ -67,11 +63,19 @@ Public Class Main
         Close_forms(LogIn)
     End Sub
 
-    Public Sub c_MouseDown(sender As Object, e As MouseEventArgs)
-        If sender IsNot NameBtn And Not isCollapsed Then
-            Timer.Start()
+    Private Sub frm_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseClick
+
+        Dim x As Integer = e.Location.X
+        Dim y As Integer = e.Location.Y
+
+        If x > 0 AndAlso x < 200 AndAlso y > 0 AndAlso y < 200 Then
+            MessageBox.Show("Inside")
+        Else
+            MessageBox.Show("Outside")
         End If
+
     End Sub
+
 #End Region
 
 
@@ -156,6 +160,7 @@ Public Class Main
         End If
 
     End Sub
+
 
 #End Region
 

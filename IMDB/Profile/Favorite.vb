@@ -23,7 +23,7 @@ Public Class Favorite
         Dim adapter As New MySqlDataAdapter()
         Dim command As New MySqlCommand("   select distinct user_id,movie_id,title,year,description,rating from MovieLists inner join Movies on MovieLists.movie_id=Movies.id and MovieLists.user_id = @idd", con.getConnection())
 
-        command.Parameters.Add("@idd", MySqlDbType.VarChar).Value = LogIn.user.Index
+        command.Parameters.Add("@idd", MySqlDbType.VarChar).Value = 1
         con.openConnection()
 
         Try

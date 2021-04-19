@@ -4,12 +4,13 @@ Imports MySql.Data.MySqlClient
 
 Public Class MoviesMain
 
-    Public Shared TopTen(10) As LoadPictureBox.s
-
+    Public Shared TopTen(10) As Movie
+    Public t As New Movie
     Public Shared MovieArray(20) As LoadPictureBox.s
     Public Shared cMovie(20) As PictureBox
 
     Private Sub On_Load(sender As Object, e As EventArgs) Handles Me.Load
+
 
 #Region "TEST1"
         'loads all movies to custom Array
@@ -22,13 +23,12 @@ Public Class MoviesMain
         Try
             Using reader As MySqlDataReader = command.ExecuteReader()
                 While reader.Read()
-                    MovieArray(c).Index = 1
-                    MovieArray(c).Index = reader.GetInt16(0)
+                    MovieArray(c).Index = reader.GetInt16("id")
                     MovieArray(c).Name = reader.GetString(1)
                     MovieArray(c).reDate = reader.GetDateTime(2)
                     MovieArray(c).Des = reader.GetString(3)
                     MovieArray(c).rate = reader.GetInt16(4)
-                    MovieArray(c).isFavorite = False
+
                     c += 1
                 End While
                 con.closeConnection()
@@ -40,33 +40,7 @@ Public Class MoviesMain
 #End Region
         LoadPictureBox.Create(20, AllMoviesPanel, cMovie, 100)
 
-#Region "TEST2"
-        'loads all movies to custom Array
-        Dim c1 = 4
-        Dim con1 As New MY_CONNECTION()
-        Dim table1 As New DataTable()
-        Dim adapter1 As New MySqlDataAdapter()
-        Dim command1 As New MySqlCommand("   Select * from Movies", con.getConnection())
-        con.openConnection()
-        Try
-            Using reader As MySqlDataReader = command.ExecuteReader()
-                While reader.Read()
-                    TopTen(c1).Index = 1
-                    TopTen(c1).Index = reader.GetInt16(0)
-                    TopTen(c1).Name = reader.GetString(1) & " top"
-                    TopTen(c1).reDate = reader.GetDateTime(2)
-                    TopTen(c1).Des = reader.GetString(3)
-                    TopTen(c1).rate = reader.GetInt16(4)
-                    TopTen(c1).isFavorite = False
-                    c1 -= 1
-                End While
-                con.closeConnection()
-            End Using
-        Catch
-            con.closeConnection()
-        End Try
 
-#End Region
         Dim TopArray(10) As PictureBox
         TopArray = {Top1, Top2, Top3, Top4, Top5, Top6, Top7, Top8, Top9, Top10}
 
@@ -76,7 +50,6 @@ Public Class MoviesMain
         Next
 
     End Sub
-
 
 
     Dim n = 20
@@ -121,7 +94,32 @@ Public Class MoviesMain
             pb.Dispose()
         Next
 
+#Region "TEST1"
+        'loads all movies to custom Array
+        Dim c = 5
+        Dim con As New MY_CONNECTION()
+        Dim table As New DataTable()
+        Dim adapter As New MySqlDataAdapter()
+        Dim command As New MySqlCommand("   Select * from Movies", con.getConnection())
+        con.openConnection()
+        Try
+            Using reader As MySqlDataReader = command.ExecuteReader()
+                While reader.Read()
+                    MovieArray(c).Index = reader.GetInt16("id")
+                    MovieArray(c).Name = reader.GetString(1)
+                    MovieArray(c).reDate = reader.GetDateTime(2)
+                    MovieArray(c).Des = reader.GetString(3)
+                    MovieArray(c).rate = reader.GetInt16(4)
 
+                    c -= 1
+                End While
+                con.closeConnection()
+            End Using
+        Catch
+            con.closeConnection()
+        End Try
+
+#End Region
         If n > tainies Then
             Pre.Text = curr.Text
             curr.Text = ne.Text

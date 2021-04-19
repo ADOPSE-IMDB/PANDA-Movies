@@ -62,14 +62,17 @@ Public Class LoadPictureBox
 
             If MoviesMain.TopMoviesPanel.Controls.Contains(MovieBox) Then
                 a = MoviesMain.TopTen
+                CurrentMovie.MovieName.Text = a(cm).Title
+                CurrentMovie.Rate.Text = a(cm).Rating
+                CurrentMovie.MovieDate.Text = a(cm).Year
+                CurrentMovie.Description.Text = a(cm).Description
             Else
                 a = MoviesMain.MovieArray
+                CurrentMovie.MovieName.Text = a(cm).Name
+                CurrentMovie.Rate.Text = a(cm).rate
+                CurrentMovie.MovieDate.Text = a(cm).reDate
+                CurrentMovie.Description.Text = a(cm).Des
             End If
-
-            CurrentMovie.MovieName.Text = a(cm).Name
-            CurrentMovie.Rate.Text = a(cm).rate
-            CurrentMovie.MovieDate.Text = a(cm).reDate
-            CurrentMovie.Description.Text = a(cm).Des
 
             CurrentMovie.Show()
 
@@ -77,4 +80,4 @@ Public Class LoadPictureBox
     End Sub
 
 
-    End Class
+End Class
