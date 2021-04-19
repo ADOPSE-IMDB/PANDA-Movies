@@ -9,6 +9,7 @@ Public Class Movie
     Private myear As Date
     Private mdescription As String
     Private mrating As Double
+    'private fav As Boolean
 
     Public Property Id() As Integer
         Get
@@ -69,9 +70,12 @@ Public Class Movie
         Return results.Rows(0)("num").ToString()
     End Function
 
-    Sub GetMoviesFromTo(ByVal fromNum As Integer, ByVal toNum As Integer, ByRef results As DataTable)
+    Function GetMoviesFromTo(ByVal fromNum As Integer, ByVal toNum As Integer)
         Dim args() As String = {fromNum, toNum}
-
+        Dim c = 1
+        Dim results As New DataTable
         con.RunQuery("select * from Movies where id between @0 and @1", args, results)
-    End Sub
+
+        Return results
+    End Function
 End Class

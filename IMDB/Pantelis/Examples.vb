@@ -2,7 +2,7 @@ Imports System
 Imports System.Data
 
 Module Examples
-    Sub Main(args As String())
+    Sub Main1(args As String())
 
         Dim loggedUser As New User              'make somehow Global
         loggedUser.LogIn("marley1", "222")
@@ -43,7 +43,7 @@ Module Examples
         Console.Write("Movies with id from 2 to 4:")
         Console.WriteLine()
         Dim specMovies As New DataTable
-        movie.GetMoviesFromTo(2, 4, specMovies)
+        'movie.GetMoviesFromTo(2, 4)
         'Print their IDs
         For Each row As DataRow In specMovies.Rows
             Console.WriteLine(row("id"))

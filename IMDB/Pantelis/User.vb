@@ -54,31 +54,35 @@ Public Class User
         End Set
     End Property
 
-    Sub LogIn(ByVal username, ByVal password)
-        Dim results As New DataTable
-        Dim args() As String = {username, password}
+    Sub LogIn(username, password)
+        Try
+            Dim results As New DataTable
+            Dim args() As String = {username, password}
 
-        con.RunQuery("select * from Users where username=@0 and password=@1", args, results)
+            con.RunQuery("select * from Users where username=@0 and password=@1", args, results)
 
-        'Assign Values to Object
-        For Each row As DataRow In results.Rows
+            'Assign Values to Object
+            For Each row As DataRow In results.Rows
 
-            For Each col As DataColumn In results.Columns
-                If col.ColumnName.Equals("id") Then
-                    Me.Id = row(col)
-                ElseIf col.ColumnName.Equals("first_name") Then
-                    Me.First_name = row(col)
-                ElseIf col.ColumnName.Equals("last_name") Then
-                    Me.Last_name = row(col)
-                ElseIf col.ColumnName.Equals("email") Then
-                    Me.Email = row(col)
-                ElseIf col.ColumnName.Equals("username") Then
-                    Me.Username = row(col)
-                End If
+                For Each col As DataColumn In results.Columns
+                    If col.ColumnName.Equals("id") Then
+                        Me.Id = row(col)
+                    ElseIf col.ColumnName.Equals("first_name") Then
+                        Me.First_name = row(col)
+                    ElseIf col.ColumnName.Equals("last_name") Then
+                        Me.Last_name = row(col)
+                    ElseIf col.ColumnName.Equals("email") Then
+                        Me.Email = row(col)
+                    ElseIf col.ColumnName.Equals("username") Then
+                        Me.Username = row(col)
+                    End If
+
+                Next
 
             Next
-
-        Next
+        Catch ex As Exception
+            Me.Id = -1
+        End Try
     End Sub
 
     Sub GetAllUsers(ByRef results As DataTable)
