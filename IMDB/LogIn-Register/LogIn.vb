@@ -126,7 +126,6 @@ FROM `it185223`.`Users` where `username`=@usn and `password`=@pass", conn.getCon
             u.LogIn(TextBoxUsername.Text, TextBoxPassword.Text)
 
 
-
             If u.Id = 0 Then
                 MessageBox.Show("Please check your username or password and try again", "SAD", MessageBoxButtons.OK, MessageBoxIcon.Error)
             ElseIf u.Id = -1 Then

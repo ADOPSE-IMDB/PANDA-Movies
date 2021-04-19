@@ -40,33 +40,7 @@ Public Class MoviesMain
 #End Region
         LoadPictureBox.Create(20, AllMoviesPanel, cMovie, 100)
 
-#Region "TEST2"
-        Dim results As DataTable
-        results = t.GetMoviesFromTo(1, 2)
-        c = 1
-        For Each row As DataRow In results.Rows
 
-            For Each col As DataColumn In results.Columns
-
-                If col.ColumnName.Equals("id") Then
-                    Dim i As Integer = row(col)
-                    TopTen(1).Id = 1
-                ElseIf col.ColumnName.Equals("title") Then
-                    Dim i As String = row(col)
-                    TopTen(1).Title = i
-                ElseIf col.ColumnName.Equals("year") Then
-                    TopTen(1).Year = 1
-                ElseIf col.ColumnName.Equals("description") Then
-                    TopTen(1).Description = "e"
-                ElseIf col.ColumnName.Equals("rating") Then
-                    TopTen(1).Rating = 1
-                End If
-                c += 1
-            Next
-
-        Next
-
-#End Region
         Dim TopArray(10) As PictureBox
         TopArray = {Top1, Top2, Top3, Top4, Top5, Top6, Top7, Top8, Top9, Top10}
 
