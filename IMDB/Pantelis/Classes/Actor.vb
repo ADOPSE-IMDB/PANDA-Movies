@@ -1,8 +1,6 @@
 ﻿Imports System.Data
 
 Public Class Actor
-    ReadOnly con As New Connection
-
     Private aid As Integer
     Private aname As String
     Private asurname As String
@@ -15,7 +13,6 @@ Public Class Actor
             aid = value
         End Set
     End Property
-
     Public Property Name() As String
         Get
             Return aname
@@ -24,7 +21,6 @@ Public Class Actor
             aname = value
         End Set
     End Property
-
     Public Property Surname() As String
         Get
             Return asurname
@@ -34,7 +30,9 @@ Public Class Actor
         End Set
     End Property
 
-    Sub GetAllActors(ByRef results As DataTable)
-        con.RunQuery("select * from Actors", results)
+    Sub Print()
+        Console.WriteLine(Me.Id)
+        Console.WriteLine(Me.Name)
+        Console.WriteLine(Me.Surname)
     End Sub
 End Class

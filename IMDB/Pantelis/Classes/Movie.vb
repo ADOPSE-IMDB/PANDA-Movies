@@ -2,8 +2,6 @@
 Imports MySql.Data.MySqlClient
 
 Public Class Movie
-    ReadOnly con As New Connection
-
     Private mid As Integer
     Private mtitle As String
     Private myear As Date
@@ -18,7 +16,6 @@ Public Class Movie
             mid = value
         End Set
     End Property
-
     Public Property Title() As String
         Get
             Return mtitle
@@ -27,7 +24,6 @@ Public Class Movie
             mtitle = value
         End Set
     End Property
-
     Public Property Year() As String
         Get
             Return myear
@@ -36,7 +32,6 @@ Public Class Movie
             myear = value
         End Set
     End Property
-
     Public Property Description() As String
         Get
             Return mdescription
@@ -45,7 +40,6 @@ Public Class Movie
             mdescription = value
         End Set
     End Property
-
     Public Property Rating() As String
         Get
             Return mrating
@@ -55,23 +49,11 @@ Public Class Movie
         End Set
     End Property
 
-    Sub GetAllMovies(ByRef results As DataTable)
-        con.RunQuery("select * from Movies", results)
-    End Sub
-
-    Sub GetTopMovies(ByRef results As DataTable)
-        con.RunQuery("select * from Movies order by rating limit 10", results)
-    End Sub
-
-    Public Function CountMovies()
-        Dim results As New DataTable
-        con.RunQuery("select count(*) as num from Movies", results)
-        Return results.Rows(0)("num").ToString()
-    End Function
-
-    Sub GetMoviesFromTo(ByVal fromNum As Integer, ByVal toNum As Integer, ByRef results As DataTable)
-        Dim args() As String = {fromNum, toNum}
-
-        con.RunQuery("select * from Movies where id between @0 and @1", args, results)
+    Sub Print()
+        Console.WriteLine(Me.Id)
+        Console.WriteLine(Me.Title)
+        Console.WriteLine(Me.Year)
+        Console.WriteLine(Me.Description)
+        Console.WriteLine(Me.Rating)
     End Sub
 End Class
