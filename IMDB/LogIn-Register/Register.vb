@@ -87,6 +87,7 @@ Public Class Register
         'check if password = confirm password
         'check if username already exists
         'get textboxes values
+        UserMod.Username_exists("NA")
 
     End Sub
 

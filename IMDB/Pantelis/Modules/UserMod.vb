@@ -37,4 +37,34 @@ Module UserMod
 
         Return loggedUser
     End Function
+
+    Public Function Register(ByVal first_name, ByVal last_name, ByVal username, ByVal email, ByVal password)
+        Dim args() As String = {first_name, last_name, username, email, password}
+
+        Dim con As New Connection
+        Dim results As New DataTable
+
+        con.RunQuery("INSERT INTO `it185223`.`Users` (`first_name`, `last_name`,`email`,`username`,`password`) VALUES (@0, @1, @3, @2, @4);", args, results)
+
+
+    End Function
+
+
+    Public Function Username_exists(ByVal username)
+        Dim args() As String = {username}
+        Dim con As New Connection
+        Dim results As New DataTable
+        con.RunQuery("Select * from Users where username=@0", args, results)
+        If (results.Rows.Count.Equals(0)) Then
+            MessageBox.Show("false")
+        Else
+            MessageBox.Show("true")
+        End If
+        ViewDataTables.ShowTable(results)
+
+
+    End Function
+    Public Function Email_exists(ByVal email)
+
+    End Function
 End Module
