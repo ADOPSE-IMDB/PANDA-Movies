@@ -15,7 +15,7 @@ Public Class Register
     End Sub
 
     Private Sub LogInLink_Click(sender As Object, e As EventArgs) Handles LogInLink.Click
-        LogIn.Show()
+        LogInForm.Show()
         Close()
     End Sub
 

@@ -1,5 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class LogIn
+Public Class LogInForm
 
 
     Dim MySqlConn As New MySqlConnection("Server=dblabs.it.teithe.gr;Port=3306;Database=it185223;Uid=it185223;Pwd=chilli123;")
@@ -123,7 +123,7 @@ FROM `it185223`.`Users` where `username`=@usn and `password`=@pass", conn.getCon
 
         Else
             Dim u As User
-            u = UserMod.LogIn(TextBoxUsername.Text, TextBoxPassword.Text)
+            u = LogIn(TextBoxUsername.Text, TextBoxPassword.Text)
 
 
             If u.Id = 0 Then

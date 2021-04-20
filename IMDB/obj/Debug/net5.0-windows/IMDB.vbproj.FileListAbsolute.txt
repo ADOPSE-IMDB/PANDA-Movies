@@ -36,7 +36,6 @@ D:\Desktop\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.dll
 D:\Desktop\IMDB\IMDB\obj\Debug\net5.0-windows\ref\IMDB.dll
 D:\Desktop\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.pdb
 D:\Desktop\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.genruntimeconfig.cache
-C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.LogIn.resources
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.Resources.resources
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.Register.resources
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.vbproj.GenerateResource.cache
@@ -109,3 +108,4 @@ C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\Zstandard
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\Renci.SshNet.dll
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\SshNet.Security.Cryptography.dll
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.vbprojAssemblyReference.cache
+C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.LogInForm.resources

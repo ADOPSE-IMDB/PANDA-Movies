@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class LogIn
+Partial Class LogInForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,7 +23,7 @@ Partial Class LogIn
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LogIn))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LogInForm))
         Me.LogInTitle = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.testLogin = New System.Windows.Forms.Button()
@@ -49,7 +49,7 @@ Partial Class LogIn
         Me.LogInTitle.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.LogInTitle.Location = New System.Drawing.Point(0, 0)
         Me.LogInTitle.Name = "LogInTitle"
-        Me.LogInTitle.Size = New System.Drawing.Size(620, 30)
+        Me.LogInTitle.Size = New System.Drawing.Size(659, 34)
         Me.LogInTitle.TabIndex = 0
         Me.LogInTitle.Text = "IMDB"
         Me.LogInTitle.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -68,7 +68,7 @@ Partial Class LogIn
         Me.Panel3.Controls.Add(Me.PasswordL)
         Me.Panel3.Controls.Add(Me.TextBoxUsername)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(0, 33)
+        Me.Panel3.Location = New System.Drawing.Point(0, 37)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(659, 303)
         Me.Panel3.TabIndex = 2
@@ -108,7 +108,7 @@ Partial Class LogIn
         'CheckConnection
         '
         Me.CheckConnection.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.CheckConnection.Location = New System.Drawing.Point(12, 269)
+        Me.CheckConnection.Location = New System.Drawing.Point(12, 250)
         Me.CheckConnection.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CheckConnection.Name = "CheckConnection"
         Me.CheckConnection.Size = New System.Drawing.Size(110, 23)
@@ -185,9 +185,9 @@ Partial Class LogIn
         '
         'CloseApp
         '
-        Me.CloseApp.Location = New System.Drawing.Point(618, 0)
+        Me.CloseApp.Location = New System.Drawing.Point(628, 0)
         Me.CloseApp.Name = "CloseApp"
-        Me.CloseApp.Size = New System.Drawing.Size(41, 30)
+        Me.CloseApp.Size = New System.Drawing.Size(31, 30)
         Me.CloseApp.TabIndex = 3
         Me.CloseApp.Text = "X"
         Me.CloseApp.UseVisualStyleBackColor = True
@@ -202,7 +202,7 @@ Partial Class LogIn
         Me.AcceptButton = Me.ButtonLogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(659, 336)
+        Me.ClientSize = New System.Drawing.Size(659, 340)
         Me.ControlBox = False
         Me.Controls.Add(Me.CloseApp)
         Me.Controls.Add(Me.LogInTitle)

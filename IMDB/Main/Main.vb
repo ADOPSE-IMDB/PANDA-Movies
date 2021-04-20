@@ -59,8 +59,8 @@ Public Class Main
 
     'Log Out Button
     Private Sub LogOut_Click(sender As Object, e As EventArgs) Handles LogOut.Click
-        LogIn.Show()
-        Close_forms(LogIn)
+        LogInForm.Show()
+        Close_forms(LogInForm)
     End Sub
 
     Private Sub frm_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseClick
