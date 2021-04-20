@@ -7,6 +7,7 @@ Public Class Movie
     Private myear As Date
     Private mdescription As String
     Private mrating As Double
+    Private mURL As String
 
     Public Property Id() As Integer
         Get
@@ -46,6 +47,14 @@ Public Class Movie
         End Get
         Set(ByVal value As String)
             mrating = value
+        End Set
+    End Property
+    Public Property Url() As String
+        Get
+            Return mURL
+        End Get
+        Set(ByVal value As String)
+            mURL = value
         End Set
     End Property
 

@@ -30,33 +30,35 @@ Partial Class CurrentMovie
         Me.AddRem = New System.Windows.Forms.Button()
         Me.MovieDate = New System.Windows.Forms.Label()
         Me.Rate = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.MoPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TopPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'MoPic
         '
-        Me.MoPic.Location = New System.Drawing.Point(30, 30)
+        Me.MoPic.Location = New System.Drawing.Point(30, 39)
         Me.MoPic.Name = "MoPic"
-        Me.MoPic.Size = New System.Drawing.Size(190, 250)
+        Me.MoPic.Size = New System.Drawing.Size(209, 297)
         Me.MoPic.TabIndex = 0
         Me.MoPic.TabStop = False
         '
         'MovieName
         '
-        Me.MovieName.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.MovieName.Location = New System.Drawing.Point(226, 30)
+        Me.MovieName.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.MovieName.Location = New System.Drawing.Point(266, 30)
         Me.MovieName.Name = "MovieName"
-        Me.MovieName.Size = New System.Drawing.Size(362, 23)
+        Me.MovieName.Size = New System.Drawing.Size(304, 40)
         Me.MovieName.TabIndex = 1
         Me.MovieName.Text = "Name"
         Me.MovieName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Description
         '
-        Me.Description.Location = New System.Drawing.Point(30, 348)
+        Me.Description.Location = New System.Drawing.Point(30, 391)
         Me.Description.Name = "Description"
-        Me.Description.Size = New System.Drawing.Size(362, 194)
+        Me.Description.Size = New System.Drawing.Size(540, 302)
         Me.Description.TabIndex = 2
         Me.Description.Text = "Description"
         '
@@ -80,7 +82,7 @@ Partial Class CurrentMovie
         '
         'AddRem
         '
-        Me.AddRem.Location = New System.Drawing.Point(362, 242)
+        Me.AddRem.Location = New System.Drawing.Point(357, 277)
         Me.AddRem.Name = "AddRem"
         Me.AddRem.Size = New System.Drawing.Size(75, 23)
         Me.AddRem.TabIndex = 4
@@ -89,27 +91,49 @@ Partial Class CurrentMovie
         '
         'MovieDate
         '
-        Me.MovieDate.AutoSize = True
-        Me.MovieDate.Location = New System.Drawing.Point(395, 141)
+        Me.MovieDate.Location = New System.Drawing.Point(422, 127)
         Me.MovieDate.Name = "MovieDate"
-        Me.MovieDate.Size = New System.Drawing.Size(30, 15)
+        Me.MovieDate.Size = New System.Drawing.Size(148, 23)
         Me.MovieDate.TabIndex = 5
         Me.MovieDate.Text = "date"
+        Me.MovieDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Rate
         '
-        Me.Rate.AutoSize = True
-        Me.Rate.Location = New System.Drawing.Point(395, 71)
+        Me.Rate.Font = New System.Drawing.Font("Trajan Pro 3", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Rate.Location = New System.Drawing.Point(266, 81)
         Me.Rate.Name = "Rate"
-        Me.Rate.Size = New System.Drawing.Size(27, 15)
+        Me.Rate.Size = New System.Drawing.Size(304, 24)
         Me.Rate.TabIndex = 6
         Me.Rate.Text = "rate"
+        Me.Rate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label1
+        '
+        Me.Label1.Location = New System.Drawing.Point(314, 127)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(102, 23)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "Released Date :"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label2
+        '
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label2.Location = New System.Drawing.Point(0, 343)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(600, 30)
+        Me.Label2.TabIndex = 8
+        Me.Label2.Text = "Description"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'CurrentMovie
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(600, 702)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Rate)
         Me.Controls.Add(Me.MovieDate)
         Me.Controls.Add(Me.AddRem)
@@ -123,7 +147,6 @@ Partial Class CurrentMovie
         CType(Me.MoPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TopPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -135,5 +158,6 @@ Partial Class CurrentMovie
     Friend WithEvents AddRem As Button
     Friend WithEvents MovieDate As Label
     Friend WithEvents Rate As Label
-
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
 End Class

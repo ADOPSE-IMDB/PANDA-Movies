@@ -75,116 +75,116 @@ Partial Class MoviesMain
         Me.TopMoviesPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.TopMoviesPanel.Location = New System.Drawing.Point(0, 0)
         Me.TopMoviesPanel.Name = "TopMoviesPanel"
-        Me.TopMoviesPanel.Size = New System.Drawing.Size(1280, 578)
+        Me.TopMoviesPanel.Size = New System.Drawing.Size(1280, 618)
         Me.TopMoviesPanel.TabIndex = 10
         '
         'Top10
         '
         Me.Top10.AccessibleName = "top"
-        Me.Top10.BackColor = System.Drawing.Color.DarkMagenta
+        Me.Top10.BackColor = System.Drawing.Color.Transparent
         Me.Top10.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Top10.Location = New System.Drawing.Point(1035, 325)
+        Me.Top10.Location = New System.Drawing.Point(1035, 345)
         Me.Top10.Name = "Top10"
-        Me.Top10.Size = New System.Drawing.Size(190, 250)
+        Me.Top10.Size = New System.Drawing.Size(190, 270)
         Me.Top10.TabIndex = 20
         Me.Top10.TabStop = False
         '
         'Top9
         '
         Me.Top9.AccessibleName = "top"
-        Me.Top9.BackColor = System.Drawing.Color.DarkMagenta
+        Me.Top9.BackColor = System.Drawing.Color.Transparent
         Me.Top9.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Top9.Location = New System.Drawing.Point(790, 325)
+        Me.Top9.Location = New System.Drawing.Point(790, 345)
         Me.Top9.Name = "Top9"
-        Me.Top9.Size = New System.Drawing.Size(190, 250)
+        Me.Top9.Size = New System.Drawing.Size(190, 270)
         Me.Top9.TabIndex = 19
         Me.Top9.TabStop = False
         '
         'Top8
         '
         Me.Top8.AccessibleName = "top"
-        Me.Top8.BackColor = System.Drawing.Color.DarkMagenta
+        Me.Top8.BackColor = System.Drawing.Color.Transparent
         Me.Top8.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Top8.Location = New System.Drawing.Point(545, 325)
+        Me.Top8.Location = New System.Drawing.Point(545, 345)
         Me.Top8.Name = "Top8"
-        Me.Top8.Size = New System.Drawing.Size(190, 250)
+        Me.Top8.Size = New System.Drawing.Size(190, 270)
         Me.Top8.TabIndex = 18
         Me.Top8.TabStop = False
         '
         'Top7
         '
         Me.Top7.AccessibleName = "top"
-        Me.Top7.BackColor = System.Drawing.Color.DarkMagenta
+        Me.Top7.BackColor = System.Drawing.Color.Transparent
         Me.Top7.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Top7.Location = New System.Drawing.Point(300, 325)
+        Me.Top7.Location = New System.Drawing.Point(300, 345)
         Me.Top7.Name = "Top7"
-        Me.Top7.Size = New System.Drawing.Size(190, 250)
+        Me.Top7.Size = New System.Drawing.Size(190, 270)
         Me.Top7.TabIndex = 17
         Me.Top7.TabStop = False
         '
         'Top6
         '
         Me.Top6.AccessibleName = "top"
-        Me.Top6.BackColor = System.Drawing.Color.DarkMagenta
+        Me.Top6.BackColor = System.Drawing.Color.Transparent
         Me.Top6.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Top6.Location = New System.Drawing.Point(55, 325)
+        Me.Top6.Location = New System.Drawing.Point(55, 345)
         Me.Top6.Name = "Top6"
-        Me.Top6.Size = New System.Drawing.Size(190, 250)
+        Me.Top6.Size = New System.Drawing.Size(190, 270)
         Me.Top6.TabIndex = 16
         Me.Top6.TabStop = False
         '
         'Top5
         '
         Me.Top5.AccessibleName = "top"
-        Me.Top5.BackColor = System.Drawing.Color.DarkMagenta
+        Me.Top5.BackColor = System.Drawing.Color.Transparent
         Me.Top5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Top5.Location = New System.Drawing.Point(1035, 50)
         Me.Top5.Name = "Top5"
-        Me.Top5.Size = New System.Drawing.Size(190, 250)
+        Me.Top5.Size = New System.Drawing.Size(190, 270)
         Me.Top5.TabIndex = 15
         Me.Top5.TabStop = False
         '
         'Top4
         '
         Me.Top4.AccessibleName = "top"
-        Me.Top4.BackColor = System.Drawing.Color.DarkMagenta
+        Me.Top4.BackColor = System.Drawing.Color.Transparent
         Me.Top4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Top4.Location = New System.Drawing.Point(790, 50)
         Me.Top4.Name = "Top4"
-        Me.Top4.Size = New System.Drawing.Size(190, 250)
+        Me.Top4.Size = New System.Drawing.Size(190, 270)
         Me.Top4.TabIndex = 14
         Me.Top4.TabStop = False
         '
         'Top3
         '
         Me.Top3.AccessibleName = "top"
-        Me.Top3.BackColor = System.Drawing.Color.DarkMagenta
+        Me.Top3.BackColor = System.Drawing.Color.Transparent
         Me.Top3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Top3.Location = New System.Drawing.Point(545, 50)
         Me.Top3.Name = "Top3"
-        Me.Top3.Size = New System.Drawing.Size(190, 250)
+        Me.Top3.Size = New System.Drawing.Size(190, 270)
         Me.Top3.TabIndex = 13
         Me.Top3.TabStop = False
         '
         'Top2
         '
         Me.Top2.AccessibleName = "top"
-        Me.Top2.BackColor = System.Drawing.Color.DarkMagenta
+        Me.Top2.BackColor = System.Drawing.Color.Transparent
         Me.Top2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Top2.Location = New System.Drawing.Point(300, 50)
         Me.Top2.Name = "Top2"
-        Me.Top2.Size = New System.Drawing.Size(190, 250)
+        Me.Top2.Size = New System.Drawing.Size(190, 270)
         Me.Top2.TabIndex = 12
         Me.Top2.TabStop = False
         '
         'Top1
         '
         Me.Top1.AccessibleName = "top"
-        Me.Top1.BackColor = System.Drawing.Color.DarkMagenta
+        Me.Top1.BackColor = System.Drawing.Color.Transparent
         Me.Top1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Top1.Location = New System.Drawing.Point(55, 50)
         Me.Top1.Name = "Top1"
-        Me.Top1.Size = New System.Drawing.Size(190, 250)
+        Me.Top1.Size = New System.Drawing.Size(190, 270)
         Me.Top1.TabIndex = 11
         Me.Top1.TabStop = False
         '
@@ -212,9 +212,9 @@ Partial Class MoviesMain
         '
         Me.AllMoviesPanel.Controls.Add(Me.FilterPanel)
         Me.AllMoviesPanel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.AllMoviesPanel.Location = New System.Drawing.Point(0, 578)
+        Me.AllMoviesPanel.Location = New System.Drawing.Point(0, 618)
         Me.AllMoviesPanel.Name = "AllMoviesPanel"
-        Me.AllMoviesPanel.Size = New System.Drawing.Size(1280, 80)
+        Me.AllMoviesPanel.Size = New System.Drawing.Size(1280, 41)
         Me.AllMoviesPanel.TabIndex = 11
         '
         'FilterPanel
@@ -224,7 +224,7 @@ Partial Class MoviesMain
         Me.FilterPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.FilterPanel.Location = New System.Drawing.Point(0, 0)
         Me.FilterPanel.Name = "FilterPanel"
-        Me.FilterPanel.Size = New System.Drawing.Size(1280, 80)
+        Me.FilterPanel.Size = New System.Drawing.Size(1280, 41)
         Me.FilterPanel.TabIndex = 2
         '
         'AllMoviesLabel
@@ -234,7 +234,7 @@ Partial Class MoviesMain
         Me.AllMoviesLabel.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.AllMoviesLabel.Location = New System.Drawing.Point(0, 0)
         Me.AllMoviesLabel.Name = "AllMoviesLabel"
-        Me.AllMoviesLabel.Size = New System.Drawing.Size(1280, 49)
+        Me.AllMoviesLabel.Size = New System.Drawing.Size(1280, 34)
         Me.AllMoviesLabel.TabIndex = 0
         Me.AllMoviesLabel.Text = "More movies"
         Me.AllMoviesLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter

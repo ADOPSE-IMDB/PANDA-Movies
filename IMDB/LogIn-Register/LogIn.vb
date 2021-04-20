@@ -122,8 +122,8 @@ FROM `it185223`.`Users` where `username`=@usn and `password`=@pass", conn.getCon
         If TextBoxUsername.Text = "" Or TextBoxPassword.Text = "" Then
 
         Else
-            Dim u As New User
-            u.LogIn(TextBoxUsername.Text, TextBoxPassword.Text)
+            Dim u As User
+            u = UserMod.LogIn(TextBoxUsername.Text, TextBoxPassword.Text)
 
 
             If u.Id = 0 Then

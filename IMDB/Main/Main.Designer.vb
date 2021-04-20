@@ -142,12 +142,13 @@ Partial Class Main
         '
         'HomeButton
         '
+        Me.HomeButton.BackColor = System.Drawing.SystemColors.Control
         Me.HomeButton.Location = New System.Drawing.Point(127, 10)
         Me.HomeButton.Name = "HomeButton"
         Me.HomeButton.Size = New System.Drawing.Size(80, 23)
         Me.HomeButton.TabIndex = 2
         Me.HomeButton.Text = "Home"
-        Me.HomeButton.UseVisualStyleBackColor = True
+        Me.HomeButton.UseVisualStyleBackColor = False
         '
         'MainPanel
         '

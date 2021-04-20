@@ -4,49 +4,42 @@ Imports MySql.Data.MySqlClient
 
 Public Class MoviesMain
 
-    Public Shared TopTen(10) As Movie
-    Public t As New Movie
+    Public Shared TopTen() As Movie
     Public Shared MovieArray(20) As LoadPictureBox.s
     Public Shared cMovie(20) As PictureBox
 
     Private Sub On_Load(sender As Object, e As EventArgs) Handles Me.Load
 
 
+
+
+
 #Region "TEST1"
-        'loads all movies to custom Array
-        Dim c = 1
-        Dim con As New MY_CONNECTION()
-        Dim table As New DataTable()
-        Dim adapter As New MySqlDataAdapter()
-        Dim command As New MySqlCommand("   Select * from Movies", con.getConnection())
-        con.openConnection()
-        Try
-            Using reader As MySqlDataReader = command.ExecuteReader()
-                While reader.Read()
-                    MovieArray(c).Index = reader.GetInt16("id")
-                    MovieArray(c).Name = reader.GetString(1)
-                    MovieArray(c).reDate = reader.GetDateTime(2)
-                    MovieArray(c).Des = reader.GetString(3)
-                    MovieArray(c).rate = reader.GetInt16(4)
+        TopTen = GetMoviesFromTo(1, 5)
 
-                    c += 1
-                End While
-                con.closeConnection()
-            End Using
-        Catch
-            con.closeConnection()
-        End Try
-
+        TopTen(0).Url = "https://i.ibb.co/8B9qK6L/inception.jpg"
+        TopTen(1).Url = "https://i.ibb.co/wBy2fbL/Interstellar.jpg"
+        TopTen(2).Url = "https://i.ibb.co/R0RTKdk/Parasite.jpg"
+        TopTen(3).Url = "https://i.ibb.co/sFJGP4J/Joker.jpg"
+        TopTen(4).Url = "https://i.ibb.co/8g2FP1L/A-Beautiful-Mind.jpg"
 #End Region
+
+
         LoadPictureBox.Create(20, AllMoviesPanel, cMovie, 100)
 
 
         Dim TopArray(10) As PictureBox
         TopArray = {Top1, Top2, Top3, Top4, Top5, Top6, Top7, Top8, Top9, Top10}
-
-        For index As Integer = 0 To 9
-            AddHandler TopArray(index).Click, AddressOf LoadPictureBox.AllMoviesCLick
+        For index As Integer = 0 To TopTen.Length - 1
+            TopArray(index).Image = My.Resources._200
             TopArray(index).TabIndex = index
+            TopArray(index).ImageLocation = TopTen(index).Url
+            AddHandler TopArray(index).Click, AddressOf LoadPictureBox.AllMoviesCLick
+
+
+
+
+
         Next
 
     End Sub
@@ -152,4 +145,5 @@ Public Class MoviesMain
         End If
 
     End Sub
+
 End Class

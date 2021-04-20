@@ -17,9 +17,9 @@ Public Class LoadPictureBox
 
         'Check height of the Movies Panel
         If h Mod 5 = 0 Then
-            panel.Height = (h / 5) * 275 + 160
+            panel.Height = (h / 5) * 295 + 160
         Else
-            panel.Height = (h \ 5) * 275 + 435
+            panel.Height = ((h \ 5) + 1) * 295 + 160
         End If
 
         'Places Labels for each movie
@@ -27,11 +27,11 @@ Public Class LoadPictureBox
 
         For index As Integer = 1 To h
             Dim MovieBox As New PictureBox With {
-                    .Size = New Size(190, 250),
+                    .BackColor = Color.Transparent,
+                    .Size = New Size(190, 270),
                     .Location = New Point(PosX, PosY),
-                    .BackColor = Color.Red,
-                    .Text = index,
-                    .Cursor = Cursors.Hand
+                    .Cursor = Cursors.Hand,
+                    .Image = My.Resources._200
                 }
             panel.Controls.Add(MovieBox)
             MovieBox.TabIndex = index
@@ -44,34 +44,41 @@ Public Class LoadPictureBox
 
             PosX += 245
             If index Mod 5 = 0 Then
-                PosY += 275
+                PosY += 295
                 PosX = 55
             End If
         Next
     End Sub
 
+
+
     Public Shared Sub AllMoviesCLick(sender As Object, ByVal e As EventArgs)
         Dim MovieBox As PictureBox = TryCast(sender, PictureBox)
-        Dim a
+
         If MovieBox IsNot Nothing Then
             Main.Container.Visible = True
             CurrentMovie.TopLevel = False
             Main.Container.Controls.Add(CurrentMovie)
 
-            Dim cm = MovieBox.TabIndex
-
+            Dim a
+            Dim c = MovieBox.TabIndex
             If MoviesMain.TopMoviesPanel.Controls.Contains(MovieBox) Then
+
                 a = MoviesMain.TopTen
-                CurrentMovie.MovieName.Text = a(cm).Title
-                CurrentMovie.Rate.Text = a(cm).Rating
-                CurrentMovie.MovieDate.Text = a(cm).Year
-                CurrentMovie.Description.Text = a(cm).Description
+                CurrentMovie.MovieName.Text = a(c).Title
+                CurrentMovie.Rate.Text = a(c).Rating & "/5"
+                CurrentMovie.MovieDate.Text = a(c).Year
+                CurrentMovie.Description.Text = a(c).Description
+                CurrentMovie.MoPic.Image = MovieBox.Image
+
             Else
+
                 a = MoviesMain.MovieArray
-                CurrentMovie.MovieName.Text = a(cm).Name
-                CurrentMovie.Rate.Text = a(cm).rate
-                CurrentMovie.MovieDate.Text = a(cm).reDate
-                CurrentMovie.Description.Text = a(cm).Des
+                CurrentMovie.MovieName.Text = a(c).Name
+                CurrentMovie.Rate.Text = a(c).rate & "/5"
+                CurrentMovie.MovieDate.Text = a(c).reDate
+                CurrentMovie.Description.Text = a(c).Des
+
             End If
 
             CurrentMovie.Show()
