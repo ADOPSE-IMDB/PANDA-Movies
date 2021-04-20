@@ -78,7 +78,6 @@ D:\GitHub\IMDB\IMDB\bin\Debug\net5.0-windows\Renci.SshNet.dll
 D:\GitHub\IMDB\IMDB\bin\Debug\net5.0-windows\SshNet.Security.Cryptography.dll
 D:\GitHub\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.CurrentMovie.resources
 D:\GitHub\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.Favorite.resources
-D:\GitHub\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.LogIn.resources
 D:\GitHub\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.Main.resources
 D:\GitHub\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.MoviesMain.resources
 D:\GitHub\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.Resources.resources
@@ -109,3 +108,4 @@ C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\Renci.Ssh
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\SshNet.Security.Cryptography.dll
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.vbprojAssemblyReference.cache
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.LogInForm.resources
+D:\GitHub\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.LogInForm.resources

@@ -90,11 +90,11 @@ Public Class MoviesMain
 #Region "TEST1"
         'loads all movies to custom Array
         Dim c = 5
-        Dim con As New MY_CONNECTION()
+        Dim con As New Connection
         Dim table As New DataTable()
         Dim adapter As New MySqlDataAdapter()
         Dim command As New MySqlCommand("   Select * from Movies", con.getConnection())
-        con.openConnection()
+        con.Connect()
         Try
             Using reader As MySqlDataReader = command.ExecuteReader()
                 While reader.Read()
@@ -106,10 +106,10 @@ Public Class MoviesMain
 
                     c -= 1
                 End While
-                con.closeConnection()
+                con.Disconnect()
             End Using
         Catch
-            con.closeConnection()
+            con.Disconnect()
         End Try
 
 #End Region

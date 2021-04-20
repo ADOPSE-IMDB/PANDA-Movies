@@ -18,13 +18,13 @@ Public Class Favorite
 
 
     Private Sub load_table()
-        Dim con As New MY_CONNECTION()
+        Dim con As New Connection
         Dim table As New DataTable()
         Dim adapter As New MySqlDataAdapter()
         Dim command As New MySqlCommand("   select distinct user_id,movie_id,title,year,description,rating from MovieLists inner join Movies on MovieLists.movie_id=Movies.id and MovieLists.user_id = @idd", con.getConnection())
 
         command.Parameters.Add("@idd", MySqlDbType.VarChar).Value = 1
-        con.openConnection()
+        con.Connect()
 
         Try
             Using reader As MySqlDataReader = command.ExecuteReader()
@@ -32,10 +32,11 @@ Public Class Favorite
                     MessageBox.Show(reader.GetString(2), "Happ", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End While
 
-                con.closeConnection()
+                con.Disconnect()
             End Using
         Catch
-            con.closeConnection()
+            con.Disconnect()
+
         End Try
 
 
