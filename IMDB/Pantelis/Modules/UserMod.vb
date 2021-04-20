@@ -56,15 +56,24 @@ Module UserMod
         Dim results As New DataTable
         con.RunQuery("Select * from Users where username=@0", args, results)
         If (results.Rows.Count.Equals(0)) Then
-            MessageBox.Show("false")
+            Return False
         Else
-            MessageBox.Show("true")
+            Return True
         End If
-        ViewDataTables.ShowTable(results)
+
 
 
     End Function
     Public Function Email_exists(ByVal email)
+        Dim args() As String = {email}
+        Dim con As New Connection
+        Dim results As New DataTable
+        con.RunQuery("Select * from Users where email=@0", args, results)
+        If (results.Rows.Count.Equals(0)) Then
+            Return False
+        Else
+            Return True
+        End If
 
     End Function
 End Module
