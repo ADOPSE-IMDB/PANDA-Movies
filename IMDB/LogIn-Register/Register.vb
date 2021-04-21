@@ -19,13 +19,8 @@ Public Class Register
         Close()
     End Sub
 
-    Private Sub FirstNameTB_Enter(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub TextBoxFirstname_Enter(sender As Object, e As EventArgs) Handles TextBoxFirstname.Enter
         LabelFN.ForeColor = Color.Red
-
     End Sub
 
     Private Sub TextBoxFirstname_Leave(sender As Object, e As EventArgs) Handles TextBoxFirstname.Leave
@@ -87,10 +82,24 @@ Public Class Register
         'check if password = confirm password
         'check if username already exists
         'get textboxes values
-        UserMod.Username_exists("NA")
+
+        If TextBoxFirstname.Text <> "" And TextBoxLastname.Text <> "" And TextBoxUsername.Text <> "" And TextBoxEmail.Text <> "" And TextBoxPassword.Text <> "" And TextBoxConfirmPassword.Text <> "" Then
+            If UserMod.Email_exists(TextBoxEmail.Text) Then
+                MessageBox.Show("Email already exists.", "Email.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                If UserMod.Username_exists(TextBoxUsername.Text) Then
+                    MessageBox.Show("Username already exists.", "Username.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+                    UserMod.Register(TextBoxFirstname.Text, TextBoxLastname.Text, TextBoxUsername.Text, TextBoxEmail.Text, TextBoxPassword.Text)
+                    MessageBox.Show("You have successfully signed up!", "Singed Up.", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    LogInLink_Click(sender, e)
+                End If
+            End If
+        Else
+            MessageBox.Show("Please fill all fields.", "Empty fields.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+
 
     End Sub
-
-
 
 End Class

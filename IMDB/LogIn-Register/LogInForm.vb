@@ -19,18 +19,18 @@ Public Class LogInForm
 
 
 
-    Private Sub TestLogin_Click(sender As Object, e As EventArgs) Handles testLogin.Click
+    Private Sub TestLogin_Click(sender As Object, e As EventArgs) Handles Login.Click
 
 
         If TextBoxUsername.Text = "" Or TextBoxPassword.Text = "" Then
 
         Else
             Dim u As User
-            u = LogIn(TextBoxUsername.Text, TextBoxPassword.Text)
+            u = UserMod.LogIn(TextBoxUsername.Text, TextBoxPassword.Text)
 
 
             If u.Id = 0 Then
-                MessageBox.Show("Please check your username or password and try again", "SAD", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Please check your username or password and try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             ElseIf u.Id = -1 Then
                 MessageBox.Show("Cant Connect to the Data Base", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
