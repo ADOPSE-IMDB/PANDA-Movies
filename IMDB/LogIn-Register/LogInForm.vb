@@ -17,15 +17,14 @@ Public Class LogInForm
     End Sub
 
 
+    Public Shared u As User
 
-
-    Private Sub TestLogin_Click(sender As Object, e As EventArgs) Handles Login.Click
+    Private Sub Login_Click(sender As Object, e As EventArgs) Handles Login.Click
 
 
         If TextBoxUsername.Text = "" Or TextBoxPassword.Text = "" Then
 
         Else
-            Dim u As User
             u = UserMod.LogIn(TextBoxUsername.Text, TextBoxPassword.Text)
 
 
@@ -34,8 +33,6 @@ Public Class LogInForm
             ElseIf u.Id = -1 Then
                 MessageBox.Show("Cant Connect to the Data Base", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                MessageBox.Show(u.Id & " " & u.First_name & " " & u.Last_name & " " & u.Email & " " & u.Username, "Happ", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                TextBoxPassword.Text = ""
                 Main.Show()
                 Close()
             End If

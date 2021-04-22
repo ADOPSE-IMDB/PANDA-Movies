@@ -28,17 +28,19 @@ Partial Class Profile
         Me.Na = New System.Windows.Forms.Label()
         Me.Su = New System.Windows.Forms.Label()
         Me.EL = New System.Windows.Forms.Label()
-        Me.PasswordL = New System.Windows.Forms.Label()
+        Me.Psw = New System.Windows.Forms.Label()
         Me.EditB = New System.Windows.Forms.Button()
         Me.NameL = New System.Windows.Forms.Label()
         Me.Surname = New System.Windows.Forms.Label()
         Me.Email = New System.Windows.Forms.Label()
-        Me.Password = New System.Windows.Forms.Label()
+        Me.PasswordL = New System.Windows.Forms.Label()
         Me.UpdateB = New System.Windows.Forms.Button()
         Me.NameTB = New System.Windows.Forms.TextBox()
         Me.SurnameTB = New System.Windows.Forms.TextBox()
         Me.EmailTB = New System.Windows.Forms.TextBox()
         Me.NewPasswordTB = New System.Windows.Forms.TextBox()
+        Me.ConfirmTB = New System.Windows.Forms.TextBox()
+        Me.CnP = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -100,15 +102,15 @@ Partial Class Profile
         Me.EL.TabIndex = 6
         Me.EL.Text = "E-mail :"
         '
-        'PasswordL
+        'Psw
         '
-        Me.PasswordL.AutoSize = True
-        Me.PasswordL.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.PasswordL.Location = New System.Drawing.Point(202, 443)
-        Me.PasswordL.Name = "PasswordL"
-        Me.PasswordL.Size = New System.Drawing.Size(145, 25)
-        Me.PasswordL.TabIndex = 7
-        Me.PasswordL.Text = "New Password :"
+        Me.Psw.AutoSize = True
+        Me.Psw.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Psw.Location = New System.Drawing.Point(202, 443)
+        Me.Psw.Name = "Psw"
+        Me.Psw.Size = New System.Drawing.Size(97, 25)
+        Me.Psw.TabIndex = 7
+        Me.Psw.Text = "Password:"
         '
         'EditB
         '
@@ -147,19 +149,19 @@ Partial Class Profile
         Me.Email.TabIndex = 11
         Me.Email.Text = "Label3"
         '
-        'Password
+        'PasswordL
         '
-        Me.Password.AutoSize = True
-        Me.Password.Location = New System.Drawing.Point(399, 453)
-        Me.Password.Name = "Password"
-        Me.Password.Size = New System.Drawing.Size(41, 15)
-        Me.Password.TabIndex = 12
-        Me.Password.Text = "Label4"
+        Me.PasswordL.AutoSize = True
+        Me.PasswordL.Location = New System.Drawing.Point(399, 453)
+        Me.PasswordL.Name = "PasswordL"
+        Me.PasswordL.Size = New System.Drawing.Size(41, 15)
+        Me.PasswordL.TabIndex = 12
+        Me.PasswordL.Text = "Label4"
         '
         'UpdateB
         '
         Me.UpdateB.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.UpdateB.Location = New System.Drawing.Point(365, 516)
+        Me.UpdateB.Location = New System.Drawing.Point(399, 552)
         Me.UpdateB.Name = "UpdateB"
         Me.UpdateB.Size = New System.Drawing.Size(75, 23)
         Me.UpdateB.TabIndex = 13
@@ -199,23 +201,44 @@ Partial Class Profile
         Me.NewPasswordTB.TabIndex = 17
         Me.NewPasswordTB.Visible = False
         '
+        'ConfirmTB
+        '
+        Me.ConfirmTB.Location = New System.Drawing.Point(381, 497)
+        Me.ConfirmTB.Name = "ConfirmTB"
+        Me.ConfirmTB.Size = New System.Drawing.Size(100, 23)
+        Me.ConfirmTB.TabIndex = 18
+        Me.ConfirmTB.Visible = False
+        '
+        'CnP
+        '
+        Me.CnP.AutoSize = True
+        Me.CnP.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.CnP.Location = New System.Drawing.Point(202, 494)
+        Me.CnP.Name = "CnP"
+        Me.CnP.Size = New System.Drawing.Size(175, 25)
+        Me.CnP.TabIndex = 19
+        Me.CnP.Text = "Confirm Password :"
+        Me.CnP.Visible = False
+        '
         'Profile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkGray
         Me.ClientSize = New System.Drawing.Size(600, 702)
+        Me.Controls.Add(Me.CnP)
+        Me.Controls.Add(Me.ConfirmTB)
         Me.Controls.Add(Me.NewPasswordTB)
         Me.Controls.Add(Me.EmailTB)
         Me.Controls.Add(Me.SurnameTB)
         Me.Controls.Add(Me.NameTB)
         Me.Controls.Add(Me.UpdateB)
-        Me.Controls.Add(Me.Password)
+        Me.Controls.Add(Me.PasswordL)
         Me.Controls.Add(Me.Email)
         Me.Controls.Add(Me.Surname)
         Me.Controls.Add(Me.NameL)
         Me.Controls.Add(Me.EditB)
-        Me.Controls.Add(Me.PasswordL)
+        Me.Controls.Add(Me.Psw)
         Me.Controls.Add(Me.EL)
         Me.Controls.Add(Me.Su)
         Me.Controls.Add(Me.Na)
@@ -237,15 +260,18 @@ Partial Class Profile
     Friend WithEvents Na As Label
     Friend WithEvents Su As Label
     Friend WithEvents EL As Label
-    Friend WithEvents PasswordL As Label
+    Friend WithEvents Ps As Label
     Friend WithEvents EditB As Button
     Friend WithEvents NameL As Label
     Friend WithEvents Surname As Label
     Friend WithEvents Email As Label
-    Friend WithEvents Password As Label
+    Friend WithEvents PasswordL As Label
     Friend WithEvents UpdateB As Button
     Friend WithEvents NameTB As TextBox
     Friend WithEvents SurnameTB As TextBox
     Friend WithEvents EmailTB As TextBox
     Friend WithEvents NewPasswordTB As TextBox
+    Friend WithEvents Psw As Label
+    Friend WithEvents ConfirmTB As TextBox
+    Friend WithEvents CnP As Label
 End Class
