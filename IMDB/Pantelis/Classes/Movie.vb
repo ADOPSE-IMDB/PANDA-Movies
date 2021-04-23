@@ -2,12 +2,14 @@
 Imports MySql.Data.MySqlClient
 
 Public Class Movie
+
     Private mid As Integer
     Private mtitle As String
-    Private myear As Date
+    Private myear As String
     Private mdescription As String
     Private mrating As Double
     Private mURL As String
+    Private mP As PictureBox
 
     Public Property Id() As Integer
         Get
@@ -55,6 +57,14 @@ Public Class Movie
         End Get
         Set(ByVal value As String)
             mURL = value
+        End Set
+    End Property
+    Public Property P() As PictureBox
+        Get
+            Return mP
+        End Get
+        Set(ByVal value As PictureBox)
+            mP = value
         End Set
     End Property
 

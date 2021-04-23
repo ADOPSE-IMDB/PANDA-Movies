@@ -3,54 +3,58 @@ Imports System.Net
 Imports MySql.Data.MySqlClient
 
 Public Class MoviesMain
+    'top movie Array
+    Public Shared TopTen(9) As Movie
 
-    Public Shared TopTen() As Movie
-    Public Shared MovieArray(20) As LoadPictureBox.s
-    Public Shared cMovie(20) As PictureBox
+    'Main page Movies
+    Public Shared MovieArray(19) As Movie
 
     Private Sub On_Load(sender As Object, e As EventArgs) Handles Me.Load
-
-
-
-
-
-#Region "TEST1"
-        TopTen = GetMoviesFromTo(1, 5)
-
-        TopTen(0).Url = "https://i.ibb.co/8B9qK6L/inception.jpg"
-        TopTen(1).Url = "https://i.ibb.co/wBy2fbL/Interstellar.jpg"
-        TopTen(2).Url = "https://i.ibb.co/R0RTKdk/Parasite.jpg"
-        TopTen(3).Url = "https://i.ibb.co/sFJGP4J/Joker.jpg"
-        TopTen(4).Url = "https://i.ibb.co/8g2FP1L/A-Beautiful-Mind.jpg"
+#Region "url"
+        'https://i.ibb.co/8B9qK6L/inception.jpg
+        'https://i.ibb.co/R0RTKdk/Parasite.jpg
+        'https://i.ibb.co/wBy2fbL/Interstellar.jpg
+        'https://i.ibb.co/sFJGP4J/Joker.jpg
+        'https://i.ibb.co/8g2FP1L/A-Beautiful-Mind.jpg
 #End Region
+        If tainies < 40 Then
+            ne.Text = "21 - > " & tainies
+        End If
 
 
-        LoadPictureBox.Create(20, AllMoviesPanel, cMovie, 100)
+        'Fill main movies
+        MovieArray = GetMoviesFromTo(1, 20)
+        LoadPictureBox.Create(AllMoviesPanel, MovieArray, 100)
 
 
-        Dim TopArray(10) As PictureBox
+        'get top ten movies
+        TopTen = GetTopMovies()
+        'Top Ten Movie Array with picturebox
+        Dim TopArray(9) As PictureBox
         TopArray = {Top1, Top2, Top3, Top4, Top5, Top6, Top7, Top8, Top9, Top10}
         For index As Integer = 0 To TopTen.Length - 1
-            TopArray(index).Image = My.Resources._200
+
             TopArray(index).TabIndex = index
-            TopArray(index).ImageLocation = TopTen(index).Url
+            TopArray(index).Image = My.Resources._200
+            If TopArray(index).ImageLocation = TopTen(index).Url Then
+                TopArray(index).Image = TopArray(index).ErrorImage
+            Else
+                TopArray(index).ImageLocation = TopTen(index).Url
+            End If
+
             AddHandler TopArray(index).Click, AddressOf LoadPictureBox.AllMoviesCLick
-
-
-
-
-
         Next
 
     End Sub
 
 
     Dim n = 20
-    ReadOnly tainies = 89
+    Private ReadOnly tainies = CountMovies()
 
     Private Sub Pre_Click(sender As Object, e As EventArgs) Handles Pre.Click
+
+
         n -= 20
-        Main.SearchBox.Text = n
         If Not ne.Enabled Then
             ne.Enabled = True
         End If
@@ -58,6 +62,8 @@ Public Class MoviesMain
         For Each pb In AllMoviesPanel.Controls.OfType(Of PictureBox)().ToArray()
             pb.Dispose()
         Next
+
+        MovieArray = GetMoviesFromTo(n - 19, n)
 
         If n = 20 Then
             ne.Text = curr.Text
@@ -72,13 +78,16 @@ Public Class MoviesMain
         End If
 
 
-        Dim cMovie(20) As PictureBox
-        LoadPictureBox.Create(20, AllMoviesPanel, cMovie, 100)
+        Dim cMovie(19) As PictureBox
+        LoadPictureBox.Create(AllMoviesPanel, MovieArray, 100)
+
+
+        AutoScrollPosition = New Point(0, 625)
     End Sub
 
     Private Sub Ne_Click(sender As Object, e As EventArgs) Handles ne.Click
+        AutoScrollPosition = New Point(0, 625)
         n += 20
-        Main.SearchBox.Text = n
         If Not Pre.Enabled Then
             Pre.Enabled = True
         End If
@@ -87,60 +96,41 @@ Public Class MoviesMain
             pb.Dispose()
         Next
 
-#Region "TEST1"
-        'loads all movies to custom Array
-        Dim c = 5
-        Dim con As New Connection
-        Dim table As New DataTable()
-        Dim adapter As New MySqlDataAdapter()
-        Dim command As New MySqlCommand("   Select * from Movies", con.getConnection())
-        con.Connect()
-        Try
-            Using reader As MySqlDataReader = command.ExecuteReader()
-                While reader.Read()
-                    MovieArray(c).Index = reader.GetInt16("id")
-                    MovieArray(c).Name = reader.GetString(1)
-                    MovieArray(c).reDate = reader.GetDateTime(2)
-                    MovieArray(c).Des = reader.GetString(3)
-                    MovieArray(c).rate = reader.GetInt16(4)
 
-                    c -= 1
-                End While
-                con.Disconnect()
-            End Using
-        Catch
-            con.Disconnect()
-        End Try
 
-#End Region
         If n > tainies Then
             Pre.Text = curr.Text
             curr.Text = ne.Text
             ne.Text = "End"
 
+            MovieArray = GetMoviesFromTo(n - 19, tainies)
+
             Dim t = tainies Mod 20
-            Dim cMovie(t) As PictureBox
-            LoadPictureBox.Create(t, AllMoviesPanel, cMovie, 100)
+            Dim cMovie(t - 1) As PictureBox
+            LoadPictureBox.Create(AllMoviesPanel, MovieArray, 100)
             ne.Enabled = False
 
         ElseIf n > tainies - 20 Then
 
             Pre.Text = curr.Text
             curr.Text = ne.Text
-            Dim t = tainies Mod 20
             ne.Text = n + 1 & " -> " & tainies
 
-            Dim cMovie(20) As PictureBox
-            LoadPictureBox.Create(20, AllMoviesPanel, cMovie, 100)
+            MovieArray = GetMoviesFromTo(n - 19, n)
+
+
+            Dim t = tainies Mod 20
+            Dim cMovie(19) As PictureBox
+            LoadPictureBox.Create(AllMoviesPanel, MovieArray, 100)
         Else
             Pre.Text = curr.Text
             curr.Text = ne.Text
             ne.Text = n + 1 & " -> " & n + 20
 
-            Dim cMovie(20) As PictureBox
-            LoadPictureBox.Create(20, AllMoviesPanel, cMovie, 100)
+            MovieArray = GetMoviesFromTo(n - 19, n)
 
-
+            Dim cMovie(19) As PictureBox
+            LoadPictureBox.Create(AllMoviesPanel, MovieArray, 100)
 
         End If
 
