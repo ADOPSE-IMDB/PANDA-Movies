@@ -5,8 +5,10 @@
         Dim con As New Connection
         Dim results As New DataTable
 
-        con.RunQuery("select distinct user_id,movie_id,title,year,description,rating,image_url from MovieFavorites 
-                      inner join Movies on MovieFavorites.movie_id=Movies.id and MovieFavorites.user_id =@0", args, results)
+        con.RunQuery("SELECT  distinct user_id,movie_id,title,year,description,rating,Mo.image_url from MovieFavorites AS M
+                      
+                      inner join Movies as Mo on Mo.id=M.movie_id
+                      inner join Users as U on M.user_id=@0", args, results)
 
         Dim FavoriteMovies(results.Rows.Count - 1) As Movie    'toNum - fromNum : number of movies (-1 size of the Array)
 
@@ -31,11 +33,18 @@
         Dim con As New Connection
         Dim results As New DataTable
 
-        con.RunQuery(" 
-SELECT distinct user_id,movie_id,title,year,description,rating from MovieFavorites AS M
-                      inner join Movies as Mo on Mo.id=M.movie_id
-                      inner join Users as U on M.user_id=@0", args, results)
+        'con.RunQuery("select distinct user_id,movie_id,title,year,description,rating,image_url from MovieFavorites 
+        'inner join Movies on MovieFavorites.movie_id=Movies.id and MovieFavorites.user_id =@0", args, results) kept as back up
 
+        'numbering the rows also
+        con.RunQuery("SET @row_number = 0;   
+SELECT   @row_number:=@row_number+1 AS row_number,user_id,movie_id,title,year,description,rating,Mo.image_url from MovieFavorites AS M
+                      
+                      inner join Movies as Mo on Mo.id=M.movie_id
+                      inner join Users as U on M.user_id=@0
+                      group by movie_id
+                      having 
+                      count(movie_id) >1 and row_number between @1 and @2", args, results)
         Dim FavoriteCountMovies As Integer   'number of Favorite Movies 
 
         FavoriteCountMovies =results.Rows.Count
