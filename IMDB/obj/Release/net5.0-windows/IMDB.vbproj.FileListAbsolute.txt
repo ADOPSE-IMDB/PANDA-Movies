@@ -1,0 +1,14 @@
+D:\GitHub\IMDB\IMDB\obj\Release\net5.0-windows\IMDB.vbprojAssemblyReference.cache
+D:\GitHub\IMDB\IMDB\obj\Release\net5.0-windows\IMDB.CurrentMovie.resources
+D:\GitHub\IMDB\IMDB\obj\Release\net5.0-windows\IMDB.LogInForm.resources
+D:\GitHub\IMDB\IMDB\obj\Release\net5.0-windows\IMDB.Register.resources
+D:\GitHub\IMDB\IMDB\obj\Release\net5.0-windows\IMDB.Main.resources
+D:\GitHub\IMDB\IMDB\obj\Release\net5.0-windows\IMDB.MoviesMain.resources
+D:\GitHub\IMDB\IMDB\obj\Release\net5.0-windows\IMDB.Resources.resources
+D:\GitHub\IMDB\IMDB\obj\Release\net5.0-windows\IMDB.Favorite.resources
+D:\GitHub\IMDB\IMDB\obj\Release\net5.0-windows\IMDB.Profile.resources
+D:\GitHub\IMDB\IMDB\obj\Release\net5.0-windows\IMDB.vbproj.GenerateResource.cache
+D:\GitHub\IMDB\IMDB\obj\Release\net5.0-windows\IMDB.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\IMDB\IMDB\obj\Release\net5.0-windows\IMDB.AssemblyInfoInputs.cache
+D:\GitHub\IMDB\IMDB\obj\Release\net5.0-windows\IMDB.AssemblyInfo.vb
+D:\GitHub\IMDB\IMDB\obj\Release\net5.0-windows\IMDB.vbproj.CoreCompileInputs.cache
