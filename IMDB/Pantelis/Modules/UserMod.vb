@@ -76,4 +76,12 @@ Module UserMod
         End If
 
     End Function
+    Public Function UpdateUser(ByVal id, ByVal first_name, ByVal last_name, ByVal email, ByVal password)
+        Dim args() As String = {id, first_name, last_name, email, password}
+
+        Dim con As New Connection
+        Dim results As New DataTable
+
+        con.RunQuery("update Users set first_name=@1, last_name=@2, email=@3, password=@4 where id=@0", args, results)
+    End Function
 End Module
