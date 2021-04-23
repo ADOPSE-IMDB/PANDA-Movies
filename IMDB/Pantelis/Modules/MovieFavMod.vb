@@ -34,9 +34,9 @@
         con.RunQuery("select distinct user_id,movie_id,title,year,description,rating,image_url from MovieFavorites 
                       inner join Movies on MovieFavorites.movie_id=Movies.id and MovieFavorites.user_id =@0", args, results)
 
-        Dim FavoriteCountMovies(results.Rows.Count) As Integer    'number of Favorite Movies 
+        Dim FavoriteCountMovies As Integer   'number of Favorite Movies 
 
-
+        FavoriteCountMovies =results.Rows.Count
 
 
         Return FavoriteCountMovies
