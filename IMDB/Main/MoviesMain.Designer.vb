@@ -22,6 +22,7 @@ Partial Class MoviesMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MoviesMain))
         Me.TopMoviesPanel = New System.Windows.Forms.Panel()
         Me.Top10 = New System.Windows.Forms.PictureBox()
         Me.Top9 = New System.Windows.Forms.PictureBox()
@@ -36,11 +37,11 @@ Partial Class MoviesMain
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TopMoviesLabel = New System.Windows.Forms.Label()
         Me.AllMoviesPanel = New System.Windows.Forms.Panel()
-        Me.FilterPanel = New System.Windows.Forms.Panel()
-        Me.AllMoviesLabel = New System.Windows.Forms.Label()
         Me.Pre = New System.Windows.Forms.Button()
         Me.ne = New System.Windows.Forms.Button()
         Me.curr = New System.Windows.Forms.Label()
+        Me.AllMoviesLabel = New System.Windows.Forms.Label()
+        Me.FilterPanel = New System.Windows.Forms.Panel()
         Me.TopMoviesPanel.SuspendLayout()
         CType(Me.Top10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Top9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,6 +84,7 @@ Partial Class MoviesMain
         Me.Top10.AccessibleName = "top"
         Me.Top10.BackColor = System.Drawing.Color.Transparent
         Me.Top10.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Top10.ErrorImage = CType(resources.GetObject("Top10.ErrorImage"), System.Drawing.Image)
         Me.Top10.Location = New System.Drawing.Point(1035, 345)
         Me.Top10.Name = "Top10"
         Me.Top10.Size = New System.Drawing.Size(190, 270)
@@ -94,6 +96,7 @@ Partial Class MoviesMain
         Me.Top9.AccessibleName = "top"
         Me.Top9.BackColor = System.Drawing.Color.Transparent
         Me.Top9.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Top9.ErrorImage = CType(resources.GetObject("Top9.ErrorImage"), System.Drawing.Image)
         Me.Top9.Location = New System.Drawing.Point(790, 345)
         Me.Top9.Name = "Top9"
         Me.Top9.Size = New System.Drawing.Size(190, 270)
@@ -105,6 +108,7 @@ Partial Class MoviesMain
         Me.Top8.AccessibleName = "top"
         Me.Top8.BackColor = System.Drawing.Color.Transparent
         Me.Top8.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Top8.ErrorImage = CType(resources.GetObject("Top8.ErrorImage"), System.Drawing.Image)
         Me.Top8.Location = New System.Drawing.Point(545, 345)
         Me.Top8.Name = "Top8"
         Me.Top8.Size = New System.Drawing.Size(190, 270)
@@ -116,6 +120,7 @@ Partial Class MoviesMain
         Me.Top7.AccessibleName = "top"
         Me.Top7.BackColor = System.Drawing.Color.Transparent
         Me.Top7.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Top7.ErrorImage = CType(resources.GetObject("Top7.ErrorImage"), System.Drawing.Image)
         Me.Top7.Location = New System.Drawing.Point(300, 345)
         Me.Top7.Name = "Top7"
         Me.Top7.Size = New System.Drawing.Size(190, 270)
@@ -127,6 +132,7 @@ Partial Class MoviesMain
         Me.Top6.AccessibleName = "top"
         Me.Top6.BackColor = System.Drawing.Color.Transparent
         Me.Top6.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Top6.ErrorImage = CType(resources.GetObject("Top6.ErrorImage"), System.Drawing.Image)
         Me.Top6.Location = New System.Drawing.Point(55, 345)
         Me.Top6.Name = "Top6"
         Me.Top6.Size = New System.Drawing.Size(190, 270)
@@ -138,6 +144,7 @@ Partial Class MoviesMain
         Me.Top5.AccessibleName = "top"
         Me.Top5.BackColor = System.Drawing.Color.Transparent
         Me.Top5.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Top5.ErrorImage = CType(resources.GetObject("Top5.ErrorImage"), System.Drawing.Image)
         Me.Top5.Location = New System.Drawing.Point(1035, 50)
         Me.Top5.Name = "Top5"
         Me.Top5.Size = New System.Drawing.Size(190, 270)
@@ -149,6 +156,7 @@ Partial Class MoviesMain
         Me.Top4.AccessibleName = "top"
         Me.Top4.BackColor = System.Drawing.Color.Transparent
         Me.Top4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Top4.ErrorImage = CType(resources.GetObject("Top4.ErrorImage"), System.Drawing.Image)
         Me.Top4.Location = New System.Drawing.Point(790, 50)
         Me.Top4.Name = "Top4"
         Me.Top4.Size = New System.Drawing.Size(190, 270)
@@ -160,6 +168,7 @@ Partial Class MoviesMain
         Me.Top3.AccessibleName = "top"
         Me.Top3.BackColor = System.Drawing.Color.Transparent
         Me.Top3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Top3.ErrorImage = CType(resources.GetObject("Top3.ErrorImage"), System.Drawing.Image)
         Me.Top3.Location = New System.Drawing.Point(545, 50)
         Me.Top3.Name = "Top3"
         Me.Top3.Size = New System.Drawing.Size(190, 270)
@@ -171,6 +180,7 @@ Partial Class MoviesMain
         Me.Top2.AccessibleName = "top"
         Me.Top2.BackColor = System.Drawing.Color.Transparent
         Me.Top2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Top2.ErrorImage = CType(resources.GetObject("Top2.ErrorImage"), System.Drawing.Image)
         Me.Top2.Location = New System.Drawing.Point(300, 50)
         Me.Top2.Name = "Top2"
         Me.Top2.Size = New System.Drawing.Size(190, 270)
@@ -182,6 +192,7 @@ Partial Class MoviesMain
         Me.Top1.AccessibleName = "top"
         Me.Top1.BackColor = System.Drawing.Color.Transparent
         Me.Top1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Top1.ErrorImage = CType(resources.GetObject("Top1.ErrorImage"), System.Drawing.Image)
         Me.Top1.Location = New System.Drawing.Point(55, 50)
         Me.Top1.Name = "Top1"
         Me.Top1.Size = New System.Drawing.Size(190, 270)
@@ -217,28 +228,6 @@ Partial Class MoviesMain
         Me.AllMoviesPanel.Size = New System.Drawing.Size(1280, 41)
         Me.AllMoviesPanel.TabIndex = 11
         '
-        'FilterPanel
-        '
-        Me.FilterPanel.BackColor = System.Drawing.Color.Transparent
-        Me.FilterPanel.Controls.Add(Me.AllMoviesLabel)
-        Me.FilterPanel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.FilterPanel.Location = New System.Drawing.Point(0, 0)
-        Me.FilterPanel.Name = "FilterPanel"
-        Me.FilterPanel.Size = New System.Drawing.Size(1280, 41)
-        Me.FilterPanel.TabIndex = 2
-        '
-        'AllMoviesLabel
-        '
-        Me.AllMoviesLabel.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.AllMoviesLabel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.AllMoviesLabel.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.AllMoviesLabel.Location = New System.Drawing.Point(0, 0)
-        Me.AllMoviesLabel.Name = "AllMoviesLabel"
-        Me.AllMoviesLabel.Size = New System.Drawing.Size(1280, 34)
-        Me.AllMoviesLabel.TabIndex = 0
-        Me.AllMoviesLabel.Text = "More movies"
-        Me.AllMoviesLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
         'Pre
         '
         Me.Pre.Anchor = System.Windows.Forms.AnchorStyles.Bottom
@@ -270,6 +259,28 @@ Partial Class MoviesMain
         Me.curr.TabIndex = 14
         Me.curr.Text = "1 -> 20"
         Me.curr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'AllMoviesLabel
+        '
+        Me.AllMoviesLabel.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.AllMoviesLabel.Dock = System.Windows.Forms.DockStyle.Top
+        Me.AllMoviesLabel.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.AllMoviesLabel.Location = New System.Drawing.Point(0, 0)
+        Me.AllMoviesLabel.Name = "AllMoviesLabel"
+        Me.AllMoviesLabel.Size = New System.Drawing.Size(1280, 34)
+        Me.AllMoviesLabel.TabIndex = 0
+        Me.AllMoviesLabel.Text = "More movies"
+        Me.AllMoviesLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'FilterPanel
+        '
+        Me.FilterPanel.BackColor = System.Drawing.Color.Transparent
+        Me.FilterPanel.Controls.Add(Me.AllMoviesLabel)
+        Me.FilterPanel.Dock = System.Windows.Forms.DockStyle.Top
+        Me.FilterPanel.Location = New System.Drawing.Point(0, 0)
+        Me.FilterPanel.Name = "FilterPanel"
+        Me.FilterPanel.Size = New System.Drawing.Size(1280, 41)
+        Me.FilterPanel.TabIndex = 2
         '
         'MoviesMain
         '
@@ -307,8 +318,6 @@ Partial Class MoviesMain
     End Sub
     Friend WithEvents TopMoviesPanel As Panel
     Friend WithEvents AllMoviesPanel As Panel
-    Friend WithEvents FilterPanel As Panel
-    Friend WithEvents AllMoviesLabel As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents TopMoviesLabel As Label
     Friend WithEvents Top10 As PictureBox
@@ -324,4 +333,6 @@ Partial Class MoviesMain
     Friend WithEvents Pre As Button
     Friend WithEvents ne As Button
     Friend WithEvents curr As Label
+    Friend WithEvents FilterPanel As Panel
+    Friend WithEvents AllMoviesLabel As Label
 End Class

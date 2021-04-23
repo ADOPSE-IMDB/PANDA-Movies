@@ -54,6 +54,7 @@ Module MovieMod
             allMovies(i).Year = results.Rows(i)("year").ToString
             allMovies(i).Description = results.Rows(i)("description").ToString
             allMovies(i).Rating = results.Rows(i)("rating").ToString
+            allMovies(i).Url = "https://i.ibb.co/" & results.Rows(i)("image_url").ToString
         Next
 
         Return allMovies
@@ -75,6 +76,8 @@ Module MovieMod
             fromToMovies(i).Year = results.Rows(i)("year").ToString
             fromToMovies(i).Description = results.Rows(i)("description").ToString
             fromToMovies(i).Rating = results.Rows(i)("rating").ToString
+            fromToMovies(i).Url = "https://i.ibb.co/" & results.Rows(i)("image_url").ToString
+
         Next
 
         Return fromToMovies
@@ -83,9 +86,9 @@ Module MovieMod
         Dim con As New Connection
         Dim results As New DataTable
 
-        con.RunQuery("select * from Movies order by rating limit 10", results)
+        con.RunQuery("select * from Movies order by rating DESC limit 10", results)
 
-        Dim topMovies(10) As Movie  '10 : number of movies (-1 size of the Array)
+        Dim topMovies(10 - 1) As Movie  '10 : number of movies (-1 size of the Array)
 
         For i = 0 To topMovies.Length - 1
             topMovies(i) = New Movie
@@ -94,6 +97,7 @@ Module MovieMod
             topMovies(i).Year = results.Rows(i)("year").ToString
             topMovies(i).Description = results.Rows(i)("description").ToString
             topMovies(i).Rating = results.Rows(i)("rating").ToString
+            topMovies(i).Url = "https://i.ibb.co/" & results.Rows(i)("image_url").ToString
         Next
 
         Return topMovies

@@ -32,8 +32,14 @@ Partial Class CurrentMovie
         Me.Rate = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.actors = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         CType(Me.MoPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TopPanel.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MoPic
@@ -82,7 +88,7 @@ Partial Class CurrentMovie
         '
         'AddRem
         '
-        Me.AddRem.Location = New System.Drawing.Point(357, 277)
+        Me.AddRem.Location = New System.Drawing.Point(375, 313)
         Me.AddRem.Name = "AddRem"
         Me.AddRem.Size = New System.Drawing.Size(75, 23)
         Me.AddRem.TabIndex = 4
@@ -127,11 +133,48 @@ Partial Class CurrentMovie
         Me.Label2.Text = "Description"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Label3
+        '
+        Me.Label3.Location = New System.Drawing.Point(266, 191)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(150, 23)
+        Me.Label3.TabIndex = 9
+        Me.Label3.Text = "Actors :"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'actors
+        '
+        Me.actors.Location = New System.Drawing.Point(422, 191)
+        Me.actors.Name = "actors"
+        Me.actors.Size = New System.Drawing.Size(148, 44)
+        Me.actors.TabIndex = 10
+        Me.actors.Text = "actors"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(330, 257)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(45, 45)
+        Me.PictureBox1.TabIndex = 11
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Location = New System.Drawing.Point(447, 257)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(45, 45)
+        Me.PictureBox2.TabIndex = 12
+        Me.PictureBox2.TabStop = False
+        '
         'CurrentMovie
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(600, 702)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.actors)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Rate)
@@ -146,6 +189,8 @@ Partial Class CurrentMovie
         Me.Text = "CurrentMovie"
         CType(Me.MoPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TopPanel.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -160,4 +205,8 @@ Partial Class CurrentMovie
     Friend WithEvents Rate As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents actors As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

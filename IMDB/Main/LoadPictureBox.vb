@@ -1,50 +1,43 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class LoadPictureBox
-    Structure s
-        Public Index As Integer
-        Public Name As String
-        Public reDate As Date
-        Public rate As Integer
-        Public Des As String
-        Public isFavorite As Boolean
-    End Structure
-
-
-
-
-
-    Public Shared Sub Create(h As Integer, panel As Panel, array() As PictureBox, PosY As Integer)
+    Public Shared Sub Create(panel As Panel, array() As Movie, PosY As Integer)
 
         'Check height of the Movies Panel
-        If h Mod 5 = 0 Then
-            panel.Height = (h / 5) * 295 + 160
+        If array.Length Mod 5 = 0 Then
+            panel.Height = (array.Length / 5) * 293 + 160
         Else
-            panel.Height = ((h \ 5) + 1) * 295 + 160
+            panel.Height = ((array.Length \ 5) + 1) * 293 + 160
         End If
 
         'Places Labels for each movie
-        Dim PosX = 55
+        Dim PosX = 59
 
-        For index As Integer = 1 To h
+        For index As Integer = 0 To array.Length - 1
             Dim MovieBox As New PictureBox With {
                     .BackColor = Color.Transparent,
-                    .Size = New Size(190, 270),
+                    .Size = New Size(182, 268),
                     .Location = New Point(PosX, PosY),
                     .Cursor = Cursors.Hand,
-                    .Image = My.Resources._200
+                    .Image = My.Resources._200,
+                    .ImageLocation = array(index).Url
                 }
+            If MovieBox.ImageLocation = array(index).Url Then
+
+            Else
+                MovieBox.ImageLocation = array(index).Url
+            End If
             panel.Controls.Add(MovieBox)
             MovieBox.TabIndex = index
 
             'Add pictureBoxs on array
-            array(index) = MovieBox
+            array(index).P = MovieBox
             'Adds click even for every label
 
-            AddHandler array(index).Click, AddressOf AllMoviesCLick
+            AddHandler array(index).P.Click, AddressOf AllMoviesCLick
 
             PosX += 245
-            If index Mod 5 = 0 Then
-                PosY += 295
+            If (index + 1) Mod 5 = 0 Then
+                PosY += 293
                 PosX = 55
             End If
         Next
@@ -63,24 +56,18 @@ Public Class LoadPictureBox
             Dim a
             Dim c = MovieBox.TabIndex
             If MoviesMain.TopMoviesPanel.Controls.Contains(MovieBox) Then
-
                 a = MoviesMain.TopTen
-                CurrentMovie.MovieName.Text = a(c).Title
-                CurrentMovie.Rate.Text = a(c).Rating & "/5"
-                CurrentMovie.MovieDate.Text = a(c).Year
-                CurrentMovie.Description.Text = a(c).Description
-                CurrentMovie.MoPic.Image = MovieBox.Image
-
-            Else
-
+            ElseIf MoviesMain.AllMoviesPanel.Controls.Contains(MovieBox) Then
                 a = MoviesMain.MovieArray
-                CurrentMovie.MovieName.Text = a(c).Name
-                CurrentMovie.Rate.Text = a(c).rate & "/5"
-                CurrentMovie.MovieDate.Text = a(c).reDate
-                CurrentMovie.Description.Text = a(c).Des
-
+            Else
+                a = Favorite.FavoriteMovie
             End If
 
+            CurrentMovie.MovieName.Text = a(c).Title
+            CurrentMovie.Rate.Text = a(c).Rating & "/10"
+            CurrentMovie.MovieDate.Text = a(c).Year
+            CurrentMovie.Description.Text = a(c).Description
+            CurrentMovie.MoPic.Image = MovieBox.Image
             CurrentMovie.Show()
 
         End If

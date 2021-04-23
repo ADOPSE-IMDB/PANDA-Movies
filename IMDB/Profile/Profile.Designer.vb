@@ -22,6 +22,7 @@ Partial Class Profile
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.ProfilePL = New System.Windows.Forms.Label()
         Me.UploadB = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -33,7 +34,6 @@ Partial Class Profile
         Me.NameL = New System.Windows.Forms.Label()
         Me.Surname = New System.Windows.Forms.Label()
         Me.Email = New System.Windows.Forms.Label()
-        Me.PasswordL = New System.Windows.Forms.Label()
         Me.UpdateB = New System.Windows.Forms.Button()
         Me.NameTB = New System.Windows.Forms.TextBox()
         Me.SurnameTB = New System.Windows.Forms.TextBox()
@@ -41,7 +41,9 @@ Partial Class Profile
         Me.NewPasswordTB = New System.Windows.Forms.TextBox()
         Me.ConfirmTB = New System.Windows.Forms.TextBox()
         Me.CnP = New System.Windows.Forms.Label()
+        Me.XError = New System.Windows.Forms.ErrorProvider(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.XError, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ProfilePL
@@ -108,14 +110,15 @@ Partial Class Profile
         Me.Psw.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Psw.Location = New System.Drawing.Point(202, 443)
         Me.Psw.Name = "Psw"
-        Me.Psw.Size = New System.Drawing.Size(97, 25)
+        Me.Psw.Size = New System.Drawing.Size(140, 25)
         Me.Psw.TabIndex = 7
-        Me.Psw.Text = "Password:"
+        Me.Psw.Text = "New Password:"
+        Me.Psw.Visible = False
         '
         'EditB
         '
         Me.EditB.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.EditB.Location = New System.Drawing.Point(202, 516)
+        Me.EditB.Location = New System.Drawing.Point(199, 445)
         Me.EditB.Name = "EditB"
         Me.EditB.Size = New System.Drawing.Size(75, 23)
         Me.EditB.TabIndex = 8
@@ -148,15 +151,6 @@ Partial Class Profile
         Me.Email.Size = New System.Drawing.Size(41, 15)
         Me.Email.TabIndex = 11
         Me.Email.Text = "Label3"
-        '
-        'PasswordL
-        '
-        Me.PasswordL.AutoSize = True
-        Me.PasswordL.Location = New System.Drawing.Point(399, 453)
-        Me.PasswordL.Name = "PasswordL"
-        Me.PasswordL.Size = New System.Drawing.Size(41, 15)
-        Me.PasswordL.TabIndex = 12
-        Me.PasswordL.Text = "Label4"
         '
         'UpdateB
         '
@@ -197,6 +191,7 @@ Partial Class Profile
         '
         Me.NewPasswordTB.Location = New System.Drawing.Point(381, 446)
         Me.NewPasswordTB.Name = "NewPasswordTB"
+        Me.NewPasswordTB.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.NewPasswordTB.Size = New System.Drawing.Size(100, 23)
         Me.NewPasswordTB.TabIndex = 17
         Me.NewPasswordTB.Visible = False
@@ -205,6 +200,7 @@ Partial Class Profile
         '
         Me.ConfirmTB.Location = New System.Drawing.Point(381, 497)
         Me.ConfirmTB.Name = "ConfirmTB"
+        Me.ConfirmTB.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.ConfirmTB.Size = New System.Drawing.Size(100, 23)
         Me.ConfirmTB.TabIndex = 18
         Me.ConfirmTB.Visible = False
@@ -220,6 +216,10 @@ Partial Class Profile
         Me.CnP.Text = "Confirm Password :"
         Me.CnP.Visible = False
         '
+        'XError
+        '
+        Me.XError.ContainerControl = Me
+        '
         'Profile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -233,7 +233,6 @@ Partial Class Profile
         Me.Controls.Add(Me.SurnameTB)
         Me.Controls.Add(Me.NameTB)
         Me.Controls.Add(Me.UpdateB)
-        Me.Controls.Add(Me.PasswordL)
         Me.Controls.Add(Me.Email)
         Me.Controls.Add(Me.Surname)
         Me.Controls.Add(Me.NameL)
@@ -249,6 +248,7 @@ Partial Class Profile
         Me.Name = "Profile"
         Me.Text = "Profile"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.XError, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -265,7 +265,6 @@ Partial Class Profile
     Friend WithEvents NameL As Label
     Friend WithEvents Surname As Label
     Friend WithEvents Email As Label
-    Friend WithEvents PasswordL As Label
     Friend WithEvents UpdateB As Button
     Friend WithEvents NameTB As TextBox
     Friend WithEvents SurnameTB As TextBox
@@ -274,4 +273,5 @@ Partial Class Profile
     Friend WithEvents Psw As Label
     Friend WithEvents ConfirmTB As TextBox
     Friend WithEvents CnP As Label
+    Friend WithEvents XError As ErrorProvider
 End Class
