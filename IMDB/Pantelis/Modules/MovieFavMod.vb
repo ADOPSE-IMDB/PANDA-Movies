@@ -1,8 +1,8 @@
 ﻿Module MovieFavMod
 
     'Show the Movies that added to Favorites
-    Public Function Show_Fav(ByVal user_id)
-        Dim args() As String = {user_id}
+    Public Function Show_Fav(ByVal user_id As Integer, ByVal fromNum As Integer, ByVal toNum As Integer)
+        Dim args() As String = {user_id, fromNum, toNum}
 
         Dim con As New Connection
         Dim results As New DataTable
@@ -12,7 +12,7 @@
                       inner join Movies as Mo on Mo.id=M.movie_id
                       inner join Users as U on M.user_id=@0", args, results)
 
-        Dim FavoriteMovies(results.Rows.Count - 1) As Movie    'toNum - fromNum : number of movies (-1 size of the Array)
+        Dim FavoriteMovies(toNum - fromNum) As Movie    'toNum - fromNum : number of movies (-1 size of the Array)
 
 
         For i = 0 To FavoriteMovies.Length - 1
@@ -85,7 +85,7 @@ SELECT   @row_number:=@row_number+1 AS row_number,user_id,movie_id,title,year,de
         Dim results As New DataTable
         con.RunQuery("select * from MovieFavorites where movie_id=@0 and user_id=@1", args, results)
         If (results.Rows.Count.Equals(0)) Then
-            con.RunQuery("INSERT INTO `it185223`.`MovieFavorites` (`movie_id`, `user_id`) VALUES (@0, @1);", args, results)
+
             Return False
         Else
             Return True
