@@ -57,19 +57,19 @@ SELECT   @row_number:=@row_number+1 AS row_number,user_id,movie_id,title,year,de
 
     End Function
     'Add movie to Favorites
-    Public Function addToFav(ByVal id_movie, id_user)
+    Public Sub addToFav(ByVal id_movie, id_user)
         Dim args() As String = {id_movie, id_user}
         Dim con As New Connection
         Dim results As New DataTable
         con.RunQuery("INSERT INTO `it185223`.`MovieFavorites` (`movie_id`, `user_id`) VALUES (@0, @1);", args, results)
-    End Function
+    End Sub
 
-    Public Function removeFav(ByVal id_movie, id_user)
+    Public Sub removeFav(ByVal id_movie, id_user)
         Dim args() As String = {id_movie, id_user}
         Dim con As New Connection
         Dim results As New DataTable
         con.RunQuery("delete from MovieFavorites where movie_id=@0 and user_id=@1", args, results)
-    End Function
+    End Sub
 
     'check if the movie is already to Favorites
     Public Function checkIfFavExists(ByVal id_movie, id_user)
@@ -78,6 +78,7 @@ SELECT   @row_number:=@row_number+1 AS row_number,user_id,movie_id,title,year,de
         Dim results As New DataTable
         con.RunQuery("select * from MovieFavorites where movie_id=@0 and user_id=@1", args, results)
         If (results.Rows.Count.Equals(0)) Then
+            con.RunQuery("INSERT INTO `it185223`.`MovieFavorites` (`movie_id`, `user_id`) VALUES (@0, @1);", args, results)
             Return False
         Else
             Return True
