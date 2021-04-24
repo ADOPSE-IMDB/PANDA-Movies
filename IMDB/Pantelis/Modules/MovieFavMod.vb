@@ -1,4 +1,6 @@
 ﻿Module MovieFavMod
+
+    'Show the Movies that added to Favorites
     Public Function Show_Fav(ByVal user_id)
         Dim args() As String = {user_id}
 
@@ -27,6 +29,7 @@
 
     End Function
 
+    'Count the rows of the Favorites Movies of the Logged User
     Public Function Count(ByVal user_id)
         Dim args() As String = {user_id}
 
@@ -47,11 +50,38 @@ SELECT   @row_number:=@row_number+1 AS row_number,user_id,movie_id,title,year,de
                       count(movie_id) >1 and row_number between @1 and @2", args, results)
         Dim FavoriteCountMovies As Integer   'number of Favorite Movies 
 
-        FavoriteCountMovies =results.Rows.Count
+        FavoriteCountMovies = results.Rows.Count
 
 
         Return FavoriteCountMovies
 
+    End Function
+    'Add movie to Favorites
+    Public Function addToFav(ByVal id_movie, id_user)
+        Dim args() As String = {id_movie, id_user}
+        Dim con As New Connection
+        Dim results As New DataTable
+        con.RunQuery("INSERT INTO `it185223`.`MovieFavorites` (`movie_id`, `user_id`) VALUES (@0, @1);", args, results)
+    End Function
+
+    Public Function removeFav(ByVal id_movie, id_user)
+        Dim args() As String = {id_movie, id_user}
+        Dim con As New Connection
+        Dim results As New DataTable
+        con.RunQuery("delete from MovieFavorites where movie_id=@0 and user_id=@1", args, results)
+    End Function
+
+    'check if the movie is already to Favorites
+    Public Function checkIfFavExists(ByVal id_movie, id_user)
+        Dim args() As String = {id_movie, id_user}
+        Dim con As New Connection
+        Dim results As New DataTable
+        con.RunQuery("select * from MovieFavorites where movie_id=@0 and user_id=@1", args, results)
+        If (results.Rows.Count.Equals(0)) Then
+            Return False
+        Else
+            Return True
+        End If
     End Function
 
 End Module
