@@ -70,7 +70,12 @@
             Else
                 LogInForm.u.Email = EmailTB.Text
             End If
-            UserMod.UpdateUser(LogInForm.u.Id, NameTB.Text, SurnameTB.Text, EmailTB.Text, NewPasswordTB.Text)
+
+            If NewPasswordTB.Text <> "" Then
+                UserMod.UpdatePassword(LogInForm.u.Id, NewPasswordTB.Text)
+            End If
+
+            UserMod.UpdateUser(LogInForm.u.Id, NameTB.Text, SurnameTB.Text, EmailTB.Text)
             NameL.Visible = True
             Surname.Visible = True
             Email.Visible = True
