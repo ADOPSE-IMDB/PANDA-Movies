@@ -56,7 +56,7 @@ SELECT   @row_number:=@row_number+1 AS row_number,user_id,movie_id,title,year,de
         Return FavoriteCountMovies
 
     End Function
-    'Add movie to Favorites
+    'Add movie to Favorites check the last Method (checkIfFavExists) to see if thats better to use.
     Public Sub addToFav(ByVal id_movie, id_user)
         Dim args() As String = {id_movie, id_user}
         Dim con As New Connection
@@ -64,12 +64,19 @@ SELECT   @row_number:=@row_number+1 AS row_number,user_id,movie_id,title,year,de
         con.RunQuery("INSERT INTO `it185223`.`MovieFavorites` (`movie_id`, `user_id`) VALUES (@0, @1);", args, results)
     End Sub
 
-    Public Sub removeFav(ByVal id_movie, id_user)
+    Public Function removeFav(ByVal id_movie, id_user)
         Dim args() As String = {id_movie, id_user}
         Dim con As New Connection
         Dim results As New DataTable
-        con.RunQuery("delete from MovieFavorites where movie_id=@0 and user_id=@1", args, results)
-    End Sub
+        con.RunQuery("select * from MovieFavorites where movie_id=@0 and user_id=@1", args, results)
+        If (results.Rows.Count.Equals(0)) Then
+            Return False
+        Else
+            con.RunQuery("delete from MovieFavorites where movie_id=@0 and user_id=@1", args, results)
+            Return True
+        End If
+
+    End Function
 
     'check if the movie is already to Favorites
     Public Function checkIfFavExists(ByVal id_movie, id_user)
