@@ -54,7 +54,7 @@ Module MovieMod
             allMovies(i).Year = results.Rows(i)("year").ToString
             allMovies(i).Description = results.Rows(i)("description").ToString
             allMovies(i).Rating = results.Rows(i)("rating").ToString
-            allMovies(i).Url = "https://i.ibb.co/" & results.Rows(i)("image_url").ToString
+            allMovies(i).Url = results.Rows(i)("image_url").ToString
         Next
 
         Return allMovies
@@ -76,7 +76,7 @@ Module MovieMod
             fromToMovies(i).Year = results.Rows(i)("year").ToString
             fromToMovies(i).Description = results.Rows(i)("description").ToString
             fromToMovies(i).Rating = results.Rows(i)("rating").ToString
-            fromToMovies(i).Url = "https://i.ibb.co/" & results.Rows(i)("image_url").ToString
+            fromToMovies(i).Url = results.Rows(i)("image_url").ToString
 
         Next
 
@@ -98,7 +98,7 @@ Module MovieMod
             topMovies(i).Year = results.Rows(i)("year").ToString
             topMovies(i).Description = results.Rows(i)("description").ToString
             topMovies(i).Rating = results.Rows(i)("rating").ToString
-            topMovies(i).Url = "https://i.ibb.co/" & results.Rows(i)("image_url").ToString
+            topMovies(i).Url = results.Rows(i)("image_url").ToString
         Next
 
         Return topMovies

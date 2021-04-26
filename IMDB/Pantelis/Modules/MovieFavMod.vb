@@ -24,7 +24,7 @@
                 FavoriteMovies(i).Year = results.Rows(i)("year").ToString
                 FavoriteMovies(i).Description = results.Rows(i)("description").ToString
                 FavoriteMovies(i).Rating = results.Rows(i)("rating").ToString
-                FavoriteMovies(i).Url = "https://i.ibb.co/" & results.Rows(i)("image_url").ToString
+                FavoriteMovies(i).Url = results.Rows(i)("image_url").ToString
             Next
 
         Catch ex As Exception
