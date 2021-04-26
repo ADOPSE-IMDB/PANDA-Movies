@@ -88,9 +88,9 @@ Partial Class CurrentMovie
         '
         'AddRem
         '
-        Me.AddRem.Location = New System.Drawing.Point(375, 313)
+        Me.AddRem.Location = New System.Drawing.Point(266, 313)
         Me.AddRem.Name = "AddRem"
-        Me.AddRem.Size = New System.Drawing.Size(75, 23)
+        Me.AddRem.Size = New System.Drawing.Size(304, 23)
         Me.AddRem.TabIndex = 4
         Me.AddRem.Text = "Add/Rem"
         Me.AddRem.UseVisualStyleBackColor = True

@@ -23,6 +23,7 @@ Partial Class Favorite
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.FavoritePanel = New System.Windows.Forms.Panel()
+        Me.info = New System.Windows.Forms.Label()
         Me.FavoriteLabel = New System.Windows.Forms.Label()
         Me.curr = New System.Windows.Forms.Label()
         Me.ne = New System.Windows.Forms.Button()
@@ -33,12 +34,24 @@ Partial Class Favorite
         'FavoritePanel
         '
         Me.FavoritePanel.BackColor = System.Drawing.Color.Transparent
+        Me.FavoritePanel.Controls.Add(Me.info)
         Me.FavoritePanel.Controls.Add(Me.FavoriteLabel)
         Me.FavoritePanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.FavoritePanel.Location = New System.Drawing.Point(0, 0)
         Me.FavoritePanel.Name = "FavoritePanel"
         Me.FavoritePanel.Size = New System.Drawing.Size(1280, 649)
         Me.FavoritePanel.TabIndex = 11
+        '
+        'info
+        '
+        Me.info.Font = New System.Drawing.Font("SimSun", 36.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point)
+        Me.info.Location = New System.Drawing.Point(12, 44)
+        Me.info.Name = "info"
+        Me.info.Size = New System.Drawing.Size(1256, 605)
+        Me.info.TabIndex = 1
+        Me.info.Text = "Add Movies to your Favorite first"
+        Me.info.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.info.Visible = False
         '
         'FavoriteLabel
         '
@@ -47,7 +60,7 @@ Partial Class Favorite
         Me.FavoriteLabel.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.FavoriteLabel.Location = New System.Drawing.Point(0, 0)
         Me.FavoriteLabel.Name = "FavoriteLabel"
-        Me.FavoriteLabel.Size = New System.Drawing.Size(1280, 25)
+        Me.FavoriteLabel.Size = New System.Drawing.Size(1280, 44)
         Me.FavoriteLabel.TabIndex = 0
         Me.FavoriteLabel.Text = "My Favorite Movies"
         Me.FavoriteLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -108,4 +121,5 @@ Partial Class Favorite
     Friend WithEvents curr As Label
     Friend WithEvents ne As Button
     Friend WithEvents Pre As Button
+    Friend WithEvents info As Label
 End Class

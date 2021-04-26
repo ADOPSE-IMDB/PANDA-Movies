@@ -72,6 +72,18 @@
           "lib/netstandard2.0/K4os.Hash.xxHash.dll": {}
         }
       },
+      "Lucene.Net/3.0.3": {
+        "type": "package",
+        "dependencies": {
+          "SharpZipLib": "0.86.0"
+        },
+        "compile": {
+          "lib/NET40/Lucene.Net.dll": {}
+        },
+        "runtime": {
+          "lib/NET40/Lucene.Net.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
@@ -122,6 +134,15 @@
           "lib/net5.0/MySql.Data.dll": {},
           "lib/net5.0/Ubiety.Dns.Core.dll": {},
           "lib/net5.0/Zstandard.Net.dll": {}
+        }
+      },
+      "SharpZipLib/0.86.0": {
+        "type": "package",
+        "compile": {
+          "lib/20/ICSharpCode.SharpZipLib.dll": {}
+        },
+        "runtime": {
+          "lib/20/ICSharpCode.SharpZipLib.dll": {}
         }
       },
       "SSH.NET/2020.0.0-beta1": {
@@ -421,6 +442,23 @@
         "lib/netstandard2.0/K4os.Hash.xxHash.xml"
       ]
     },
+    "Lucene.Net/3.0.3": {
+      "sha512": "A/70q4eDcuuafQeDB9eaiDP9FQG7X29T4VIYRphS7Wk8kAM9gNcfVqYyd0H8BJ1BTpA5C1ORm9RzFn4BiNavrw==",
+      "type": "package",
+      "path": "lucene.net/3.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/NET35/Lucene.Net.XML",
+        "lib/NET35/Lucene.Net.dll",
+        "lib/NET35/Lucene.Net.pdb",
+        "lib/NET40/Lucene.Net.XML",
+        "lib/NET40/Lucene.Net.dll",
+        "lib/NET40/Lucene.Net.pdb",
+        "lucene.net.3.0.3.nupkg.sha512",
+        "lucene.net.nuspec"
+      ]
+    },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
       "type": "package",
@@ -496,6 +534,21 @@
         "lib/netstandard2.1/Zstandard.Net.dll",
         "mysql.data.8.0.23.nupkg.sha512",
         "mysql.data.nuspec"
+      ]
+    },
+    "SharpZipLib/0.86.0": {
+      "sha512": "5DbS1SlKLMi+WG00Cm0ueYf2oyXJrowETQk8nx96rmdjTuHsA3laPykGV7Sxi0R5Xxfx0Kh/EfacAZ1f6M7y/g==",
+      "type": "package",
+      "path": "sharpziplib/0.86.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/11/ICSharpCode.SharpZipLib.dll",
+        "lib/20/ICSharpCode.SharpZipLib.dll",
+        "lib/SL3/SharpZipLib.Silverlight3.dll",
+        "lib/SL4/SharpZipLib.Silverlight4.dll",
+        "sharpziplib.0.86.0.nupkg.sha512",
+        "sharpziplib.nuspec"
       ]
     },
     "SSH.NET/2020.0.0-beta1": {
@@ -915,23 +968,24 @@
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
       "FontAwesome.Sharp >= 5.15.3",
+      "Lucene.Net >= 3.0.3",
       "MySql.Data >= 8.0.23"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Δημήτρης\\.nuget\\packages\\": {}
+    "C:\\Users\\AlexPap\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Desktop\\IMDB\\IMDB\\IMDB.vbproj",
+      "projectUniqueName": "C:\\Users\\AlexPap\\Desktop\\TEI\\Adopse\\IMDB\\IMDB\\IMDB.vbproj",
       "projectName": "IMDB",
-      "projectPath": "D:\\Desktop\\IMDB\\IMDB\\IMDB.vbproj",
-      "packagesPath": "C:\\Users\\Δημήτρης\\.nuget\\packages\\",
-      "outputPath": "D:\\Desktop\\IMDB\\IMDB\\obj\\",
+      "projectPath": "C:\\Users\\AlexPap\\Desktop\\TEI\\Adopse\\IMDB\\IMDB\\IMDB.vbproj",
+      "packagesPath": "C:\\Users\\AlexPap\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\AlexPap\\Desktop\\TEI\\Adopse\\IMDB\\IMDB\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Δημήτρης\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\AlexPap\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -961,6 +1015,10 @@
             "target": "Package",
             "version": "[5.15.3, )"
           },
+          "Lucene.Net": {
+            "target": "Package",
+            "version": "[3.0.3, )"
+          },
           "MySql.Data": {
             "target": "Package",
             "version": "[8.0.23, )"
@@ -984,8 +1042,30 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Lucene.Net 3.0.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Lucene.Net",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SharpZipLib 0.86.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "SharpZipLib",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    }
+  ]
 }

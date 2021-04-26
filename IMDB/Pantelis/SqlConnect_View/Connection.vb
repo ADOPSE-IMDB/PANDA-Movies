@@ -2,7 +2,7 @@
 Imports MySql.Data.MySqlClient
 
 Public Class Connection
-    Private con As New MySqlConnection("Server=dblabs.it.teithe.gr;Port=3306;Database=it185223;Uid=it185223;Pwd=chilli123;")
+    Private con As New MySqlConnection("Server=dblabs.it.teithe.gr;Port=3306;Database=it185223;Uid=it185223;Pwd=chilli123;Allow User Variables=True")
 
     ReadOnly Property getConnection() As MySqlConnection
         Get
@@ -30,17 +30,19 @@ Public Class Connection
             results.Clear()
             results.Constraints.Clear()
             results.Load(DReader)
-        Catch ex As Exception
-            Console.WriteLine("Problem with Query Execution")
-        Finally
             DReader.Close()
+        Catch ex As Exception
+            MessageBox.Show("RunQuery Error" & vbCrLf & ex.Message)
+        Finally
             con.Close()
         End Try
     End Sub
 
+
     Sub RunQuery(ByVal query As String, ByVal args As Array, ByRef results As DataTable)
         Dim cmd As MySqlCommand = New MySqlCommand()
         Dim DReader As MySqlDataReader
+
 
         Try
             con.Open()
@@ -54,12 +56,13 @@ Public Class Connection
             results.Clear()
             results.Constraints.Clear()
             results.Load(DReader)
-        Catch ex As Exception
-            Console.WriteLine("Problem with Query Execution")
-        Finally
             DReader.Close()
+        Catch ex As Exception
+            MessageBox.Show(vbCrLf & ex.Message & vbCrLf & vbCrLf & ex.ToString, "Query Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
             con.Close()
         End Try
+
     End Sub
 
 

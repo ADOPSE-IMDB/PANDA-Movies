@@ -1,38 +1,42 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Favorite
-    Dim MySqlConn As MySqlConnection
-    Dim COMMAND As New MySqlCommand
 
-    Dim tFavorite = 10
     Public Shared FavoriteMovie() As Movie
-
-
+    Dim tFavorite
     Private Sub On_Load(sender As Object, e As EventArgs) Handles Me.Load
 
 
-        If tFavorite < 20 Then
+
+
+
+        tFavorite = Count(LogInForm.u.Id)
+        If tFavorite = 0 Then
             ne.Visible = False
             Pre.Visible = False
             curr.Visible = False
-            FavoriteMovie = GetMoviesFromTo(1, tFavorite)
-            Dim cMovie(tFavorite - 1) As PictureBox
-            LoadPictureBox.Create(FavoritePanel, FavoriteMovie, 50)
+            info.Visible = True
+        ElseIf tFavorite < 20 Then
+            ne.Visible = False
+            Pre.Visible = False
+            curr.Visible = False
+            Try
+                FavoriteMovie = Show_Fav(LogInForm.u.Id, 0, tFavorite - 1)
+                LoadPictureBox.Create(FavoritePanel, FavoriteMovie, 50)
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString, ex.Message & " Fav Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                info.Text = ("Something went Wrong")
+                info.Visible = True
+            End Try
+
         ElseIf tFavorite < 40 Then
             ne.Text = "21 - > " & tFavorite
-            FavoriteMovie = GetMoviesFromTo(1, 20)
-            Dim cMovie(19) As PictureBox
+            FavoriteMovie = Show_Fav(LogInForm.u.Id, 0, 19)
             LoadPictureBox.Create(FavoritePanel, FavoriteMovie, 50)
         Else
-            FavoriteMovie = GetMoviesFromTo(1, 20)
-            Dim cMovie(19) As PictureBox
+            FavoriteMovie = Show_Fav(LogInForm.u.Id, 0, 19)
             LoadPictureBox.Create(FavoritePanel, FavoriteMovie, 50)
         End If
-
-
-
-        load_table()
-
     End Sub
 
 
@@ -123,59 +127,4 @@ Public Class Favorite
         End If
 
     End Sub
-    Private Sub ButtonLoadTable_Click(sender As Object, e As EventArgs)
-
-
-        MySqlConn = New MySqlConnection
-        MySqlConn.ConnectionString = "Server=dblabs.it.teithe.gr;Port=3306;Database=it185223;Uid=it185223;Pwd=chilli123;"
-        Dim SDA As New MySqlDataAdapter
-        Dim dbDataSet As New DataTable
-        Dim bSource As New BindingSource
-        Try
-            MySqlConn.Open()
-            Dim Querry As String
-            Querry = "select user_id,movie_id,title,year,description,rating from MovieLists inner join Movies on MovieLists.movie_id=Movies.id
-"
-
-            COMMAND = New MySqlCommand(Querry, MySqlConn)
-            SDA.SelectCommand = COMMAND
-            SDA.Fill(dbDataSet)
-            bSource.DataSource = dbDataSet
-
-            SDA.Update(dbDataSet)
-            MySqlConn.Close()
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        Finally
-            MySqlConn.Dispose()
-        End Try
-
-    End Sub
-
-    Private Sub load_table()
-        Dim con As New Connection
-        Dim table As New DataTable()
-        Dim adapter As New MySqlDataAdapter()
-        Dim command As New MySqlCommand("   select distinct user_id,movie_id,title,year,description,rating from MovieLists inner join Movies on MovieLists.movie_id=Movies.id and MovieLists.user_id = @idd", con.getConnection())
-
-        command.Parameters.Add("@idd", MySqlDbType.VarChar).Value = 1
-        con.Connect()
-
-        Try
-            Using reader As MySqlDataReader = command.ExecuteReader()
-                While reader.Read()
-                    MessageBox.Show(reader.GetString(2), "Happ", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End While
-
-                con.Disconnect()
-            End Using
-        Catch
-            con.Disconnect()
-
-        End Try
-
-
-    End Sub
-
 End Class

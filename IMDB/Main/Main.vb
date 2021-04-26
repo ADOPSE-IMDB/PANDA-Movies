@@ -31,7 +31,7 @@ Public Class Main
 #End Region
 
     'Open Favorite Form
-    Private Sub FavoriteBtn_Click(sender As Object, e As EventArgs) Handles FavoriteBtn.Click
+    Public Sub FavoriteBtn_Click(sender As Object, e As EventArgs) Handles FavoriteBtn.Click
         If Not Application.OpenForms().OfType(Of Favorite).Any Then
             ChnageWindow(Favorite, MainPanel, False)
             HomeInticator.Visible = False

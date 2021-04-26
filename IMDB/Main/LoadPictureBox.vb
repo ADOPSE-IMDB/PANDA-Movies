@@ -21,11 +21,13 @@ Public Class LoadPictureBox
                     .Image = My.Resources._200,
                     .ImageLocation = array(index).Url
                 }
+
             If MovieBox.ImageLocation = array(index).Url Then
 
             Else
                 MovieBox.ImageLocation = array(index).Url
             End If
+
             panel.Controls.Add(MovieBox)
             MovieBox.TabIndex = index
 
@@ -63,6 +65,15 @@ Public Class LoadPictureBox
                 a = Favorite.FavoriteMovie
             End If
 
+            If checkIfFavExists(a(c).Id, LogInForm.u.Id) Then
+                CurrentMovie.AddRem.Text = "Remove from Favorites"
+                CurrentMovie.flag = True
+            Else
+                CurrentMovie.AddRem.Text = "Add to Favorites"
+                CurrentMovie.flag = False
+            End If
+
+            CurrentMovie.mID = a(c).Id
             CurrentMovie.MovieName.Text = a(c).Title
             CurrentMovie.Rate.Text = a(c).Rating & "/10"
             CurrentMovie.MovieDate.Text = a(c).Year

@@ -88,6 +88,7 @@ Module MovieMod
 
         con.RunQuery("select * from Movies order by rating DESC limit 10", results)
 
+
         Dim topMovies(10 - 1) As Movie  '10 : number of movies (-1 size of the Array)
 
         For i = 0 To topMovies.Length - 1
