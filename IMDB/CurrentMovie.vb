@@ -16,12 +16,12 @@
             addToFav(mID, LogInForm.u.Id)
             AddRem.Text = "Remove from Favorites"
             flag = Not flag
-            If Favorite.Visible = True Then
-                Favorite.Close()
-                Main.FavoriteBtn_Click(e, e)
-            End If
         End If
 
+        If Favorite.Visible = True Then
+            Favorite.Close()
+            Main.FavoriteBtn_Click(sender, e)
+        End If
     End Sub
 
     Private Sub CloseMovie_Click(sender As Object, e As EventArgs) Handles CloseMovie.Click

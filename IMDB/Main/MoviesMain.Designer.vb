@@ -22,265 +22,104 @@ Partial Class MoviesMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MoviesMain))
-        Me.TopMoviesPanel = New System.Windows.Forms.Panel()
-        Me.Top10 = New System.Windows.Forms.PictureBox()
-        Me.Top9 = New System.Windows.Forms.PictureBox()
-        Me.Top8 = New System.Windows.Forms.PictureBox()
-        Me.Top7 = New System.Windows.Forms.PictureBox()
-        Me.Top6 = New System.Windows.Forms.PictureBox()
-        Me.Top5 = New System.Windows.Forms.PictureBox()
-        Me.Top4 = New System.Windows.Forms.PictureBox()
-        Me.Top3 = New System.Windows.Forms.PictureBox()
-        Me.Top2 = New System.Windows.Forms.PictureBox()
-        Me.Top1 = New System.Windows.Forms.PictureBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TopMoviesLabel = New System.Windows.Forms.Label()
-        Me.AllMoviesPanel = New System.Windows.Forms.Panel()
-        Me.Pre = New System.Windows.Forms.Button()
-        Me.ne = New System.Windows.Forms.Button()
         Me.curr = New System.Windows.Forms.Label()
+        Me.Pre = New System.Windows.Forms.Button()
+        Me.AllMoviesPanel = New System.Windows.Forms.Panel()
         Me.AllMoviesLabel = New System.Windows.Forms.Label()
-        Me.FilterPanel = New System.Windows.Forms.Panel()
-        Me.TopMoviesPanel.SuspendLayout()
-        CType(Me.Top10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Top9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Top8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Top7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Top6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Top5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Top4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Top3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Top2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Top1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
+        Me.TopMoviesPanel = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TopMoviesLabel = New System.Windows.Forms.Label()
+        Me.ne = New System.Windows.Forms.Button()
         Me.AllMoviesPanel.SuspendLayout()
-        Me.FilterPanel.SuspendLayout()
+        Me.TopMoviesPanel.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'TopMoviesPanel
-        '
-        Me.TopMoviesPanel.AutoSize = True
-        Me.TopMoviesPanel.BackColor = System.Drawing.Color.Transparent
-        Me.TopMoviesPanel.Controls.Add(Me.Top10)
-        Me.TopMoviesPanel.Controls.Add(Me.Top9)
-        Me.TopMoviesPanel.Controls.Add(Me.Top8)
-        Me.TopMoviesPanel.Controls.Add(Me.Top7)
-        Me.TopMoviesPanel.Controls.Add(Me.Top6)
-        Me.TopMoviesPanel.Controls.Add(Me.Top5)
-        Me.TopMoviesPanel.Controls.Add(Me.Top4)
-        Me.TopMoviesPanel.Controls.Add(Me.Top3)
-        Me.TopMoviesPanel.Controls.Add(Me.Top2)
-        Me.TopMoviesPanel.Controls.Add(Me.Top1)
-        Me.TopMoviesPanel.Controls.Add(Me.Panel1)
-        Me.TopMoviesPanel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TopMoviesPanel.Location = New System.Drawing.Point(0, 0)
-        Me.TopMoviesPanel.Name = "TopMoviesPanel"
-        Me.TopMoviesPanel.Size = New System.Drawing.Size(1280, 618)
-        Me.TopMoviesPanel.TabIndex = 10
-        '
-        'Top10
-        '
-        Me.Top10.AccessibleName = "top"
-        Me.Top10.BackColor = System.Drawing.Color.Transparent
-        Me.Top10.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Top10.ErrorImage = CType(resources.GetObject("Top10.ErrorImage"), System.Drawing.Image)
-        Me.Top10.Location = New System.Drawing.Point(1035, 345)
-        Me.Top10.Name = "Top10"
-        Me.Top10.Size = New System.Drawing.Size(190, 270)
-        Me.Top10.TabIndex = 20
-        Me.Top10.TabStop = False
-        '
-        'Top9
-        '
-        Me.Top9.AccessibleName = "top"
-        Me.Top9.BackColor = System.Drawing.Color.Transparent
-        Me.Top9.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Top9.ErrorImage = CType(resources.GetObject("Top9.ErrorImage"), System.Drawing.Image)
-        Me.Top9.Location = New System.Drawing.Point(790, 345)
-        Me.Top9.Name = "Top9"
-        Me.Top9.Size = New System.Drawing.Size(190, 270)
-        Me.Top9.TabIndex = 19
-        Me.Top9.TabStop = False
-        '
-        'Top8
-        '
-        Me.Top8.AccessibleName = "top"
-        Me.Top8.BackColor = System.Drawing.Color.Transparent
-        Me.Top8.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Top8.ErrorImage = CType(resources.GetObject("Top8.ErrorImage"), System.Drawing.Image)
-        Me.Top8.Location = New System.Drawing.Point(545, 345)
-        Me.Top8.Name = "Top8"
-        Me.Top8.Size = New System.Drawing.Size(190, 270)
-        Me.Top8.TabIndex = 18
-        Me.Top8.TabStop = False
-        '
-        'Top7
-        '
-        Me.Top7.AccessibleName = "top"
-        Me.Top7.BackColor = System.Drawing.Color.Transparent
-        Me.Top7.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Top7.ErrorImage = CType(resources.GetObject("Top7.ErrorImage"), System.Drawing.Image)
-        Me.Top7.Location = New System.Drawing.Point(300, 345)
-        Me.Top7.Name = "Top7"
-        Me.Top7.Size = New System.Drawing.Size(190, 270)
-        Me.Top7.TabIndex = 17
-        Me.Top7.TabStop = False
-        '
-        'Top6
-        '
-        Me.Top6.AccessibleName = "top"
-        Me.Top6.BackColor = System.Drawing.Color.Transparent
-        Me.Top6.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Top6.ErrorImage = CType(resources.GetObject("Top6.ErrorImage"), System.Drawing.Image)
-        Me.Top6.Location = New System.Drawing.Point(55, 345)
-        Me.Top6.Name = "Top6"
-        Me.Top6.Size = New System.Drawing.Size(190, 270)
-        Me.Top6.TabIndex = 16
-        Me.Top6.TabStop = False
-        '
-        'Top5
-        '
-        Me.Top5.AccessibleName = "top"
-        Me.Top5.BackColor = System.Drawing.Color.Transparent
-        Me.Top5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Top5.ErrorImage = CType(resources.GetObject("Top5.ErrorImage"), System.Drawing.Image)
-        Me.Top5.Location = New System.Drawing.Point(1035, 50)
-        Me.Top5.Name = "Top5"
-        Me.Top5.Size = New System.Drawing.Size(190, 270)
-        Me.Top5.TabIndex = 15
-        Me.Top5.TabStop = False
-        '
-        'Top4
-        '
-        Me.Top4.AccessibleName = "top"
-        Me.Top4.BackColor = System.Drawing.Color.Transparent
-        Me.Top4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Top4.ErrorImage = CType(resources.GetObject("Top4.ErrorImage"), System.Drawing.Image)
-        Me.Top4.Location = New System.Drawing.Point(790, 50)
-        Me.Top4.Name = "Top4"
-        Me.Top4.Size = New System.Drawing.Size(190, 270)
-        Me.Top4.TabIndex = 14
-        Me.Top4.TabStop = False
-        '
-        'Top3
-        '
-        Me.Top3.AccessibleName = "top"
-        Me.Top3.BackColor = System.Drawing.Color.Transparent
-        Me.Top3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Top3.ErrorImage = CType(resources.GetObject("Top3.ErrorImage"), System.Drawing.Image)
-        Me.Top3.Location = New System.Drawing.Point(545, 50)
-        Me.Top3.Name = "Top3"
-        Me.Top3.Size = New System.Drawing.Size(190, 270)
-        Me.Top3.TabIndex = 13
-        Me.Top3.TabStop = False
-        '
-        'Top2
-        '
-        Me.Top2.AccessibleName = "top"
-        Me.Top2.BackColor = System.Drawing.Color.Transparent
-        Me.Top2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Top2.ErrorImage = CType(resources.GetObject("Top2.ErrorImage"), System.Drawing.Image)
-        Me.Top2.Location = New System.Drawing.Point(300, 50)
-        Me.Top2.Name = "Top2"
-        Me.Top2.Size = New System.Drawing.Size(190, 270)
-        Me.Top2.TabIndex = 12
-        Me.Top2.TabStop = False
-        '
-        'Top1
-        '
-        Me.Top1.AccessibleName = "top"
-        Me.Top1.BackColor = System.Drawing.Color.Transparent
-        Me.Top1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Top1.ErrorImage = CType(resources.GetObject("Top1.ErrorImage"), System.Drawing.Image)
-        Me.Top1.Location = New System.Drawing.Point(55, 50)
-        Me.Top1.Name = "Top1"
-        Me.Top1.Size = New System.Drawing.Size(190, 270)
-        Me.Top1.TabIndex = 11
-        Me.Top1.TabStop = False
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Transparent
-        Me.Panel1.Controls.Add(Me.TopMoviesLabel)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1280, 45)
-        Me.Panel1.TabIndex = 10
-        '
-        'TopMoviesLabel
-        '
-        Me.TopMoviesLabel.AutoSize = True
-        Me.TopMoviesLabel.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.TopMoviesLabel.Location = New System.Drawing.Point(20, 9)
-        Me.TopMoviesLabel.Name = "TopMoviesLabel"
-        Me.TopMoviesLabel.Size = New System.Drawing.Size(110, 21)
-        Me.TopMoviesLabel.TabIndex = 0
-        Me.TopMoviesLabel.Text = "Top 10 Movies"
-        '
-        'AllMoviesPanel
-        '
-        Me.AllMoviesPanel.Controls.Add(Me.FilterPanel)
-        Me.AllMoviesPanel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.AllMoviesPanel.Location = New System.Drawing.Point(0, 618)
-        Me.AllMoviesPanel.Name = "AllMoviesPanel"
-        Me.AllMoviesPanel.Size = New System.Drawing.Size(1280, 41)
-        Me.AllMoviesPanel.TabIndex = 11
-        '
-        'Pre
-        '
-        Me.Pre.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Pre.Enabled = False
-        Me.Pre.Location = New System.Drawing.Point(545, 685)
-        Me.Pre.Name = "Pre"
-        Me.Pre.Size = New System.Drawing.Size(75, 23)
-        Me.Pre.TabIndex = 12
-        Me.Pre.Text = "Start"
-        Me.Pre.UseVisualStyleBackColor = True
-        '
-        'ne
-        '
-        Me.ne.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.ne.Location = New System.Drawing.Point(660, 685)
-        Me.ne.Name = "ne"
-        Me.ne.Size = New System.Drawing.Size(75, 23)
-        Me.ne.TabIndex = 13
-        Me.ne.Text = "21 -> 40"
-        Me.ne.UseVisualStyleBackColor = True
         '
         'curr
         '
         Me.curr.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.curr.BackColor = System.Drawing.Color.DarkGray
-        Me.curr.Location = New System.Drawing.Point(604, 662)
+        Me.curr.Location = New System.Drawing.Point(604, 669)
         Me.curr.Name = "curr"
         Me.curr.Size = New System.Drawing.Size(74, 20)
-        Me.curr.TabIndex = 14
+        Me.curr.TabIndex = 19
         Me.curr.Text = "1 -> 20"
         Me.curr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Pre
+        '
+        Me.Pre.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Pre.Enabled = False
+        Me.Pre.Location = New System.Drawing.Point(547, 692)
+        Me.Pre.Name = "Pre"
+        Me.Pre.Size = New System.Drawing.Size(75, 23)
+        Me.Pre.TabIndex = 17
+        Me.Pre.Text = "Start"
+        Me.Pre.UseVisualStyleBackColor = True
+        '
+        'AllMoviesPanel
+        '
+        Me.AllMoviesPanel.Controls.Add(Me.AllMoviesLabel)
+        Me.AllMoviesPanel.Dock = System.Windows.Forms.DockStyle.Top
+        Me.AllMoviesPanel.Location = New System.Drawing.Point(0, 325)
+        Me.AllMoviesPanel.Name = "AllMoviesPanel"
+        Me.AllMoviesPanel.Size = New System.Drawing.Size(1280, 254)
+        Me.AllMoviesPanel.TabIndex = 16
+        '
         'AllMoviesLabel
         '
+        Me.AllMoviesLabel.BackColor = System.Drawing.Color.Transparent
         Me.AllMoviesLabel.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.AllMoviesLabel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.AllMoviesLabel.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.AllMoviesLabel.Font = New System.Drawing.Font("SimSun", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.AllMoviesLabel.Location = New System.Drawing.Point(0, 0)
         Me.AllMoviesLabel.Name = "AllMoviesLabel"
-        Me.AllMoviesLabel.Size = New System.Drawing.Size(1280, 34)
-        Me.AllMoviesLabel.TabIndex = 0
+        Me.AllMoviesLabel.Size = New System.Drawing.Size(1280, 50)
+        Me.AllMoviesLabel.TabIndex = 1
         Me.AllMoviesLabel.Text = "More movies"
-        Me.AllMoviesLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.AllMoviesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'FilterPanel
+        'TopMoviesPanel
         '
-        Me.FilterPanel.BackColor = System.Drawing.Color.Transparent
-        Me.FilterPanel.Controls.Add(Me.AllMoviesLabel)
-        Me.FilterPanel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.FilterPanel.Location = New System.Drawing.Point(0, 0)
-        Me.FilterPanel.Name = "FilterPanel"
-        Me.FilterPanel.Size = New System.Drawing.Size(1280, 41)
-        Me.FilterPanel.TabIndex = 2
+        Me.TopMoviesPanel.BackColor = System.Drawing.Color.Transparent
+        Me.TopMoviesPanel.Controls.Add(Me.PictureBox1)
+        Me.TopMoviesPanel.Controls.Add(Me.TopMoviesLabel)
+        Me.TopMoviesPanel.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TopMoviesPanel.Location = New System.Drawing.Point(0, 0)
+        Me.TopMoviesPanel.Name = "TopMoviesPanel"
+        Me.TopMoviesPanel.Size = New System.Drawing.Size(1280, 325)
+        Me.TopMoviesPanel.TabIndex = 15
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Black
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 322)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(1280, 3)
+        Me.PictureBox1.TabIndex = 22
+        Me.PictureBox1.TabStop = False
+        '
+        'TopMoviesLabel
+        '
+        Me.TopMoviesLabel.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TopMoviesLabel.Font = New System.Drawing.Font("SimSun", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.TopMoviesLabel.Location = New System.Drawing.Point(0, 0)
+        Me.TopMoviesLabel.Name = "TopMoviesLabel"
+        Me.TopMoviesLabel.Size = New System.Drawing.Size(1280, 55)
+        Me.TopMoviesLabel.TabIndex = 21
+        Me.TopMoviesLabel.Text = "Top 10 Movies"
+        Me.TopMoviesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'ne
+        '
+        Me.ne.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.ne.Location = New System.Drawing.Point(658, 692)
+        Me.ne.Name = "ne"
+        Me.ne.Size = New System.Drawing.Size(75, 23)
+        Me.ne.TabIndex = 20
+        Me.ne.Text = "21 - > 40"
+        Me.ne.UseVisualStyleBackColor = True
         '
         'MoviesMain
         '
@@ -297,42 +136,18 @@ Partial Class MoviesMain
         Me.Controls.Add(Me.TopMoviesPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "MoviesMain"
-        Me.TopMoviesPanel.ResumeLayout(False)
-        CType(Me.Top10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Top9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Top8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Top7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Top6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Top5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Top4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Top3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Top2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Top1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.AllMoviesPanel.ResumeLayout(False)
-        Me.FilterPanel.ResumeLayout(False)
+        Me.TopMoviesPanel.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents TopMoviesPanel As Panel
-    Friend WithEvents AllMoviesPanel As Panel
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents TopMoviesLabel As Label
-    Friend WithEvents Top10 As PictureBox
-    Friend WithEvents Top9 As PictureBox
-    Friend WithEvents Top8 As PictureBox
-    Friend WithEvents Top7 As PictureBox
-    Friend WithEvents Top6 As PictureBox
-    Friend WithEvents Top5 As PictureBox
-    Friend WithEvents Top4 As PictureBox
-    Friend WithEvents Top3 As PictureBox
-    Friend WithEvents Top2 As PictureBox
-    Friend WithEvents Top1 As PictureBox
-    Friend WithEvents Pre As Button
-    Friend WithEvents ne As Button
     Friend WithEvents curr As Label
-    Friend WithEvents FilterPanel As Panel
+    Friend WithEvents Pre As Button
+    Friend WithEvents AllMoviesPanel As Panel
+    Friend WithEvents TopMoviesPanel As Panel
     Friend WithEvents AllMoviesLabel As Label
+    Friend WithEvents TopMoviesLabel As Label
+    Friend WithEvents ne As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

@@ -6,11 +6,8 @@ Public Class Favorite
     Dim tFavorite
     Private Sub On_Load(sender As Object, e As EventArgs) Handles Me.Load
 
-
-
-
-
         tFavorite = Count(LogInForm.u.Id)
+
         If tFavorite = 0 Then
             ne.Visible = False
             Pre.Visible = False
@@ -25,7 +22,6 @@ Public Class Favorite
                 LoadPictureBox.Create(FavoritePanel, FavoriteMovie, 50)
             Catch ex As Exception
                 MessageBox.Show(ex.ToString, ex.Message & " Fav Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                info.Text = ("Something went Wrong")
                 info.Visible = True
             End Try
 

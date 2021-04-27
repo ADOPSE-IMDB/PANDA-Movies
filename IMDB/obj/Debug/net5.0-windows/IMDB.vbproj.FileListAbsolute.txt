@@ -113,3 +113,4 @@ C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\Lucene.Ne
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\ICSharpCode.SharpZipLib.dll
 D:\GitHub\IMDB\IMDB\bin\Debug\net5.0-windows\Lucene.Net.dll
 D:\GitHub\IMDB\IMDB\bin\Debug\net5.0-windows\ICSharpCode.SharpZipLib.dll
+C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.SearchForm.resources

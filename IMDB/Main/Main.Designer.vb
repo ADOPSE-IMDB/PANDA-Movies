@@ -88,7 +88,7 @@ Partial Class Main
         Me.NameBtn.Name = "NameBtn"
         Me.NameBtn.Size = New System.Drawing.Size(80, 23)
         Me.NameBtn.TabIndex = 2
-        Me.NameBtn.Text = "Username"
+        Me.NameBtn.Text = "xristina"
         Me.NameBtn.UseVisualStyleBackColor = True
         '
         'AppName

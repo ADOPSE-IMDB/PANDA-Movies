@@ -5,7 +5,7 @@ Public Class Main
 
     'Load Main Page
     Private Sub On_Load(sender As Object, e As EventArgs) Handles Me.Load
-
+        NameBtn.Text = LogInForm.u.Username
         DropPanel.Height = 0
         MoviesMain.TopLevel = False
         MainPanel.Controls.Add(MoviesMain)
@@ -40,6 +40,18 @@ Public Class Main
         End If
     End Sub
 
+    Private Sub Search_Click(sender As Object, e As EventArgs) Handles Search.Click
+        If Not SearchBox.Text.Trim = "" Then
+            If Application.OpenForms().OfType(Of SearchForm).Any Then
+                SearchForm.Close()
+            End If
+            ChnageWindow(SearchForm, MainPanel, False)
+            HomeInticator.Visible = False
+            FavoriteInticator.Visible = False
+            UsernameInticator.Visible = False
+        End If
+
+    End Sub
 #Region "Drop Menu"
 
     'Opens DropDown menu
@@ -168,4 +180,5 @@ Public Class Main
     Private Sub ExitBtn_Click(sender As Object, e As EventArgs) Handles ExitBtn.Click
         Application.Exit()
     End Sub
+
 End Class

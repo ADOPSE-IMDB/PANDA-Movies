@@ -4,6 +4,9 @@
     <Compile Update="CurrentMovie.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Main\SearchForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Profile\Favorite.vb">
       <SubType>Form</SubType>
     </Compile>
