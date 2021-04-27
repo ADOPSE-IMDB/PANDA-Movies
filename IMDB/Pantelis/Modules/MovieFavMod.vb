@@ -92,4 +92,38 @@
         End If
     End Function
 
+    'Function that returns the common listed movies of two users
+    Public Function commonFavs(ByVal username1 As String, ByVal username2 As String)
+        Dim args() As String = {username1, username2}
+
+        Dim con As New Connection
+        Dim results As New DataTable
+
+        con.RunQuery("SELECT movies.* 
+                    FROM movielists 
+                    INNER JOIN movies ON movielists.movie_id = movies.id 
+                    INNER JOIN users ON movielists.user_id = users.id
+                    WHERE users.username = @0 
+                    AND movie_id IN (
+                    SELECT movie_id
+                    FROM movielists 
+                    INNER JOIN users ON movielists.user_id = users.id
+                    WHERE users.username = @1)", args, results)
+
+        Dim inCommonMovies(results.Rows.Count - 1) As Movie
+
+        For i = 0 To inCommonMovies.Length - 1
+            inCommonMovies(i) = New Movie With {
+                                                .Id = results.Rows(i)("id").ToString,
+                                                .Title = results.Rows(i)("title").ToString,
+                                                .Year = results.Rows(i)("year").ToString,
+                                                .Description = results.Rows(i)("description").ToString,
+                                                .Rating = results.Rows(i)("rating").ToString,
+                                                .Url = results.Rows(i)("image_url").ToString
+                                                }
+        Next
+
+        Return inCommonMovies
+    End Function
+
 End Module
