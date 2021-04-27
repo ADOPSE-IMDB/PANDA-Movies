@@ -99,16 +99,16 @@
         Dim con As New Connection
         Dim results As New DataTable
 
-        con.RunQuery("SELECT movies.* 
-                    FROM movielists 
-                    INNER JOIN movies ON movielists.movie_id = movies.id 
-                    INNER JOIN users ON movielists.user_id = users.id
-                    WHERE users.username = @0 
+        con.RunQuery("SELECT Movies.* 
+                    FROM MovieFavorites 
+                    INNER JOIN Movies ON MovieFavorites.movie_id = Movies.id 
+                    INNER JOIN Users ON MovieFavorites.user_id = Users.id
+                    WHERE Users.username = @0 
                     AND movie_id IN (
                     SELECT movie_id
-                    FROM movielists 
-                    INNER JOIN users ON movielists.user_id = users.id
-                    WHERE users.username = @1)", args, results)
+                    FROM MovieFavorites 
+                    INNER JOIN Users ON MovieFavorites.user_id = Users.id
+                    WHERE Users.username = @1)", args, results)
 
         Dim inCommonMovies(results.Rows.Count - 1) As Movie
 
