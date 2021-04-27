@@ -1,8 +1,4 @@
-﻿Imports System.IO
-Imports System.Net
-Imports MySql.Data.MySqlClient
-
-Public Class MoviesMain
+﻿Public Class MoviesMain
     'top movie Array
     Public Shared TopTen(9) As Movie
 

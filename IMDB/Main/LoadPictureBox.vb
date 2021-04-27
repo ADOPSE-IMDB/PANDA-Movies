@@ -73,6 +73,13 @@ Public Class LoadPictureBox
                 CurrentMovie.flag = False
             End If
 
+            Dim actor() As Actor
+            actor = ShowActors(a(c).Id)
+
+            For Each act In actor
+                CurrentMovie.actors.Text += act.Name & " " & act.Surname & vbCrLf
+            Next
+
             CurrentMovie.mID = a(c).Id
             CurrentMovie.MovieName.Text = a(c).Title
             CurrentMovie.Rate.Text = a(c).Rating & "/10"

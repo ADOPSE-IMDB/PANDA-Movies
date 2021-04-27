@@ -7,31 +7,33 @@
         Dim results As New DataTable
         con.RunQuery("SELECT name,surname from Actors AS A 
 		              inner join  MovieCasts as MC on MC.id=A.id and MC.movie_id=@0", args, results)
+
         Dim numberOfActors As New Integer
-        numberOfActors = CountMovies()
+
+        numberOfActors = countActors(movie_id)
+
         Dim allActors(numberOfActors - 1) As Actor  'numberOfActors : number of Actors (-1 size of the Array)
         Try
             For i = 0 To allActors.Length - 1
                 allActors(i) = New Actor
-                allActors(i).Id = results.Rows(i)("id").ToString
-                allActors(i).Name = results.Rows(i)("name").ToString
-                allActors(i).Surname = results.Rows(i)("surname").ToString
+                allActors(i).Name = results.Rows(i)(0).ToString
+                allActors(i).Surname = results.Rows(i)(1).ToString
             Next
         Catch ex As Exception
             MessageBox.Show(ex.ToString, ex.Message & " Show Actors Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
 
-        Return numberOfActors
+        Return allActors
 
     End Function
 
-    Public Function countActors()
+    Public Function countActors(ByVal movie_id)
+
         Dim con As New Connection
         Dim results As New DataTable
 
-        con.RunQuery("select count(*) as num from MovieCasts", results)
-
+        con.RunQuery("select count(*) as num from MovieCasts where movie_id = " & movie_id, results)
         Return results.Rows(0)("num").ToString()
     End Function
 

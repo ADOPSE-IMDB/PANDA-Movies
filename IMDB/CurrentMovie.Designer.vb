@@ -148,7 +148,6 @@ Partial Class CurrentMovie
         Me.actors.Name = "actors"
         Me.actors.Size = New System.Drawing.Size(148, 44)
         Me.actors.TabIndex = 10
-        Me.actors.Text = "actors"
         '
         'PictureBox1
         '

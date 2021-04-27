@@ -48,13 +48,14 @@ Module MovieMod
         Dim allMovies(numberOfMovies - 1) As Movie  'numberOfMovies : number of movies (-1 size of the Array)
 
         For i = 0 To allMovies.Length - 1
-            allMovies(i) = New Movie
-            allMovies(i).Id = results.Rows(i)("id").ToString
-            allMovies(i).Title = results.Rows(i)("title").ToString
-            allMovies(i).Year = results.Rows(i)("year").ToString
-            allMovies(i).Description = results.Rows(i)("description").ToString
-            allMovies(i).Rating = results.Rows(i)("rating").ToString
-            allMovies(i).Url = results.Rows(i)("image_url").ToString
+            allMovies(i) = New Movie With {
+                .Id = results.Rows(i)("id").ToString,
+                .Title = results.Rows(i)("title").ToString,
+                .Year = results.Rows(i)("year").ToString,
+                .Description = results.Rows(i)("description").ToString,
+                .Rating = results.Rows(i)("rating").ToString,
+                .Url = results.Rows(i)("image_url").ToString
+            }
         Next
 
         Return allMovies
@@ -70,13 +71,14 @@ Module MovieMod
         Dim fromToMovies(toNum - fromNum) As Movie    'toNum - fromNum : number of movies (-1 size of the Array)
 
         For i = 0 To fromToMovies.Length - 1
-            fromToMovies(i) = New Movie
-            fromToMovies(i).Id = results.Rows(i)("id").ToString
-            fromToMovies(i).Title = results.Rows(i)("title").ToString
-            fromToMovies(i).Year = results.Rows(i)("year").ToString
-            fromToMovies(i).Description = results.Rows(i)("description").ToString
-            fromToMovies(i).Rating = results.Rows(i)("rating").ToString
-            fromToMovies(i).Url = results.Rows(i)("image_url").ToString
+            fromToMovies(i) = New Movie With {
+                .Id = results.Rows(i)("id").ToString,
+                .Title = results.Rows(i)("title").ToString,
+                .Year = results.Rows(i)("year").ToString,
+                .Description = results.Rows(i)("description").ToString,
+                .Rating = results.Rows(i)("rating").ToString,
+                .Url = results.Rows(i)("image_url").ToString
+            }
 
         Next
 
@@ -92,13 +94,14 @@ Module MovieMod
         Dim topMovies(10 - 1) As Movie  '10 : number of movies (-1 size of the Array)
 
         For i = 0 To topMovies.Length - 1
-            topMovies(i) = New Movie
-            topMovies(i).Id = results.Rows(i)("id").ToString
-            topMovies(i).Title = results.Rows(i)("title").ToString
-            topMovies(i).Year = results.Rows(i)("year").ToString
-            topMovies(i).Description = results.Rows(i)("description").ToString
-            topMovies(i).Rating = results.Rows(i)("rating").ToString
-            topMovies(i).Url = results.Rows(i)("image_url").ToString
+            topMovies(i) = New Movie With {
+                .Id = results.Rows(i)("id").ToString,
+                .Title = results.Rows(i)("title").ToString,
+                .Year = results.Rows(i)("year").ToString,
+                .Description = results.Rows(i)("description").ToString,
+                .Rating = results.Rows(i)("rating").ToString,
+                .Url = results.Rows(i)("image_url").ToString
+            }
         Next
 
         Return topMovies
