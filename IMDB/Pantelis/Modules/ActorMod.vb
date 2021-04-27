@@ -15,9 +15,10 @@
         Dim allActors(numberOfActors - 1) As Actor  'numberOfActors : number of Actors (-1 size of the Array)
         Try
             For i = 0 To allActors.Length - 1
-                allActors(i) = New Actor
-                allActors(i).Name = results.Rows(i)(0).ToString
-                allActors(i).Surname = results.Rows(i)(1).ToString
+                allActors(i) = New Actor With {
+                    .Name = results.Rows(i)("name").ToString,
+                    .Surname = results.Rows(i)("surname").ToString
+                }
             Next
         Catch ex As Exception
             MessageBox.Show(ex.ToString, ex.Message & " Show Actors Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
