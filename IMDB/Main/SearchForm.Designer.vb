@@ -23,6 +23,7 @@ Partial Class SearchForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.SLabel = New System.Windows.Forms.Label()
+        Me.result = New System.Windows.Forms.Panel()
         Me.SuspendLayout()
         '
         'SLabel
@@ -36,12 +37,21 @@ Partial Class SearchForm
         Me.SLabel.Text = "Search Results for : "
         Me.SLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'result
+        '
+        Me.result.Dock = System.Windows.Forms.DockStyle.Top
+        Me.result.Location = New System.Drawing.Point(0, 46)
+        Me.result.Name = "result"
+        Me.result.Size = New System.Drawing.Size(1278, 100)
+        Me.result.TabIndex = 1
+        '
         'SearchForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1278, 718)
         Me.ControlBox = False
+        Me.Controls.Add(Me.result)
         Me.Controls.Add(Me.SLabel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "SearchForm"
@@ -51,4 +61,5 @@ Partial Class SearchForm
 
     Friend WithEvents Label As Label
     Friend WithEvents SLabel As Label
+    Friend WithEvents result As Panel
 End Class

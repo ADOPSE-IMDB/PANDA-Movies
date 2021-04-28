@@ -3,6 +3,11 @@ Public Class LogInForm
     Private ReadOnly e As EventArgs
 
 
+
+    Private Sub on_Load() Handles MyBase.Load
+        MvcLuceneSampleApp.Search.LuceneSearch.Initialize()
+    End Sub
+
     Private Sub CloseApp_Click(sender As Object, e As EventArgs) Handles CloseApp.Click
         Application.Exit()
     End Sub

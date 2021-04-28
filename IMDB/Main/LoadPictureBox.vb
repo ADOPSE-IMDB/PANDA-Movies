@@ -1,5 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class LoadPictureBox
+
+
     Public Shared Sub Create(panel As Panel, array() As Movie, PosY As Integer)
 
         'Check height of the Movies Panel
@@ -20,7 +22,7 @@ Public Class LoadPictureBox
                     .Cursor = Cursors.Hand,
                     .Image = My.Resources._200,
                     .ImageLocation = array(index).Url
-                }
+            }
 
 
             MovieBox.ImageLocation = array(index).Url
@@ -56,24 +58,27 @@ Public Class LoadPictureBox
                 a = MoviesMain.TopTen
             ElseIf MoviesMain.AllMoviesPanel.Controls.Contains(MovieBox) Then
                 a = MoviesMain.MovieArray
-            Else
+            ElseIf Favorite.FavoritePanel.Controls.Contains(MovieBox) Then
                 a = Favorite.FavoriteMovie
+            Else
+                a = SearchForm.resultMovies
             End If
+
 
             If checkIfFavExists(a(c).Id, LogInForm.u.Id) Then
-                CurrentMovie.AddRem.Text = "Remove from Favorites"
-                CurrentMovie.flag = True
-            Else
-                CurrentMovie.AddRem.Text = "Add to Favorites"
-                CurrentMovie.flag = False
-            End If
+                    CurrentMovie.AddRem.Text = "Remove from Favorites"
+                    CurrentMovie.flag = True
+                Else
+                    CurrentMovie.AddRem.Text = "Add to Favorites"
+                    CurrentMovie.flag = False
+                End If
 
-            Dim actor() As Actor
-            actor = ShowActors(a(c).Id)
-
+                Dim actor() As Actor
+                actor = ShowActors(a(c).Id)
             For Each act In actor
                 CurrentMovie.actors.Text += act.Name & " " & act.Surname & vbCrLf
             Next
+
 
             CurrentMovie.mID = a(c).Id
             CurrentMovie.MovieName.Text = a(c).Title

@@ -41,15 +41,6 @@ Public Class Main
     End Sub
 
     Private Sub Search_Click(sender As Object, e As EventArgs) Handles Search.Click
-        If Not SearchBox.Text.Trim = "" Then
-            If Application.OpenForms().OfType(Of SearchForm).Any Then
-                SearchForm.Close()
-            End If
-            ChnageWindow(SearchForm, MainPanel, False)
-            HomeInticator.Visible = False
-            FavoriteInticator.Visible = False
-            UsernameInticator.Visible = False
-        End If
 
     End Sub
 #Region "Drop Menu"
@@ -181,4 +172,20 @@ Public Class Main
         Application.Exit()
     End Sub
 
+    Private Sub SearchBox_TextChanged(sender As Object, e As EventArgs) Handles SearchBox.TextChanged
+        If SearchBox.Text.Trim.Length >= 3 Then
+            If Application.OpenForms().OfType(Of SearchForm).Any Then
+                SearchForm.Close()
+            End If
+            ChnageWindow(SearchForm, MainPanel, False)
+            HomeInticator.Visible = False
+            FavoriteInticator.Visible = False
+            UsernameInticator.Visible = False
+        ElseIf Not Application.OpenForms().OfType(Of MoviesMain).Any Then
+            ChnageWindow(MoviesMain, MainPanel, False)
+                HomeInticator.Visible = True
+                FavoriteInticator.Visible = False
+            UsernameInticator.Visible = False
+        End If
+    End Sub
 End Class
