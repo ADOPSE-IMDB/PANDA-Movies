@@ -1,15 +1,16 @@
 ﻿Public Class MoviesMain
 
     'top movie Array
-    Public Shared TopTen(9) As Movie
+    Private Topten(9) As Movie
     'Main page Movies
-    Public Shared MovieArray(19) As Movie
+    Private MovieArray(19) As Movie
     Private ReadOnly tainies = CountMovies()
     Private Sub On_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         'get top ten movies
+
         TopTen = GetTopMovies()
-        LoadPictureBox.Create(TopMoviesPanel, TopTen, 70)
+        MoviesLoad(TopMoviesPanel, Topten, 70)
 
 
         If tainies < 40 Then
@@ -25,7 +26,7 @@
         End If
 
         'Fill main movies
-        LoadPictureBox.Create(AllMoviesPanel, MovieArray, 70)
+        MoviesLoad(AllMoviesPanel, MovieArray, 70)
         ne.Visible = True
 
     End Sub
@@ -59,7 +60,7 @@
 
         MovieArray = GetMoviesFromTo(n - 19, n)
 
-        LoadPictureBox.Create(AllMoviesPanel, MovieArray, 60)
+        MoviesLoad(AllMoviesPanel, MovieArray, 60)
         AutoScrollPosition = New Point(0, 683)
     End Sub
 
@@ -100,7 +101,7 @@
             MovieArray = GetMoviesFromTo(n - 19, n)
         End If
 
-        LoadPictureBox.Create(AllMoviesPanel, MovieArray, 60)
+        MoviesLoad(AllMoviesPanel, MovieArray, 60)
 
     End Sub
 

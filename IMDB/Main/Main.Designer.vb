@@ -36,6 +36,7 @@ Partial Class Main
         Me.HomeButton = New System.Windows.Forms.Button()
         Me.MainPanel = New System.Windows.Forms.Panel()
         Me.resultPanel = New System.Windows.Forms.Panel()
+        Me.ResultInfo = New System.Windows.Forms.Label()
         Me.DropPanel = New System.Windows.Forms.Panel()
         Me.OpenProfile = New System.Windows.Forms.Button()
         Me.LogOut = New System.Windows.Forms.Button()
@@ -45,6 +46,7 @@ Partial Class Main
         Me.ExitBtn = New System.Windows.Forms.Button()
         Me.TopPanel.SuspendLayout()
         Me.MainPanel.SuspendLayout()
+        Me.resultPanel.SuspendLayout()
         Me.DropPanel.SuspendLayout()
         Me.MovePanel.SuspendLayout()
         Me.SuspendLayout()
@@ -167,11 +169,24 @@ Partial Class Main
         'resultPanel
         '
         Me.resultPanel.BackColor = System.Drawing.Color.LightGray
+        Me.resultPanel.Controls.Add(Me.ResultInfo)
         Me.resultPanel.Location = New System.Drawing.Point(515, 1)
         Me.resultPanel.Name = "resultPanel"
-        Me.resultPanel.Size = New System.Drawing.Size(200, 140)
+        Me.resultPanel.Size = New System.Drawing.Size(200, 193)
         Me.resultPanel.TabIndex = 2
         Me.resultPanel.Visible = False
+        '
+        'ResultInfo
+        '
+        Me.ResultInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.ResultInfo.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ResultInfo.Location = New System.Drawing.Point(0, 0)
+        Me.ResultInfo.Name = "ResultInfo"
+        Me.ResultInfo.Size = New System.Drawing.Size(200, 20)
+        Me.ResultInfo.TabIndex = 0
+        Me.ResultInfo.Text = "Label1"
+        Me.ResultInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ResultInfo.Visible = False
         '
         'DropPanel
         '
@@ -252,6 +267,7 @@ Partial Class Main
         Me.TopPanel.ResumeLayout(False)
         Me.TopPanel.PerformLayout()
         Me.MainPanel.ResumeLayout(False)
+        Me.resultPanel.ResumeLayout(False)
         Me.DropPanel.ResumeLayout(False)
         Me.MovePanel.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -278,4 +294,5 @@ Partial Class Main
     Friend WithEvents FavoriteInticator As Panel
     Friend WithEvents ExitBtn As Button
     Friend WithEvents resultPanel As Panel
+    Friend WithEvents ResultInfo As Label
 End Class

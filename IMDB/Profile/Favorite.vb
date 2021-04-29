@@ -19,7 +19,7 @@ Public Class Favorite
             curr.Visible = False
             Try
                 FavoriteMovie = Show_Fav(LogInForm.u.Id, 0, tFavorite - 1)
-                LoadPictureBox.Create(FavoritePanel, FavoriteMovie, 50)
+                MoviesLoad(FavoritePanel, FavoriteMovie, 50)
             Catch ex As Exception
                 MessageBox.Show(ex.ToString, ex.Message & " Fav Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 info.Visible = True
@@ -28,10 +28,10 @@ Public Class Favorite
         ElseIf tFavorite < 40 Then
             ne.Text = "21 - > " & tFavorite
             FavoriteMovie = Show_Fav(LogInForm.u.Id, 0, 19)
-            LoadPictureBox.Create(FavoritePanel, FavoriteMovie, 50)
+            MoviesLoad(FavoritePanel, FavoriteMovie, 50)
         Else
             FavoriteMovie = Show_Fav(LogInForm.u.Id, 0, 19)
-            LoadPictureBox.Create(FavoritePanel, FavoriteMovie, 50)
+            MoviesLoad(FavoritePanel, FavoriteMovie, 50)
         End If
     End Sub
 
@@ -67,7 +67,7 @@ Public Class Favorite
 
 
         Dim cMovie(19) As PictureBox
-        LoadPictureBox.Create(FavoritePanel, FavoriteMovie, 100)
+        MoviesLoad(FavoritePanel, FavoriteMovie, 100)
 
 
         AutoScrollPosition = New Point(0, 0)
@@ -95,7 +95,7 @@ Public Class Favorite
 
             Dim t = tFavorite Mod 20
             Dim cMovie(t - 1) As PictureBox
-            LoadPictureBox.Create(FavoritePanel, FavoriteMovie, 100)
+            MoviesLoad(FavoritePanel, FavoriteMovie, 100)
             ne.Enabled = False
 
         ElseIf n > tFavorite - 20 Then
@@ -109,7 +109,7 @@ Public Class Favorite
 
             Dim t = tFavorite Mod 20
             Dim cMovie(19) As PictureBox
-            LoadPictureBox.Create(FavoritePanel, FavoriteMovie, 100)
+            MoviesLoad(FavoritePanel, FavoriteMovie, 100)
         Else
             Pre.Text = curr.Text
             curr.Text = ne.Text
@@ -118,7 +118,7 @@ Public Class Favorite
             FavoriteMovie = GetMoviesFromTo(n - 19, n)
 
             Dim cMovie(19) As PictureBox
-            LoadPictureBox.Create(FavoritePanel, FavoriteMovie, 100)
+            MoviesLoad(FavoritePanel, FavoriteMovie, 100)
 
         End If
 
