@@ -41,7 +41,16 @@ Public Class Main
     End Sub
 
     Private Sub Search_Click(sender As Object, e As EventArgs) Handles Search.Click
-
+        If SearchBox.Text.Trim.Length >= 3 Then
+            If Application.OpenForms().OfType(Of SearchForm).Any Then
+                SearchForm.Close()
+            End If
+            ChnageWindow(SearchForm, MainPanel, False)
+            HomeInticator.Visible = False
+            FavoriteInticator.Visible = False
+            UsernameInticator.Visible = False
+            SearchBox.Text = ""
+        End If
     End Sub
 #Region "Drop Menu"
 
@@ -66,18 +75,6 @@ Public Class Main
         Close_forms(LogInForm)
     End Sub
 
-    Private Sub frm_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseClick
-
-        Dim x As Integer = e.Location.X
-        Dim y As Integer = e.Location.Y
-
-        If x > 0 AndAlso x < 200 AndAlso y > 0 AndAlso y < 200 Then
-            MessageBox.Show("Inside")
-        Else
-            MessageBox.Show("Outside")
-        End If
-
-    End Sub
 
 #End Region
 
@@ -172,20 +169,18 @@ Public Class Main
         Application.Exit()
     End Sub
 
+    Public Shared resultMovies() As Movie
     Private Sub SearchBox_TextChanged(sender As Object, e As EventArgs) Handles SearchBox.TextChanged
         If SearchBox.Text.Trim.Length >= 3 Then
-            If Application.OpenForms().OfType(Of SearchForm).Any Then
-                SearchForm.Close()
-            End If
-            ChnageWindow(SearchForm, MainPanel, False)
-            HomeInticator.Visible = False
-            FavoriteInticator.Visible = False
-            UsernameInticator.Visible = False
-        ElseIf Not Application.OpenForms().OfType(Of MoviesMain).Any Then
-            ChnageWindow(MoviesMain, MainPanel, False)
-                HomeInticator.Visible = True
-                FavoriteInticator.Visible = False
-            UsernameInticator.Visible = False
+            For Each lL In resultPanel.Controls.OfType(Of LinkLabel)().ToArray()
+                lL.Dispose()
+            Next
+            resultMovies = MvcLuceneSampleApp.Search.LuceneSearch.SearchMovieResults(SearchBox.Text)
+            SearchClass.Create(resultPanel, resultMovies)
+            resultPanel.Visible = True
+        Else
+            resultPanel.Visible = False
         End If
+
     End Sub
 End Class

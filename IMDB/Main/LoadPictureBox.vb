@@ -1,7 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class LoadPictureBox
 
-
     Public Shared Sub Create(panel As Panel, array() As Movie, PosY As Integer)
 
         'Check height of the Movies Panel
@@ -24,16 +23,14 @@ Public Class LoadPictureBox
                     .ImageLocation = array(index).Url
             }
 
-
-            MovieBox.ImageLocation = array(index).Url
             panel.Controls.Add(MovieBox)
             MovieBox.TabIndex = index
 
             'Add pictureBoxs on array
             array(index).P = MovieBox
-            'Adds click even for every label
 
-            AddHandler array(index).P.Click, AddressOf AllMoviesCLick
+            'Adds click even for every label
+            AddHandler MovieBox.Click, AddressOf AllMoviesCLick
 
             PosX += 245
             If (index + 1) Mod 5 = 0 Then
@@ -44,13 +41,14 @@ Public Class LoadPictureBox
     End Sub
 
 
-    Public Shared Sub AllMoviesCLick(sender As Object, ByVal e As EventArgs)
+    Public Shared Sub AllMoviesCLick(sender As Object, e As EventArgs)
         Dim MovieBox As PictureBox = TryCast(sender, PictureBox)
-
         If MovieBox IsNot Nothing Then
+
             Main.Container.Visible = True
             CurrentMovie.TopLevel = False
             Main.Container.Controls.Add(CurrentMovie)
+
 
             Dim a
             Dim c = MovieBox.TabIndex
@@ -66,15 +64,15 @@ Public Class LoadPictureBox
 
 
             If checkIfFavExists(a(c).Id, LogInForm.u.Id) Then
-                    CurrentMovie.AddRem.Text = "Remove from Favorites"
-                    CurrentMovie.flag = True
-                Else
-                    CurrentMovie.AddRem.Text = "Add to Favorites"
-                    CurrentMovie.flag = False
-                End If
+                CurrentMovie.AddRem.Text = "Remove from Favorites"
+                CurrentMovie.flag = True
+            Else
+                CurrentMovie.AddRem.Text = "Add to Favorites"
+                CurrentMovie.flag = False
+            End If
 
-                Dim actor() As Actor
-                actor = ShowActors(a(c).Id)
+            Dim actor() As Actor
+            actor = ShowActors(a(c).Id)
             For Each act In actor
                 CurrentMovie.actors.Text += act.Name & " " & act.Surname & vbCrLf
             Next

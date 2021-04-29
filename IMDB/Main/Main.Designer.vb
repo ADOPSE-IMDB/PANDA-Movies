@@ -35,6 +35,7 @@ Partial Class Main
         Me.SearchBox = New System.Windows.Forms.TextBox()
         Me.HomeButton = New System.Windows.Forms.Button()
         Me.MainPanel = New System.Windows.Forms.Panel()
+        Me.resultPanel = New System.Windows.Forms.Panel()
         Me.DropPanel = New System.Windows.Forms.Panel()
         Me.OpenProfile = New System.Windows.Forms.Button()
         Me.LogOut = New System.Windows.Forms.Button()
@@ -154,6 +155,7 @@ Partial Class Main
         '
         Me.MainPanel.BackColor = System.Drawing.Color.DimGray
         Me.MainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.MainPanel.Controls.Add(Me.resultPanel)
         Me.MainPanel.Controls.Add(Me.DropPanel)
         Me.MainPanel.Controls.Add(Me.Container)
         Me.MainPanel.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -161,6 +163,15 @@ Partial Class Main
         Me.MainPanel.Name = "MainPanel"
         Me.MainPanel.Size = New System.Drawing.Size(1280, 720)
         Me.MainPanel.TabIndex = 1
+        '
+        'resultPanel
+        '
+        Me.resultPanel.BackColor = System.Drawing.Color.LightGray
+        Me.resultPanel.Location = New System.Drawing.Point(515, 1)
+        Me.resultPanel.Name = "resultPanel"
+        Me.resultPanel.Size = New System.Drawing.Size(200, 140)
+        Me.resultPanel.TabIndex = 2
+        Me.resultPanel.Visible = False
         '
         'DropPanel
         '
@@ -266,4 +277,5 @@ Partial Class Main
     Friend WithEvents UsernameInticator As Panel
     Friend WithEvents FavoriteInticator As Panel
     Friend WithEvents ExitBtn As Button
+    Friend WithEvents resultPanel As Panel
 End Class
