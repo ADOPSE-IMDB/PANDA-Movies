@@ -53,7 +53,7 @@
         Dim actor() As Actor = ShowActors(movie.Id)
 
         For Each act In actor
-            CurrentMovie.actors.Text += act.Name & " " & act.Surname & vbCrLf
+            CurrentMovie.actors.Text += act.Name & " " & vbCrLf
         Next
     End Sub
 End Module
