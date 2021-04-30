@@ -5,7 +5,7 @@
 
         Dim con As New Connection
         Dim results As New DataTable
-        con.RunQuery("SELECT name,surname from Actors AS A 
+        con.RunQuery("SELECT name from Actors AS A 
 		              inner join  MovieCasts as MC on MC.id=A.id and MC.movie_id=@0", args, results)
 
         Dim numberOfActors As New Integer
@@ -16,8 +16,7 @@
         Try
             For i = 0 To allActors.Length - 1
                 allActors(i) = New Actor With {
-                    .Name = results.Rows(i)("name").ToString,
-                    .Surname = results.Rows(i)("surname").ToString
+                    .Name = results.Rows(i)("name").ToString
                 }
             Next
         Catch ex As Exception

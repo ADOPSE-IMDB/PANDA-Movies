@@ -74,7 +74,7 @@ Public Class LoadPictureBox
             Dim actor() As Actor
             actor = ShowActors(a(c).Id)
             For Each act In actor
-                CurrentMovie.actors.Text += act.Name & " " & act.Surname & vbCrLf
+                CurrentMovie.actors.Text += act.Name & " " & vbCrLf
             Next
 
 
