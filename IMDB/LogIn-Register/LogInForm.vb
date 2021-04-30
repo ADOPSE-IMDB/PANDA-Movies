@@ -5,7 +5,7 @@ Public Class LogInForm
 
 
     Private Sub on_Load() Handles MyBase.Load
-        MvcLuceneSampleApp.Search.LuceneSearch.Initialize()
+        MvcLuceneSampleApp.Search.Initialize()
     End Sub
 
     Private Sub CloseApp_Click(sender As Object, e As EventArgs) Handles CloseApp.Click

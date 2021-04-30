@@ -8,7 +8,7 @@
             SLabel.Text = "Sorry we found " & resultMovies.Length & " for : " & Main.SearchBox.Text
         Else
             SLabel.Text = "We found " & resultMovies.Length & " for : " & Main.SearchBox.Text
-            LoadPictureBox.Create(result, resultMovies, 50)
+            MoviesLoad(result, resultMovies, 50)
         End If
 
     End Sub

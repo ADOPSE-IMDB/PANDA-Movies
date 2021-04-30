@@ -1,10 +1,6 @@
 ﻿Public Class CurrentMovie
     Public mID
     Public flag
-    Private Sub On_Load(sender As Object, e As EventArgs) Handles Me.Load
-
-    End Sub
-
 
     Private Sub AddRem_Click(sender As Object, e As EventArgs) Handles AddRem.Click
 

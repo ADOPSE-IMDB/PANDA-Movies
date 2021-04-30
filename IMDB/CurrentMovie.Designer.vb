@@ -44,9 +44,12 @@ Partial Class CurrentMovie
         '
         'MoPic
         '
-        Me.MoPic.Location = New System.Drawing.Point(30, 39)
+        Me.MoPic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.MoPic.Image = Global.IMDB.My.Resources.Resources._200
+        Me.MoPic.Location = New System.Drawing.Point(34, 30)
         Me.MoPic.Name = "MoPic"
-        Me.MoPic.Size = New System.Drawing.Size(209, 297)
+        Me.MoPic.Size = New System.Drawing.Size(208, 306)
+        Me.MoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.MoPic.TabIndex = 0
         Me.MoPic.TabStop = False
         '
