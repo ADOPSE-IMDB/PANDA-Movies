@@ -107,4 +107,15 @@ Module MovieMod
         Return topMovies
     End Function
 
+    Public Function RateMovie(ByVal movieID, ByVal userID, ByVal rating)
+        Dim flag As Boolean = False
+
+        Dim con As New Connection
+        Dim args() As String = {movieID, userID, rating}
+        Dim results As New DataTable
+        con.RunQuery("Insert into UserRating(movie_id,user_id,rating) values (@0,@1,@2)", args, results)
+        flag = True
+        Return flag
+    End Function
+
 End Module
