@@ -1,0 +1,9 @@
+ CREATE DEFINER=`it185223`@`%` TRIGGER `it185223`.`UserRating_AFTER_INSERT` AFTER INSERT ON `UserRating` FOR EACH ROW
+    BEGIN
+    SET @COUNT=(SELECT COUNT(*) FROM UserRating WHERE (movie_id=NEW.movie_id));
+    SET @SUM=(Select SUM(rating) from UserRating where (movie_id=NEW.movie_id));
+	Update Movies
+    SET Movies.rating = @SUM /@count
+    where Movies.id=New.movie_id;
+    
+    END 
