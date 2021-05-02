@@ -36,6 +36,7 @@ Partial Class CurrentMovie
         Me.actors = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.MovieGenre = New System.Windows.Forms.Label()
         CType(Me.MoPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TopPanel.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,9 +66,9 @@ Partial Class CurrentMovie
         '
         'Description
         '
-        Me.Description.Location = New System.Drawing.Point(30, 391)
+        Me.Description.Location = New System.Drawing.Point(30, 393)
         Me.Description.Name = "Description"
-        Me.Description.Size = New System.Drawing.Size(540, 302)
+        Me.Description.Size = New System.Drawing.Size(540, 300)
         Me.Description.TabIndex = 2
         Me.Description.Text = "Description"
         '
@@ -129,7 +130,7 @@ Partial Class CurrentMovie
         'Label2
         '
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label2.Location = New System.Drawing.Point(0, 343)
+        Me.Label2.Location = New System.Drawing.Point(0, 363)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(600, 30)
         Me.Label2.TabIndex = 8
@@ -168,11 +169,19 @@ Partial Class CurrentMovie
         Me.PictureBox2.TabIndex = 12
         Me.PictureBox2.TabStop = False
         '
+        'MovieGenre
+        '
+        Me.MovieGenre.Location = New System.Drawing.Point(34, 343)
+        Me.MovieGenre.Name = "MovieGenre"
+        Me.MovieGenre.Size = New System.Drawing.Size(208, 50)
+        Me.MovieGenre.TabIndex = 13
+        '
         'CurrentMovie
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(600, 702)
+        Me.Controls.Add(Me.MovieGenre)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.actors)
@@ -211,4 +220,5 @@ Partial Class CurrentMovie
     Friend WithEvents actors As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents MovieGenre As Label
 End Class

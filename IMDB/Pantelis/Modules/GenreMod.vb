@@ -15,7 +15,7 @@
         Try
             For i = 0 To allGenres.Length - 1
                 allGenres(i) = New Genre With {
-                    .Name = results.Rows(i)("name").ToString
+                    .Name = results.Rows(i)("genre").ToString
                 }
             Next
         Catch ex As Exception

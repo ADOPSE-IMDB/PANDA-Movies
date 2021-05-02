@@ -67,7 +67,13 @@ Module LoadPictureBox
         Dim actor() As Actor
         actor = ShowActors(movie.Id)
         For Each act In actor
-            CurrentMovie.actors.Text += act.Name & " " & vbCrLf
+            CurrentMovie.actors.Text += act.Name & vbCrLf
+        Next
+
+        Dim genre() As Genre
+        genre = showGenres(movie.Id)
+        For Each g In genre
+            CurrentMovie.MovieGenre.Text += g.Name & " "
         Next
     End Sub
 
