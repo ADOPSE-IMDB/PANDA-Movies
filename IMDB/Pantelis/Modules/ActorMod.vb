@@ -6,7 +6,7 @@
         Dim con As New Connection
         Dim results As New DataTable
         con.RunQuery("SELECT name from Actors AS A 
-		              inner join  MovieCasts as MC on MC.id=A.id and MC.movie_id=@0", args, results)
+		              inner join  MovieCasts as MC on MC.actor_id=A.id and MC.movie_id=@0", args, results)
 
         Dim numberOfActors As New Integer
 
