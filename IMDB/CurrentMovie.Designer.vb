@@ -34,13 +34,14 @@ Partial Class CurrentMovie
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.actors = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.MovieGenre = New System.Windows.Forms.Label()
+        Me.Urating = New System.Windows.Forms.TrackBar()
+        Me.uR = New System.Windows.Forms.Label()
+        Me.Ratebutton = New System.Windows.Forms.Button()
+        Me.rateInfo = New System.Windows.Forms.Label()
         CType(Me.MoPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TopPanel.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Urating, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MoPic
@@ -139,7 +140,7 @@ Partial Class CurrentMovie
         '
         'Label3
         '
-        Me.Label3.Location = New System.Drawing.Point(266, 191)
+        Me.Label3.Location = New System.Drawing.Point(266, 179)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(150, 23)
         Me.Label3.TabIndex = 9
@@ -148,26 +149,10 @@ Partial Class CurrentMovie
         '
         'actors
         '
-        Me.actors.Location = New System.Drawing.Point(422, 191)
+        Me.actors.Location = New System.Drawing.Point(422, 179)
         Me.actors.Name = "actors"
         Me.actors.Size = New System.Drawing.Size(148, 44)
         Me.actors.TabIndex = 10
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(330, 257)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(45, 45)
-        Me.PictureBox1.TabIndex = 11
-        Me.PictureBox1.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Location = New System.Drawing.Point(447, 257)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(45, 45)
-        Me.PictureBox2.TabIndex = 12
-        Me.PictureBox2.TabStop = False
         '
         'MovieGenre
         '
@@ -176,14 +161,56 @@ Partial Class CurrentMovie
         Me.MovieGenre.Size = New System.Drawing.Size(208, 50)
         Me.MovieGenre.TabIndex = 13
         '
+        'Urating
+        '
+        Me.Urating.LargeChange = 1
+        Me.Urating.Location = New System.Drawing.Point(316, 265)
+        Me.Urating.Name = "Urating"
+        Me.Urating.Size = New System.Drawing.Size(131, 45)
+        Me.Urating.TabIndex = 14
+        Me.Urating.TickStyle = System.Windows.Forms.TickStyle.Both
+        Me.Urating.Visible = False
+        '
+        'uR
+        '
+        Me.uR.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.uR.Location = New System.Drawing.Point(453, 265)
+        Me.uR.Name = "uR"
+        Me.uR.Size = New System.Drawing.Size(59, 45)
+        Me.uR.TabIndex = 15
+        Me.uR.Text = "uR"
+        Me.uR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.uR.Visible = False
+        '
+        'Ratebutton
+        '
+        Me.Ratebutton.Location = New System.Drawing.Point(358, 274)
+        Me.Ratebutton.Name = "Ratebutton"
+        Me.Ratebutton.Size = New System.Drawing.Size(125, 23)
+        Me.Ratebutton.TabIndex = 16
+        Me.Ratebutton.Text = "Rate this Movie"
+        Me.Ratebutton.UseVisualStyleBackColor = True
+        '
+        'rateInfo
+        '
+        Me.rateInfo.Location = New System.Drawing.Point(266, 242)
+        Me.rateInfo.Name = "rateInfo"
+        Me.rateInfo.Size = New System.Drawing.Size(304, 20)
+        Me.rateInfo.TabIndex = 17
+        Me.rateInfo.Text = "rateInfo"
+        Me.rateInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.rateInfo.Visible = False
+        '
         'CurrentMovie
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(600, 702)
+        Me.Controls.Add(Me.rateInfo)
+        Me.Controls.Add(Me.Ratebutton)
+        Me.Controls.Add(Me.uR)
+        Me.Controls.Add(Me.Urating)
         Me.Controls.Add(Me.MovieGenre)
-        Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.actors)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -200,9 +227,9 @@ Partial Class CurrentMovie
         Me.Text = "CurrentMovie"
         CType(Me.MoPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TopPanel.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Urating, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -218,7 +245,9 @@ Partial Class CurrentMovie
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents actors As Label
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents MovieGenre As Label
+    Friend WithEvents Urating As TrackBar
+    Friend WithEvents uR As Label
+    Friend WithEvents Ratebutton As Button
+    Friend WithEvents rateInfo As Label
 End Class

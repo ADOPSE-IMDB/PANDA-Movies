@@ -122,12 +122,12 @@ Module MovieMod
         Dim con As New Connection
         Dim args() As String = {movieID, userID}
         Dim results As New DataTable
-        con.RunQuery("Select * from UserRating where movieID=@0 and userID=@1", args, results)
+        con.RunQuery("Select * from UserRating where movie_id=@0 and user_id=@1", args, results)
         If (results.Rows.Count.Equals(0)) Then
             Return -1
         Else
 
-            Return results.Rows(1)("rating").ToString
+            Return results.Rows(0)("rating").ToString
 
         End If
     End Function

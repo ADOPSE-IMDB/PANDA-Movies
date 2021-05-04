@@ -44,10 +44,10 @@
 
         If checkIfFavExists(movie.Id, LogInForm.u.Id) Then
             CurrentMovie.AddRem.Text = "Remove from Favorites"
-            CurrentMovie.flag = True
+            CurrentMovie.ARflag = True
         Else
             CurrentMovie.AddRem.Text = "Add to Favorites"
-            CurrentMovie.flag = False
+            CurrentMovie.ARflag = False
         End If
 
         Dim actor() As Actor = ShowActors(movie.Id)

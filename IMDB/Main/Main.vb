@@ -14,7 +14,7 @@ Public Class Main
 
 #Region "Open Main page"
 
-    Private Sub HomeButton_Click(sender As Object, e As EventArgs) Handles HomeButton.Click
+    Public Sub HomeButton_Click(sender As Object, e As EventArgs) Handles HomeButton.Click
         If Not Application.OpenForms().OfType(Of MoviesMain).Any Then
             ChnageWindow(MoviesMain, MainPanel, False)
             HomeInticator.Visible = True
