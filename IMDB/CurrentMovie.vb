@@ -57,7 +57,7 @@
         If r = -1 Then
             Urating.Value = 0
             rateInfo.Text = "You haven't rated this movie yet"
-            uR.Text = ""
+            uR.Text = "-/10"
             URflag = False
         Else
             Urating.Value = r

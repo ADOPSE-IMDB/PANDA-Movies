@@ -8,23 +8,37 @@
         con.RunQuery("SELECT name from Actors AS A 
 		              inner join  MovieCasts as MC on MC.actor_id=A.id and MC.movie_id=@0", args, results)
 
-        Dim numberOfActors As New Integer
-
-        numberOfActors = countActors(movie_id)
-
-        Dim allActors(numberOfActors - 1) As Actor  'numberOfActors : number of Actors (-1 size of the Array)
+        Dim t = ""
         Try
-            For i = 0 To allActors.Length - 1
-                allActors(i) = New Actor With {
-                    .Name = results.Rows(i)("name").ToString
-                }
+            For Each r In results.Rows
+                t += r("name").ToString() & vbCrLf
             Next
         Catch ex As Exception
-            MessageBox.Show(ex.ToString, ex.Message & " Show Actors Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.ToString, ex.Message & " Show Genres Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
+        Return t
 
-        Return allActors
+
+
+
+        'Dim numberOfActors As New Integer
+
+        'numberOfActors = countActors(movie_id)
+
+        '     Dim allActors(numberOfActors - 1) As Actor  'numberOfActors : number of Actors (-1 size of the Array)
+        '    Try
+        '   For i = 0 To allActors.Length - 1
+        '  allActors(i) = New Actor With {
+        '             .Name = results.Rows(i)("name").ToString
+        '        }
+        'Next
+        'Catch ex As Exception
+        ' MessageBox.Show(ex.ToString, ex.Message & " Show Actors Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        ' End Try
+
+
+        '        Return allActors
 
     End Function
 

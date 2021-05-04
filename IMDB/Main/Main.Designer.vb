@@ -161,7 +161,7 @@ Partial Class Main
         Me.MainPanel.Controls.Add(Me.DropPanel)
         Me.MainPanel.Controls.Add(Me.Container)
         Me.MainPanel.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.MainPanel.Location = New System.Drawing.Point(0, 60)
+        Me.MainPanel.Location = New System.Drawing.Point(0, 59)
         Me.MainPanel.Name = "MainPanel"
         Me.MainPanel.Size = New System.Drawing.Size(1280, 720)
         Me.MainPanel.TabIndex = 1
@@ -256,7 +256,7 @@ Partial Class Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1280, 780)
+        Me.ClientSize = New System.Drawing.Size(1280, 779)
         Me.ControlBox = False
         Me.Controls.Add(Me.TopPanel)
         Me.Controls.Add(Me.MovePanel)

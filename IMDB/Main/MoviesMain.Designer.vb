@@ -39,7 +39,7 @@ Partial Class MoviesMain
         '
         Me.curr.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.curr.BackColor = System.Drawing.Color.DarkGray
-        Me.curr.Location = New System.Drawing.Point(604, 669)
+        Me.curr.Location = New System.Drawing.Point(604, 668)
         Me.curr.Name = "curr"
         Me.curr.Size = New System.Drawing.Size(74, 20)
         Me.curr.TabIndex = 19
@@ -50,7 +50,7 @@ Partial Class MoviesMain
         '
         Me.Pre.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Pre.Enabled = False
-        Me.Pre.Location = New System.Drawing.Point(547, 692)
+        Me.Pre.Location = New System.Drawing.Point(547, 691)
         Me.Pre.Name = "Pre"
         Me.Pre.Size = New System.Drawing.Size(75, 23)
         Me.Pre.TabIndex = 17
@@ -114,7 +114,7 @@ Partial Class MoviesMain
         'ne
         '
         Me.ne.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.ne.Location = New System.Drawing.Point(658, 692)
+        Me.ne.Location = New System.Drawing.Point(658, 691)
         Me.ne.Name = "ne"
         Me.ne.Size = New System.Drawing.Size(75, 23)
         Me.ne.TabIndex = 20
@@ -128,7 +128,7 @@ Partial Class MoviesMain
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.DimGray
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1280, 720)
+        Me.ClientSize = New System.Drawing.Size(1280, 719)
         Me.Controls.Add(Me.curr)
         Me.Controls.Add(Me.ne)
         Me.Controls.Add(Me.Pre)

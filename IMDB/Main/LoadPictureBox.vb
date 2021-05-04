@@ -45,36 +45,11 @@ Module LoadPictureBox
 
     Public Sub AllMoviesCLick(movie As Movie)
 
-
+        Main.SearchBox.Text = ""
         Main.Container.Visible = True
         CurrentMovie.TopLevel = False
         Main.Container.Controls.Add(CurrentMovie)
         CurrentMovie.Show()
-
-        If checkIfFavExists(movie.Id, LogInForm.u.Id) Then
-            CurrentMovie.AddRem.Text = "Remove from Favorites"
-            CurrentMovie.ARflag = True
-        Else
-            CurrentMovie.AddRem.Text = "Add to Favorites"
-            CurrentMovie.ARflag = False
-        End If
-
-        Dim t = ""
-
-        Dim actor() As Actor
-        actor = ShowActors(movie.Id)
-        For Each act In actor
-            t += act.Name & vbCrLf
-        Next
-        CurrentMovie.actors.Text = t
-        t = ""
-
-        Dim genre() As Genre
-        genre = showGenres(movie.Id)
-        For Each g In genre
-            t += g.Name & " "
-        Next
-        CurrentMovie.MovieGenre.Text = t
 
         CurrentMovie.mID = movie.Id
         CurrentMovie.MovieName.Text = movie.Title
@@ -84,6 +59,15 @@ Module LoadPictureBox
         CurrentMovie.MoPic.ImageLocation = movie.Url
 
 
+        If checkIfFavExists(movie.Id, LogInForm.u.Id) Then
+            CurrentMovie.AddRem.Text = "Remove from Favorites"
+            CurrentMovie.ARflag = True
+        Else
+            CurrentMovie.AddRem.Text = "Add to Favorites"
+            CurrentMovie.ARflag = False
+        End If
+        CurrentMovie.actors.Text = ShowActors(movie.Id)
+        CurrentMovie.MovieGenre.Text = showGenres(movie.Id)
     End Sub
 
 End Module

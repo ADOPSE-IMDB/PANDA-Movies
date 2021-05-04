@@ -188,7 +188,7 @@ Partial Class CurrentMovie
         Me.Ratebutton.Name = "Ratebutton"
         Me.Ratebutton.Size = New System.Drawing.Size(125, 23)
         Me.Ratebutton.TabIndex = 16
-        Me.Ratebutton.Text = "Rate this Movie"
+        Me.Ratebutton.Text = "Rate this movie"
         Me.Ratebutton.UseVisualStyleBackColor = True
         '
         'rateInfo
