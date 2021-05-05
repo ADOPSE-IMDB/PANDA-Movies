@@ -39,8 +39,8 @@
         Dim con As New Connection
         Dim args() As String = {movie_id}
         Dim results As New DataTable
-        con.RunQuery("Select rating from Movies where movie_id=@0", args, results)
-        Return results.Rows(0)("rating").ToString
+        con.RunQuery("Select rating from Movies where Id=@0", args, results)
+        Return results.Rows(0)("rating")
 
     End Function
 

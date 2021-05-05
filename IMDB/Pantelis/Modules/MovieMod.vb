@@ -53,7 +53,7 @@ Module MovieMod
                 .Title = results.Rows(i)("title").ToString,
                 .Year = results.Rows(i)("year").ToString,
                 .Description = results.Rows(i)("description").ToString,
-                .Rating = results.Rows(i)("rating").ToString,
+                .Rating = results.Rows(i)("rating"),
                 .Url = results.Rows(i)("image_url").ToString
             }
         Next

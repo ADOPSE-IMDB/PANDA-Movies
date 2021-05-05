@@ -84,12 +84,6 @@ Public Class Main
 #End Region
 
 #Region "Drop Menu"
-
-    'Opens DropDown menu
-    Private Sub NameBtn_Click(sender As Object, e As EventArgs) Handles NameBtn.Click
-        Timer.Start()
-    End Sub
-
     'Open Profile
     Private Sub OpenProfile_Click(sender As Object, e As EventArgs) Handles OpenProfile.Click
         If Not Application.OpenForms().OfType(Of Profile).Any Then
@@ -106,6 +100,35 @@ Public Class Main
         Close_forms(LogInForm)
     End Sub
 
+
+    'Opens DropDown menu
+    Private Sub NameBtn_Click(sender As Object, e As EventArgs) Handles NameBtn.Click
+        Timer.Start()
+    End Sub
+
+
+    Private Sub NameBtn_L(sender As Object, e As System.EventArgs) Handles NameBtn.LostFocus
+        If Not isCollapsed Then
+            Threading.Thread.Sleep(100)
+            Timer.Start()
+        End If
+
+    End Sub
+
+    'check if mouse is over the buttons/DropPanel
+    Private Sub DropPanel_MouseLeave(sender As Object, e As System.EventArgs) Handles DropPanel.MouseLeave, LogOut.MouseLeave, OpenProfile.MouseLeave, NameBtn.MouseLeave
+        If Not MouseIsOverControl(OpenProfile) And Not MouseIsOverControl(LogOut) And Not MouseIsOverControl(DropPanel) And Not MouseIsOverControl(NameBtn) Then
+            If Not isCollapsed Then
+                Threading.Thread.Sleep(100)
+                Timer.Start()
+            End If
+        End If
+    End Sub
+
+    'Check if mouse is over a control
+    Public Function MouseIsOverControl(ByVal c As Control) As Boolean
+        Return c.ClientRectangle.Contains(c.PointToClient(Control.MousePosition))
+    End Function
 
 #End Region
 
@@ -139,11 +162,11 @@ Public Class Main
 #Region "Change Form "
 
     Private Sub ChnageWindow(newform, panel, flag)
+        Container.Visible = flag
         Close_forms(Me)
         newform.TopLevel = False
         panel.Controls.Add(newform)
         newform.Show()
-        Container.Visible = flag
     End Sub
 #End Region
 
@@ -199,6 +222,4 @@ Public Class Main
     Private Sub ExitBtn_Click(sender As Object, e As EventArgs) Handles ExitBtn.Click
         Application.Exit()
     End Sub
-
-
 End Class

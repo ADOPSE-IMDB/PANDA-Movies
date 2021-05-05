@@ -91,7 +91,7 @@ Partial Class Main
         Me.NameBtn.Name = "NameBtn"
         Me.NameBtn.Size = New System.Drawing.Size(80, 23)
         Me.NameBtn.TabIndex = 2
-        Me.NameBtn.Text = "xristina"
+        Me.NameBtn.Text = "UserName"
         Me.NameBtn.UseVisualStyleBackColor = True
         '
         'AppName
@@ -172,7 +172,7 @@ Partial Class Main
         Me.resultPanel.Controls.Add(Me.ResultInfo)
         Me.resultPanel.Location = New System.Drawing.Point(515, 1)
         Me.resultPanel.Name = "resultPanel"
-        Me.resultPanel.Size = New System.Drawing.Size(200, 193)
+        Me.resultPanel.Size = New System.Drawing.Size(200, 131)
         Me.resultPanel.TabIndex = 2
         Me.resultPanel.Visible = False
         '
@@ -193,7 +193,7 @@ Partial Class Main
         Me.DropPanel.BackColor = System.Drawing.Color.Transparent
         Me.DropPanel.Controls.Add(Me.OpenProfile)
         Me.DropPanel.Controls.Add(Me.LogOut)
-        Me.DropPanel.Location = New System.Drawing.Point(1171, 0)
+        Me.DropPanel.Location = New System.Drawing.Point(1171, -2)
         Me.DropPanel.MaximumSize = New System.Drawing.Size(74, 58)
         Me.DropPanel.MinimumSize = New System.Drawing.Size(74, 0)
         Me.DropPanel.Name = "DropPanel"
@@ -258,9 +258,9 @@ Partial Class Main
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1280, 779)
         Me.ControlBox = False
+        Me.Controls.Add(Me.MainPanel)
         Me.Controls.Add(Me.TopPanel)
         Me.Controls.Add(Me.MovePanel)
-        Me.Controls.Add(Me.MainPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "Main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

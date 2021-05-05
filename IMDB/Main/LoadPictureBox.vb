@@ -32,8 +32,6 @@ Module LoadPictureBox
             Dim mv As Movie = array(index)
             AddHandler MovieBox.Click, Sub() AllMoviesCLick(mv)
 
-            array(index).P = MovieBox
-
             PosX += 245
             If (index + 1) Mod 5 = 0 Then
                 PosY += 293
@@ -44,7 +42,6 @@ Module LoadPictureBox
 
 
     Public Sub AllMoviesCLick(movie As Movie)
-
         Main.SearchBox.Text = ""
         Main.Container.Visible = True
         CurrentMovie.TopLevel = False
@@ -53,7 +50,7 @@ Module LoadPictureBox
 
         CurrentMovie.mID = movie.Id
         CurrentMovie.MovieName.Text = movie.Title
-        CurrentMovie.Rate.Text = movie.Rating & "/10"
+        CurrentMovie.Rate.Text = Math.Round(movie.Rating, 1) & "/10"
         CurrentMovie.MovieDate.Text = movie.Year
         CurrentMovie.Description.Text = movie.Description
         CurrentMovie.MoPic.ImageLocation = movie.Url

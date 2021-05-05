@@ -105,7 +105,4 @@
 
     End Sub
 
-    Private Sub curr_Click(sender As Object, e As EventArgs) Handles curr.Click
-
-    End Sub
 End Class

@@ -43,11 +43,11 @@ Public Class Movie
             mdescription = value
         End Set
     End Property
-    Public Property Rating() As String
+    Public Property Rating() As Double
         Get
             Return mrating
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Double)
             mrating = value
         End Set
     End Property
@@ -59,14 +59,8 @@ Public Class Movie
             mURL = value
         End Set
     End Property
-    Public Property P() As PictureBox
-        Get
-            Return mP
-        End Get
-        Set(ByVal value As PictureBox)
-            mP = value
-        End Set
-    End Property
+
+
 
     Sub Print()
         Console.WriteLine(Me.Id)

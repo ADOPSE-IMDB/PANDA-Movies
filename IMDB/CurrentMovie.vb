@@ -3,7 +3,7 @@
     'add/remove flag
     Public ARflag
     'uratingFlag
-    Public URflag
+    Dim URflag
     Private Sub AddRem_Click(sender As Object, e As EventArgs) Handles AddRem.Click
 
         If ARflag Then
@@ -43,7 +43,7 @@
         uR.Visible = False
         rateInfo.Text = "You rated this movie with " & Urating.Value & "/10"
         Ratebutton.Visible = True
-
+        Rate.Text = Math.Round(returnRatedMovie(mID), 1) & "/10"
     End Sub
 
 

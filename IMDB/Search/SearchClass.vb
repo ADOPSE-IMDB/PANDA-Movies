@@ -3,6 +3,7 @@
         Dim PosY = 0
         Dim s As String
         Panel.Height = array.Length * 20
+
         For index As Integer = 0 To array.Length - 1
             If array(index).Title.Length > 33 Then
                 s = array(index).Title.Substring(0, 33) & "..."
