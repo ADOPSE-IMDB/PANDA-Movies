@@ -5,17 +5,16 @@ Public Class LogInForm
 
 
     Private Sub on_Load() Handles MyBase.Load
-        MvcLuceneSampleApp.Search.Initialize()
+        Try
+            MvcLuceneSampleApp.Search.Initialize()
+        Catch
+            MessageBox.Show("Connect to teithe First")
+        End Try
     End Sub
 
-    Private Sub CloseApp_Click(sender As Object, e As EventArgs) Handles CloseApp.Click
-        Application.Exit()
-    End Sub
-
-    'Check Username and Password to log in
 
 
-    'Close Log in and open Register form 
+
     Private Sub RegisterLink_Click(sender As Object, e As EventArgs) Handles LabelGoToSignup.Click
         Register.Show()
         Me.Close()
@@ -42,5 +41,14 @@ Public Class LogInForm
                 Close()
             End If
         End If
+    End Sub
+    Private Sub CloseLogIn_click(sender As Object, e As EventArgs) Handles CloseLogIn.Click
+        Application.Exit()
+    End Sub
+    Private Sub CloseLogIn_Enter(sender As Object, e As EventArgs) Handles CloseLogIn.MouseEnter
+        CloseLogIn.Image = My.Resources.Close2
+    End Sub
+    Private Sub CloseLogIn_Leave(sender As Object, e As EventArgs) Handles CloseLogIn.MouseLeave
+        CloseLogIn.Image = My.Resources.Close1
     End Sub
 End Class

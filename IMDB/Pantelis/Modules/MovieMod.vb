@@ -28,12 +28,11 @@ Module MovieMod
             topMovies(i).Print()
         Next
     End Function
+
     Public Function CountMovies()   'a function that returns the number of movies in the database
         Dim con As New Connection
         Dim results As New DataTable
-
         con.RunQuery("select count(*) as num from Movies", results)
-
         Return results.Rows(0)("num").ToString()
     End Function
     Public Function GetAllMovies()  'a function that returns a table of Movie objects with all the movies

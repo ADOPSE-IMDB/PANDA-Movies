@@ -24,41 +24,31 @@ Partial Class LogInForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LogInForm))
-        Me.LogInTitle = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.CloseLogIn = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Login = New System.Windows.Forms.Button()
         Me.UsernameL = New System.Windows.Forms.Label()
-        Me.CheckConnection = New System.Windows.Forms.Button()
         Me.ErrorLabel = New System.Windows.Forms.Label()
         Me.RememberMe = New System.Windows.Forms.CheckBox()
         Me.LabelGoToSignup = New System.Windows.Forms.LinkLabel()
         Me.TextBoxPassword = New System.Windows.Forms.TextBox()
         Me.PasswordL = New System.Windows.Forms.Label()
         Me.TextBoxUsername = New System.Windows.Forms.TextBox()
-        Me.CloseApp = New System.Windows.Forms.Button()
         Me.XError = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Panel3.SuspendLayout()
+        CType(Me.CloseLogIn, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XError, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'LogInTitle
-        '
-        Me.LogInTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LogInTitle.Image = CType(resources.GetObject("LogInTitle.Image"), System.Drawing.Image)
-        Me.LogInTitle.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.LogInTitle.Location = New System.Drawing.Point(0, 0)
-        Me.LogInTitle.Name = "LogInTitle"
-        Me.LogInTitle.Size = New System.Drawing.Size(659, 34)
-        Me.LogInTitle.TabIndex = 0
-        Me.LogInTitle.Text = "IMDB"
-        Me.LogInTitle.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.Transparent
+        Me.Panel3.Controls.Add(Me.CloseLogIn)
+        Me.Panel3.Controls.Add(Me.PictureBox1)
         Me.Panel3.Controls.Add(Me.Login)
         Me.Panel3.Controls.Add(Me.UsernameL)
-        Me.Panel3.Controls.Add(Me.CheckConnection)
         Me.Panel3.Controls.Add(Me.ErrorLabel)
         Me.Panel3.Controls.Add(Me.RememberMe)
         Me.Panel3.Controls.Add(Me.LabelGoToSignup)
@@ -66,14 +56,35 @@ Partial Class LogInForm
         Me.Panel3.Controls.Add(Me.PasswordL)
         Me.Panel3.Controls.Add(Me.TextBoxUsername)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(0, 37)
+        Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(659, 303)
+        Me.Panel3.Size = New System.Drawing.Size(484, 288)
         Me.Panel3.TabIndex = 2
+        '
+        'CloseLogIn
+        '
+        Me.CloseLogIn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CloseLogIn.Image = Global.IMDB.My.Resources.Resources.Close1
+        Me.CloseLogIn.Location = New System.Drawing.Point(454, 0)
+        Me.CloseLogIn.Name = "CloseLogIn"
+        Me.CloseLogIn.Size = New System.Drawing.Size(30, 30)
+        Me.CloseLogIn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.CloseLogIn.TabIndex = 15
+        Me.CloseLogIn.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 8)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(230, 177)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 14
+        Me.PictureBox1.TabStop = False
         '
         'Login
         '
-        Me.Login.Location = New System.Drawing.Point(463, 210)
+        Me.Login.Location = New System.Drawing.Point(325, 204)
         Me.Login.Name = "Login"
         Me.Login.Size = New System.Drawing.Size(75, 23)
         Me.Login.TabIndex = 13
@@ -83,23 +94,12 @@ Partial Class LogInForm
         'UsernameL
         '
         Me.UsernameL.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.UsernameL.Location = New System.Drawing.Point(463, 45)
+        Me.UsernameL.Location = New System.Drawing.Point(325, 39)
         Me.UsernameL.Name = "UsernameL"
         Me.UsernameL.Size = New System.Drawing.Size(102, 20)
         Me.UsernameL.TabIndex = 12
         Me.UsernameL.Text = "Username"
         Me.UsernameL.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        '
-        'CheckConnection
-        '
-        Me.CheckConnection.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.CheckConnection.Location = New System.Drawing.Point(12, 250)
-        Me.CheckConnection.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.CheckConnection.Name = "CheckConnection"
-        Me.CheckConnection.Size = New System.Drawing.Size(110, 23)
-        Me.CheckConnection.TabIndex = 8
-        Me.CheckConnection.Text = "Check Connection"
-        Me.CheckConnection.UseVisualStyleBackColor = True
         '
         'ErrorLabel
         '
@@ -111,7 +111,7 @@ Partial Class LogInForm
         '
         'RememberMe
         '
-        Me.RememberMe.Location = New System.Drawing.Point(512, 176)
+        Me.RememberMe.Location = New System.Drawing.Point(374, 170)
         Me.RememberMe.Name = "RememberMe"
         Me.RememberMe.Size = New System.Drawing.Size(86, 19)
         Me.RememberMe.TabIndex = 6
@@ -125,7 +125,7 @@ Partial Class LogInForm
         Me.LabelGoToSignup.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LabelGoToSignup.ForeColor = System.Drawing.Color.DimGray
         Me.LabelGoToSignup.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LabelGoToSignup.Location = New System.Drawing.Point(390, 238)
+        Me.LabelGoToSignup.Location = New System.Drawing.Point(252, 232)
         Me.LabelGoToSignup.Name = "LabelGoToSignup"
         Me.LabelGoToSignup.Size = New System.Drawing.Size(231, 47)
         Me.LabelGoToSignup.TabIndex = 4
@@ -140,7 +140,7 @@ Partial Class LogInForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBoxPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.TextBoxPassword.ForeColor = System.Drawing.Color.Black
-        Me.TextBoxPassword.Location = New System.Drawing.Point(415, 149)
+        Me.TextBoxPassword.Location = New System.Drawing.Point(277, 143)
         Me.TextBoxPassword.Name = "TextBoxPassword"
         Me.TextBoxPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBoxPassword.Size = New System.Drawing.Size(183, 21)
@@ -149,7 +149,7 @@ Partial Class LogInForm
         'PasswordL
         '
         Me.PasswordL.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.PasswordL.Location = New System.Drawing.Point(463, 126)
+        Me.PasswordL.Location = New System.Drawing.Point(325, 120)
         Me.PasswordL.Name = "PasswordL"
         Me.PasswordL.Size = New System.Drawing.Size(102, 20)
         Me.PasswordL.TabIndex = 2
@@ -163,19 +163,10 @@ Partial Class LogInForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBoxUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.TextBoxUsername.ForeColor = System.Drawing.Color.Black
-        Me.TextBoxUsername.Location = New System.Drawing.Point(415, 68)
+        Me.TextBoxUsername.Location = New System.Drawing.Point(277, 62)
         Me.TextBoxUsername.Name = "TextBoxUsername"
         Me.TextBoxUsername.Size = New System.Drawing.Size(183, 21)
         Me.TextBoxUsername.TabIndex = 1
-        '
-        'CloseApp
-        '
-        Me.CloseApp.Location = New System.Drawing.Point(628, 0)
-        Me.CloseApp.Name = "CloseApp"
-        Me.CloseApp.Size = New System.Drawing.Size(31, 30)
-        Me.CloseApp.TabIndex = 3
-        Me.CloseApp.Text = "X"
-        Me.CloseApp.UseVisualStyleBackColor = True
         '
         'XError
         '
@@ -187,10 +178,8 @@ Partial Class LogInForm
         Me.AcceptButton = Me.Login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(659, 340)
+        Me.ClientSize = New System.Drawing.Size(484, 288)
         Me.ControlBox = False
-        Me.Controls.Add(Me.CloseApp)
-        Me.Controls.Add(Me.LogInTitle)
         Me.Controls.Add(Me.Panel3)
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -199,23 +188,24 @@ Partial Class LogInForm
         Me.Text = "Log In"
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.CloseLogIn, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XError, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents LogInTitle As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents PasswordL As Label
     Friend WithEvents TextBoxUsername As TextBox
     Friend WithEvents LinkLabel1 As LinkLabel
-    Friend WithEvents CloseApp As Button
     Friend WithEvents RememberMe As CheckBox
     Friend WithEvents LabelGoToSignup As LinkLabel
     Friend WithEvents TextBoxPassword As TextBox
     Friend WithEvents XError As ErrorProvider
     Friend WithEvents ErrorLabel As Label
-    Friend WithEvents CheckConnection As Button
     Friend WithEvents UsernameL As Label
     Friend WithEvents Login As Button
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents CloseLogIn As PictureBox
 End Class

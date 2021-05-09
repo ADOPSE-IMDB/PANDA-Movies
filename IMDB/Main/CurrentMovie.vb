@@ -46,12 +46,6 @@
         Rate.Text = Math.Round(returnRatedMovie(mID), 1) & "/10"
     End Sub
 
-
-    Private Sub CloseMovie_Click(sender As Object, e As EventArgs) Handles CloseMovie.Click
-        Me.Close()
-        Main.Container.Visible = False
-    End Sub
-
     Private Sub Ratebutton_Click(sender As Object, e As EventArgs) Handles Ratebutton.Click
         Dim r = CheckIfRated(mID, LogInForm.u.Id)
         If r = -1 Then
@@ -69,5 +63,17 @@
         uR.Visible = True
         rateInfo.Visible = True
         Ratebutton.Visible = False
+    End Sub
+
+    Private Sub CloseMovie_Click(sender As Object, e As EventArgs) Handles CloseCuMovie.Click
+        Me.Close()
+        Main.Container.Visible = False
+    End Sub
+
+    Private Sub ExitBtn_Hover(sender As Object, e As EventArgs) Handles CloseCuMovie.MouseEnter
+        CloseCuMovie.Image = My.Resources.Close2
+    End Sub
+    Private Sub ExitBtn_Leave(sender As Object, e As EventArgs) Handles CloseCuMovie.MouseLeave
+        CloseCuMovie.Image = My.Resources.Close1
     End Sub
 End Class

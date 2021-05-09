@@ -26,7 +26,6 @@ Partial Class CurrentMovie
         Me.MovieName = New System.Windows.Forms.Label()
         Me.Description = New System.Windows.Forms.Label()
         Me.TopPanel = New System.Windows.Forms.Panel()
-        Me.CloseMovie = New System.Windows.Forms.Button()
         Me.AddRem = New System.Windows.Forms.Button()
         Me.MovieDate = New System.Windows.Forms.Label()
         Me.Rate = New System.Windows.Forms.Label()
@@ -39,9 +38,10 @@ Partial Class CurrentMovie
         Me.uR = New System.Windows.Forms.Label()
         Me.Ratebutton = New System.Windows.Forms.Button()
         Me.rateInfo = New System.Windows.Forms.Label()
+        Me.CloseCuMovie = New System.Windows.Forms.PictureBox()
         CType(Me.MoPic, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TopPanel.SuspendLayout()
         CType(Me.Urating, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CloseCuMovie, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MoPic
@@ -75,21 +75,11 @@ Partial Class CurrentMovie
         '
         'TopPanel
         '
-        Me.TopPanel.Controls.Add(Me.CloseMovie)
         Me.TopPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.TopPanel.Location = New System.Drawing.Point(0, 0)
         Me.TopPanel.Name = "TopPanel"
         Me.TopPanel.Size = New System.Drawing.Size(600, 24)
         Me.TopPanel.TabIndex = 3
-        '
-        'CloseMovie
-        '
-        Me.CloseMovie.Location = New System.Drawing.Point(578, 0)
-        Me.CloseMovie.Name = "CloseMovie"
-        Me.CloseMovie.Size = New System.Drawing.Size(22, 22)
-        Me.CloseMovie.TabIndex = 4
-        Me.CloseMovie.Text = "X"
-        Me.CloseMovie.UseVisualStyleBackColor = True
         '
         'AddRem
         '
@@ -201,11 +191,23 @@ Partial Class CurrentMovie
         Me.rateInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.rateInfo.Visible = False
         '
+        'CloseCuMovie
+        '
+        Me.CloseCuMovie.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CloseCuMovie.Image = Global.IMDB.My.Resources.Resources.Close1
+        Me.CloseCuMovie.Location = New System.Drawing.Point(576, 0)
+        Me.CloseCuMovie.Name = "CloseCuMovie"
+        Me.CloseCuMovie.Size = New System.Drawing.Size(24, 24)
+        Me.CloseCuMovie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.CloseCuMovie.TabIndex = 18
+        Me.CloseCuMovie.TabStop = False
+        '
         'CurrentMovie
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(600, 702)
+        Me.Controls.Add(Me.CloseCuMovie)
         Me.Controls.Add(Me.rateInfo)
         Me.Controls.Add(Me.Ratebutton)
         Me.Controls.Add(Me.uR)
@@ -226,8 +228,8 @@ Partial Class CurrentMovie
         Me.Name = "CurrentMovie"
         Me.Text = "CurrentMovie"
         CType(Me.MoPic, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TopPanel.ResumeLayout(False)
         CType(Me.Urating, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CloseCuMovie, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -237,7 +239,6 @@ Partial Class CurrentMovie
     Friend WithEvents MovieName As Label
     Friend WithEvents Description As Label
     Friend WithEvents TopPanel As Panel
-    Friend WithEvents CloseMovie As Button
     Friend WithEvents AddRem As Button
     Friend WithEvents MovieDate As Label
     Friend WithEvents Rate As Label
@@ -250,4 +251,5 @@ Partial Class CurrentMovie
     Friend WithEvents uR As Label
     Friend WithEvents Ratebutton As Button
     Friend WithEvents rateInfo As Label
+    Friend WithEvents CloseCuMovie As PictureBox
 End Class

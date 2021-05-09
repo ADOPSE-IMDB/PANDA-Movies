@@ -24,7 +24,7 @@ Public Class Main
     End Sub
 
     'Open MoviesMain in main form and close all other forms
-    Private Sub AppName_Click(sender As Object, e As EventArgs) Handles AppName.Click
+    Private Sub AppNamee_Click(sender As Object, e As EventArgs) Handles AppName.Click
         HomeButton_Click(sender, e)
     End Sub
 
@@ -183,43 +183,32 @@ Public Class Main
 #End Region
 
 #Region " Move Main Form "
-
-    Public MoveForm As Boolean
-    Public MoveForm_MousePosition As Point
-
-    Public Sub MoveForm_MouseDown(sender As Object, e As MouseEventArgs) Handles _
-    MovePanel.MouseDown
-
-        If e.Button = MouseButtons.Left Then
-            MoveForm = True
-            MoveForm_MousePosition = e.Location
-        End If
-
+    Private Sub F_mouseDown(sender As Object, e As EventArgs) Handles AppLabel.MouseDown, MovePanel.MouseDown
+        MoveForm_MouseDown(sender, e)
     End Sub
 
-    Public Sub MoveForm_MouseMove(sender As Object, e As MouseEventArgs) Handles _
-    MovePanel.MouseMove ' Add more handles here (Example: PictureBox1.MouseMove)
-
-        If MoveForm Then
-            Me.Location = Me.Location + (e.Location - MoveForm_MousePosition)
-        End If
-
+    Private Sub F_mouseMove(sender As Object, e As EventArgs) Handles AppLabel.MouseMove, MovePanel.MouseMove
+        MoveForm_MouseMove(sender, e, Me)
     End Sub
 
-    Public Sub MoveForm_MouseUp(sender As Object, e As MouseEventArgs) Handles _
-    MovePanel.MouseUp ' Add more handles here (Example: PictureBox1.MouseUp)
-
-        If e.Button = MouseButtons.Left Then
-            MoveForm = False
-        End If
-
+    Private Sub F_mouseUp(sender As Object, e As EventArgs) Handles AppLabel.MouseUp, MovePanel.MouseUp
+        MoveForm_MouseUp(sender, e)
     End Sub
-
-
 #End Region
 
     'Close Program 
     Private Sub ExitBtn_Click(sender As Object, e As EventArgs) Handles ExitBtn.Click
-        Application.Exit()
+        Dim answer As Integer
+        answer = MsgBox("Do you really want to Exit the PANDApp?", vbExclamation + vbYesNo, "Exit")
+        If answer = vbYes Then
+            Application.Exit()
+        End If
+    End Sub
+
+    Private Sub ExitBtn_Hover(sender As Object, e As EventArgs) Handles ExitBtn.MouseEnter
+        ExitBtn.Image = My.Resources.Close2
+    End Sub
+    Private Sub ExitBtn_Leave(sender As Object, e As EventArgs) Handles ExitBtn.MouseLeave
+        ExitBtn.Image = My.Resources.Close1
     End Sub
 End Class

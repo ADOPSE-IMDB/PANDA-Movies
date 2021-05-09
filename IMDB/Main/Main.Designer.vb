@@ -25,10 +25,10 @@ Partial Class Main
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.TopPanel = New System.Windows.Forms.Panel()
+        Me.AppName = New System.Windows.Forms.PictureBox()
         Me.UsernameInticator = New System.Windows.Forms.Panel()
         Me.FavoriteInticator = New System.Windows.Forms.Panel()
         Me.NameBtn = New System.Windows.Forms.Button()
-        Me.AppName = New System.Windows.Forms.Label()
         Me.Search = New System.Windows.Forms.Button()
         Me.FavoriteBtn = New System.Windows.Forms.Button()
         Me.HomeInticator = New System.Windows.Forms.Panel()
@@ -43,20 +43,23 @@ Partial Class Main
         Me.Container = New System.Windows.Forms.Panel()
         Me.Timer = New System.Windows.Forms.Timer(Me.components)
         Me.MovePanel = New System.Windows.Forms.Panel()
-        Me.ExitBtn = New System.Windows.Forms.Button()
+        Me.ExitBtn = New System.Windows.Forms.PictureBox()
+        Me.AppLabel = New System.Windows.Forms.Label()
         Me.TopPanel.SuspendLayout()
+        CType(Me.AppName, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MainPanel.SuspendLayout()
         Me.resultPanel.SuspendLayout()
         Me.DropPanel.SuspendLayout()
         Me.MovePanel.SuspendLayout()
+        CType(Me.ExitBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TopPanel
         '
+        Me.TopPanel.Controls.Add(Me.AppName)
         Me.TopPanel.Controls.Add(Me.UsernameInticator)
         Me.TopPanel.Controls.Add(Me.FavoriteInticator)
         Me.TopPanel.Controls.Add(Me.NameBtn)
-        Me.TopPanel.Controls.Add(Me.AppName)
         Me.TopPanel.Controls.Add(Me.Search)
         Me.TopPanel.Controls.Add(Me.FavoriteBtn)
         Me.TopPanel.Controls.Add(Me.HomeInticator)
@@ -67,6 +70,16 @@ Partial Class Main
         Me.TopPanel.Name = "TopPanel"
         Me.TopPanel.Size = New System.Drawing.Size(1280, 36)
         Me.TopPanel.TabIndex = 0
+        '
+        'AppName
+        '
+        Me.AppName.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AppName.Image = CType(resources.GetObject("AppName.Image"), System.Drawing.Image)
+        Me.AppName.Location = New System.Drawing.Point(0, 0)
+        Me.AppName.Name = "AppName"
+        Me.AppName.Size = New System.Drawing.Size(105, 37)
+        Me.AppName.TabIndex = 3
+        Me.AppName.TabStop = False
         '
         'UsernameInticator
         '
@@ -93,16 +106,6 @@ Partial Class Main
         Me.NameBtn.TabIndex = 2
         Me.NameBtn.Text = "UserName"
         Me.NameBtn.UseVisualStyleBackColor = True
-        '
-        'AppName
-        '
-        Me.AppName.BackColor = System.Drawing.Color.White
-        Me.AppName.Location = New System.Drawing.Point(0, 0)
-        Me.AppName.Name = "AppName"
-        Me.AppName.Size = New System.Drawing.Size(107, 36)
-        Me.AppName.TabIndex = 0
-        Me.AppName.Text = "Program Name"
-        Me.AppName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Search
         '
@@ -237,6 +240,7 @@ Partial Class Main
         'MovePanel
         '
         Me.MovePanel.Controls.Add(Me.ExitBtn)
+        Me.MovePanel.Controls.Add(Me.AppLabel)
         Me.MovePanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.MovePanel.Location = New System.Drawing.Point(0, 0)
         Me.MovePanel.Name = "MovePanel"
@@ -245,12 +249,22 @@ Partial Class Main
         '
         'ExitBtn
         '
-        Me.ExitBtn.Location = New System.Drawing.Point(1205, 1)
+        Me.ExitBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ExitBtn.Image = Global.IMDB.My.Resources.Resources.Close1
+        Me.ExitBtn.Location = New System.Drawing.Point(1256, 0)
         Me.ExitBtn.Name = "ExitBtn"
-        Me.ExitBtn.Size = New System.Drawing.Size(75, 23)
-        Me.ExitBtn.TabIndex = 0
-        Me.ExitBtn.Text = "Close"
-        Me.ExitBtn.UseVisualStyleBackColor = True
+        Me.ExitBtn.Size = New System.Drawing.Size(24, 24)
+        Me.ExitBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ExitBtn.TabIndex = 2
+        Me.ExitBtn.TabStop = False
+        '
+        'AppLabel
+        '
+        Me.AppLabel.Location = New System.Drawing.Point(0, 0)
+        Me.AppLabel.Name = "AppLabel"
+        Me.AppLabel.Size = New System.Drawing.Size(105, 24)
+        Me.AppLabel.TabIndex = 1
+        Me.AppLabel.Text = "PANDA movies"
         '
         'Main
         '
@@ -261,15 +275,18 @@ Partial Class Main
         Me.Controls.Add(Me.MainPanel)
         Me.Controls.Add(Me.TopPanel)
         Me.Controls.Add(Me.MovePanel)
+        Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "Main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.TopPanel.ResumeLayout(False)
         Me.TopPanel.PerformLayout()
+        CType(Me.AppName, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MainPanel.ResumeLayout(False)
         Me.resultPanel.ResumeLayout(False)
         Me.DropPanel.ResumeLayout(False)
         Me.MovePanel.ResumeLayout(False)
+        CType(Me.ExitBtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -277,7 +294,6 @@ Partial Class Main
     Friend WithEvents TopPanel As Panel
     Friend WithEvents FavoriteBtn As Button
     Friend WithEvents NameBtn As Button
-    Friend WithEvents AppName As Label
     Friend WithEvents MainPanel As Panel
     Friend WithEvents SearchBox As TextBox
     Friend WithEvents DropPanel As Panel
@@ -292,7 +308,9 @@ Partial Class Main
     Friend WithEvents Button1 As Button
     Friend WithEvents UsernameInticator As Panel
     Friend WithEvents FavoriteInticator As Panel
-    Friend WithEvents ExitBtn As Button
     Friend WithEvents resultPanel As Panel
     Friend WithEvents ResultInfo As Label
+    Friend WithEvents AppName As PictureBox
+    Friend WithEvents AppLabel As Label
+    Friend WithEvents ExitBtn As PictureBox
 End Class
