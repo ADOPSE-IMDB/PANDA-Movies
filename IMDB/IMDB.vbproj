@@ -22,6 +22,7 @@
   <ItemGroup>
     <PackageReference Include="FontAwesome.Sharp" Version="5.15.3" />
     <PackageReference Include="Lucene.Net" Version="3.0.3" />
+    <PackageReference Include="Microsoft.Azure.Amqp" Version="2.4.13" />
     <PackageReference Include="MySql.Data" Version="8.0.23" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
   </ItemGroup>

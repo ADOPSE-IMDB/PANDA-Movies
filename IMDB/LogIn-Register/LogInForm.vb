@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports Microsoft.Azure.Amqp.Framing
+Imports MySql.Data.MySqlClient
 Public Class LogInForm
     Private ReadOnly e As EventArgs
 
@@ -15,7 +16,7 @@ Public Class LogInForm
 
 
 
-    Private Sub RegisterLink_Click(sender As Object, e As EventArgs) Handles LabelGoToSignup.Click
+    Private Sub RegisterLink_Click(sender As Object, e As EventArgs) Handles Label4.Click
         Register.Show()
         Me.Close()
     End Sub
@@ -23,13 +24,13 @@ Public Class LogInForm
 
     Public Shared u As User
 
-    Private Sub Login_Click(sender As Object, e As EventArgs) Handles Login.Click
+    Private Sub Login_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
 
 
-        If TextBoxUsername.Text = "" Or TextBoxPassword.Text = "" Then
+        If TextBox.Text = "" Or TextBoxPassword.Text = "" Then
 
         Else
-            u = UserMod.LogIn(TextBoxUsername.Text, TextBoxPassword.Text)
+            u = UserMod.LogIn(TextBox.Text, TextBoxPassword.Text)
 
 
             If u.Id = 0 Then
@@ -51,4 +52,6 @@ Public Class LogInForm
     Private Sub CloseLogIn_Leave(sender As Object, e As EventArgs) Handles CloseLogIn.MouseLeave
         CloseLogIn.Image = My.Resources.Close1
     End Sub
+
+
 End Class
