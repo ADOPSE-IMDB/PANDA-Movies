@@ -74,14 +74,14 @@ Public Class LogInForm
 #End Region
 
 #Region "Close Button"
-    Private Sub CloseLogIn_click(sender As Object, e As EventArgs) Handles CloseLogIn.Click
+    Private Sub CloseLogIn_click(sender As Object, e As EventArgs) Handles ExitBtn.Click
         Application.Exit()
     End Sub
-    Private Sub CloseLogIn_Enter(sender As Object, e As EventArgs) Handles CloseLogIn.MouseEnter
-        CloseLogIn.Image = My.Resources.Close2
+    Private Sub CloseLogIn_Enter(sender As Object, e As EventArgs) Handles ExitBtn.MouseEnter
+        ExitBtn.Image = My.Resources.Close2
     End Sub
-    Private Sub CloseLogIn_Leave(sender As Object, e As EventArgs) Handles CloseLogIn.MouseLeave
-        CloseLogIn.Image = My.Resources.Close1
+    Private Sub CloseLogIn_Leave(sender As Object, e As EventArgs) Handles ExitBtn.MouseLeave
+        ExitBtn.Image = My.Resources.Close1
     End Sub
 #End Region
 

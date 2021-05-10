@@ -23,7 +23,6 @@ Partial Class LogInForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.CloseLogIn = New System.Windows.Forms.PictureBox()
         Me.RememberMe = New System.Windows.Forms.CheckBox()
         Me.UserName = New System.Windows.Forms.TextBox()
         Me.XError = New System.Windows.Forms.ErrorProvider(Me.components)
@@ -38,28 +37,15 @@ Partial Class LogInForm
         Me.LogInInfo = New System.Windows.Forms.Label()
         Me.MovePanel = New System.Windows.Forms.Panel()
         Me.RegisterBtn = New System.Windows.Forms.LinkLabel()
-        CType(Me.CloseLogIn, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ExitBtn = New System.Windows.Forms.PictureBox()
         CType(Me.XError, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LogInPic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AppLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserPanel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PwsPanel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LogInButton, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ExitBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'CloseLogIn
-        '
-        Me.CloseLogIn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.CloseLogIn.ErrorImage = Nothing
-        Me.CloseLogIn.Image = Global.IMDB.My.Resources.Resources.Close1
-        Me.CloseLogIn.ImageLocation = "0.0"
-        Me.CloseLogIn.InitialImage = Nothing
-        Me.CloseLogIn.Location = New System.Drawing.Point(680, 4)
-        Me.CloseLogIn.Name = "CloseLogIn"
-        Me.CloseLogIn.Size = New System.Drawing.Size(25, 25)
-        Me.CloseLogIn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.CloseLogIn.TabIndex = 15
-        Me.CloseLogIn.TabStop = False
         '
         'RememberMe
         '
@@ -77,11 +63,11 @@ Partial Class LogInForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.UserName.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.UserName.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.UserName.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.UserName.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.UserName.ForeColor = System.Drawing.Color.DarkGray
-        Me.UserName.Location = New System.Drawing.Point(439, 140)
+        Me.UserName.Location = New System.Drawing.Point(430, 137)
         Me.UserName.Name = "UserName"
-        Me.UserName.Size = New System.Drawing.Size(204, 17)
+        Me.UserName.Size = New System.Drawing.Size(223, 24)
         Me.UserName.TabIndex = 1
         Me.UserName.Text = "Username"
         Me.UserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -154,11 +140,11 @@ Partial Class LogInForm
         Me.Password.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Password.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Password.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Password.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Password.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Password.ForeColor = System.Drawing.Color.DarkGray
-        Me.Password.Location = New System.Drawing.Point(439, 194)
+        Me.Password.Location = New System.Drawing.Point(430, 191)
         Me.Password.Name = "Password"
-        Me.Password.Size = New System.Drawing.Size(204, 17)
+        Me.Password.Size = New System.Drawing.Size(223, 24)
         Me.Password.TabIndex = 2
         Me.Password.Text = "Password"
         Me.Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -221,6 +207,17 @@ Partial Class LogInForm
         Me.RegisterBtn.TabStop = True
         Me.RegisterBtn.Text = "Register Now!"
         '
+        'ExitBtn
+        '
+        Me.ExitBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ExitBtn.Image = Global.IMDB.My.Resources.Resources.Close1
+        Me.ExitBtn.Location = New System.Drawing.Point(670, 12)
+        Me.ExitBtn.Name = "ExitBtn"
+        Me.ExitBtn.Size = New System.Drawing.Size(27, 27)
+        Me.ExitBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ExitBtn.TabIndex = 28
+        Me.ExitBtn.TabStop = False
+        '
         'LogInForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -229,9 +226,8 @@ Partial Class LogInForm
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(709, 390)
         Me.ControlBox = False
+        Me.Controls.Add(Me.ExitBtn)
         Me.Controls.Add(Me.RegisterBtn)
-        Me.Controls.Add(Me.CloseLogIn)
-        Me.Controls.Add(Me.MovePanel)
         Me.Controls.Add(Me.NewUser)
         Me.Controls.Add(Me.LogInButton)
         Me.Controls.Add(Me.Password)
@@ -243,19 +239,20 @@ Partial Class LogInForm
         Me.Controls.Add(Me.AppInfo)
         Me.Controls.Add(Me.LogInPic)
         Me.Controls.Add(Me.RememberMe)
+        Me.Controls.Add(Me.MovePanel)
         Me.DoubleBuffered = True
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "LogInForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Log In"
-        CType(Me.CloseLogIn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XError, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LogInPic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AppLogo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserPanel, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PwsPanel, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LogInButton, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ExitBtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -263,7 +260,6 @@ Partial Class LogInForm
     Friend WithEvents UserName As TextBox
     Friend WithEvents RememberMe As CheckBox
     Friend WithEvents XError As ErrorProvider
-    Friend WithEvents CloseLogIn As PictureBox
     Friend WithEvents AppInfo As Label
     Friend WithEvents LogInPic As PictureBox
     Friend WithEvents PwsPanel As PictureBox
@@ -275,4 +271,5 @@ Partial Class LogInForm
     Friend WithEvents LogInInfo As Label
     Friend WithEvents MovePanel As Panel
     Friend WithEvents RegisterBtn As LinkLabel
+    Friend WithEvents ExitBtn As PictureBox
 End Class

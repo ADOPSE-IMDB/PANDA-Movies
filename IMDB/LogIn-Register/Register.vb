@@ -2,16 +2,16 @@
 
 Public Class Register
 
-    Private Sub Return_Click(sender As Object, e As EventArgs) Handles ReturnB.Click
+    Private Sub Return_Click(sender As Object, e As EventArgs) Handles ReturnBtn.Click
         LogInLink_Click(sender, e)
     End Sub
 
-    Private Sub CheckTB(TB As TextBox, ErrorText As String)
-        If TB.Text.Trim() = "" Then
-            Me.XError.SetError(TB, ErrorText)
-        Else
-            Me.XError.SetError(TB, "")
-        End If
+    Private Sub Return_Hover(sender As Object, e As EventArgs) Handles ReturnBtn.MouseEnter
+        ReturnBtn.Image = My.Resources.Close2
+    End Sub
+
+    Private Sub Return_Leave(sender As Object, e As EventArgs) Handles ReturnBtn.MouseLeave
+        ReturnBtn.Image = My.Resources.Close1
     End Sub
 
     Private Sub LogInLink_Click(sender As Object, e As EventArgs) Handles LogInLink.Click
@@ -19,63 +19,58 @@ Public Class Register
         Close()
     End Sub
 
-    Private Sub TextBoxFirstname_Enter(sender As Object, e As EventArgs) Handles TextBoxFirstname.Enter
-        LabelFN.ForeColor = Color.Red
-    End Sub
 
-    Private Sub TextBoxFirstname_Leave(sender As Object, e As EventArgs) Handles TextBoxFirstname.Leave
-        LabelFN.ForeColor = Color.Black
-        CheckTB(sender, "Please enter your First Name.")
-    End Sub
+#Region "Register TextBox"
 
-    Private Sub TextBoxLastname_Enter(sender As Object, e As EventArgs) Handles TextBoxLastname.Enter
-        LabelLN.ForeColor = Color.Red
-    End Sub
-
-    Private Sub TextBoxLastname_Leave(sender As Object, e As EventArgs) Handles TextBoxLastname.Leave
-        LabelLN.ForeColor = Color.Black
-        CheckTB(sender, "Please enter your Last Name.")
-    End Sub
-
-    Private Sub TextBoxUsername_Enter(sender As Object, e As EventArgs) Handles TextBoxUsername.Enter
-        LabelUN.ForeColor = Color.Red
-    End Sub
-
-    Private Sub TextBoxUsername_Leave(sender As Object, e As EventArgs) Handles TextBoxUsername.Leave
-        LabelUN.ForeColor = Color.Black
-        CheckTB(sender, "Please enter a Username.")
-    End Sub
-
-    Private Sub TextBoxEmail_Enter(sender As Object, e As EventArgs) Handles TextBoxEmail.Enter
-        LabelEM.ForeColor = Color.Red
-    End Sub
-
-    Private Sub TextBoxEmail_Leave(sender As Object, e As EventArgs) Handles TextBoxEmail.Leave
-        LabelEM.ForeColor = Color.Black
-        CheckTB(sender, "Please enter your Email.")
-    End Sub
-
-    Private Sub TextBoxPassword_Enter(sender As Object, e As EventArgs) Handles TextBoxPassword.Enter
-        LabelPASS1.ForeColor = Color.Red
-    End Sub
-
-    Private Sub TextBoxPassword_Leave(sender As Object, e As EventArgs) Handles TextBoxPassword.Leave
-        LabelPASS1.ForeColor = Color.Black
-        CheckTB(sender, "Please enter a Password.")
-    End Sub
-
-    Private Sub TextBoxConfirmPassword_Enter(sender As Object, e As EventArgs) Handles TextBoxConfirmPassword.Enter
-        LabelPASS2.ForeColor = Color.Red
-    End Sub
-
-    Private Sub TextBoxConfirmPassword_Leave(sender As Object, e As EventArgs) Handles TextBoxConfirmPassword.Leave
-        LabelPASS2.ForeColor = Color.Black
-        If TextBoxPassword.Text.Trim() <> "" Then
-            CheckTB(sender, "Please confirm your Password.")
-        ElseIf TextBoxPassword.Text.Trim() <> TextBoxConfirmPassword.Text.Trim() Then
-            CheckTB(sender, "Your Passwords are not matching.")
+    Private Sub TextBox_Enter(sender As Object, e As EventArgs) Handles TextBoxFirstname.GotFocus, TextBoxLastname.GotFocus, TextBoxUsername.GotFocus, TextBoxEmail.GotFocus
+        Dim s As TextBox = sender
+        If s.ForeColor = Color.DarkGray Then
+            s.ForeColor = Color.Black
+            s.Text = ""
         End If
     End Sub
+
+    Private Sub TextBox_Leave(sender As Object, e As EventArgs) Handles TextBoxFirstname.Leave, TextBoxLastname.Leave, TextBoxUsername.Leave, TextBoxEmail.Leave
+        Dim s As TextBox = sender
+        If s.Text = "" Then
+            s.ForeColor = Color.DarkGray
+            s.Text = s.AccessibleName
+        End If
+    End Sub
+
+    Private Sub Password_Enter(sender As Object, e As EventArgs) Handles TextBoxPassword.GotFocus, TextBoxConfirmPassword.GotFocus
+        Dim s As TextBox = sender
+        If s.ForeColor = Color.DarkGray Then
+            s.PasswordChar = "*"
+            s.Text = ""
+            s.ForeColor = Color.Black
+        End If
+    End Sub
+    Private Sub Password_Leave(sender As Object, e As EventArgs) Handles TextBoxPassword.Leave
+        Dim s As TextBox = sender
+        If s.Text = "" Then
+            s.PasswordChar = ""
+            s.ForeColor = Color.DarkGray
+            s.Text = s.AccessibleName
+
+        End If
+    End Sub
+
+    Private Sub CPassword_Leave(sender As Object, e As EventArgs) Handles TextBoxConfirmPassword.Leave
+        Dim s As TextBox = sender
+        If s.Text = "" Then
+            s.ForeColor = Color.DarkGray
+            s.Text = s.AccessibleName
+        Else
+            If s.Text <> TextBoxPassword.Text Then
+                Me.XError.SetError(sender, "Your Passwords are not matching")
+            Else
+                Me.XError.SetError(sender, "")
+            End If
+        End If
+    End Sub
+
+#End Region
 
     Private Sub ButtonRegister_Click(sender As Object, e As EventArgs) Handles ButtonRegister.Click
         'check fields if empty
@@ -102,4 +97,20 @@ Public Class Register
 
     End Sub
 
+
+#Region "Move Register"
+
+    Private Sub F_mouseDown(sender As Object, e As EventArgs) Handles MovePanel.MouseDown
+        MoveForm_MouseDown(sender, e)
+    End Sub
+
+    Private Sub F_mouseMove(sender As Object, e As EventArgs) Handles MovePanel.MouseMove
+        MoveForm_MouseMove(sender, e, Me)
+    End Sub
+
+    Private Sub F_mouseUp(sender As Object, e As EventArgs) Handles MovePanel.MouseUp
+        MoveForm_MouseUp(sender, e)
+    End Sub
+
+#End Region
 End Class
