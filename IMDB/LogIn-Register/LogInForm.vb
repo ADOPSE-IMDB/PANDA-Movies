@@ -14,21 +14,30 @@ Public Class LogInForm
     End Sub
 
 #Region "Username/Password Textbox"
-    Private Sub Got_focus(sender As TextBox, e As EventArgs) Handles UserName.GotFocus, Password.GotFocus
+    Private Sub Username_GotFocus(sender As TextBox, e As EventArgs) Handles UserName.GotFocus
         If sender.ForeColor = Color.DarkGray Then
             sender.ForeColor = Color.Black
             sender.Text = ""
         End If
     End Sub
 
-    Private Sub Username_LostFocus(sender As Object, e As EventArgs) Handles UserName.LostFocus
+    Private Sub Username_LostFocus(sender As Object, e As EventArgs) Handles UserName.Leave
         If UserName.Text = "" Then
             UserName.ForeColor = Color.DarkGray
             UserName.Text = "Username"
         End If
     End Sub
-    Private Sub Password_LostFocus(sender As Object, e As EventArgs) Handles Password.LostFocus
+
+    Private Sub Pass_GotFocus(sender As TextBox, e As EventArgs) Handles Password.GotFocus
+        If sender.ForeColor = Color.DarkGray Then
+            sender.PasswordChar = "*"
+            sender.ForeColor = Color.Black
+            sender.Text = ""
+        End If
+    End Sub
+    Private Sub Password_LostFocus(sender As Object, e As EventArgs) Handles Password.Leave
         If Password.Text = "" Then
+            Password.PasswordChar = ""
             Password.ForeColor = Color.DarkGray
             Password.Text = "Password"
         End If

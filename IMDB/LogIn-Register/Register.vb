@@ -59,6 +59,7 @@ Public Class Register
     Private Sub CPassword_Leave(sender As Object, e As EventArgs) Handles TextBoxConfirmPassword.Leave
         Dim s As TextBox = sender
         If s.Text = "" Then
+            s.PasswordChar = ""
             s.ForeColor = Color.DarkGray
             s.Text = s.AccessibleName
         Else
@@ -72,11 +73,9 @@ Public Class Register
 
 #End Region
 
-    Private Sub ButtonRegister_Click(sender As Object, e As EventArgs) Handles ButtonRegister.Click
-        'check fields if empty
-        'check if password = confirm password
-        'check if username already exists
-        'get textboxes values
+
+
+    Private Sub ButtonRegister_Click(sender As Object, e As EventArgs) Handles BtnRegister.Click
 
         If TextBoxFirstname.Text <> "" And TextBoxLastname.Text <> "" And TextBoxUsername.Text <> "" And TextBoxEmail.Text <> "" And TextBoxPassword.Text <> "" And TextBoxConfirmPassword.Text <> "" Then
             If UserMod.Email_exists(TextBoxEmail.Text) Then
@@ -93,8 +92,13 @@ Public Class Register
         Else
             MessageBox.Show("Please fill all fields.", "Empty fields.", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
+    End Sub
 
-
+    Private Sub ButtonRegister_Hover(sender As Object, e As EventArgs) Handles BtnRegister.MouseEnter
+        BtnRegister.Image = My.Resources.Register2
+    End Sub
+    Private Sub ButtonRegister_Leave(sender As Object, e As EventArgs) Handles BtnRegister.MouseLeave
+        BtnRegister.Image = My.Resources.Register1
     End Sub
 
 

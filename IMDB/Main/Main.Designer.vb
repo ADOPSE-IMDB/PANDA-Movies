@@ -25,15 +25,12 @@ Partial Class Main
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.TopPanel = New System.Windows.Forms.Panel()
+        Me.Favorite = New System.Windows.Forms.PictureBox()
+        Me.Home = New System.Windows.Forms.PictureBox()
         Me.AppName = New System.Windows.Forms.PictureBox()
-        Me.UsernameInticator = New System.Windows.Forms.Panel()
-        Me.FavoriteInticator = New System.Windows.Forms.Panel()
         Me.NameBtn = New System.Windows.Forms.Button()
         Me.Search = New System.Windows.Forms.Button()
-        Me.FavoriteBtn = New System.Windows.Forms.Button()
-        Me.HomeInticator = New System.Windows.Forms.Panel()
         Me.SearchBox = New System.Windows.Forms.TextBox()
-        Me.HomeButton = New System.Windows.Forms.Button()
         Me.MainPanel = New System.Windows.Forms.Panel()
         Me.resultPanel = New System.Windows.Forms.Panel()
         Me.ResultInfo = New System.Windows.Forms.Label()
@@ -45,7 +42,10 @@ Partial Class Main
         Me.MovePanel = New System.Windows.Forms.Panel()
         Me.ExitBtn = New System.Windows.Forms.PictureBox()
         Me.AppLabel = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TopPanel.SuspendLayout()
+        CType(Me.Favorite, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Home, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AppName, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MainPanel.SuspendLayout()
         Me.resultPanel.SuspendLayout()
@@ -56,20 +56,40 @@ Partial Class Main
         '
         'TopPanel
         '
+        Me.TopPanel.Controls.Add(Me.Button1)
+        Me.TopPanel.Controls.Add(Me.Favorite)
+        Me.TopPanel.Controls.Add(Me.Home)
         Me.TopPanel.Controls.Add(Me.AppName)
-        Me.TopPanel.Controls.Add(Me.UsernameInticator)
-        Me.TopPanel.Controls.Add(Me.FavoriteInticator)
         Me.TopPanel.Controls.Add(Me.NameBtn)
         Me.TopPanel.Controls.Add(Me.Search)
-        Me.TopPanel.Controls.Add(Me.FavoriteBtn)
-        Me.TopPanel.Controls.Add(Me.HomeInticator)
         Me.TopPanel.Controls.Add(Me.SearchBox)
-        Me.TopPanel.Controls.Add(Me.HomeButton)
         Me.TopPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.TopPanel.Location = New System.Drawing.Point(0, 24)
         Me.TopPanel.Name = "TopPanel"
         Me.TopPanel.Size = New System.Drawing.Size(1280, 36)
         Me.TopPanel.TabIndex = 0
+        '
+        'Favorite
+        '
+        Me.Favorite.BackColor = System.Drawing.Color.Transparent
+        Me.Favorite.Image = CType(resources.GetObject("Favorite.Image"), System.Drawing.Image)
+        Me.Favorite.Location = New System.Drawing.Point(1067, 10)
+        Me.Favorite.Name = "Favorite"
+        Me.Favorite.Size = New System.Drawing.Size(95, 26)
+        Me.Favorite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Favorite.TabIndex = 4
+        Me.Favorite.TabStop = False
+        '
+        'Home
+        '
+        Me.Home.BackColor = System.Drawing.Color.Transparent
+        Me.Home.Image = CType(resources.GetObject("Home.Image"), System.Drawing.Image)
+        Me.Home.Location = New System.Drawing.Point(124, 10)
+        Me.Home.Name = "Home"
+        Me.Home.Size = New System.Drawing.Size(95, 26)
+        Me.Home.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Home.TabIndex = 3
+        Me.Home.TabStop = False
         '
         'AppName
         '
@@ -80,23 +100,6 @@ Partial Class Main
         Me.AppName.Size = New System.Drawing.Size(105, 37)
         Me.AppName.TabIndex = 3
         Me.AppName.TabStop = False
-        '
-        'UsernameInticator
-        '
-        Me.UsernameInticator.BackColor = System.Drawing.Color.Black
-        Me.UsernameInticator.Location = New System.Drawing.Point(1168, 32)
-        Me.UsernameInticator.Name = "UsernameInticator"
-        Me.UsernameInticator.Size = New System.Drawing.Size(80, 5)
-        Me.UsernameInticator.TabIndex = 5
-        '
-        'FavoriteInticator
-        '
-        Me.FavoriteInticator.BackColor = System.Drawing.Color.Black
-        Me.FavoriteInticator.Location = New System.Drawing.Point(1082, 32)
-        Me.FavoriteInticator.Name = "FavoriteInticator"
-        Me.FavoriteInticator.Size = New System.Drawing.Size(80, 5)
-        Me.FavoriteInticator.TabIndex = 4
-        Me.FavoriteInticator.Visible = False
         '
         'NameBtn
         '
@@ -121,23 +124,6 @@ Partial Class Main
         Me.Search.TabIndex = 1
         Me.Search.UseVisualStyleBackColor = False
         '
-        'FavoriteBtn
-        '
-        Me.FavoriteBtn.Location = New System.Drawing.Point(1082, 10)
-        Me.FavoriteBtn.Name = "FavoriteBtn"
-        Me.FavoriteBtn.Size = New System.Drawing.Size(80, 23)
-        Me.FavoriteBtn.TabIndex = 1
-        Me.FavoriteBtn.Text = "Favorite"
-        Me.FavoriteBtn.UseVisualStyleBackColor = True
-        '
-        'HomeInticator
-        '
-        Me.HomeInticator.BackColor = System.Drawing.Color.Black
-        Me.HomeInticator.Location = New System.Drawing.Point(127, 32)
-        Me.HomeInticator.Name = "HomeInticator"
-        Me.HomeInticator.Size = New System.Drawing.Size(80, 5)
-        Me.HomeInticator.TabIndex = 3
-        '
         'SearchBox
         '
         Me.SearchBox.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -145,16 +131,6 @@ Partial Class Main
         Me.SearchBox.Name = "SearchBox"
         Me.SearchBox.Size = New System.Drawing.Size(200, 23)
         Me.SearchBox.TabIndex = 0
-        '
-        'HomeButton
-        '
-        Me.HomeButton.BackColor = System.Drawing.SystemColors.Control
-        Me.HomeButton.Location = New System.Drawing.Point(127, 10)
-        Me.HomeButton.Name = "HomeButton"
-        Me.HomeButton.Size = New System.Drawing.Size(80, 23)
-        Me.HomeButton.TabIndex = 2
-        Me.HomeButton.Text = "Home"
-        Me.HomeButton.UseVisualStyleBackColor = False
         '
         'MainPanel
         '
@@ -164,9 +140,9 @@ Partial Class Main
         Me.MainPanel.Controls.Add(Me.DropPanel)
         Me.MainPanel.Controls.Add(Me.Container)
         Me.MainPanel.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.MainPanel.Location = New System.Drawing.Point(0, 59)
+        Me.MainPanel.Location = New System.Drawing.Point(0, 61)
         Me.MainPanel.Name = "MainPanel"
-        Me.MainPanel.Size = New System.Drawing.Size(1280, 720)
+        Me.MainPanel.Size = New System.Drawing.Size(1280, 718)
         Me.MainPanel.TabIndex = 1
         '
         'resultPanel
@@ -266,6 +242,15 @@ Partial Class Main
         Me.AppLabel.TabIndex = 1
         Me.AppLabel.Text = "PANDA movies"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(225, 14)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -281,6 +266,8 @@ Partial Class Main
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.TopPanel.ResumeLayout(False)
         Me.TopPanel.PerformLayout()
+        CType(Me.Favorite, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Home, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AppName, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MainPanel.ResumeLayout(False)
         Me.resultPanel.ResumeLayout(False)
@@ -292,7 +279,6 @@ Partial Class Main
     End Sub
 
     Friend WithEvents TopPanel As Panel
-    Friend WithEvents FavoriteBtn As Button
     Friend WithEvents NameBtn As Button
     Friend WithEvents MainPanel As Panel
     Friend WithEvents SearchBox As TextBox
@@ -303,14 +289,13 @@ Partial Class Main
     Friend WithEvents Container As Panel
     Friend WithEvents Search As Button
     Friend WithEvents HomeInticator As Panel
-    Friend WithEvents HomeButton As Button
     Friend WithEvents MovePanel As Panel
-    Friend WithEvents Button1 As Button
-    Friend WithEvents UsernameInticator As Panel
-    Friend WithEvents FavoriteInticator As Panel
     Friend WithEvents resultPanel As Panel
     Friend WithEvents ResultInfo As Label
     Friend WithEvents AppName As PictureBox
     Friend WithEvents AppLabel As Label
     Friend WithEvents ExitBtn As PictureBox
+    Friend WithEvents Home As PictureBox
+    Friend WithEvents Favorite As PictureBox
+    Friend WithEvents Button1 As Button
 End Class

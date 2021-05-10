@@ -14,14 +14,16 @@ Public Class Main
 
 #Region "Open Main page"
 
-    Public Sub HomeButton_Click(sender As Object, e As EventArgs) Handles HomeButton.Click
+    Public Sub HomeButton_Click(sender As Object, e As EventArgs) Handles Home.Click
         If Not Application.OpenForms().OfType(Of MoviesMain).Any Then
             ChnageWindow(MoviesMain, MainPanel, False)
-            HomeInticator.Visible = True
-            FavoriteInticator.Visible = False
-            UsernameInticator.Visible = False
         End If
     End Sub
+
+    Public Sub HomeButton_Hover(sender As Object, e As EventArgs) Handles Home.MouseEnter
+
+    End Sub
+
 
     'Open MoviesMain in main form and close all other forms
     Private Sub AppNamee_Click(sender As Object, e As EventArgs) Handles AppName.Click
@@ -31,12 +33,10 @@ Public Class Main
 #End Region
 
     'Open Favorite Form
-    Public Sub FavoriteBtn_Click(sender As Object, e As EventArgs) Handles FavoriteBtn.Click
+    Public Sub FavoriteBtn_Click(sender As Object, e As EventArgs)
         If Not Application.OpenForms().OfType(Of Favorite).Any Then
             ChnageWindow(Favorite, MainPanel, False)
-            HomeInticator.Visible = False
-            FavoriteInticator.Visible = True
-            UsernameInticator.Visible = False
+
         End If
     End Sub
 
@@ -48,9 +48,7 @@ Public Class Main
                 SearchForm.Close()
             End If
             ChnageWindow(SearchForm, MainPanel, False)
-            HomeInticator.Visible = False
-            FavoriteInticator.Visible = False
-            UsernameInticator.Visible = False
+
             SearchBox.Text = ""
         End If
     End Sub
@@ -89,9 +87,7 @@ Public Class Main
     Private Sub OpenProfile_Click(sender As Object, e As EventArgs) Handles OpenProfile.Click
         If Not Application.OpenForms().OfType(Of Profile).Any Then
             ChnageWindow(Profile, Container, True)
-            HomeInticator.Visible = False
-            FavoriteInticator.Visible = False
-            UsernameInticator.Visible = True
+
         End If
     End Sub
 
@@ -142,19 +138,14 @@ Public Class Main
             If DropPanel.Size = DropPanel.MaximumSize Then
                 Timer.Stop()
                 isCollapsed = False
-                UsernameInticator.Visible = True
             End If
         Else
             DropPanel.Height -= 10
             If DropPanel.Size = DropPanel.MinimumSize Then
                 Timer.Stop()
                 isCollapsed = True
-                UsernameInticator.Visible = False
             End If
             If Application.OpenForms().OfType(Of Profile).Any Then
-                UsernameInticator.Visible = True
-                HomeInticator.Visible = False
-                FavoriteInticator.Visible = False
             End If
         End If
     End Sub
@@ -214,4 +205,5 @@ Public Class Main
         ExitBtn.Image = My.Resources.Close1
     End Sub
 #End Region
+
 End Class

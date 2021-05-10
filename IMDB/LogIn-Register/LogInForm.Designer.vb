@@ -52,7 +52,7 @@ Partial Class LogInForm
         Me.RememberMe.Location = New System.Drawing.Point(588, 234)
         Me.RememberMe.Name = "RememberMe"
         Me.RememberMe.Size = New System.Drawing.Size(86, 19)
-        Me.RememberMe.TabIndex = 3
+        Me.RememberMe.TabIndex = 1
         Me.RememberMe.Text = "Remember Me"
         Me.RememberMe.UseVisualStyleBackColor = True
         '
@@ -68,7 +68,7 @@ Partial Class LogInForm
         Me.UserName.Location = New System.Drawing.Point(430, 137)
         Me.UserName.Name = "UserName"
         Me.UserName.Size = New System.Drawing.Size(223, 24)
-        Me.UserName.TabIndex = 1
+        Me.UserName.TabIndex = 2
         Me.UserName.Text = "Username"
         Me.UserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -145,7 +145,7 @@ Partial Class LogInForm
         Me.Password.Location = New System.Drawing.Point(430, 191)
         Me.Password.Name = "Password"
         Me.Password.Size = New System.Drawing.Size(223, 24)
-        Me.Password.TabIndex = 2
+        Me.Password.TabIndex = 3
         Me.Password.Text = "Password"
         Me.Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
