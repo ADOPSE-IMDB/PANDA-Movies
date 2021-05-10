@@ -17,6 +17,11 @@
         Email.Visible = False
         EditB.Visible = False
 
+        PbN.Visible = True
+        PbS.Visible = True
+        PbE.Visible = True
+        PbP.Visible = True
+        PbCP.Visible = True
         UpdateB.Visible = True
         NameTB.Visible = True
         SurnameTB.Visible = True
@@ -81,6 +86,11 @@
             Email.Visible = True
             EditB.Visible = True
 
+            PbN.Visible = False
+            PbS.Visible = False
+            PbE.Visible = False
+            PbP.Visible = False
+            PbCP.Visible = False
             UpdateB.Visible = False
             NameTB.Visible = False
             SurnameTB.Visible = False
