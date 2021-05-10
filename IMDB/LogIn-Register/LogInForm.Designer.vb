@@ -25,240 +25,254 @@ Partial Class LogInForm
         Me.components = New System.ComponentModel.Container()
         Me.CloseLogIn = New System.Windows.Forms.PictureBox()
         Me.RememberMe = New System.Windows.Forms.CheckBox()
-        Me.TextBox = New System.Windows.Forms.TextBox()
+        Me.UserName = New System.Windows.Forms.TextBox()
         Me.XError = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.TextBoxPassword = New System.Windows.Forms.TextBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.LogInPic = New System.Windows.Forms.PictureBox()
+        Me.AppInfo = New System.Windows.Forms.Label()
+        Me.AppLogo = New System.Windows.Forms.PictureBox()
+        Me.UserPanel = New System.Windows.Forms.PictureBox()
+        Me.PwsPanel = New System.Windows.Forms.PictureBox()
+        Me.Password = New System.Windows.Forms.TextBox()
+        Me.LogInButton = New System.Windows.Forms.PictureBox()
+        Me.NewUser = New System.Windows.Forms.Label()
+        Me.LogInInfo = New System.Windows.Forms.Label()
+        Me.MovePanel = New System.Windows.Forms.Panel()
+        Me.RegisterBtn = New System.Windows.Forms.LinkLabel()
         CType(Me.CloseLogIn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XError, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LogInPic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AppLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UserPanel, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PwsPanel, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LogInButton, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CloseLogIn
         '
         Me.CloseLogIn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CloseLogIn.ErrorImage = Nothing
         Me.CloseLogIn.Image = Global.IMDB.My.Resources.Resources.Close1
-        Me.CloseLogIn.Location = New System.Drawing.Point(776, 1)
-        Me.CloseLogIn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.CloseLogIn.ImageLocation = "0.0"
+        Me.CloseLogIn.InitialImage = Nothing
+        Me.CloseLogIn.Location = New System.Drawing.Point(680, 4)
         Me.CloseLogIn.Name = "CloseLogIn"
-        Me.CloseLogIn.Size = New System.Drawing.Size(34, 40)
+        Me.CloseLogIn.Size = New System.Drawing.Size(25, 25)
         Me.CloseLogIn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.CloseLogIn.TabIndex = 15
         Me.CloseLogIn.TabStop = False
         '
         'RememberMe
         '
-        Me.RememberMe.Location = New System.Drawing.Point(624, 491)
-        Me.RememberMe.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.RememberMe.Location = New System.Drawing.Point(588, 234)
         Me.RememberMe.Name = "RememberMe"
-        Me.RememberMe.Size = New System.Drawing.Size(98, 25)
-        Me.RememberMe.TabIndex = 6
+        Me.RememberMe.Size = New System.Drawing.Size(86, 19)
+        Me.RememberMe.TabIndex = 3
         Me.RememberMe.Text = "Remember Me"
         Me.RememberMe.UseVisualStyleBackColor = True
         '
-        'TextBox
+        'UserName
         '
-        Me.TextBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.UserName.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox.Font = New System.Drawing.Font("Century Gothic", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox.ForeColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.TextBox.Location = New System.Drawing.Point(527, 233)
-        Me.TextBox.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.TextBox.Name = "TextBox"
-        Me.TextBox.Size = New System.Drawing.Size(233, 23)
-        Me.TextBox.TabIndex = 1
-        Me.TextBox.Text = "Username"
-        Me.TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.UserName.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.UserName.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.UserName.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.UserName.ForeColor = System.Drawing.Color.DarkGray
+        Me.UserName.Location = New System.Drawing.Point(439, 140)
+        Me.UserName.Name = "UserName"
+        Me.UserName.Size = New System.Drawing.Size(204, 17)
+        Me.UserName.TabIndex = 1
+        Me.UserName.Text = "Username"
+        Me.UserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'XError
         '
         Me.XError.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
         Me.XError.ContainerControl = Me
         '
-        'PictureBox2
+        'LogInPic
         '
-        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox2.BackgroundImage = Global.IMDB.My.Resources.Resources.keyhole
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox2.Location = New System.Drawing.Point(606, 46)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(100, 100)
-        Me.PictureBox2.TabIndex = 16
-        Me.PictureBox2.TabStop = False
+        Me.LogInPic.BackColor = System.Drawing.Color.Transparent
+        Me.LogInPic.BackgroundImage = Global.IMDB.My.Resources.Resources.keyhole
+        Me.LogInPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.LogInPic.Location = New System.Drawing.Point(496, 20)
+        Me.LogInPic.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.LogInPic.Name = "LogInPic"
+        Me.LogInPic.Size = New System.Drawing.Size(88, 75)
+        Me.LogInPic.TabIndex = 16
+        Me.LogInPic.TabStop = False
         '
-        'Label1
+        'AppInfo
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 15.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(37, 237)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(360, 60)
-        Me.Label1.TabIndex = 17
-        Me.Label1.Text = "Welcome to PANDA movies" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "A project made with love." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.AppInfo.AutoSize = True
+        Me.AppInfo.BackColor = System.Drawing.Color.Transparent
+        Me.AppInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.AppInfo.ForeColor = System.Drawing.Color.White
+        Me.AppInfo.Location = New System.Drawing.Point(12, 225)
+        Me.AppInfo.Name = "AppInfo"
+        Me.AppInfo.Size = New System.Drawing.Size(300, 50)
+        Me.AppInfo.TabIndex = 17
+        Me.AppInfo.Text = "Welcome to PANDA movies" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "A project made with love." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
-        'Label2
+        'AppLogo
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 11.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(520, 168)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(269, 23)
-        Me.Label2.TabIndex = 18
-        Me.Label2.Text = "Login below to get started." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.AppLogo.BackColor = System.Drawing.Color.Transparent
+        Me.AppLogo.BackgroundImage = Global.IMDB.My.Resources.Resources.Panda_movies
+        Me.AppLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.AppLogo.Location = New System.Drawing.Point(51, 61)
+        Me.AppLogo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.AppLogo.Name = "AppLogo"
+        Me.AppLogo.Size = New System.Drawing.Size(207, 153)
+        Me.AppLogo.TabIndex = 19
+        Me.AppLogo.TabStop = False
         '
-        'PictureBox1
+        'UserPanel
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.BackgroundImage = Global.IMDB.My.Resources.Resources.Panda_movies
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(91, 121)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(237, 113)
-        Me.PictureBox1.TabIndex = 19
-        Me.PictureBox1.TabStop = False
+        Me.UserPanel.BackgroundImage = Global.IMDB.My.Resources.Resources.bgtxt
+        Me.UserPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.UserPanel.Location = New System.Drawing.Point(406, 129)
+        Me.UserPanel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.UserPanel.Name = "UserPanel"
+        Me.UserPanel.Size = New System.Drawing.Size(270, 40)
+        Me.UserPanel.TabIndex = 20
+        Me.UserPanel.TabStop = False
         '
-        'PictureBox3
+        'PwsPanel
         '
-        Me.PictureBox3.BackgroundImage = Global.IMDB.My.Resources.Resources.bgtxt
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox3.Location = New System.Drawing.Point(489, 213)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(309, 62)
-        Me.PictureBox3.TabIndex = 20
-        Me.PictureBox3.TabStop = False
+        Me.PwsPanel.BackgroundImage = Global.IMDB.My.Resources.Resources.bgtxt
+        Me.PwsPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PwsPanel.Location = New System.Drawing.Point(406, 183)
+        Me.PwsPanel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PwsPanel.Name = "PwsPanel"
+        Me.PwsPanel.Size = New System.Drawing.Size(270, 40)
+        Me.PwsPanel.TabIndex = 21
+        Me.PwsPanel.TabStop = False
         '
-        'PictureBox4
+        'Password
         '
-        Me.PictureBox4.BackgroundImage = Global.IMDB.My.Resources.Resources.bgtxt
-        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox4.Location = New System.Drawing.Point(489, 281)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(309, 62)
-        Me.PictureBox4.TabIndex = 21
-        Me.PictureBox4.TabStop = False
+        Me.Password.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Password.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.Password.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Password.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Password.ForeColor = System.Drawing.Color.DarkGray
+        Me.Password.Location = New System.Drawing.Point(439, 194)
+        Me.Password.Name = "Password"
+        Me.Password.Size = New System.Drawing.Size(204, 17)
+        Me.Password.TabIndex = 2
+        Me.Password.Text = "Password"
+        Me.Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBoxPassword
+        'LogInButton
         '
-        Me.TextBoxPassword.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBoxPassword.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.TextBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBoxPassword.Font = New System.Drawing.Font("Century Gothic", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.TextBoxPassword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.TextBoxPassword.Location = New System.Drawing.Point(527, 301)
-        Me.TextBoxPassword.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.TextBoxPassword.Name = "TextBoxPassword"
-        Me.TextBoxPassword.Size = New System.Drawing.Size(233, 23)
-        Me.TextBoxPassword.TabIndex = 22
-        Me.TextBoxPassword.Text = "Password"
-        Me.TextBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.LogInButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.LogInButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LogInButton.Image = Global.IMDB.My.Resources.Resources.btn2
+        Me.LogInButton.Location = New System.Drawing.Point(406, 265)
+        Me.LogInButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.LogInButton.Name = "LogInButton"
+        Me.LogInButton.Size = New System.Drawing.Size(270, 58)
+        Me.LogInButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.LogInButton.TabIndex = 23
+        Me.LogInButton.TabStop = False
         '
-        'PictureBox5
+        'NewUser
         '
-        Me.PictureBox5.BackgroundImage = Global.IMDB.My.Resources.Resources.btn2
-        Me.PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox5.Location = New System.Drawing.Point(489, 363)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(309, 62)
-        Me.PictureBox5.TabIndex = 23
-        Me.PictureBox5.TabStop = False
+        Me.NewUser.AutoSize = True
+        Me.NewUser.BackColor = System.Drawing.Color.Transparent
+        Me.NewUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.NewUser.ForeColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(175, Byte), Integer))
+        Me.NewUser.Location = New System.Drawing.Point(437, 350)
+        Me.NewUser.Name = "NewUser"
+        Me.NewUser.Size = New System.Drawing.Size(91, 18)
+        Me.NewUser.TabIndex = 24
+        Me.NewUser.Text = "New User?"
         '
-        'Label3
+        'LogInInfo
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(541, 441)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(102, 22)
-        Me.Label3.TabIndex = 24
-        Me.Label3.Text = "New User?"
+        Me.LogInInfo.AutoSize = True
+        Me.LogInInfo.BackColor = System.Drawing.Color.Transparent
+        Me.LogInInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.LogInInfo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(175, Byte), Integer))
+        Me.LogInInfo.Location = New System.Drawing.Point(430, 100)
+        Me.LogInInfo.Name = "LogInInfo"
+        Me.LogInInfo.Size = New System.Drawing.Size(223, 20)
+        Me.LogInInfo.TabIndex = 18
+        Me.LogInInfo.Text = "Login below to get started." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
-        'Label4
+        'MovePanel
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(163, Byte), Integer), CType(CType(69, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(635, 441)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(125, 22)
-        Me.Label4.TabIndex = 25
-        Me.Label4.Text = "Register here"
+        Me.MovePanel.BackColor = System.Drawing.Color.Transparent
+        Me.MovePanel.Dock = System.Windows.Forms.DockStyle.Top
+        Me.MovePanel.Location = New System.Drawing.Point(0, 0)
+        Me.MovePanel.Name = "MovePanel"
+        Me.MovePanel.Size = New System.Drawing.Size(709, 20)
+        Me.MovePanel.TabIndex = 26
+        '
+        'RegisterBtn
+        '
+        Me.RegisterBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.RegisterBtn.ForeColor = System.Drawing.Color.Orange
+        Me.RegisterBtn.LinkColor = System.Drawing.Color.DarkOrange
+        Me.RegisterBtn.Location = New System.Drawing.Point(534, 350)
+        Me.RegisterBtn.Name = "RegisterBtn"
+        Me.RegisterBtn.Size = New System.Drawing.Size(122, 18)
+        Me.RegisterBtn.TabIndex = 27
+        Me.RegisterBtn.TabStop = True
+        Me.RegisterBtn.Text = "Register Now!"
         '
         'LogInForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.IMDB.My.Resources.Resources.images
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(810, 520)
+        Me.ClientSize = New System.Drawing.Size(709, 390)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.PictureBox5)
-        Me.Controls.Add(Me.TextBoxPassword)
-        Me.Controls.Add(Me.TextBox)
-        Me.Controls.Add(Me.PictureBox4)
-        Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.RememberMe)
+        Me.Controls.Add(Me.RegisterBtn)
         Me.Controls.Add(Me.CloseLogIn)
+        Me.Controls.Add(Me.MovePanel)
+        Me.Controls.Add(Me.NewUser)
+        Me.Controls.Add(Me.LogInButton)
+        Me.Controls.Add(Me.Password)
+        Me.Controls.Add(Me.UserName)
+        Me.Controls.Add(Me.PwsPanel)
+        Me.Controls.Add(Me.UserPanel)
+        Me.Controls.Add(Me.AppLogo)
+        Me.Controls.Add(Me.LogInInfo)
+        Me.Controls.Add(Me.AppInfo)
+        Me.Controls.Add(Me.LogInPic)
+        Me.Controls.Add(Me.RememberMe)
         Me.DoubleBuffered = True
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "LogInForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Log In"
         CType(Me.CloseLogIn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XError, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LogInPic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AppLogo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UserPanel, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PwsPanel, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LogInButton, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents TextBox As TextBox
-    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents UserName As TextBox
     Friend WithEvents RememberMe As CheckBox
     Friend WithEvents XError As ErrorProvider
     Friend WithEvents CloseLogIn As PictureBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents TextBoxPassword As TextBox
+    Friend WithEvents AppInfo As Label
+    Friend WithEvents LogInPic As PictureBox
+    Friend WithEvents PwsPanel As PictureBox
+    Friend WithEvents UserPanel As PictureBox
+    Friend WithEvents AppLogo As PictureBox
+    Friend WithEvents LogInButton As PictureBox
+    Friend WithEvents Password As TextBox
+    Friend WithEvents NewUser As Label
+    Friend WithEvents LogInInfo As Label
+    Friend WithEvents MovePanel As Panel
+    Friend WithEvents RegisterBtn As LinkLabel
 End Class

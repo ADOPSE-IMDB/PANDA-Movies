@@ -39,6 +39,7 @@ Public Class Main
             UsernameInticator.Visible = False
         End If
     End Sub
+
 #Region "Search"
 
     Private Sub Search_Click(sender As Object, e As EventArgs) Handles Search.Click
@@ -196,7 +197,8 @@ Public Class Main
     End Sub
 #End Region
 
-    'Close Program 
+
+#Region "Exit App"
     Private Sub ExitBtn_Click(sender As Object, e As EventArgs) Handles ExitBtn.Click
         Dim answer As Integer
         answer = MsgBox("Do you really want to Exit the PANDApp?", vbExclamation + vbYesNo, "Exit")
@@ -211,4 +213,5 @@ Public Class Main
     Private Sub ExitBtn_Leave(sender As Object, e As EventArgs) Handles ExitBtn.MouseLeave
         ExitBtn.Image = My.Resources.Close1
     End Sub
+#End Region
 End Class

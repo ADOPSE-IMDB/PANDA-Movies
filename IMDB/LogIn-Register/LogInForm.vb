@@ -13,24 +13,44 @@ Public Class LogInForm
         End Try
     End Sub
 
+#Region "Username/Password Textbox"
+    Private Sub Got_focus(sender As TextBox, e As EventArgs) Handles UserName.GotFocus, Password.GotFocus
+        If sender.ForeColor = Color.DarkGray Then
+            sender.ForeColor = Color.Black
+            sender.Text = ""
+        End If
+    End Sub
+
+    Private Sub Username_LostFocus(sender As Object, e As EventArgs) Handles UserName.LostFocus
+        If UserName.Text = "" Then
+            UserName.ForeColor = Color.DarkGray
+            UserName.Text = "Username"
+        End If
+    End Sub
+    Private Sub Password_LostFocus(sender As Object, e As EventArgs) Handles Password.LostFocus
+        If Password.Text = "" Then
+            Password.ForeColor = Color.DarkGray
+            Password.Text = "Password"
+        End If
+    End Sub
+#End Region
 
 
-
-    Private Sub RegisterLink_Click(sender As Object, e As EventArgs) Handles Label4.Click
+    Private Sub Register_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles RegisterBtn.LinkClicked
         Register.Show()
         Me.Close()
     End Sub
 
 
+
+#Region "LogIn"
     Public Shared u As User
+    Private Sub Login_Click(sender As Object, e As EventArgs) Handles LogInButton.Click
 
-    Private Sub Login_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
-
-
-        If TextBox.Text = "" Or TextBoxPassword.Text = "" Then
+        If UserName.Text = "" Or Password.Text = "" Then
 
         Else
-            u = UserMod.LogIn(TextBox.Text, TextBoxPassword.Text)
+            u = UserMod.LogIn(UserName.Text, Password.Text)
 
 
             If u.Id = 0 Then
@@ -43,6 +63,17 @@ Public Class LogInForm
             End If
         End If
     End Sub
+
+    Private Sub Login_Enter(sender As Object, e As EventArgs) Handles LogInButton.MouseEnter
+        LogInButton.Image = My.Resources.btn1
+    End Sub
+    Private Sub Login_Leave(sender As Object, e As EventArgs) Handles LogInButton.MouseLeave
+        LogInButton.Image = My.Resources.btn2
+    End Sub
+
+#End Region
+
+#Region "Close Button"
     Private Sub CloseLogIn_click(sender As Object, e As EventArgs) Handles CloseLogIn.Click
         Application.Exit()
     End Sub
@@ -52,6 +83,20 @@ Public Class LogInForm
     Private Sub CloseLogIn_Leave(sender As Object, e As EventArgs) Handles CloseLogIn.MouseLeave
         CloseLogIn.Image = My.Resources.Close1
     End Sub
+#End Region
 
+#Region "Move Log In"
+    Private Sub F_mouseDown(sender As Object, e As EventArgs) Handles MovePanel.MouseDown
+        MoveForm_MouseDown(sender, e)
+    End Sub
+
+    Private Sub F_mouseMove(sender As Object, e As EventArgs) Handles MovePanel.MouseMove
+        MoveForm_MouseMove(sender, e, Me)
+    End Sub
+
+    Private Sub F_mouseUp(sender As Object, e As EventArgs) Handles MovePanel.MouseUp
+        MoveForm_MouseUp(sender, e)
+    End Sub
+#End Region
 
 End Class
