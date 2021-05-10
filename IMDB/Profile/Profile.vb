@@ -96,12 +96,6 @@
 
     Private Sub UploadB_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UploadB.Click
 
-        Dim OpenFileDialog1 As New OpenFileDialog
-
-        OpenFileDialog1.Filter = "Picture Files (*)|*.png;*.bmp;*.gif;*.jpg"
-        If OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
-            ProfilePic.Image = Image.FromFile(OpenFileDialog1.FileName)
-        End If
 
     End Sub
 End Class

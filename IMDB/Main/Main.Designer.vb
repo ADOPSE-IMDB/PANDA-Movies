@@ -25,71 +25,114 @@ Partial Class Main
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.TopPanel = New System.Windows.Forms.Panel()
-        Me.Favorite = New System.Windows.Forms.PictureBox()
-        Me.Home = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.FavoriteInd = New System.Windows.Forms.Panel()
+        Me.FavoriteBtn = New System.Windows.Forms.Label()
+        Me.HomeBtnInd = New System.Windows.Forms.Panel()
+        Me.HomeBtn = New System.Windows.Forms.Label()
         Me.AppName = New System.Windows.Forms.PictureBox()
-        Me.NameBtn = New System.Windows.Forms.Button()
         Me.Search = New System.Windows.Forms.Button()
         Me.SearchBox = New System.Windows.Forms.TextBox()
+        Me.NamebtnPanel = New System.Windows.Forms.Panel()
+        Me.NameBtn = New System.Windows.Forms.Label()
         Me.MainPanel = New System.Windows.Forms.Panel()
         Me.resultPanel = New System.Windows.Forms.Panel()
         Me.ResultInfo = New System.Windows.Forms.Label()
         Me.DropPanel = New System.Windows.Forms.Panel()
-        Me.OpenProfile = New System.Windows.Forms.Button()
-        Me.LogOut = New System.Windows.Forms.Button()
+        Me.ProfilePanel = New System.Windows.Forms.Panel()
+        Me.OpenProfile = New System.Windows.Forms.Label()
         Me.Container = New System.Windows.Forms.Panel()
         Me.Timer = New System.Windows.Forms.Timer(Me.components)
         Me.MovePanel = New System.Windows.Forms.Panel()
         Me.ExitBtn = New System.Windows.Forms.PictureBox()
         Me.AppLabel = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.LogOutPanel = New System.Windows.Forms.Panel()
+        Me.LogOut = New System.Windows.Forms.Label()
         Me.TopPanel.SuspendLayout()
-        CType(Me.Favorite, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Home, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FavoriteInd.SuspendLayout()
+        Me.HomeBtnInd.SuspendLayout()
         CType(Me.AppName, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.NamebtnPanel.SuspendLayout()
         Me.MainPanel.SuspendLayout()
         Me.resultPanel.SuspendLayout()
         Me.DropPanel.SuspendLayout()
+        Me.ProfilePanel.SuspendLayout()
         Me.MovePanel.SuspendLayout()
         CType(Me.ExitBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.LogOutPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'TopPanel
         '
         Me.TopPanel.Controls.Add(Me.Button1)
-        Me.TopPanel.Controls.Add(Me.Favorite)
-        Me.TopPanel.Controls.Add(Me.Home)
+        Me.TopPanel.Controls.Add(Me.FavoriteInd)
+        Me.TopPanel.Controls.Add(Me.HomeBtnInd)
         Me.TopPanel.Controls.Add(Me.AppName)
-        Me.TopPanel.Controls.Add(Me.NameBtn)
         Me.TopPanel.Controls.Add(Me.Search)
         Me.TopPanel.Controls.Add(Me.SearchBox)
+        Me.TopPanel.Controls.Add(Me.NamebtnPanel)
         Me.TopPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.TopPanel.Location = New System.Drawing.Point(0, 24)
         Me.TopPanel.Name = "TopPanel"
         Me.TopPanel.Size = New System.Drawing.Size(1280, 36)
         Me.TopPanel.TabIndex = 0
         '
-        'Favorite
+        'Button1
         '
-        Me.Favorite.BackColor = System.Drawing.Color.Transparent
-        Me.Favorite.Image = CType(resources.GetObject("Favorite.Image"), System.Drawing.Image)
-        Me.Favorite.Location = New System.Drawing.Point(1067, 10)
-        Me.Favorite.Name = "Favorite"
-        Me.Favorite.Size = New System.Drawing.Size(95, 26)
-        Me.Favorite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Favorite.TabIndex = 4
-        Me.Favorite.TabStop = False
+        Me.Button1.Location = New System.Drawing.Point(225, 14)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
-        'Home
+        'FavoriteInd
         '
-        Me.Home.BackColor = System.Drawing.Color.Transparent
-        Me.Home.Image = CType(resources.GetObject("Home.Image"), System.Drawing.Image)
-        Me.Home.Location = New System.Drawing.Point(124, 10)
-        Me.Home.Name = "Home"
-        Me.Home.Size = New System.Drawing.Size(95, 26)
-        Me.Home.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Home.TabIndex = 3
-        Me.Home.TabStop = False
+        Me.FavoriteInd.BackColor = System.Drawing.Color.Transparent
+        Me.FavoriteInd.BackgroundImage = CType(resources.GetObject("FavoriteInd.BackgroundImage"), System.Drawing.Image)
+        Me.FavoriteInd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.FavoriteInd.Controls.Add(Me.FavoriteBtn)
+        Me.FavoriteInd.Location = New System.Drawing.Point(1059, 10)
+        Me.FavoriteInd.Name = "FavoriteInd"
+        Me.FavoriteInd.Size = New System.Drawing.Size(95, 26)
+        Me.FavoriteInd.TabIndex = 7
+        '
+        'FavoriteBtn
+        '
+        Me.FavoriteBtn.BackColor = System.Drawing.Color.Transparent
+        Me.FavoriteBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FavoriteBtn.Font = New System.Drawing.Font("Adobe Fan Heiti Std B", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.FavoriteBtn.ForeColor = System.Drawing.Color.White
+        Me.FavoriteBtn.Location = New System.Drawing.Point(0, 0)
+        Me.FavoriteBtn.Name = "FavoriteBtn"
+        Me.FavoriteBtn.Size = New System.Drawing.Size(95, 28)
+        Me.FavoriteBtn.TabIndex = 0
+        Me.FavoriteBtn.Text = "Favorite"
+        Me.FavoriteBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'HomeBtnInd
+        '
+        Me.HomeBtnInd.BackColor = System.Drawing.Color.Transparent
+        Me.HomeBtnInd.BackgroundImage = CType(resources.GetObject("HomeBtnInd.BackgroundImage"), System.Drawing.Image)
+        Me.HomeBtnInd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.HomeBtnInd.Controls.Add(Me.HomeBtn)
+        Me.HomeBtnInd.Location = New System.Drawing.Point(111, 10)
+        Me.HomeBtnInd.Name = "HomeBtnInd"
+        Me.HomeBtnInd.Size = New System.Drawing.Size(95, 26)
+        Me.HomeBtnInd.TabIndex = 7
+        '
+        'HomeBtn
+        '
+        Me.HomeBtn.BackColor = System.Drawing.Color.Transparent
+        Me.HomeBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.HomeBtn.Font = New System.Drawing.Font("Adobe Fan Heiti Std B", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.HomeBtn.ForeColor = System.Drawing.Color.White
+        Me.HomeBtn.Location = New System.Drawing.Point(0, -1)
+        Me.HomeBtn.Name = "HomeBtn"
+        Me.HomeBtn.Size = New System.Drawing.Size(95, 28)
+        Me.HomeBtn.TabIndex = 0
+        Me.HomeBtn.Text = "Home"
+        Me.HomeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'AppName
         '
@@ -100,15 +143,6 @@ Partial Class Main
         Me.AppName.Size = New System.Drawing.Size(105, 37)
         Me.AppName.TabIndex = 3
         Me.AppName.TabStop = False
-        '
-        'NameBtn
-        '
-        Me.NameBtn.Location = New System.Drawing.Point(1168, 10)
-        Me.NameBtn.Name = "NameBtn"
-        Me.NameBtn.Size = New System.Drawing.Size(80, 23)
-        Me.NameBtn.TabIndex = 2
-        Me.NameBtn.Text = "UserName"
-        Me.NameBtn.UseVisualStyleBackColor = True
         '
         'Search
         '
@@ -131,6 +165,30 @@ Partial Class Main
         Me.SearchBox.Name = "SearchBox"
         Me.SearchBox.Size = New System.Drawing.Size(200, 23)
         Me.SearchBox.TabIndex = 0
+        '
+        'NamebtnPanel
+        '
+        Me.NamebtnPanel.BackColor = System.Drawing.Color.Transparent
+        Me.NamebtnPanel.BackgroundImage = CType(resources.GetObject("NamebtnPanel.BackgroundImage"), System.Drawing.Image)
+        Me.NamebtnPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.NamebtnPanel.Controls.Add(Me.NameBtn)
+        Me.NamebtnPanel.Location = New System.Drawing.Point(1160, 10)
+        Me.NamebtnPanel.Name = "NamebtnPanel"
+        Me.NamebtnPanel.Size = New System.Drawing.Size(95, 26)
+        Me.NamebtnPanel.TabIndex = 6
+        '
+        'NameBtn
+        '
+        Me.NameBtn.BackColor = System.Drawing.Color.Transparent
+        Me.NameBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.NameBtn.Font = New System.Drawing.Font("Adobe Fan Heiti Std B", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.NameBtn.ForeColor = System.Drawing.Color.White
+        Me.NameBtn.Location = New System.Drawing.Point(0, 0)
+        Me.NameBtn.Name = "NameBtn"
+        Me.NameBtn.Size = New System.Drawing.Size(95, 28)
+        Me.NameBtn.TabIndex = 0
+        Me.NameBtn.Text = "LogedUser"
+        Me.NameBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'MainPanel
         '
@@ -170,32 +228,38 @@ Partial Class Main
         'DropPanel
         '
         Me.DropPanel.BackColor = System.Drawing.Color.Transparent
-        Me.DropPanel.Controls.Add(Me.OpenProfile)
-        Me.DropPanel.Controls.Add(Me.LogOut)
-        Me.DropPanel.Location = New System.Drawing.Point(1171, -2)
-        Me.DropPanel.MaximumSize = New System.Drawing.Size(74, 58)
+        Me.DropPanel.Controls.Add(Me.LogOutPanel)
+        Me.DropPanel.Controls.Add(Me.ProfilePanel)
+        Me.DropPanel.Location = New System.Drawing.Point(1171, -1)
+        Me.DropPanel.MaximumSize = New System.Drawing.Size(74, 70)
         Me.DropPanel.MinimumSize = New System.Drawing.Size(74, 0)
         Me.DropPanel.Name = "DropPanel"
-        Me.DropPanel.Size = New System.Drawing.Size(74, 58)
+        Me.DropPanel.Size = New System.Drawing.Size(74, 66)
         Me.DropPanel.TabIndex = 0
+        '
+        'ProfilePanel
+        '
+        Me.ProfilePanel.BackColor = System.Drawing.Color.Transparent
+        Me.ProfilePanel.BackgroundImage = CType(resources.GetObject("ProfilePanel.BackgroundImage"), System.Drawing.Image)
+        Me.ProfilePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ProfilePanel.Controls.Add(Me.OpenProfile)
+        Me.ProfilePanel.Location = New System.Drawing.Point(0, 8)
+        Me.ProfilePanel.Name = "ProfilePanel"
+        Me.ProfilePanel.Size = New System.Drawing.Size(74, 24)
+        Me.ProfilePanel.TabIndex = 8
         '
         'OpenProfile
         '
-        Me.OpenProfile.Location = New System.Drawing.Point(0, 6)
+        Me.OpenProfile.BackColor = System.Drawing.Color.Transparent
+        Me.OpenProfile.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.OpenProfile.Font = New System.Drawing.Font("Adobe Fan Heiti Std B", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.OpenProfile.ForeColor = System.Drawing.Color.White
+        Me.OpenProfile.Location = New System.Drawing.Point(0, 0)
         Me.OpenProfile.Name = "OpenProfile"
-        Me.OpenProfile.Size = New System.Drawing.Size(74, 23)
+        Me.OpenProfile.Size = New System.Drawing.Size(74, 24)
         Me.OpenProfile.TabIndex = 1
         Me.OpenProfile.Text = "Profile"
-        Me.OpenProfile.UseVisualStyleBackColor = True
-        '
-        'LogOut
-        '
-        Me.LogOut.Location = New System.Drawing.Point(0, 35)
-        Me.LogOut.Name = "LogOut"
-        Me.LogOut.Size = New System.Drawing.Size(74, 23)
-        Me.LogOut.TabIndex = 0
-        Me.LogOut.Text = "Log Out"
-        Me.LogOut.UseVisualStyleBackColor = True
+        Me.OpenProfile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Container
         '
@@ -242,14 +306,29 @@ Partial Class Main
         Me.AppLabel.TabIndex = 1
         Me.AppLabel.Text = "PANDA movies"
         '
-        'Button1
+        'LogOutPanel
         '
-        Me.Button1.Location = New System.Drawing.Point(225, 14)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.LogOutPanel.BackColor = System.Drawing.Color.Transparent
+        Me.LogOutPanel.BackgroundImage = CType(resources.GetObject("LogOutPanel.BackgroundImage"), System.Drawing.Image)
+        Me.LogOutPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.LogOutPanel.Controls.Add(Me.LogOut)
+        Me.LogOutPanel.Location = New System.Drawing.Point(0, 39)
+        Me.LogOutPanel.Name = "LogOutPanel"
+        Me.LogOutPanel.Size = New System.Drawing.Size(74, 24)
+        Me.LogOutPanel.TabIndex = 9
+        '
+        'LogOut
+        '
+        Me.LogOut.BackColor = System.Drawing.Color.Transparent
+        Me.LogOut.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LogOut.Font = New System.Drawing.Font("Adobe Fan Heiti Std B", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.LogOut.ForeColor = System.Drawing.Color.White
+        Me.LogOut.Location = New System.Drawing.Point(0, 0)
+        Me.LogOut.Name = "LogOut"
+        Me.LogOut.Size = New System.Drawing.Size(74, 24)
+        Me.LogOut.TabIndex = 1
+        Me.LogOut.Text = "Log Out"
+        Me.LogOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Main
         '
@@ -266,25 +345,25 @@ Partial Class Main
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.TopPanel.ResumeLayout(False)
         Me.TopPanel.PerformLayout()
-        CType(Me.Favorite, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Home, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FavoriteInd.ResumeLayout(False)
+        Me.HomeBtnInd.ResumeLayout(False)
         CType(Me.AppName, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.NamebtnPanel.ResumeLayout(False)
         Me.MainPanel.ResumeLayout(False)
         Me.resultPanel.ResumeLayout(False)
         Me.DropPanel.ResumeLayout(False)
+        Me.ProfilePanel.ResumeLayout(False)
         Me.MovePanel.ResumeLayout(False)
         CType(Me.ExitBtn, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.LogOutPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents TopPanel As Panel
-    Friend WithEvents NameBtn As Button
     Friend WithEvents MainPanel As Panel
     Friend WithEvents SearchBox As TextBox
     Friend WithEvents DropPanel As Panel
-    Friend WithEvents OpenProfile As Button
-    Friend WithEvents LogOut As Button
     Friend WithEvents Timer As Timer
     Friend WithEvents Container As Panel
     Friend WithEvents Search As Button
@@ -295,7 +374,15 @@ Partial Class Main
     Friend WithEvents AppName As PictureBox
     Friend WithEvents AppLabel As Label
     Friend WithEvents ExitBtn As PictureBox
-    Friend WithEvents Home As PictureBox
-    Friend WithEvents Favorite As PictureBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents NamebtnPanel As Panel
+    Friend WithEvents NameBtn As Label
+    Friend WithEvents HomeBtnInd As Panel
+    Friend WithEvents HomeBtn As Label
+    Friend WithEvents FavoriteInd As Panel
+    Friend WithEvents FavoriteBtn As Label
+    Friend WithEvents ProfilePanel As Panel
+    Friend WithEvents OpenProfile As Label
+    Friend WithEvents LogOutPanel As Panel
+    Friend WithEvents LogOut As Label
 End Class
