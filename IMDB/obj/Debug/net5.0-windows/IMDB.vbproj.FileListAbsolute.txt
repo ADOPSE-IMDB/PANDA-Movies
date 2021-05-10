@@ -117,3 +117,7 @@ C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.Sear
 D:\GitHub\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.SearchForm.resources
 D:\GitHub\IMDB\IMDB\bin\Debug\net5.0-windows\Microsoft.Azure.Amqp.dll
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\Microsoft.Azure.Amqp.dll
+D:\Desktop\IMDB\IMDB\bin\Debug\net5.0-windows\Lucene.Net.dll
+D:\Desktop\IMDB\IMDB\bin\Debug\net5.0-windows\Microsoft.Azure.Amqp.dll
+D:\Desktop\IMDB\IMDB\bin\Debug\net5.0-windows\ICSharpCode.SharpZipLib.dll
+D:\Desktop\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.SearchForm.resources

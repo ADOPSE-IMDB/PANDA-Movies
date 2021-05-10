@@ -23,9 +23,10 @@ Partial Class Profile
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Profile))
         Me.ProfilePL = New System.Windows.Forms.Label()
         Me.UploadB = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ProfilePic = New System.Windows.Forms.PictureBox()
         Me.Na = New System.Windows.Forms.Label()
         Me.Su = New System.Windows.Forms.Label()
         Me.EL = New System.Windows.Forms.Label()
@@ -42,8 +43,18 @@ Partial Class Profile
         Me.ConfirmTB = New System.Windows.Forms.TextBox()
         Me.CnP = New System.Windows.Forms.Label()
         Me.XError = New System.Windows.Forms.ErrorProvider(Me.components)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PbN = New System.Windows.Forms.PictureBox()
+        Me.PbS = New System.Windows.Forms.PictureBox()
+        Me.PbE = New System.Windows.Forms.PictureBox()
+        Me.PbP = New System.Windows.Forms.PictureBox()
+        Me.PbCP = New System.Windows.Forms.PictureBox()
+        CType(Me.ProfilePic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XError, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PbN, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PbS, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PbE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PbP, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PbCP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ProfilePL
@@ -66,13 +77,15 @@ Partial Class Profile
         Me.UploadB.Text = "Upload"
         Me.UploadB.UseVisualStyleBackColor = True
         '
-        'PictureBox1
+        'ProfilePic
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(38, 112)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 99)
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = False
+        Me.ProfilePic.Image = CType(resources.GetObject("ProfilePic.Image"), System.Drawing.Image)
+        Me.ProfilePic.Location = New System.Drawing.Point(42, 106)
+        Me.ProfilePic.Name = "ProfilePic"
+        Me.ProfilePic.Size = New System.Drawing.Size(105, 112)
+        Me.ProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ProfilePic.TabIndex = 3
+        Me.ProfilePic.TabStop = False
         '
         'Na
         '
@@ -128,7 +141,7 @@ Partial Class Profile
         'NameL
         '
         Me.NameL.AutoSize = True
-        Me.NameL.Location = New System.Drawing.Point(399, 275)
+        Me.NameL.Location = New System.Drawing.Point(472, 275)
         Me.NameL.Name = "NameL"
         Me.NameL.Size = New System.Drawing.Size(41, 15)
         Me.NameL.TabIndex = 9
@@ -137,7 +150,7 @@ Partial Class Profile
         'Surname
         '
         Me.Surname.AutoSize = True
-        Me.Surname.Location = New System.Drawing.Point(399, 336)
+        Me.Surname.Location = New System.Drawing.Point(472, 336)
         Me.Surname.Name = "Surname"
         Me.Surname.Size = New System.Drawing.Size(41, 15)
         Me.Surname.TabIndex = 10
@@ -146,7 +159,7 @@ Partial Class Profile
         'Email
         '
         Me.Email.AutoSize = True
-        Me.Email.Location = New System.Drawing.Point(399, 392)
+        Me.Email.Location = New System.Drawing.Point(472, 392)
         Me.Email.Name = "Email"
         Me.Email.Size = New System.Drawing.Size(41, 15)
         Me.Email.TabIndex = 11
@@ -165,43 +178,63 @@ Partial Class Profile
         '
         'NameTB
         '
-        Me.NameTB.Location = New System.Drawing.Point(381, 272)
+        Me.NameTB.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.NameTB.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.NameTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.NameTB.ForeColor = System.Drawing.Color.DarkGray
+        Me.NameTB.Location = New System.Drawing.Point(435, 272)
         Me.NameTB.Name = "NameTB"
-        Me.NameTB.Size = New System.Drawing.Size(100, 23)
+        Me.NameTB.Size = New System.Drawing.Size(100, 22)
         Me.NameTB.TabIndex = 14
         Me.NameTB.Visible = False
         '
         'SurnameTB
         '
-        Me.SurnameTB.Location = New System.Drawing.Point(381, 329)
+        Me.SurnameTB.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.SurnameTB.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.SurnameTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.SurnameTB.ForeColor = System.Drawing.Color.DarkGray
+        Me.SurnameTB.Location = New System.Drawing.Point(435, 329)
         Me.SurnameTB.Name = "SurnameTB"
-        Me.SurnameTB.Size = New System.Drawing.Size(100, 23)
+        Me.SurnameTB.Size = New System.Drawing.Size(100, 22)
         Me.SurnameTB.TabIndex = 15
         Me.SurnameTB.Visible = False
         '
         'EmailTB
         '
-        Me.EmailTB.Location = New System.Drawing.Point(381, 389)
+        Me.EmailTB.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.EmailTB.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.EmailTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.EmailTB.ForeColor = System.Drawing.Color.DarkGray
+        Me.EmailTB.Location = New System.Drawing.Point(435, 392)
         Me.EmailTB.Name = "EmailTB"
-        Me.EmailTB.Size = New System.Drawing.Size(100, 23)
+        Me.EmailTB.Size = New System.Drawing.Size(100, 22)
         Me.EmailTB.TabIndex = 16
         Me.EmailTB.Visible = False
         '
         'NewPasswordTB
         '
-        Me.NewPasswordTB.Location = New System.Drawing.Point(381, 446)
+        Me.NewPasswordTB.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.NewPasswordTB.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.NewPasswordTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.NewPasswordTB.ForeColor = System.Drawing.Color.DarkGray
+        Me.NewPasswordTB.Location = New System.Drawing.Point(435, 446)
         Me.NewPasswordTB.Name = "NewPasswordTB"
         Me.NewPasswordTB.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.NewPasswordTB.Size = New System.Drawing.Size(100, 23)
+        Me.NewPasswordTB.Size = New System.Drawing.Size(100, 22)
         Me.NewPasswordTB.TabIndex = 17
         Me.NewPasswordTB.Visible = False
         '
         'ConfirmTB
         '
-        Me.ConfirmTB.Location = New System.Drawing.Point(381, 497)
+        Me.ConfirmTB.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.ConfirmTB.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ConfirmTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.ConfirmTB.ForeColor = System.Drawing.Color.DarkGray
+        Me.ConfirmTB.Location = New System.Drawing.Point(435, 497)
         Me.ConfirmTB.Name = "ConfirmTB"
         Me.ConfirmTB.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.ConfirmTB.Size = New System.Drawing.Size(100, 23)
+        Me.ConfirmTB.Size = New System.Drawing.Size(100, 22)
         Me.ConfirmTB.TabIndex = 18
         Me.ConfirmTB.Visible = False
         '
@@ -219,6 +252,66 @@ Partial Class Profile
         'XError
         '
         Me.XError.ContainerControl = Me
+        '
+        'PbN
+        '
+        Me.PbN.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.PbN.BackColor = System.Drawing.Color.Transparent
+        Me.PbN.Image = Global.IMDB.My.Resources.Resources.bgtxt
+        Me.PbN.Location = New System.Drawing.Point(415, 269)
+        Me.PbN.Name = "PbN"
+        Me.PbN.Size = New System.Drawing.Size(141, 33)
+        Me.PbN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PbN.TabIndex = 20
+        Me.PbN.TabStop = False
+        '
+        'PbS
+        '
+        Me.PbS.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.PbS.BackColor = System.Drawing.Color.Transparent
+        Me.PbS.Image = Global.IMDB.My.Resources.Resources.bgtxt
+        Me.PbS.Location = New System.Drawing.Point(415, 326)
+        Me.PbS.Name = "PbS"
+        Me.PbS.Size = New System.Drawing.Size(141, 33)
+        Me.PbS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PbS.TabIndex = 21
+        Me.PbS.TabStop = False
+        '
+        'PbE
+        '
+        Me.PbE.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.PbE.BackColor = System.Drawing.Color.Transparent
+        Me.PbE.Image = Global.IMDB.My.Resources.Resources.bgtxt
+        Me.PbE.Location = New System.Drawing.Point(415, 386)
+        Me.PbE.Name = "PbE"
+        Me.PbE.Size = New System.Drawing.Size(141, 33)
+        Me.PbE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PbE.TabIndex = 22
+        Me.PbE.TabStop = False
+        '
+        'PbP
+        '
+        Me.PbP.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.PbP.BackColor = System.Drawing.Color.Transparent
+        Me.PbP.Image = Global.IMDB.My.Resources.Resources.bgtxt
+        Me.PbP.Location = New System.Drawing.Point(415, 443)
+        Me.PbP.Name = "PbP"
+        Me.PbP.Size = New System.Drawing.Size(141, 33)
+        Me.PbP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PbP.TabIndex = 23
+        Me.PbP.TabStop = False
+        '
+        'PbCP
+        '
+        Me.PbCP.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.PbCP.BackColor = System.Drawing.Color.Transparent
+        Me.PbCP.Image = Global.IMDB.My.Resources.Resources.bgtxt
+        Me.PbCP.Location = New System.Drawing.Point(415, 494)
+        Me.PbCP.Name = "PbCP"
+        Me.PbCP.Size = New System.Drawing.Size(141, 33)
+        Me.PbCP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PbCP.TabIndex = 24
+        Me.PbCP.TabStop = False
         '
         'Profile
         '
@@ -241,14 +334,24 @@ Partial Class Profile
         Me.Controls.Add(Me.EL)
         Me.Controls.Add(Me.Su)
         Me.Controls.Add(Me.Na)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.ProfilePic)
         Me.Controls.Add(Me.UploadB)
         Me.Controls.Add(Me.ProfilePL)
+        Me.Controls.Add(Me.PbN)
+        Me.Controls.Add(Me.PbS)
+        Me.Controls.Add(Me.PbE)
+        Me.Controls.Add(Me.PbP)
+        Me.Controls.Add(Me.PbCP)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Profile"
         Me.Text = "Profile"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProfilePic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XError, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PbN, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PbS, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PbE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PbP, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PbCP, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -256,7 +359,7 @@ Partial Class Profile
 
     Friend WithEvents ProfilePL As Label
     Friend WithEvents UploadB As Button
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents ProfilePic As PictureBox
     Friend WithEvents Na As Label
     Friend WithEvents Su As Label
     Friend WithEvents EL As Label
@@ -274,4 +377,9 @@ Partial Class Profile
     Friend WithEvents ConfirmTB As TextBox
     Friend WithEvents CnP As Label
     Friend WithEvents XError As ErrorProvider
+    Friend WithEvents PbCP As PictureBox
+    Friend WithEvents PbP As PictureBox
+    Friend WithEvents PbE As PictureBox
+    Friend WithEvents PbS As PictureBox
+    Friend WithEvents PbN As PictureBox
 End Class
