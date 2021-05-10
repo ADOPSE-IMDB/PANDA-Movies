@@ -264,6 +264,7 @@ Partial Class Profile
         Me.PbN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbN.TabIndex = 20
         Me.PbN.TabStop = False
+        Me.PbN.Visible = False
         '
         'PbS
         '
@@ -276,6 +277,7 @@ Partial Class Profile
         Me.PbS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbS.TabIndex = 21
         Me.PbS.TabStop = False
+        Me.PbS.Visible = False
         '
         'PbE
         '
@@ -288,6 +290,7 @@ Partial Class Profile
         Me.PbE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbE.TabIndex = 22
         Me.PbE.TabStop = False
+        Me.PbE.Visible = False
         '
         'PbP
         '
@@ -300,6 +303,7 @@ Partial Class Profile
         Me.PbP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbP.TabIndex = 23
         Me.PbP.TabStop = False
+        Me.PbP.Visible = False
         '
         'PbCP
         '
@@ -312,6 +316,7 @@ Partial Class Profile
         Me.PbCP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbCP.TabIndex = 24
         Me.PbCP.TabStop = False
+        Me.PbCP.Visible = False
         '
         'Profile
         '
