@@ -6,6 +6,16 @@ Public Class LogInForm
 
 
     Private Sub on_Load() Handles MyBase.Load
+
+        If My.Settings.Check Then
+            RememberMe.Checked = True
+            UserName.ForeColor = Color.Black
+            Password.ForeColor = Color.Black
+            Password.PasswordChar = "*"
+            UserName.Text = My.Settings.username
+            Password.Text = My.Settings.password
+        End If
+
         Try
             MvcLuceneSampleApp.Search.Initialize()
         Catch
@@ -56,17 +66,29 @@ Public Class LogInForm
     Public Shared u As User
     Private Sub Login_Click(sender As Object, e As EventArgs) Handles LogInButton.Click
 
-        If UserName.Text = "" Or Password.Text = "" Then
-
+        If UserName.ForeColor = Color.DarkGray Then
+            info.Text = "Please enter your username"
+        ElseIf Password.ForeColor = Color.DarkGray Then
+            info.Text = "Please enter your password"
         Else
             u = UserMod.LogIn(UserName.Text, Password.Text)
 
 
             If u.Id = 0 Then
-                MessageBox.Show("Please check your username or password and try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                info.Text = "Please check your username or password and try again"
             ElseIf u.Id = -1 Then
                 MessageBox.Show("Cant Connect to the Data Base", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
+                If RememberMe.Checked Then
+                    My.Settings.Check = True
+                    My.Settings.username = UserName.Text
+                    My.Settings.password = Password.Text
+                Else
+                    My.Settings.Check = False
+                    My.Settings.username = ""
+                    My.Settings.password = ""
+                End If
+                info.Text = ""
                 Main.Show()
                 Close()
             End If

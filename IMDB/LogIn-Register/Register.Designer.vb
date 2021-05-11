@@ -43,7 +43,7 @@ Partial Class Register
         Me.MovePanel = New System.Windows.Forms.Panel()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.BtnRegister = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.info = New System.Windows.Forms.Label()
         CType(Me.XError, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,9 +109,9 @@ Partial Class Register
         Me.LogInLink.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.LogInLink.BackColor = System.Drawing.Color.Transparent
         Me.LogInLink.LinkColor = System.Drawing.Color.DarkOrange
-        Me.LogInLink.Location = New System.Drawing.Point(391, 420)
+        Me.LogInLink.Location = New System.Drawing.Point(406, 418)
         Me.LogInLink.Name = "LogInLink"
-        Me.LogInLink.Size = New System.Drawing.Size(200, 21)
+        Me.LogInLink.Size = New System.Drawing.Size(175, 21)
         Me.LogInLink.TabIndex = 8
         Me.LogInLink.TabStop = True
         Me.LogInLink.Text = "Already have an account?"
@@ -287,23 +287,23 @@ Partial Class Register
         Me.BtnRegister.BackColor = System.Drawing.Color.Transparent
         Me.BtnRegister.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnRegister.Image = CType(resources.GetObject("BtnRegister.Image"), System.Drawing.Image)
-        Me.BtnRegister.Location = New System.Drawing.Point(406, 378)
+        Me.BtnRegister.Location = New System.Drawing.Point(406, 380)
         Me.BtnRegister.Name = "BtnRegister"
         Me.BtnRegister.Size = New System.Drawing.Size(175, 35)
         Me.BtnRegister.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.BtnRegister.TabIndex = 21
         Me.BtnRegister.TabStop = False
         '
-        'Button1
+        'info
         '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Button1.Location = New System.Drawing.Point(475, 388)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(37, 23)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "loseFocus"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.info.BackColor = System.Drawing.Color.Transparent
+        Me.info.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.info.ForeColor = System.Drawing.Color.DarkOrange
+        Me.info.Location = New System.Drawing.Point(244, 354)
+        Me.info.Name = "info"
+        Me.info.Size = New System.Drawing.Size(504, 23)
+        Me.info.TabIndex = 30
+        Me.info.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Register
         '
@@ -314,6 +314,7 @@ Partial Class Register
         Me.CancelButton = Me.LogInLink
         Me.ClientSize = New System.Drawing.Size(760, 443)
         Me.ControlBox = False
+        Me.Controls.Add(Me.info)
         Me.Controls.Add(Me.BtnRegister)
         Me.Controls.Add(Me.PictureBox7)
         Me.Controls.Add(Me.ReturnBtn)
@@ -332,7 +333,6 @@ Partial Class Register
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.PictureBox6)
         Me.Controls.Add(Me.MovePanel)
-        Me.Controls.Add(Me.Button1)
         Me.DoubleBuffered = True
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -373,5 +373,5 @@ Partial Class Register
     Friend WithEvents MovePanel As Panel
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents BtnRegister As PictureBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents info As Label
 End Class

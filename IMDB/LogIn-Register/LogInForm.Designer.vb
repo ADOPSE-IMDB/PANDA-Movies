@@ -38,6 +38,7 @@ Partial Class LogInForm
         Me.MovePanel = New System.Windows.Forms.Panel()
         Me.RegisterBtn = New System.Windows.Forms.LinkLabel()
         Me.ExitBtn = New System.Windows.Forms.PictureBox()
+        Me.info = New System.Windows.Forms.Label()
         CType(Me.XError, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LogInPic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AppLogo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -154,7 +155,7 @@ Partial Class LogInForm
         Me.LogInButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.LogInButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.LogInButton.Image = Global.IMDB.My.Resources.Resources.btn2
-        Me.LogInButton.Location = New System.Drawing.Point(406, 265)
+        Me.LogInButton.Location = New System.Drawing.Point(406, 283)
         Me.LogInButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.LogInButton.Name = "LogInButton"
         Me.LogInButton.Size = New System.Drawing.Size(270, 58)
@@ -218,6 +219,17 @@ Partial Class LogInForm
         Me.ExitBtn.TabIndex = 28
         Me.ExitBtn.TabStop = False
         '
+        'info
+        '
+        Me.info.BackColor = System.Drawing.Color.Transparent
+        Me.info.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.info.ForeColor = System.Drawing.Color.DarkOrange
+        Me.info.Location = New System.Drawing.Point(406, 258)
+        Me.info.Name = "info"
+        Me.info.Size = New System.Drawing.Size(270, 23)
+        Me.info.TabIndex = 29
+        Me.info.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'LogInForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -226,6 +238,7 @@ Partial Class LogInForm
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(709, 390)
         Me.ControlBox = False
+        Me.Controls.Add(Me.info)
         Me.Controls.Add(Me.ExitBtn)
         Me.Controls.Add(Me.RegisterBtn)
         Me.Controls.Add(Me.NewUser)
@@ -272,4 +285,5 @@ Partial Class LogInForm
     Friend WithEvents MovePanel As Panel
     Friend WithEvents RegisterBtn As LinkLabel
     Friend WithEvents ExitBtn As PictureBox
+    Friend WithEvents info As Label
 End Class

@@ -63,10 +63,8 @@ Public Class Register
             s.ForeColor = Color.DarkGray
             s.Text = s.AccessibleName
         Else
-            If s.Text <> TextBoxPassword.Text Then
-                Me.XError.SetError(sender, "Your Passwords are not matching")
-            Else
-                Me.XError.SetError(sender, "")
+            If TextBoxPassword.Text <> TextBoxConfirmPassword.Text Then
+                info.Text = "Passwords do not match"
             End If
         End If
     End Sub
@@ -77,20 +75,24 @@ Public Class Register
 
     Private Sub ButtonRegister_Click(sender As Object, e As EventArgs) Handles BtnRegister.Click
 
-        If TextBoxFirstname.Text <> "" And TextBoxLastname.Text <> "" And TextBoxUsername.Text <> "" And TextBoxEmail.Text <> "" And TextBoxPassword.Text <> "" And TextBoxConfirmPassword.Text <> "" Then
-            If UserMod.Email_exists(TextBoxEmail.Text) Then
-                MessageBox.Show("Email already exists.", "Email.", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Else
+        If TextBoxFirstname.ForeColor = Color.Black And TextBoxLastname.ForeColor = Color.Black And TextBoxUsername.ForeColor = Color.Black And TextBoxEmail.ForeColor = Color.Black And TextBoxPassword.ForeColor = Color.Black And TextBoxConfirmPassword.ForeColor = Color.Black Then
+            If TextBoxPassword.Text = TextBoxConfirmPassword.Text Then
                 If UserMod.Username_exists(TextBoxUsername.Text) Then
-                    MessageBox.Show("Username already exists.", "Username.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    info.Text = "Username already exists."
                 Else
-                    UserMod.Register(TextBoxFirstname.Text, TextBoxLastname.Text, TextBoxUsername.Text, TextBoxEmail.Text, TextBoxPassword.Text)
-                    MessageBox.Show("You have successfully signed up!", "Singed Up.", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    LogInLink_Click(sender, e)
+                    If UserMod.Email_exists(TextBoxEmail.Text) Then
+                        info.Text = "Email already exists."
+                    Else
+                        UserMod.Register(TextBoxFirstname.Text, TextBoxLastname.Text, TextBoxUsername.Text, TextBoxEmail.Text, TextBoxPassword.Text)
+                        MessageBox.Show("You have successfully signed up!", "Singed Up.", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        LogInLink_Click(sender, e)
+                    End If
                 End If
+            Else
+                info.Text = "Passwords do not match"
             End If
         Else
-            MessageBox.Show("Please fill all fields.", "Empty fields.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            info.Text = "Please fill all fields."
         End If
     End Sub
 
@@ -115,6 +117,5 @@ Public Class Register
     Private Sub F_mouseUp(sender As Object, e As EventArgs) Handles MovePanel.MouseUp
         MoveForm_MouseUp(sender, e)
     End Sub
-
 #End Region
 End Class
