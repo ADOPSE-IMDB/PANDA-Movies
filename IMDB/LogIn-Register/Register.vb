@@ -1,7 +1,9 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Register
-
+    Private Sub On_Load() Handles Me.Load
+        BtnRegister.Select()
+    End Sub
     Private Sub Return_Click(sender As Object, e As EventArgs) Handles ReturnBtn.Click
         LogInLink_Click(sender, e)
     End Sub
