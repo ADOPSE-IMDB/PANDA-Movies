@@ -1785,7 +1785,7 @@
         AAAASUVORK5CYII=
 </value>
   </data>
-  <data name="ProfilePanel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="LogOutPanel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAZEAAABxCAYAAAAUEp5hAAAABGdBTUEAALGPC/xhBQAAf0JJREFUeF6l
         vcuvt3l21VfDDPMvoEgZZxaJQST3pbrL3WX3LAN6FHd1t91tcw0GczF3czHgY2NuNnZ3V3ebCBsxYuQB
@@ -2334,7 +2334,7 @@
         AAAASUVORK5CYII=
 </value>
   </data>
-  <data name="LogOutPanel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ProfilePanel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAZEAAABxCAYAAAAUEp5hAAAABGdBTUEAALGPC/xhBQAAf0JJREFUeF6l
         vcuvt3l21VfDDPMvoEgZZxaJQST3pbrL3WX3LAN6FHd1t91tcw0GczF3czHgY2NuNnZ3V3ebCBsxYuQB

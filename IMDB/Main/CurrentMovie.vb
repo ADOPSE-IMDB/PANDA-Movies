@@ -1,9 +1,11 @@
 ﻿Public Class CurrentMovie
     Public mID
-    'add/remove flag
+    'Check if movie exists in favorite
     Public ARflag
-    'uratingFlag
+    'Check if User have already rated this movie
     Dim URflag
+#Region "Add/Remove to favorite"
+
     Private Sub AddRem_Click(sender As Object, e As EventArgs) Handles AddRem.Click
 
         If ARflag Then
@@ -21,11 +23,20 @@
             Main.FavoriteBtn_Click(sender, e)
         End If
     End Sub
+    Private Sub AddRem_Enter(sender As Object, e As EventArgs) Handles AddRem.MouseEnter
+        AddRemPanel.BackgroundImage = My.Resources.GeneralBtn2
+    End Sub
+    Private Sub AddRem_Leave(sender As Object, e As EventArgs) Handles AddRem.MouseLeave
+        AddRemPanel.BackgroundImage = My.Resources.GeneralBtn1
+    End Sub
 
+#End Region
 
+#Region "Rate Movie"
     Private Sub Urating_DragEnter(sender As Object, e As EventArgs) Handles Urating.ValueChanged
         uR.Text = Urating.Value & "/10"
     End Sub
+
 
     Private Sub Urating_MouseUp(sender As Object, e As MouseEventArgs) Handles Urating.MouseUp
         If URflag Then
@@ -42,11 +53,13 @@
         Urating.Visible = False
         uR.Visible = False
         rateInfo.Text = "You rated this movie with " & Urating.Value & "/10"
-        Ratebutton.Visible = True
+        RatebtnPanel.Visible = True
         Rate.Text = Math.Round(returnRatedMovie(mID), 1) & "/10"
     End Sub
 
-    Private Sub Ratebutton_Click(sender As Object, e As EventArgs) Handles Ratebutton.Click
+
+
+    Private Sub Ratebutton_Click(sender As Object, e As EventArgs) Handles RateBtn.Click
         Dim r = CheckIfRated(mID, LogInForm.u.Id)
         If r = -1 Then
             Urating.Value = 0
@@ -62,8 +75,20 @@
         Urating.Visible = True
         uR.Visible = True
         rateInfo.Visible = True
-        Ratebutton.Visible = False
+        RatebtnPanel.Visible = False
     End Sub
+
+    Private Sub Ratebutton_Enter(sender As Object, e As EventArgs) Handles RateBtn.MouseEnter
+        RatebtnPanel.BackgroundImage = My.Resources.GeneralBtn2
+    End Sub
+
+    Private Sub Ratebutton_Leavee(sender As Object, e As EventArgs) Handles RateBtn.MouseLeave
+        RatebtnPanel.BackgroundImage = My.Resources.GeneralBtn1
+    End Sub
+
+#End Region
+
+#Region "close CurrentMovie"
 
     Private Sub CloseMovie_Click(sender As Object, e As EventArgs) Handles CloseCuMovie.Click
         Me.Close()
@@ -76,4 +101,6 @@
     Private Sub ExitBtn_Leave(sender As Object, e As EventArgs) Handles CloseCuMovie.MouseLeave
         CloseCuMovie.Image = My.Resources.Close1
     End Sub
+#End Region
+
 End Class

@@ -13,7 +13,9 @@
                             inner join Users as U on M.user_id=@0
                             group by movie_id
                             having 
-                                count(movie_id) >1 and row_number between @1 and @2", args, results)
+                                count(movie_id) >1 and row_number between @1 and @2
+                                order by row_number", args, results)
+
 
         Dim FavoriteMovies(toNum - fromNum) As Movie    'toNum - fromNum : number of movies 
         Try

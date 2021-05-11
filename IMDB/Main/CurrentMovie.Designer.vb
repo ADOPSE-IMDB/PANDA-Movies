@@ -22,11 +22,11 @@ Partial Class CurrentMovie
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CurrentMovie))
         Me.MoPic = New System.Windows.Forms.PictureBox()
         Me.MovieName = New System.Windows.Forms.Label()
         Me.Description = New System.Windows.Forms.Label()
         Me.TopPanel = New System.Windows.Forms.Panel()
-        Me.AddRem = New System.Windows.Forms.Button()
         Me.MovieDate = New System.Windows.Forms.Label()
         Me.Rate = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -36,16 +36,22 @@ Partial Class CurrentMovie
         Me.MovieGenre = New System.Windows.Forms.Label()
         Me.Urating = New System.Windows.Forms.TrackBar()
         Me.uR = New System.Windows.Forms.Label()
-        Me.Ratebutton = New System.Windows.Forms.Button()
         Me.rateInfo = New System.Windows.Forms.Label()
         Me.CloseCuMovie = New System.Windows.Forms.PictureBox()
+        Me.RatebtnPanel = New System.Windows.Forms.Panel()
+        Me.RateBtn = New System.Windows.Forms.Label()
+        Me.AddRemPanel = New System.Windows.Forms.Panel()
+        Me.AddRem = New System.Windows.Forms.Label()
         CType(Me.MoPic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Urating, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CloseCuMovie, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RatebtnPanel.SuspendLayout()
+        Me.AddRemPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'MoPic
         '
+        Me.MoPic.BackColor = System.Drawing.Color.Transparent
         Me.MoPic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.MoPic.Image = Global.IMDB.My.Resources.Resources._200
         Me.MoPic.Location = New System.Drawing.Point(34, 30)
@@ -57,6 +63,7 @@ Partial Class CurrentMovie
         '
         'MovieName
         '
+        Me.MovieName.BackColor = System.Drawing.Color.Transparent
         Me.MovieName.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.MovieName.Location = New System.Drawing.Point(266, 30)
         Me.MovieName.Name = "MovieName"
@@ -67,6 +74,7 @@ Partial Class CurrentMovie
         '
         'Description
         '
+        Me.Description.BackColor = System.Drawing.Color.Transparent
         Me.Description.Location = New System.Drawing.Point(30, 393)
         Me.Description.Name = "Description"
         Me.Description.Size = New System.Drawing.Size(540, 300)
@@ -75,23 +83,16 @@ Partial Class CurrentMovie
         '
         'TopPanel
         '
+        Me.TopPanel.BackColor = System.Drawing.Color.Transparent
         Me.TopPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.TopPanel.Location = New System.Drawing.Point(0, 0)
         Me.TopPanel.Name = "TopPanel"
         Me.TopPanel.Size = New System.Drawing.Size(600, 24)
         Me.TopPanel.TabIndex = 3
         '
-        'AddRem
-        '
-        Me.AddRem.Location = New System.Drawing.Point(266, 313)
-        Me.AddRem.Name = "AddRem"
-        Me.AddRem.Size = New System.Drawing.Size(304, 23)
-        Me.AddRem.TabIndex = 4
-        Me.AddRem.Text = "Add/Rem"
-        Me.AddRem.UseVisualStyleBackColor = True
-        '
         'MovieDate
         '
+        Me.MovieDate.BackColor = System.Drawing.Color.Transparent
         Me.MovieDate.Location = New System.Drawing.Point(422, 127)
         Me.MovieDate.Name = "MovieDate"
         Me.MovieDate.Size = New System.Drawing.Size(148, 23)
@@ -101,6 +102,7 @@ Partial Class CurrentMovie
         '
         'Rate
         '
+        Me.Rate.BackColor = System.Drawing.Color.Transparent
         Me.Rate.Font = New System.Drawing.Font("Trajan Pro 3", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Rate.Location = New System.Drawing.Point(266, 81)
         Me.Rate.Name = "Rate"
@@ -111,6 +113,7 @@ Partial Class CurrentMovie
         '
         'Label1
         '
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Location = New System.Drawing.Point(314, 127)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(102, 23)
@@ -120,6 +123,7 @@ Partial Class CurrentMovie
         '
         'Label2
         '
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label2.Location = New System.Drawing.Point(0, 363)
         Me.Label2.Name = "Label2"
@@ -130,6 +134,7 @@ Partial Class CurrentMovie
         '
         'Label3
         '
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Location = New System.Drawing.Point(266, 179)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(150, 23)
@@ -139,6 +144,7 @@ Partial Class CurrentMovie
         '
         'actors
         '
+        Me.actors.BackColor = System.Drawing.Color.Transparent
         Me.actors.Location = New System.Drawing.Point(422, 179)
         Me.actors.Name = "actors"
         Me.actors.Size = New System.Drawing.Size(148, 44)
@@ -146,6 +152,7 @@ Partial Class CurrentMovie
         '
         'MovieGenre
         '
+        Me.MovieGenre.BackColor = System.Drawing.Color.Transparent
         Me.MovieGenre.Location = New System.Drawing.Point(34, 343)
         Me.MovieGenre.Name = "MovieGenre"
         Me.MovieGenre.Size = New System.Drawing.Size(208, 50)
@@ -153,6 +160,7 @@ Partial Class CurrentMovie
         '
         'Urating
         '
+        Me.Urating.BackColor = System.Drawing.SystemColors.Control
         Me.Urating.LargeChange = 1
         Me.Urating.Location = New System.Drawing.Point(316, 265)
         Me.Urating.Name = "Urating"
@@ -163,6 +171,7 @@ Partial Class CurrentMovie
         '
         'uR
         '
+        Me.uR.BackColor = System.Drawing.Color.Transparent
         Me.uR.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.uR.Location = New System.Drawing.Point(453, 265)
         Me.uR.Name = "uR"
@@ -172,17 +181,9 @@ Partial Class CurrentMovie
         Me.uR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.uR.Visible = False
         '
-        'Ratebutton
-        '
-        Me.Ratebutton.Location = New System.Drawing.Point(358, 274)
-        Me.Ratebutton.Name = "Ratebutton"
-        Me.Ratebutton.Size = New System.Drawing.Size(125, 23)
-        Me.Ratebutton.TabIndex = 16
-        Me.Ratebutton.Text = "Rate this movie"
-        Me.Ratebutton.UseVisualStyleBackColor = True
-        '
         'rateInfo
         '
+        Me.rateInfo.BackColor = System.Drawing.Color.Transparent
         Me.rateInfo.Location = New System.Drawing.Point(266, 242)
         Me.rateInfo.Name = "rateInfo"
         Me.rateInfo.Size = New System.Drawing.Size(304, 20)
@@ -202,14 +203,61 @@ Partial Class CurrentMovie
         Me.CloseCuMovie.TabIndex = 18
         Me.CloseCuMovie.TabStop = False
         '
+        'RatebtnPanel
+        '
+        Me.RatebtnPanel.BackColor = System.Drawing.Color.Transparent
+        Me.RatebtnPanel.BackgroundImage = Global.IMDB.My.Resources.Resources.GeneralBtn1
+        Me.RatebtnPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RatebtnPanel.Controls.Add(Me.RateBtn)
+        Me.RatebtnPanel.Location = New System.Drawing.Point(358, 274)
+        Me.RatebtnPanel.Name = "RatebtnPanel"
+        Me.RatebtnPanel.Size = New System.Drawing.Size(125, 23)
+        Me.RatebtnPanel.TabIndex = 19
+        '
+        'RateBtn
+        '
+        Me.RateBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.RateBtn.ForeColor = System.Drawing.Color.White
+        Me.RateBtn.Location = New System.Drawing.Point(0, 0)
+        Me.RateBtn.Name = "RateBtn"
+        Me.RateBtn.Size = New System.Drawing.Size(125, 23)
+        Me.RateBtn.TabIndex = 0
+        Me.RateBtn.Text = "Rate this movie"
+        Me.RateBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'AddRemPanel
+        '
+        Me.AddRemPanel.BackColor = System.Drawing.Color.Transparent
+        Me.AddRemPanel.BackgroundImage = Global.IMDB.My.Resources.Resources.GeneralBtn1
+        Me.AddRemPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.AddRemPanel.Controls.Add(Me.AddRem)
+        Me.AddRemPanel.Location = New System.Drawing.Point(266, 313)
+        Me.AddRemPanel.Name = "AddRemPanel"
+        Me.AddRemPanel.Size = New System.Drawing.Size(304, 23)
+        Me.AddRemPanel.TabIndex = 20
+        '
+        'AddRem
+        '
+        Me.AddRem.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AddRem.ForeColor = System.Drawing.Color.White
+        Me.AddRem.Location = New System.Drawing.Point(0, 0)
+        Me.AddRem.Name = "AddRem"
+        Me.AddRem.Size = New System.Drawing.Size(304, 23)
+        Me.AddRem.TabIndex = 0
+        Me.AddRem.Text = "Add/Rem"
+        Me.AddRem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'CurrentMovie
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(600, 702)
+        Me.Controls.Add(Me.AddRemPanel)
+        Me.Controls.Add(Me.RatebtnPanel)
         Me.Controls.Add(Me.CloseCuMovie)
         Me.Controls.Add(Me.rateInfo)
-        Me.Controls.Add(Me.Ratebutton)
         Me.Controls.Add(Me.uR)
         Me.Controls.Add(Me.Urating)
         Me.Controls.Add(Me.MovieGenre)
@@ -219,7 +267,6 @@ Partial Class CurrentMovie
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Rate)
         Me.Controls.Add(Me.MovieDate)
-        Me.Controls.Add(Me.AddRem)
         Me.Controls.Add(Me.TopPanel)
         Me.Controls.Add(Me.Description)
         Me.Controls.Add(Me.MovieName)
@@ -230,6 +277,8 @@ Partial Class CurrentMovie
         CType(Me.MoPic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Urating, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CloseCuMovie, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RatebtnPanel.ResumeLayout(False)
+        Me.AddRemPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -239,7 +288,6 @@ Partial Class CurrentMovie
     Friend WithEvents MovieName As Label
     Friend WithEvents Description As Label
     Friend WithEvents TopPanel As Panel
-    Friend WithEvents AddRem As Button
     Friend WithEvents MovieDate As Label
     Friend WithEvents Rate As Label
     Friend WithEvents Label1 As Label
@@ -249,7 +297,10 @@ Partial Class CurrentMovie
     Friend WithEvents MovieGenre As Label
     Friend WithEvents Urating As TrackBar
     Friend WithEvents uR As Label
-    Friend WithEvents Ratebutton As Button
     Friend WithEvents rateInfo As Label
     Friend WithEvents CloseCuMovie As PictureBox
+    Friend WithEvents RatebtnPanel As Panel
+    Friend WithEvents RateBtn As Label
+    Friend WithEvents AddRemPanel As Panel
+    Friend WithEvents AddRem As Label
 End Class

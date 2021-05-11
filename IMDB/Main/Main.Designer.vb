@@ -39,6 +39,8 @@ Partial Class Main
         Me.resultPanel = New System.Windows.Forms.Panel()
         Me.ResultInfo = New System.Windows.Forms.Label()
         Me.DropPanel = New System.Windows.Forms.Panel()
+        Me.LogOutPanel = New System.Windows.Forms.Panel()
+        Me.LogOut = New System.Windows.Forms.Label()
         Me.ProfilePanel = New System.Windows.Forms.Panel()
         Me.OpenProfile = New System.Windows.Forms.Label()
         Me.Container = New System.Windows.Forms.Panel()
@@ -46,8 +48,6 @@ Partial Class Main
         Me.MovePanel = New System.Windows.Forms.Panel()
         Me.ExitBtn = New System.Windows.Forms.PictureBox()
         Me.AppLabel = New System.Windows.Forms.Label()
-        Me.LogOutPanel = New System.Windows.Forms.Panel()
-        Me.LogOut = New System.Windows.Forms.Label()
         Me.TopPanel.SuspendLayout()
         Me.FavoriteInd.SuspendLayout()
         Me.HomeBtnInd.SuspendLayout()
@@ -56,10 +56,10 @@ Partial Class Main
         Me.MainPanel.SuspendLayout()
         Me.resultPanel.SuspendLayout()
         Me.DropPanel.SuspendLayout()
+        Me.LogOutPanel.SuspendLayout()
         Me.ProfilePanel.SuspendLayout()
         Me.MovePanel.SuspendLayout()
         CType(Me.ExitBtn, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.LogOutPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'TopPanel
@@ -192,7 +192,7 @@ Partial Class Main
         '
         'MainPanel
         '
-        Me.MainPanel.BackColor = System.Drawing.Color.DimGray
+        Me.MainPanel.BackColor = System.Drawing.Color.Transparent
         Me.MainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.MainPanel.Controls.Add(Me.resultPanel)
         Me.MainPanel.Controls.Add(Me.DropPanel)
@@ -217,6 +217,8 @@ Partial Class Main
         '
         Me.ResultInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.ResultInfo.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ResultInfo.ForeColor = System.Drawing.Color.White
+        Me.ResultInfo.Image = Global.IMDB.My.Resources.Resources.Indicator
         Me.ResultInfo.Location = New System.Drawing.Point(0, 0)
         Me.ResultInfo.Name = "ResultInfo"
         Me.ResultInfo.Size = New System.Drawing.Size(200, 20)
@@ -228,14 +230,40 @@ Partial Class Main
         'DropPanel
         '
         Me.DropPanel.BackColor = System.Drawing.Color.Transparent
+        Me.DropPanel.BackgroundImage = Global.IMDB.My.Resources.Resources.Indicator
+        Me.DropPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.DropPanel.Controls.Add(Me.LogOutPanel)
         Me.DropPanel.Controls.Add(Me.ProfilePanel)
         Me.DropPanel.Location = New System.Drawing.Point(1171, -1)
-        Me.DropPanel.MaximumSize = New System.Drawing.Size(74, 70)
+        Me.DropPanel.MaximumSize = New System.Drawing.Size(74, 65)
         Me.DropPanel.MinimumSize = New System.Drawing.Size(74, 0)
         Me.DropPanel.Name = "DropPanel"
-        Me.DropPanel.Size = New System.Drawing.Size(74, 66)
+        Me.DropPanel.Size = New System.Drawing.Size(74, 65)
         Me.DropPanel.TabIndex = 0
+        '
+        'LogOutPanel
+        '
+        Me.LogOutPanel.BackColor = System.Drawing.Color.Transparent
+        Me.LogOutPanel.BackgroundImage = CType(resources.GetObject("LogOutPanel.BackgroundImage"), System.Drawing.Image)
+        Me.LogOutPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.LogOutPanel.Controls.Add(Me.LogOut)
+        Me.LogOutPanel.Location = New System.Drawing.Point(0, 39)
+        Me.LogOutPanel.Name = "LogOutPanel"
+        Me.LogOutPanel.Size = New System.Drawing.Size(74, 24)
+        Me.LogOutPanel.TabIndex = 9
+        '
+        'LogOut
+        '
+        Me.LogOut.BackColor = System.Drawing.Color.Transparent
+        Me.LogOut.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LogOut.Font = New System.Drawing.Font("Adobe Fan Heiti Std B", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.LogOut.ForeColor = System.Drawing.Color.White
+        Me.LogOut.Location = New System.Drawing.Point(0, 0)
+        Me.LogOut.Name = "LogOut"
+        Me.LogOut.Size = New System.Drawing.Size(74, 24)
+        Me.LogOut.TabIndex = 1
+        Me.LogOut.Text = "Log Out"
+        Me.LogOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ProfilePanel
         '
@@ -279,6 +307,8 @@ Partial Class Main
         '
         'MovePanel
         '
+        Me.MovePanel.BackgroundImage = Global.IMDB.My.Resources.Resources.Indicator
+        Me.MovePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.MovePanel.Controls.Add(Me.ExitBtn)
         Me.MovePanel.Controls.Add(Me.AppLabel)
         Me.MovePanel.Dock = System.Windows.Forms.DockStyle.Top
@@ -289,57 +319,38 @@ Partial Class Main
         '
         'ExitBtn
         '
+        Me.ExitBtn.BackColor = System.Drawing.Color.Transparent
         Me.ExitBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ExitBtn.Image = Global.IMDB.My.Resources.Resources.Close1
-        Me.ExitBtn.Location = New System.Drawing.Point(1256, 0)
+        Me.ExitBtn.Location = New System.Drawing.Point(1256, 1)
         Me.ExitBtn.Name = "ExitBtn"
-        Me.ExitBtn.Size = New System.Drawing.Size(24, 24)
+        Me.ExitBtn.Size = New System.Drawing.Size(23, 23)
         Me.ExitBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.ExitBtn.TabIndex = 2
         Me.ExitBtn.TabStop = False
         '
         'AppLabel
         '
+        Me.AppLabel.BackColor = System.Drawing.Color.Transparent
+        Me.AppLabel.ForeColor = System.Drawing.Color.White
         Me.AppLabel.Location = New System.Drawing.Point(0, 0)
         Me.AppLabel.Name = "AppLabel"
         Me.AppLabel.Size = New System.Drawing.Size(105, 24)
         Me.AppLabel.TabIndex = 1
         Me.AppLabel.Text = "PANDA movies"
         '
-        'LogOutPanel
-        '
-        Me.LogOutPanel.BackColor = System.Drawing.Color.Transparent
-        Me.LogOutPanel.BackgroundImage = CType(resources.GetObject("LogOutPanel.BackgroundImage"), System.Drawing.Image)
-        Me.LogOutPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.LogOutPanel.Controls.Add(Me.LogOut)
-        Me.LogOutPanel.Location = New System.Drawing.Point(0, 39)
-        Me.LogOutPanel.Name = "LogOutPanel"
-        Me.LogOutPanel.Size = New System.Drawing.Size(74, 24)
-        Me.LogOutPanel.TabIndex = 9
-        '
-        'LogOut
-        '
-        Me.LogOut.BackColor = System.Drawing.Color.Transparent
-        Me.LogOut.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LogOut.Font = New System.Drawing.Font("Adobe Fan Heiti Std B", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LogOut.ForeColor = System.Drawing.Color.White
-        Me.LogOut.Location = New System.Drawing.Point(0, 0)
-        Me.LogOut.Name = "LogOut"
-        Me.LogOut.Size = New System.Drawing.Size(74, 24)
-        Me.LogOut.TabIndex = 1
-        Me.LogOut.Text = "Log Out"
-        Me.LogOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 779)
         Me.ControlBox = False
         Me.Controls.Add(Me.MainPanel)
         Me.Controls.Add(Me.TopPanel)
         Me.Controls.Add(Me.MovePanel)
         Me.Cursor = System.Windows.Forms.Cursors.Default
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "Main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -352,10 +363,10 @@ Partial Class Main
         Me.MainPanel.ResumeLayout(False)
         Me.resultPanel.ResumeLayout(False)
         Me.DropPanel.ResumeLayout(False)
+        Me.LogOutPanel.ResumeLayout(False)
         Me.ProfilePanel.ResumeLayout(False)
         Me.MovePanel.ResumeLayout(False)
         CType(Me.ExitBtn, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.LogOutPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

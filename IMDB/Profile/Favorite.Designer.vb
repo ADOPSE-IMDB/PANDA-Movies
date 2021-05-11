@@ -26,9 +26,13 @@ Partial Class Favorite
         Me.info = New System.Windows.Forms.Label()
         Me.FavoriteLabel = New System.Windows.Forms.Label()
         Me.curr = New System.Windows.Forms.Label()
-        Me.ne = New System.Windows.Forms.Button()
-        Me.Pre = New System.Windows.Forms.Button()
+        Me.PrePanel = New System.Windows.Forms.Panel()
+        Me.Pre = New System.Windows.Forms.Label()
+        Me.NextPanel = New System.Windows.Forms.Panel()
+        Me.ne = New System.Windows.Forms.Label()
         Me.FavoritePanel.SuspendLayout()
+        Me.PrePanel.SuspendLayout()
+        Me.NextPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'FavoritePanel
@@ -45,6 +49,7 @@ Partial Class Favorite
         'info
         '
         Me.info.Font = New System.Drawing.Font("SimSun", 36.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point)
+        Me.info.ForeColor = System.Drawing.Color.Black
         Me.info.Location = New System.Drawing.Point(12, 44)
         Me.info.Name = "info"
         Me.info.Size = New System.Drawing.Size(1256, 605)
@@ -69,6 +74,8 @@ Partial Class Favorite
         '
         Me.curr.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.curr.BackColor = System.Drawing.Color.DarkGray
+        Me.curr.ForeColor = System.Drawing.Color.White
+        Me.curr.Image = Global.IMDB.My.Resources.Resources.Indicator
         Me.curr.Location = New System.Drawing.Point(604, 662)
         Me.curr.Name = "curr"
         Me.curr.Size = New System.Drawing.Size(74, 20)
@@ -76,50 +83,80 @@ Partial Class Favorite
         Me.curr.Text = "1 -> 20"
         Me.curr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'ne
+        'PrePanel
         '
-        Me.ne.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.ne.Location = New System.Drawing.Point(660, 685)
-        Me.ne.Name = "ne"
-        Me.ne.Size = New System.Drawing.Size(75, 23)
-        Me.ne.TabIndex = 16
-        Me.ne.Text = "21 -> 40"
-        Me.ne.UseVisualStyleBackColor = True
+        Me.PrePanel.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.PrePanel.BackColor = System.Drawing.Color.Black
+        Me.PrePanel.BackgroundImage = Global.IMDB.My.Resources.Resources.Indicator
+        Me.PrePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PrePanel.Controls.Add(Me.Pre)
+        Me.PrePanel.Location = New System.Drawing.Point(548, 689)
+        Me.PrePanel.Name = "PrePanel"
+        Me.PrePanel.Size = New System.Drawing.Size(75, 23)
+        Me.PrePanel.TabIndex = 24
         '
         'Pre
         '
-        Me.Pre.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Pre.Enabled = False
-        Me.Pre.Location = New System.Drawing.Point(545, 685)
+        Me.Pre.BackColor = System.Drawing.Color.Transparent
+        Me.Pre.ForeColor = System.Drawing.Color.White
+        Me.Pre.Location = New System.Drawing.Point(0, 0)
         Me.Pre.Name = "Pre"
         Me.Pre.Size = New System.Drawing.Size(75, 23)
-        Me.Pre.TabIndex = 15
+        Me.Pre.TabIndex = 1
         Me.Pre.Text = "Start"
-        Me.Pre.UseVisualStyleBackColor = True
+        Me.Pre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'NextPanel
+        '
+        Me.NextPanel.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.NextPanel.BackColor = System.Drawing.Color.Transparent
+        Me.NextPanel.BackgroundImage = Global.IMDB.My.Resources.Resources.GeneralBtn1
+        Me.NextPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.NextPanel.Controls.Add(Me.ne)
+        Me.NextPanel.Location = New System.Drawing.Point(656, 689)
+        Me.NextPanel.Name = "NextPanel"
+        Me.NextPanel.Size = New System.Drawing.Size(75, 23)
+        Me.NextPanel.TabIndex = 23
+        '
+        'ne
+        '
+        Me.ne.BackColor = System.Drawing.Color.Transparent
+        Me.ne.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ne.ForeColor = System.Drawing.Color.White
+        Me.ne.Location = New System.Drawing.Point(0, 0)
+        Me.ne.Name = "ne"
+        Me.ne.Size = New System.Drawing.Size(75, 23)
+        Me.ne.TabIndex = 2
+        Me.ne.Text = "Start"
+        Me.ne.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Favorite
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(1280, 720)
+        Me.Controls.Add(Me.PrePanel)
+        Me.Controls.Add(Me.NextPanel)
         Me.Controls.Add(Me.curr)
-        Me.Controls.Add(Me.ne)
-        Me.Controls.Add(Me.Pre)
         Me.Controls.Add(Me.FavoritePanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Favorite"
         Me.Text = "Favorite"
         Me.FavoritePanel.ResumeLayout(False)
+        Me.PrePanel.ResumeLayout(False)
+        Me.NextPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents FavoritePanel As Panel
     Friend WithEvents FavoriteLabel As Label
-    Friend WithEvents curr As Label
-    Friend WithEvents ne As Button
-    Friend WithEvents Pre As Button
     Friend WithEvents info As Label
+    Friend WithEvents curr As Label
+    Friend WithEvents PrePanel As Panel
+    Friend WithEvents Pre As Label
+    Friend WithEvents NextPanel As Panel
+    Friend WithEvents ne As Label
 End Class

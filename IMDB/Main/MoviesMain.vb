@@ -14,11 +14,11 @@
 
 
         If tainies < 40 Then
-            ne.Text = "21 - > " & tainies
+            Ne.Text = "21 - > " & tainies
             MovieArray = GetMoviesFromTo(1, 20)
         ElseIf tainies < 20 Then
-            ne.Visible = False
-            Pre.Visible = False
+            Ne.Parent.Visible = False
+            Pre.Parent.Visible = False
             curr.Text = "1 - > " & tainies
             MovieArray = GetMoviesFromTo(1, tainies)
         Else
@@ -27,8 +27,6 @@
 
         'Fill main movies
         MoviesLoad(AllMoviesPanel, MovieArray, 70)
-        ne.Visible = True
-
     End Sub
 
 
@@ -36,73 +34,99 @@
 
 
     Private Sub Pre_Click(sender As Object, e As EventArgs) Handles Pre.Click
-        n -= 20
+        If Pre.Parent.BackColor = Color.Transparent Then
 
-        If Not ne.Enabled Then
-            ne.Enabled = True
-        End If
+            n -= 20
+            If Ne.Parent.BackColor = Color.Black Then
+                Ne.Parent.BackColor = Color.Transparent
+                Ne.Parent.BackgroundImage = My.Resources.GeneralBtn1
+                Ne.Cursor = Cursors.Hand
+            End If
 
-        For Each pb In AllMoviesPanel.Controls.OfType(Of PictureBox)().ToArray()
-            pb.Dispose()
-        Next
-
-
-        If n = 20 Then
-            ne.Text = curr.Text
-            curr.Text = Pre.Text
-            Pre.Text = "Start"
-            Pre.Enabled = False
-        Else
-            ne.Text = curr.Text
-            curr.Text = Pre.Text
-            Pre.Text = n - 39 & " -> " & n - 20
-        End If
-
-        MovieArray = GetMoviesFromTo(n - 19, n)
-
-        MoviesLoad(AllMoviesPanel, MovieArray, 60)
-        AutoScrollPosition = New Point(0, 683)
-    End Sub
-
-    Private Sub Ne_Click(sender As Object, e As EventArgs) Handles ne.Click
-        n += 20
-        AutoScrollPosition = New Point(0, 683)
+            For Each pb In AllMoviesPanel.Controls.OfType(Of PictureBox)().ToArray()
+                pb.Dispose()
+            Next
 
 
+            If n = 20 Then
+                Ne.Text = curr.Text
+                curr.Text = Pre.Text
+                Pre.Text = "Start"
 
-        If Not Pre.Enabled Then
-            Pre.Enabled = True
-        End If
+                'Disable the button
+                Pre.Parent.BackgroundImage = My.Resources.Indicator
+                Pre.Parent.BackColor = Color.Black
+                Pre.Cursor = Cursors.Default
 
-        For Each pb In AllMoviesPanel.Controls.OfType(Of PictureBox)().ToArray()
-            pb.Dispose()
-        Next
-
-
-
-        If n > tainies Then
-            Pre.Text = curr.Text
-            curr.Text = ne.Text
-            ne.Text = "End"
-            ne.Enabled = False
-
-            MovieArray = GetMoviesFromTo(n - 19, tainies)
-        ElseIf n > tainies - 20 Then
-            Pre.Text = curr.Text
-            curr.Text = ne.Text
-            ne.Text = n + 1 & " -> " & tainies
+            Else
+                Ne.Text = curr.Text
+                curr.Text = Pre.Text
+                Pre.Text = n - 39 & " -> " & n - 20
+            End If
 
             MovieArray = GetMoviesFromTo(n - 19, n)
-        Else
-            Pre.Text = curr.Text
-            curr.Text = ne.Text
-            ne.Text = n + 1 & " -> " & n + 20
 
-            MovieArray = GetMoviesFromTo(n - 19, n)
+            MoviesLoad(AllMoviesPanel, MovieArray, 60)
+            AutoScrollPosition = New Point(0, 683)
         End If
-
-        MoviesLoad(AllMoviesPanel, MovieArray, 60)
-
     End Sub
 
+    Private Sub Ne_Click(sender As Object, e As EventArgs) Handles Ne.Click
+        If Ne.Parent.BackColor = Color.Transparent Then
+            n += 20
+
+            If Pre.Parent.BackColor = Color.Black Then
+                Pre.Parent.BackColor = Color.Transparent
+                Pre.Parent.BackgroundImage = My.Resources.GeneralBtn1
+                Pre.Cursor = Cursors.Hand
+            End If
+
+
+            For Each pb In AllMoviesPanel.Controls.OfType(Of PictureBox)().ToArray()
+                pb.Dispose()
+            Next
+
+
+
+            If n > tainies Then
+                Pre.Text = curr.Text
+                curr.Text = Ne.Text
+                Ne.Text = "End"
+
+                'Disable the button
+                Ne.Parent.BackgroundImage = My.Resources.Indicator
+                Ne.Parent.BackColor = Color.Black
+                Ne.Cursor = Cursors.Default
+
+
+                MovieArray = GetMoviesFromTo(n - 19, tainies)
+            ElseIf n > tainies - 20 Then
+                Pre.Text = curr.Text
+                curr.Text = Ne.Text
+                Ne.Text = n + 1 & " -> " & tainies
+                MovieArray = GetMoviesFromTo(n - 19, n)
+            Else
+                Pre.Text = curr.Text
+                curr.Text = Ne.Text
+                Ne.Text = n + 1 & " -> " & n + 20
+                MovieArray = GetMoviesFromTo(n - 19, n)
+            End If
+
+            MoviesLoad(AllMoviesPanel, MovieArray, 60)
+            AutoScrollPosition = New Point(0, 683)
+
+        End If
+    End Sub
+
+    Private Sub Ne_Enter(sender As Object, e As EventArgs) Handles Ne.MouseEnter, Pre.MouseEnter
+        If sender.parent.backcolor = Color.Transparent Then
+            btnEnter(sender.Parent)
+        End If
+    End Sub
+
+    Private Sub Mouse_Leave(sender As Object, e As EventArgs) Handles Ne.MouseLeave, Pre.MouseLeave
+        If sender.parent.backcolor = Color.Transparent Then
+            btnLeave(sender.Parent)
+        End If
+    End Sub
 End Class

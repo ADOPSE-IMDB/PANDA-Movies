@@ -78,24 +78,18 @@ Public Class Main
     End Sub
 
     Public Sub NameBtn_Enter(sender As Object, e As EventArgs) Handles NameBtn.MouseEnter
-        If isCollapsed Then
+        If isCollapsed And Not Application.OpenForms().OfType(Of Profile).Any Then
             NamebtnPanel.BackgroundImage = My.Resources.GeneralBtn2
         End If
     End Sub
 
     Public Sub NameBtn_Leave(sender As Object, e As EventArgs) Handles NameBtn.MouseLeave
-        If isCollapsed Then
+        If isCollapsed And Not Application.OpenForms().OfType(Of Profile).Any Then
             NamebtnPanel.BackgroundImage = My.Resources.GeneralBtn1
         End If
     End Sub
 
-    Private Sub NameBtn_L(sender As Object, e As System.EventArgs) Handles NameBtn.LostFocus
-        If Not isCollapsed Then
-            Threading.Thread.Sleep(100)
-            Timer.Start()
-        End If
 
-    End Sub
 
 
     'Open Profile
@@ -103,15 +97,12 @@ Public Class Main
         If Not Application.OpenForms().OfType(Of Profile).Any Then
             ChnageWindow(Profile, Container, True)
         End If
+        If Not isCollapsed Then
+            Threading.Thread.Sleep(100)
+            Timer.Start()
+        End If
     End Sub
 
-    Private Sub OpenProfile_Enter(sender As Object, e As EventArgs) Handles OpenProfile.MouseEnter
-        ProfilePanel.BackgroundImage = My.Resources.GeneralBtn2
-    End Sub
-
-    Private Sub OpenProfile_Leave(sender As Object, e As EventArgs) Handles OpenProfile.MouseLeave
-        ProfilePanel.BackgroundImage = My.Resources.GeneralBtn1
-    End Sub
 
 
 
@@ -121,18 +112,20 @@ Public Class Main
         Close_forms(LogInForm)
     End Sub
 
-    Private Sub LogOut_Enter(sender As Object, e As EventArgs) Handles LogOut.MouseEnter
-        LogOutPanel.BackgroundImage = My.Resources.GeneralBtn2
+
+    Private Sub OpenProfile_Enter(sender As Object, e As EventArgs) Handles OpenProfile.MouseEnter, LogOut.MouseEnter
+        btnEnter(sender.Parent)
     End Sub
 
-    Private Sub LogOut_Leave(sender As Object, e As EventArgs) Handles LogOut.MouseLeave
-        LogOutPanel.BackgroundImage = My.Resources.GeneralBtn1
+    Private Sub OpenProfile_Leave(sender As Object, e As EventArgs) Handles OpenProfile.MouseLeave, LogOut.MouseLeave
+        btnLeave(sender.Parent)
     End Sub
+
 
 
 
     'check if mouse is over the buttons/DropPanel
-    Private Sub DropPanel_MouseLeave(sender As Object, e As System.EventArgs) Handles DropPanel.MouseLeave, NameBtn.MouseLeave
+    Private Sub DropPanel_MouseLeave(sender As Object, e As System.EventArgs) Handles DropPanel.MouseLeave, NameBtn.MouseLeave, OpenProfile.MouseLeave, LogOut.MouseLeave
         If Not MouseIsOverControl(OpenProfile) And Not MouseIsOverControl(LogOut) And Not MouseIsOverControl(DropPanel) And Not MouseIsOverControl(NameBtn) Then
             If Not isCollapsed Then
                 Threading.Thread.Sleep(100)

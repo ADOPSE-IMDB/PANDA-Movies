@@ -130,26 +130,14 @@
   <data name="_200" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\200.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="padlock1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\padlock1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="envelope" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\envelope.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="btn2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btn2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btn1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btn1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="padlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\padlock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bgtxt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bgtxt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="envelope1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\envelope1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="keyhole" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\keyhole.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

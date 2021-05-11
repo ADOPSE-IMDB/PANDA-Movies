@@ -16,7 +16,9 @@
                     .TextAlign = ContentAlignment.MiddleLeft,
                     .Location = New Point(0, PosY),
                     .Cursor = Cursors.Hand,
-                    .BorderStyle = BorderStyle.FixedSingle
+                    .BorderStyle = BorderStyle.FixedSingle,
+                    .LinkColor = Color.Orange,
+                    .BackColor = Color.White
             }
 
 
