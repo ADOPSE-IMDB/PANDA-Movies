@@ -25,7 +25,8 @@ Partial Class Main
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.TopPanel = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.CommonMoviesPanel = New System.Windows.Forms.Panel()
+        Me.CommonMoviesBtn = New System.Windows.Forms.Label()
         Me.FavoriteInd = New System.Windows.Forms.Panel()
         Me.FavoriteBtn = New System.Windows.Forms.Label()
         Me.HomeBtnInd = New System.Windows.Forms.Panel()
@@ -36,6 +37,14 @@ Partial Class Main
         Me.NamebtnPanel = New System.Windows.Forms.Panel()
         Me.NameBtn = New System.Windows.Forms.Label()
         Me.MainPanel = New System.Windows.Forms.Panel()
+        Me.FindComFavPanel = New System.Windows.Forms.Panel()
+        Me.ShowComInfo = New System.Windows.Forms.Label()
+        Me.CloseCommon = New System.Windows.Forms.PictureBox()
+        Me.SearchCommonPanel = New System.Windows.Forms.Panel()
+        Me.SearchCommon = New System.Windows.Forms.Label()
+        Me.SearchUsername = New System.Windows.Forms.TextBox()
+        Me.SearchUsernamePic = New System.Windows.Forms.PictureBox()
+        Me.InfoLabel = New System.Windows.Forms.Label()
         Me.resultPanel = New System.Windows.Forms.Panel()
         Me.ResultInfo = New System.Windows.Forms.Label()
         Me.DropPanel = New System.Windows.Forms.Panel()
@@ -49,11 +58,16 @@ Partial Class Main
         Me.ExitBtn = New System.Windows.Forms.PictureBox()
         Me.AppLabel = New System.Windows.Forms.Label()
         Me.TopPanel.SuspendLayout()
+        Me.CommonMoviesPanel.SuspendLayout()
         Me.FavoriteInd.SuspendLayout()
         Me.HomeBtnInd.SuspendLayout()
         CType(Me.AppName, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NamebtnPanel.SuspendLayout()
         Me.MainPanel.SuspendLayout()
+        Me.FindComFavPanel.SuspendLayout()
+        CType(Me.CloseCommon, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SearchCommonPanel.SuspendLayout()
+        CType(Me.SearchUsernamePic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.resultPanel.SuspendLayout()
         Me.DropPanel.SuspendLayout()
         Me.LogOutPanel.SuspendLayout()
@@ -64,7 +78,7 @@ Partial Class Main
         '
         'TopPanel
         '
-        Me.TopPanel.Controls.Add(Me.Button1)
+        Me.TopPanel.Controls.Add(Me.CommonMoviesPanel)
         Me.TopPanel.Controls.Add(Me.FavoriteInd)
         Me.TopPanel.Controls.Add(Me.HomeBtnInd)
         Me.TopPanel.Controls.Add(Me.AppName)
@@ -74,25 +88,41 @@ Partial Class Main
         Me.TopPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.TopPanel.Location = New System.Drawing.Point(0, 24)
         Me.TopPanel.Name = "TopPanel"
-        Me.TopPanel.Size = New System.Drawing.Size(1280, 36)
+        Me.TopPanel.Size = New System.Drawing.Size(1280, 32)
         Me.TopPanel.TabIndex = 0
         '
-        'Button1
+        'CommonMoviesPanel
         '
-        Me.Button1.Location = New System.Drawing.Point(225, 14)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.CommonMoviesPanel.BackColor = System.Drawing.Color.Transparent
+        Me.CommonMoviesPanel.BackgroundImage = Global.IMDB.My.Resources.Resources.GeneralBtn1
+        Me.CommonMoviesPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.CommonMoviesPanel.Controls.Add(Me.CommonMoviesBtn)
+        Me.CommonMoviesPanel.Location = New System.Drawing.Point(921, 5)
+        Me.CommonMoviesPanel.Name = "CommonMoviesPanel"
+        Me.CommonMoviesPanel.Size = New System.Drawing.Size(132, 26)
+        Me.CommonMoviesPanel.TabIndex = 4
+        '
+        'CommonMoviesBtn
+        '
+        Me.CommonMoviesBtn.BackColor = System.Drawing.Color.Transparent
+        Me.CommonMoviesBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CommonMoviesBtn.Font = New System.Drawing.Font("Adobe Fan Heiti Std B", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.CommonMoviesBtn.ForeColor = System.Drawing.Color.White
+        Me.CommonMoviesBtn.Location = New System.Drawing.Point(0, 0)
+        Me.CommonMoviesBtn.Name = "CommonMoviesBtn"
+        Me.CommonMoviesBtn.Size = New System.Drawing.Size(132, 28)
+        Me.CommonMoviesBtn.TabIndex = 0
+        Me.CommonMoviesBtn.Text = "Common Movies"
+        Me.CommonMoviesBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FavoriteInd
         '
+        Me.FavoriteInd.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.FavoriteInd.BackColor = System.Drawing.Color.Transparent
         Me.FavoriteInd.BackgroundImage = CType(resources.GetObject("FavoriteInd.BackgroundImage"), System.Drawing.Image)
         Me.FavoriteInd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.FavoriteInd.Controls.Add(Me.FavoriteBtn)
-        Me.FavoriteInd.Location = New System.Drawing.Point(1059, 10)
+        Me.FavoriteInd.Location = New System.Drawing.Point(1059, 5)
         Me.FavoriteInd.Name = "FavoriteInd"
         Me.FavoriteInd.Size = New System.Drawing.Size(95, 26)
         Me.FavoriteInd.TabIndex = 7
@@ -116,7 +146,7 @@ Partial Class Main
         Me.HomeBtnInd.BackgroundImage = CType(resources.GetObject("HomeBtnInd.BackgroundImage"), System.Drawing.Image)
         Me.HomeBtnInd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.HomeBtnInd.Controls.Add(Me.HomeBtn)
-        Me.HomeBtnInd.Location = New System.Drawing.Point(111, 10)
+        Me.HomeBtnInd.Location = New System.Drawing.Point(111, 5)
         Me.HomeBtnInd.Name = "HomeBtnInd"
         Me.HomeBtnInd.Size = New System.Drawing.Size(95, 26)
         Me.HomeBtnInd.TabIndex = 7
@@ -127,9 +157,9 @@ Partial Class Main
         Me.HomeBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.HomeBtn.Font = New System.Drawing.Font("Adobe Fan Heiti Std B", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.HomeBtn.ForeColor = System.Drawing.Color.White
-        Me.HomeBtn.Location = New System.Drawing.Point(0, -1)
+        Me.HomeBtn.Location = New System.Drawing.Point(0, 0)
         Me.HomeBtn.Name = "HomeBtn"
-        Me.HomeBtn.Size = New System.Drawing.Size(95, 28)
+        Me.HomeBtn.Size = New System.Drawing.Size(95, 27)
         Me.HomeBtn.TabIndex = 0
         Me.HomeBtn.Text = "Home"
         Me.HomeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -146,13 +176,13 @@ Partial Class Main
         '
         'Search
         '
-        Me.Search.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Search.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Search.BackColor = System.Drawing.Color.Transparent
         Me.Search.BackgroundImage = CType(resources.GetObject("Search.BackgroundImage"), System.Drawing.Image)
         Me.Search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Search.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.Search.FlatAppearance.BorderSize = 0
-        Me.Search.Location = New System.Drawing.Point(730, 8)
+        Me.Search.Location = New System.Drawing.Point(730, 6)
         Me.Search.Name = "Search"
         Me.Search.Size = New System.Drawing.Size(25, 25)
         Me.Search.TabIndex = 1
@@ -160,19 +190,20 @@ Partial Class Main
         '
         'SearchBox
         '
-        Me.SearchBox.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.SearchBox.Location = New System.Drawing.Point(515, 8)
+        Me.SearchBox.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.SearchBox.Location = New System.Drawing.Point(515, 6)
         Me.SearchBox.Name = "SearchBox"
         Me.SearchBox.Size = New System.Drawing.Size(200, 23)
         Me.SearchBox.TabIndex = 0
         '
         'NamebtnPanel
         '
+        Me.NamebtnPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.NamebtnPanel.BackColor = System.Drawing.Color.Transparent
         Me.NamebtnPanel.BackgroundImage = CType(resources.GetObject("NamebtnPanel.BackgroundImage"), System.Drawing.Image)
         Me.NamebtnPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.NamebtnPanel.Controls.Add(Me.NameBtn)
-        Me.NamebtnPanel.Location = New System.Drawing.Point(1160, 10)
+        Me.NamebtnPanel.Location = New System.Drawing.Point(1160, 5)
         Me.NamebtnPanel.Name = "NamebtnPanel"
         Me.NamebtnPanel.Size = New System.Drawing.Size(95, 26)
         Me.NamebtnPanel.TabIndex = 6
@@ -194,22 +225,115 @@ Partial Class Main
         '
         Me.MainPanel.BackColor = System.Drawing.Color.Transparent
         Me.MainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.MainPanel.Controls.Add(Me.FindComFavPanel)
         Me.MainPanel.Controls.Add(Me.resultPanel)
         Me.MainPanel.Controls.Add(Me.DropPanel)
         Me.MainPanel.Controls.Add(Me.Container)
-        Me.MainPanel.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.MainPanel.Location = New System.Drawing.Point(0, 61)
+        Me.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MainPanel.Location = New System.Drawing.Point(0, 56)
         Me.MainPanel.Name = "MainPanel"
-        Me.MainPanel.Size = New System.Drawing.Size(1280, 718)
+        Me.MainPanel.Size = New System.Drawing.Size(1280, 723)
         Me.MainPanel.TabIndex = 1
+        '
+        'FindComFavPanel
+        '
+        Me.FindComFavPanel.BackgroundImage = CType(resources.GetObject("FindComFavPanel.BackgroundImage"), System.Drawing.Image)
+        Me.FindComFavPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.FindComFavPanel.Controls.Add(Me.ShowComInfo)
+        Me.FindComFavPanel.Controls.Add(Me.CloseCommon)
+        Me.FindComFavPanel.Controls.Add(Me.SearchCommonPanel)
+        Me.FindComFavPanel.Controls.Add(Me.SearchUsername)
+        Me.FindComFavPanel.Controls.Add(Me.SearchUsernamePic)
+        Me.FindComFavPanel.Controls.Add(Me.InfoLabel)
+        Me.FindComFavPanel.Location = New System.Drawing.Point(340, 186)
+        Me.FindComFavPanel.Name = "FindComFavPanel"
+        Me.FindComFavPanel.Size = New System.Drawing.Size(600, 141)
+        Me.FindComFavPanel.TabIndex = 3
+        Me.FindComFavPanel.Visible = False
+        '
+        'ShowComInfo
+        '
+        Me.ShowComInfo.ForeColor = System.Drawing.Color.Red
+        Me.ShowComInfo.Location = New System.Drawing.Point(0, 36)
+        Me.ShowComInfo.Name = "ShowComInfo"
+        Me.ShowComInfo.Size = New System.Drawing.Size(597, 23)
+        Me.ShowComInfo.TabIndex = 7
+        Me.ShowComInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'CloseCommon
+        '
+        Me.CloseCommon.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CloseCommon.BackColor = System.Drawing.Color.Transparent
+        Me.CloseCommon.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CloseCommon.Image = Global.IMDB.My.Resources.Resources.Close1
+        Me.CloseCommon.Location = New System.Drawing.Point(574, 3)
+        Me.CloseCommon.Name = "CloseCommon"
+        Me.CloseCommon.Size = New System.Drawing.Size(23, 23)
+        Me.CloseCommon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.CloseCommon.TabIndex = 6
+        Me.CloseCommon.TabStop = False
+        '
+        'SearchCommonPanel
+        '
+        Me.SearchCommonPanel.BackgroundImage = Global.IMDB.My.Resources.Resources.GeneralBtn1
+        Me.SearchCommonPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.SearchCommonPanel.Controls.Add(Me.SearchCommon)
+        Me.SearchCommonPanel.Location = New System.Drawing.Point(391, 63)
+        Me.SearchCommonPanel.Name = "SearchCommonPanel"
+        Me.SearchCommonPanel.Size = New System.Drawing.Size(99, 34)
+        Me.SearchCommonPanel.TabIndex = 5
+        '
+        'SearchCommon
+        '
+        Me.SearchCommon.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SearchCommon.Font = New System.Drawing.Font("SimSun", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.SearchCommon.ForeColor = System.Drawing.Color.White
+        Me.SearchCommon.Location = New System.Drawing.Point(0, 0)
+        Me.SearchCommon.Name = "SearchCommon"
+        Me.SearchCommon.Size = New System.Drawing.Size(100, 34)
+        Me.SearchCommon.TabIndex = 4
+        Me.SearchCommon.Text = "Search"
+        Me.SearchCommon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'SearchUsername
+        '
+        Me.SearchUsername.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.SearchUsername.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.SearchUsername.Location = New System.Drawing.Point(128, 72)
+        Me.SearchUsername.Name = "SearchUsername"
+        Me.SearchUsername.Size = New System.Drawing.Size(210, 16)
+        Me.SearchUsername.TabIndex = 2
+        Me.SearchUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'SearchUsernamePic
+        '
+        Me.SearchUsernamePic.BackgroundImage = Global.IMDB.My.Resources.Resources.bgtxt
+        Me.SearchUsernamePic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.SearchUsernamePic.Location = New System.Drawing.Point(112, 63)
+        Me.SearchUsernamePic.Name = "SearchUsernamePic"
+        Me.SearchUsernamePic.Size = New System.Drawing.Size(240, 34)
+        Me.SearchUsernamePic.TabIndex = 1
+        Me.SearchUsernamePic.TabStop = False
+        '
+        'InfoLabel
+        '
+        Me.InfoLabel.Font = New System.Drawing.Font("SimSun", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.InfoLabel.ForeColor = System.Drawing.Color.DarkOrange
+        Me.InfoLabel.Location = New System.Drawing.Point(0, 0)
+        Me.InfoLabel.Name = "InfoLabel"
+        Me.InfoLabel.Size = New System.Drawing.Size(600, 42)
+        Me.InfoLabel.TabIndex = 0
+        Me.InfoLabel.Text = "Type a username to find common movies"
+        Me.InfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'resultPanel
         '
+        Me.resultPanel.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.resultPanel.BackColor = System.Drawing.Color.LightGray
         Me.resultPanel.Controls.Add(Me.ResultInfo)
         Me.resultPanel.Location = New System.Drawing.Point(515, 1)
         Me.resultPanel.Name = "resultPanel"
-        Me.resultPanel.Size = New System.Drawing.Size(200, 131)
+        Me.resultPanel.Size = New System.Drawing.Size(200, 30)
         Me.resultPanel.TabIndex = 2
         Me.resultPanel.Visible = False
         '
@@ -229,6 +353,7 @@ Partial Class Main
         '
         'DropPanel
         '
+        Me.DropPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DropPanel.BackColor = System.Drawing.Color.Transparent
         Me.DropPanel.BackgroundImage = Global.IMDB.My.Resources.Resources.Indicator
         Me.DropPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -291,12 +416,13 @@ Partial Class Main
         '
         'Container
         '
+        Me.Container.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.Container.BackColor = System.Drawing.Color.Transparent
         Me.Container.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Container.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Container.Location = New System.Drawing.Point(340, 6)
         Me.Container.Name = "Container"
-        Me.Container.Size = New System.Drawing.Size(600, 702)
+        Me.Container.Size = New System.Drawing.Size(600, 700)
         Me.Container.TabIndex = 1
         Me.Container.Visible = False
         '
@@ -319,6 +445,7 @@ Partial Class Main
         '
         'ExitBtn
         '
+        Me.ExitBtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ExitBtn.BackColor = System.Drawing.Color.Transparent
         Me.ExitBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ExitBtn.Image = Global.IMDB.My.Resources.Resources.Close1
@@ -341,8 +468,7 @@ Partial Class Main
         '
         'Main
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 779)
         Me.ControlBox = False
@@ -351,16 +477,22 @@ Partial Class Main
         Me.Controls.Add(Me.MovePanel)
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.DoubleBuffered = True
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "Main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.TopPanel.ResumeLayout(False)
         Me.TopPanel.PerformLayout()
+        Me.CommonMoviesPanel.ResumeLayout(False)
         Me.FavoriteInd.ResumeLayout(False)
         Me.HomeBtnInd.ResumeLayout(False)
         CType(Me.AppName, System.ComponentModel.ISupportInitialize).EndInit()
         Me.NamebtnPanel.ResumeLayout(False)
         Me.MainPanel.ResumeLayout(False)
+        Me.FindComFavPanel.ResumeLayout(False)
+        Me.FindComFavPanel.PerformLayout()
+        CType(Me.CloseCommon, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SearchCommonPanel.ResumeLayout(False)
+        CType(Me.SearchUsernamePic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.resultPanel.ResumeLayout(False)
         Me.DropPanel.ResumeLayout(False)
         Me.LogOutPanel.ResumeLayout(False)
@@ -385,7 +517,6 @@ Partial Class Main
     Friend WithEvents AppName As PictureBox
     Friend WithEvents AppLabel As Label
     Friend WithEvents ExitBtn As PictureBox
-    Friend WithEvents Button1 As Button
     Friend WithEvents NamebtnPanel As Panel
     Friend WithEvents NameBtn As Label
     Friend WithEvents HomeBtnInd As Panel
@@ -396,4 +527,14 @@ Partial Class Main
     Friend WithEvents OpenProfile As Label
     Friend WithEvents LogOutPanel As Panel
     Friend WithEvents LogOut As Label
+    Friend WithEvents FindComFavPanel As Panel
+    Friend WithEvents SearchUsername As TextBox
+    Friend WithEvents SearchUsernamePic As PictureBox
+    Friend WithEvents InfoLabel As Label
+    Friend WithEvents SearchCommonPanel As Panel
+    Friend WithEvents SearchCommon As Label
+    Friend WithEvents CloseCommon As PictureBox
+    Friend WithEvents ShowComInfo As Label
+    Friend WithEvents CommonMoviesPanel As Panel
+    Friend WithEvents CommonMoviesBtn As Label
 End Class

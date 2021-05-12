@@ -145,19 +145,26 @@ Public Class Main
 
     Private Sub Search_Click(sender As Object, e As EventArgs) Handles Search.Click
         If SearchBox.Text.Trim.Length >= 3 Then
-            If Application.OpenForms().OfType(Of SearchForm).Any Then
-                SearchForm.Close()
+            ResultForm.resultMovies = MvcLuceneSampleApp.Search.LuceneSearch.SearchMovieResults(SearchBox.Text)
+            If Application.OpenForms().OfType(Of ResultForm).Any Then
+                ResultForm.Close()
             End If
-            ChnageWindow(SearchForm, MainPanel, False)
+            ChnageWindow(ResultForm, MainPanel, False)
             HomeBtnInd.BackgroundImage = My.Resources.GeneralBtn1
             FavoriteInd.BackgroundImage = My.Resources.GeneralBtn1
             NamebtnPanel.BackgroundImage = My.Resources.GeneralBtn1
-            SearchBox.Text = ""
+
+        ElseIf SearchBox.Text.Trim.Length = 0 Then
+            resultPanel.Visible = True
+            resultPanel.Height = 20
+            ResultInfo.Visible = True
+            ResultInfo.Text = "Please type 3 or more letters"
         End If
     End Sub
 
-    Public Shared resultMovies() As Movie
+
     Private Sub SearchBox_TextChanged(sender As Object, e As EventArgs) Handles SearchBox.TextChanged
+        Dim resultMovies() As Movie
         If SearchBox.Text.Trim.Length >= 3 Then
             resultPanel.Visible = True
             For Each lL In resultPanel.Controls.OfType(Of LinkLabel)().ToArray()
@@ -183,6 +190,59 @@ Public Class Main
             resultPanel.Visible = False
         End If
     End Sub
+#End Region
+
+#Region "show common Favorites"
+
+    Private Sub CommonMoviesBtn_Click(sender As Object, e As EventArgs) Handles CommonMoviesBtn.Click
+        If FindComFavPanel.Visible Then
+            CloseCommonSearch_click(sender, e)
+        Else
+            FindComFavPanel.Visible = True
+            CommonMoviesBtn.Parent.BackgroundImage = My.Resources.Indicator
+        End If
+
+
+    End Sub
+
+    Private Sub CommonMoviesBtn_Hover(sender As Object, e As EventArgs) Handles CommonMoviesBtn.MouseEnter
+        If FindComFavPanel.Visible = False Then
+            CommonMoviesBtn.Parent.BackgroundImage = My.Resources.GeneralBtn2
+        End If
+    End Sub
+
+    Private Sub CommonMoviesBtn_Leave(sender As Object, e As EventArgs) Handles CommonMoviesBtn.MouseLeave
+        If FindComFavPanel.Visible = False Then
+            CommonMoviesBtn.Parent.BackgroundImage = My.Resources.GeneralBtn1
+        End If
+    End Sub
+
+    Private Sub SearchCommon_Click(sender As Object, e As EventArgs) Handles SearchCommon.Click
+        If Username_exists(SearchUsername.Text) Then
+            ResultForm.resultMovies = commonFavs(LogInForm.u.Username, SearchUsername.Text)
+            If Application.OpenForms().OfType(Of ResultForm).Any Then
+                ResultForm.Close()
+            End If
+            ChnageWindow(ResultForm, MainPanel, False)
+            HomeBtnInd.BackgroundImage = My.Resources.GeneralBtn1
+            FavoriteInd.BackgroundImage = My.Resources.GeneralBtn1
+            NamebtnPanel.BackgroundImage = My.Resources.GeneralBtn1
+            ResultForm.SLabel.Text = "We Found those movies in common with " & SearchUsername.Text
+            FindComFavPanel.Visible = False
+            ShowComInfo.Text = ""
+            CommonMoviesBtn.Parent.BackgroundImage = My.Resources.GeneralBtn1
+        Else
+            ShowComInfo.Text = "This username does not exist"
+        End If
+    End Sub
+
+    Private Sub CloseCommonSearch_click(sender As Object, e As EventArgs) Handles CloseCommon.Click
+        CommonMoviesBtn.Parent.BackgroundImage = My.Resources.GeneralBtn1
+        FindComFavPanel.Visible = False
+        SearchUsername.Text = ""
+        ShowComInfo.Text = ""
+    End Sub
+
 #End Region
 
 #Region "Timer for drop menu"
@@ -212,10 +272,11 @@ Public Class Main
 
 #Region "Change Form "
 
-    Private Sub ChnageWindow(newform, panel, flag)
+    Private Sub ChnageWindow(newform As Form, panel As Panel, flag As Boolean)
         Container.Visible = flag
         Close_forms(Me)
         newform.TopLevel = False
+        newform.AutoSize = False
         panel.Controls.Add(newform)
         newform.Show()
     End Sub
@@ -247,7 +308,6 @@ Public Class Main
     End Sub
 #End Region
 
-
 #Region "Exit App"
     Private Sub ExitBtn_Click(sender As Object, e As EventArgs) Handles ExitBtn.Click
         Dim answer As Integer
@@ -257,11 +317,11 @@ Public Class Main
         End If
     End Sub
 
-    Private Sub ExitBtn_Hover(sender As Object, e As EventArgs) Handles ExitBtn.MouseEnter
-        ExitBtn.Image = My.Resources.Close2
+    Private Sub Closebtns_Hover(sender As Object, e As EventArgs) Handles ExitBtn.MouseEnter, CloseCommon.MouseEnter
+        sender.Image = My.Resources.Close2
     End Sub
-    Private Sub ExitBtn_Leave(sender As Object, e As EventArgs) Handles ExitBtn.MouseLeave
-        ExitBtn.Image = My.Resources.Close1
+    Private Sub Closebtns_Leave(sender As Object, e As EventArgs) Handles ExitBtn.MouseLeave, CloseCommon.MouseLeave
+        sender.Image = My.Resources.Close1
     End Sub
 
 #End Region
