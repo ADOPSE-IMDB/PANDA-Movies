@@ -3,6 +3,11 @@ Imports System.IO
 Public Class Profile
 
     Private Sub On_load(sender As Object, e As EventArgs) Handles Me.Load
+        If Not LogInForm.u.Profile_Pic = "" Then
+            ProfilePic.ImageLocation = LogInForm.u.Profile_Pic
+        Else
+            ProfilePic.Image = My.Resources.NoImage
+        End If
         NameL.Text = LogInForm.u.First_name
         Surname.Text = LogInForm.u.Last_name
         Email.Text = LogInForm.u.Email
@@ -106,10 +111,50 @@ Public Class Profile
         End If
     End Sub
 
+    Dim avatars() As String = {"https://i.ibb.co/GxtstcB/1.png", "https://i.ibb.co/5jsTXM7/2.png", "https://i.ibb.co/jwVDVTT/3.png", "https://i.ibb.co/dWZtdZn/4.png", "https://i.ibb.co/crDHbgy/5.png", "https://i.ibb.co/wrV9dcP/6.png", "https://i.ibb.co/mC6SpFY/7.png", "https://i.ibb.co/bX0MT2y/8.png"}
 
 
+    Private Sub UploadB_Click(sender As Object, e As EventArgs) Handles UploadB.Click
+        If ChangeAvatarPanel.Visible Then
+            ChangeAvatarPanel.Visible = False
+            For Each pb In ChangeAvatarPanel.Controls.OfType(Of PictureBox)().ToArray()
+                pb.Dispose()
+            Next
+        Else
+            Dim posx = 30
+            Dim posy = 2
+            ChangeAvatarPanel.Visible = True
+            For index = 0 To avatars.Length - 1
+                Dim avatarPicBox As New PictureBox With {
+                        .SizeMode = PictureBoxSizeMode.StretchImage,
+                        .BackColor = Color.Transparent,
+                        .Size = New Size(120, 120),
+                        .Location = New Point(posx, posy),
+                        .Cursor = Cursors.Hand,
+                        .ImageLocation = avatars(index),
+                        .BorderStyle = BorderStyle.Fixed3D
+                }
 
+                ChangeAvatarPanel.Controls.Add(avatarPicBox)
+                AddHandler avatarPicBox.Click, AddressOf ChangeAvatarSub
+                posx += 160
+                If (index + 1) Mod 2 = 0 Then
+                    posx = 30
+                    posy += 140
+                End If
+            Next
+            ChangeAvatarPanel.Height = posy + 160
+        End If
+    End Sub
 
+    Public Sub ChangeAvatarSub(sender As PictureBox, e As EventArgs)
+        ProfilePic.ImageLocation = sender.ImageLocation
+        ChangeAvatarPanel.Visible = False
+        LogInForm.u.Profile_Pic = sender.ImageLocation
+        SetProfilePic(LogInForm.u.Id, sender.ImageLocation)
 
-
+        For Each pb In ChangeAvatarPanel.Controls.OfType(Of PictureBox)().ToArray()
+            pb.Dispose()
+        Next
+    End Sub
 End Class

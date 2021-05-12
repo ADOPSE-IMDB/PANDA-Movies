@@ -26,12 +26,12 @@ Public Class Main
 
     Public Sub Home_Hover(sender As Object, e As EventArgs) Handles HomeBtn.MouseEnter
         If Not Application.OpenForms().OfType(Of MoviesMain).Any Then
-            HomeBtnInd.BackgroundImage = My.Resources.GeneralBtn2
+            btnEnter(HomeBtnInd)
         End If
     End Sub
     Public Sub HomeButton_Leave(sender As Object, e As EventArgs) Handles HomeBtn.MouseLeave
         If Not Application.OpenForms().OfType(Of MoviesMain).Any Then
-            HomeBtnInd.BackgroundImage = My.Resources.GeneralBtn1
+            btnLeave(HomeBtnInd)
         End If
     End Sub
 
@@ -60,13 +60,13 @@ Public Class Main
 
     Public Sub FavoriteBtn_Enter(sender As Object, e As EventArgs) Handles FavoriteBtn.MouseEnter
         If Not Application.OpenForms().OfType(Of Favorite).Any Then
-            FavoriteInd.BackgroundImage = My.Resources.GeneralBtn2
+            btnEnter(FavoriteInd)
         End If
     End Sub
 
     Public Sub FavoriteBtn_Leave(sender As Object, e As EventArgs) Handles FavoriteBtn.MouseLeave
         If Not Application.OpenForms().OfType(Of Favorite).Any Then
-            FavoriteInd.BackgroundImage = My.Resources.GeneralBtn1
+            btnLeave(FavoriteInd)
         End If
     End Sub
 #End Region
@@ -207,13 +207,13 @@ Public Class Main
 
     Private Sub CommonMoviesBtn_Hover(sender As Object, e As EventArgs) Handles CommonMoviesBtn.MouseEnter
         If FindComFavPanel.Visible = False Then
-            CommonMoviesBtn.Parent.BackgroundImage = My.Resources.GeneralBtn2
+            btnEnter(CommonMoviesBtn.Parent)
         End If
     End Sub
 
     Private Sub CommonMoviesBtn_Leave(sender As Object, e As EventArgs) Handles CommonMoviesBtn.MouseLeave
         If FindComFavPanel.Visible = False Then
-            CommonMoviesBtn.Parent.BackgroundImage = My.Resources.GeneralBtn1
+            btnLeave(CommonMoviesBtn.Parent)
         End If
     End Sub
 
@@ -310,11 +310,7 @@ Public Class Main
 
 #Region "Exit App"
     Private Sub ExitBtn_Click(sender As Object, e As EventArgs) Handles ExitBtn.Click
-        Dim answer As Integer
-        answer = MsgBox("Do you really want to Exit the PANDApp?", vbExclamation + vbYesNo, "We will miss you :/")
-        If answer = vbYes Then
-            Application.Exit()
-        End If
+        CustomMessageBox.Show()
     End Sub
 
     Private Sub Closebtns_Hover(sender As Object, e As EventArgs) Handles ExitBtn.MouseEnter, CloseCommon.MouseEnter

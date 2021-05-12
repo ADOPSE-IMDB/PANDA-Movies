@@ -6,6 +6,11 @@ Public Class LogInForm
 
 
     Private Sub on_Load() Handles MyBase.Load
+        Try
+            MvcLuceneSampleApp.Search.Initialize()
+        Catch
+            MessageBox.Show("Connect to teithe First")
+        End Try
 
         If My.Settings.Check Then
             RememberMe.Checked = True
@@ -14,13 +19,8 @@ Public Class LogInForm
             Password.PasswordChar = "*"
             UserName.Text = My.Settings.username
             Password.Text = My.Settings.password
+            Login_Click()
         End If
-
-        Try
-            MvcLuceneSampleApp.Search.Initialize()
-        Catch
-            MessageBox.Show("Connect to teithe First")
-        End Try
     End Sub
 
 #Region "Username/Password Textbox"
@@ -64,7 +64,7 @@ Public Class LogInForm
 
 #Region "LogIn"
     Public Shared u As User
-    Private Sub Login_Click(sender As Object, e As EventArgs) Handles LogInButton.Click
+    Private Sub Login_Click() Handles LogInButton.Click
 
         If UserName.ForeColor = Color.DarkGray Then
             info.Text = "Please enter your username"
@@ -128,6 +128,7 @@ Public Class LogInForm
     Private Sub F_mouseUp(sender As Object, e As EventArgs) Handles MovePanel.MouseUp
         MoveForm_MouseUp(sender, e)
     End Sub
+
 #End Region
 
 End Class

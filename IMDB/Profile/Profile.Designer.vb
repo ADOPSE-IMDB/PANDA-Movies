@@ -23,8 +23,6 @@ Partial Class Profile
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Profile))
-        Me.ProfilePL = New System.Windows.Forms.Label()
         Me.UploadB = New System.Windows.Forms.Button()
         Me.ProfilePic = New System.Windows.Forms.PictureBox()
         Me.Na = New System.Windows.Forms.Label()
@@ -49,6 +47,7 @@ Partial Class Profile
         Me.PbP = New System.Windows.Forms.PictureBox()
         Me.PbCP = New System.Windows.Forms.PictureBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.ChangeAvatarPanel = New System.Windows.Forms.Panel()
         CType(Me.ProfilePic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XError, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PbN, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,34 +57,21 @@ Partial Class Profile
         CType(Me.PbCP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'ProfilePL
-        '
-        Me.ProfilePL.AutoSize = True
-        Me.ProfilePL.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.ProfilePL.Location = New System.Drawing.Point(231, 196)
-        Me.ProfilePL.Name = "ProfilePL"
-        Me.ProfilePL.Size = New System.Drawing.Size(173, 30)
-        Me.ProfilePL.TabIndex = 1
-        Me.ProfilePL.Text = "Profile Picture :"
-        '
         'UploadB
         '
         Me.UploadB.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.UploadB.Location = New System.Drawing.Point(456, 199)
-        Me.UploadB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.UploadB.Location = New System.Drawing.Point(225, 191)
         Me.UploadB.Name = "UploadB"
-        Me.UploadB.Size = New System.Drawing.Size(85, 31)
+        Me.UploadB.Size = New System.Drawing.Size(150, 23)
         Me.UploadB.TabIndex = 2
-        Me.UploadB.Text = "Upload"
+        Me.UploadB.Text = "Change Avatar"
         Me.UploadB.UseVisualStyleBackColor = True
         '
         'ProfilePic
         '
-        Me.ProfilePic.Image = CType(resources.GetObject("ProfilePic.Image"), System.Drawing.Image)
-        Me.ProfilePic.Location = New System.Drawing.Point(48, 141)
-        Me.ProfilePic.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.ProfilePic.Location = New System.Drawing.Point(225, 35)
         Me.ProfilePic.Name = "ProfilePic"
-        Me.ProfilePic.Size = New System.Drawing.Size(120, 149)
+        Me.ProfilePic.Size = New System.Drawing.Size(150, 150)
         Me.ProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.ProfilePic.TabIndex = 3
         Me.ProfilePic.TabStop = False
@@ -94,9 +80,9 @@ Partial Class Profile
         '
         Me.Na.AutoSize = True
         Me.Na.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Na.Location = New System.Drawing.Point(231, 359)
+        Me.Na.Location = New System.Drawing.Point(117, 269)
         Me.Na.Name = "Na"
-        Me.Na.Size = New System.Drawing.Size(86, 30)
+        Me.Na.Size = New System.Drawing.Size(72, 25)
         Me.Na.TabIndex = 4
         Me.Na.Text = "Name :"
         '
@@ -104,9 +90,9 @@ Partial Class Profile
         '
         Me.Su.AutoSize = True
         Me.Su.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Su.Location = New System.Drawing.Point(231, 435)
+        Me.Su.Location = New System.Drawing.Point(117, 326)
         Me.Su.Name = "Su"
-        Me.Su.Size = New System.Drawing.Size(116, 30)
+        Me.Su.Size = New System.Drawing.Size(97, 25)
         Me.Su.TabIndex = 5
         Me.Su.Text = "Surname :"
         '
@@ -114,9 +100,9 @@ Partial Class Profile
         '
         Me.EL.AutoSize = True
         Me.EL.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.EL.Location = New System.Drawing.Point(231, 515)
+        Me.EL.Location = New System.Drawing.Point(117, 386)
         Me.EL.Name = "EL"
-        Me.EL.Size = New System.Drawing.Size(90, 30)
+        Me.EL.Size = New System.Drawing.Size(75, 25)
         Me.EL.TabIndex = 6
         Me.EL.Text = "E-mail :"
         '
@@ -124,9 +110,9 @@ Partial Class Profile
         '
         Me.Psw.AutoSize = True
         Me.Psw.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Psw.Location = New System.Drawing.Point(231, 591)
+        Me.Psw.Location = New System.Drawing.Point(117, 443)
         Me.Psw.Name = "Psw"
-        Me.Psw.Size = New System.Drawing.Size(171, 30)
+        Me.Psw.Size = New System.Drawing.Size(140, 25)
         Me.Psw.TabIndex = 7
         Me.Psw.Text = "New Password:"
         Me.Psw.Visible = False
@@ -134,48 +120,49 @@ Partial Class Profile
         'EditB
         '
         Me.EditB.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.EditB.Location = New System.Drawing.Point(286, 736)
-        Me.EditB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.EditB.Location = New System.Drawing.Point(165, 552)
         Me.EditB.Name = "EditB"
-        Me.EditB.Size = New System.Drawing.Size(86, 31)
+        Me.EditB.Size = New System.Drawing.Size(75, 23)
         Me.EditB.TabIndex = 8
         Me.EditB.Text = "Edit"
         Me.EditB.UseVisualStyleBackColor = True
         '
         'NameL
         '
+        Me.NameL.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.NameL.AutoSize = True
-        Me.NameL.Location = New System.Drawing.Point(539, 367)
+        Me.NameL.Location = New System.Drawing.Point(387, 272)
         Me.NameL.Name = "NameL"
-        Me.NameL.Size = New System.Drawing.Size(53, 20)
+        Me.NameL.Size = New System.Drawing.Size(41, 15)
         Me.NameL.TabIndex = 9
         Me.NameL.Text = "Label1"
         '
         'Surname
         '
+        Me.Surname.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Surname.AutoSize = True
-        Me.Surname.Location = New System.Drawing.Point(539, 448)
+        Me.Surname.Location = New System.Drawing.Point(387, 333)
         Me.Surname.Name = "Surname"
-        Me.Surname.Size = New System.Drawing.Size(53, 20)
+        Me.Surname.Size = New System.Drawing.Size(41, 15)
         Me.Surname.TabIndex = 10
         Me.Surname.Text = "Label2"
         '
         'Email
         '
+        Me.Email.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Email.AutoSize = True
-        Me.Email.Location = New System.Drawing.Point(539, 523)
+        Me.Email.Location = New System.Drawing.Point(387, 389)
         Me.Email.Name = "Email"
-        Me.Email.Size = New System.Drawing.Size(53, 20)
+        Me.Email.Size = New System.Drawing.Size(41, 15)
         Me.Email.TabIndex = 11
         Me.Email.Text = "Label3"
         '
         'UpdateB
         '
         Me.UpdateB.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.UpdateB.Location = New System.Drawing.Point(456, 736)
-        Me.UpdateB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.UpdateB.Location = New System.Drawing.Point(314, 552)
         Me.UpdateB.Name = "UpdateB"
-        Me.UpdateB.Size = New System.Drawing.Size(86, 31)
+        Me.UpdateB.Size = New System.Drawing.Size(75, 23)
         Me.UpdateB.TabIndex = 13
         Me.UpdateB.Text = "Update"
         Me.UpdateB.UseVisualStyleBackColor = True
@@ -183,68 +170,68 @@ Partial Class Profile
         '
         'NameTB
         '
+        Me.NameTB.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.NameTB.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.NameTB.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.NameTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.NameTB.ForeColor = System.Drawing.Color.DarkGray
-        Me.NameTB.Location = New System.Drawing.Point(497, 363)
-        Me.NameTB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.NameTB.Location = New System.Drawing.Point(350, 272)
         Me.NameTB.Name = "NameTB"
-        Me.NameTB.Size = New System.Drawing.Size(114, 27)
+        Me.NameTB.Size = New System.Drawing.Size(100, 22)
         Me.NameTB.TabIndex = 14
         Me.NameTB.Visible = False
         '
         'SurnameTB
         '
+        Me.SurnameTB.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.SurnameTB.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.SurnameTB.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.SurnameTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.SurnameTB.ForeColor = System.Drawing.Color.DarkGray
-        Me.SurnameTB.Location = New System.Drawing.Point(497, 439)
-        Me.SurnameTB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.SurnameTB.Location = New System.Drawing.Point(350, 329)
         Me.SurnameTB.Name = "SurnameTB"
-        Me.SurnameTB.Size = New System.Drawing.Size(114, 27)
+        Me.SurnameTB.Size = New System.Drawing.Size(100, 22)
         Me.SurnameTB.TabIndex = 15
         Me.SurnameTB.Visible = False
         '
         'EmailTB
         '
+        Me.EmailTB.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.EmailTB.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.EmailTB.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.EmailTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.EmailTB.ForeColor = System.Drawing.Color.DarkGray
-        Me.EmailTB.Location = New System.Drawing.Point(497, 523)
-        Me.EmailTB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.EmailTB.Location = New System.Drawing.Point(350, 389)
         Me.EmailTB.Name = "EmailTB"
-        Me.EmailTB.Size = New System.Drawing.Size(114, 27)
+        Me.EmailTB.Size = New System.Drawing.Size(100, 22)
         Me.EmailTB.TabIndex = 16
         Me.EmailTB.Visible = False
         '
         'NewPasswordTB
         '
+        Me.NewPasswordTB.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.NewPasswordTB.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.NewPasswordTB.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.NewPasswordTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.NewPasswordTB.ForeColor = System.Drawing.Color.DarkGray
-        Me.NewPasswordTB.Location = New System.Drawing.Point(497, 595)
-        Me.NewPasswordTB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.NewPasswordTB.Location = New System.Drawing.Point(350, 446)
         Me.NewPasswordTB.Name = "NewPasswordTB"
         Me.NewPasswordTB.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.NewPasswordTB.Size = New System.Drawing.Size(114, 27)
+        Me.NewPasswordTB.Size = New System.Drawing.Size(100, 22)
         Me.NewPasswordTB.TabIndex = 17
         Me.NewPasswordTB.Visible = False
         '
         'ConfirmTB
         '
+        Me.ConfirmTB.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.ConfirmTB.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.ConfirmTB.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ConfirmTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.ConfirmTB.ForeColor = System.Drawing.Color.DarkGray
-        Me.ConfirmTB.Location = New System.Drawing.Point(497, 663)
-        Me.ConfirmTB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.ConfirmTB.Location = New System.Drawing.Point(350, 497)
         Me.ConfirmTB.Name = "ConfirmTB"
         Me.ConfirmTB.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.ConfirmTB.Size = New System.Drawing.Size(114, 27)
+        Me.ConfirmTB.Size = New System.Drawing.Size(100, 22)
         Me.ConfirmTB.TabIndex = 18
         Me.ConfirmTB.Visible = False
         '
@@ -252,9 +239,9 @@ Partial Class Profile
         '
         Me.CnP.AutoSize = True
         Me.CnP.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.CnP.Location = New System.Drawing.Point(231, 659)
+        Me.CnP.Location = New System.Drawing.Point(117, 494)
         Me.CnP.Name = "CnP"
-        Me.CnP.Size = New System.Drawing.Size(213, 30)
+        Me.CnP.Size = New System.Drawing.Size(175, 25)
         Me.CnP.TabIndex = 19
         Me.CnP.Text = "Confirm Password :"
         Me.CnP.Visible = False
@@ -265,13 +252,12 @@ Partial Class Profile
         '
         'PbN
         '
-        Me.PbN.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.PbN.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PbN.BackColor = System.Drawing.Color.Transparent
         Me.PbN.Image = Global.IMDB.My.Resources.Resources.bgtxt
-        Me.PbN.Location = New System.Drawing.Point(474, 359)
-        Me.PbN.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.PbN.Location = New System.Drawing.Point(330, 266)
         Me.PbN.Name = "PbN"
-        Me.PbN.Size = New System.Drawing.Size(161, 44)
+        Me.PbN.Size = New System.Drawing.Size(141, 33)
         Me.PbN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbN.TabIndex = 20
         Me.PbN.TabStop = False
@@ -279,13 +265,12 @@ Partial Class Profile
         '
         'PbS
         '
-        Me.PbS.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.PbS.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PbS.BackColor = System.Drawing.Color.Transparent
         Me.PbS.Image = Global.IMDB.My.Resources.Resources.bgtxt
-        Me.PbS.Location = New System.Drawing.Point(474, 435)
-        Me.PbS.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.PbS.Location = New System.Drawing.Point(330, 323)
         Me.PbS.Name = "PbS"
-        Me.PbS.Size = New System.Drawing.Size(161, 44)
+        Me.PbS.Size = New System.Drawing.Size(141, 33)
         Me.PbS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbS.TabIndex = 21
         Me.PbS.TabStop = False
@@ -293,13 +278,12 @@ Partial Class Profile
         '
         'PbE
         '
-        Me.PbE.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.PbE.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PbE.BackColor = System.Drawing.Color.Transparent
         Me.PbE.Image = Global.IMDB.My.Resources.Resources.bgtxt
-        Me.PbE.Location = New System.Drawing.Point(474, 515)
-        Me.PbE.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.PbE.Location = New System.Drawing.Point(330, 383)
         Me.PbE.Name = "PbE"
-        Me.PbE.Size = New System.Drawing.Size(161, 44)
+        Me.PbE.Size = New System.Drawing.Size(141, 33)
         Me.PbE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbE.TabIndex = 22
         Me.PbE.TabStop = False
@@ -307,13 +291,12 @@ Partial Class Profile
         '
         'PbP
         '
-        Me.PbP.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.PbP.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PbP.BackColor = System.Drawing.Color.Transparent
         Me.PbP.Image = Global.IMDB.My.Resources.Resources.bgtxt
-        Me.PbP.Location = New System.Drawing.Point(474, 591)
-        Me.PbP.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.PbP.Location = New System.Drawing.Point(330, 440)
         Me.PbP.Name = "PbP"
-        Me.PbP.Size = New System.Drawing.Size(161, 44)
+        Me.PbP.Size = New System.Drawing.Size(141, 33)
         Me.PbP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbP.TabIndex = 23
         Me.PbP.TabStop = False
@@ -321,13 +304,12 @@ Partial Class Profile
         '
         'PbCP
         '
-        Me.PbCP.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.PbCP.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PbCP.BackColor = System.Drawing.Color.Transparent
         Me.PbCP.Image = Global.IMDB.My.Resources.Resources.bgtxt
-        Me.PbCP.Location = New System.Drawing.Point(474, 659)
-        Me.PbCP.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.PbCP.Location = New System.Drawing.Point(330, 491)
         Me.PbCP.Name = "PbCP"
-        Me.PbCP.Size = New System.Drawing.Size(161, 44)
+        Me.PbCP.Size = New System.Drawing.Size(141, 33)
         Me.PbCP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbCP.TabIndex = 24
         Me.PbCP.TabStop = False
@@ -337,12 +319,24 @@ Partial Class Profile
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'ChangeAvatarPanel
+        '
+        Me.ChangeAvatarPanel.AutoScroll = True
+        Me.ChangeAvatarPanel.BackColor = System.Drawing.Color.White
+        Me.ChangeAvatarPanel.Location = New System.Drawing.Point(129, 220)
+        Me.ChangeAvatarPanel.MaximumSize = New System.Drawing.Size(340, 355)
+        Me.ChangeAvatarPanel.Name = "ChangeAvatarPanel"
+        Me.ChangeAvatarPanel.Size = New System.Drawing.Size(340, 40)
+        Me.ChangeAvatarPanel.TabIndex = 25
+        Me.ChangeAvatarPanel.Visible = False
+        '
         'Profile
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkGray
-        Me.ClientSize = New System.Drawing.Size(686, 936)
+        Me.ClientSize = New System.Drawing.Size(600, 611)
+        Me.Controls.Add(Me.ChangeAvatarPanel)
         Me.Controls.Add(Me.CnP)
         Me.Controls.Add(Me.ConfirmTB)
         Me.Controls.Add(Me.NewPasswordTB)
@@ -360,14 +354,12 @@ Partial Class Profile
         Me.Controls.Add(Me.Na)
         Me.Controls.Add(Me.ProfilePic)
         Me.Controls.Add(Me.UploadB)
-        Me.Controls.Add(Me.ProfilePL)
         Me.Controls.Add(Me.PbN)
         Me.Controls.Add(Me.PbS)
         Me.Controls.Add(Me.PbE)
         Me.Controls.Add(Me.PbP)
         Me.Controls.Add(Me.PbCP)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "Profile"
         Me.Text = "Profile"
         CType(Me.ProfilePic, System.ComponentModel.ISupportInitialize).EndInit()
@@ -381,8 +373,6 @@ Partial Class Profile
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents ProfilePL As Label
     Friend WithEvents UploadB As Button
     Friend WithEvents ProfilePic As PictureBox
     Friend WithEvents Na As Label
@@ -408,4 +398,6 @@ Partial Class Profile
     Friend WithEvents PbS As PictureBox
     Friend WithEvents PbN As PictureBox
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents Avata As Panel
+    Friend WithEvents ChangeAvatarPanel As Panel
 End Class

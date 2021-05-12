@@ -48,11 +48,11 @@ Public Class User
             uusername = value
         End Set
     End Property
-    Public Property Profile_Pic() As Integer
+    Public Property Profile_Pic() As String
         Get
             Return uprofile_pic
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             uprofile_pic = value
         End Set
     End Property
