@@ -28,7 +28,7 @@ Partial Class ResultForm
         '
         'SLabel
         '
-        Me.SLabel.BackColor = System.Drawing.Color.DarkGray
+        Me.SLabel.BackColor = System.Drawing.SystemColors.Control
         Me.SLabel.Dock = System.Windows.Forms.DockStyle.Top
         Me.SLabel.Font = New System.Drawing.Font("SimSun", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.SLabel.Location = New System.Drawing.Point(0, 0)
@@ -46,17 +46,17 @@ Partial Class ResultForm
         Me.result.Size = New System.Drawing.Size(1278, 100)
         Me.result.TabIndex = 1
         '
-        'SearchForm
+        'ResultForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DimGray
+        Me.BackColor = System.Drawing.Color.Snow
         Me.ClientSize = New System.Drawing.Size(1278, 718)
         Me.ControlBox = False
         Me.Controls.Add(Me.result)
         Me.Controls.Add(Me.SLabel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Name = "SearchForm"
+        Me.Name = "ResultForm"
         Me.ResumeLayout(False)
 
     End Sub

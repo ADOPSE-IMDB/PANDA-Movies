@@ -25,6 +25,7 @@ Partial Class Main
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.TopPanel = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.CommonMoviesPanel = New System.Windows.Forms.Panel()
         Me.CommonMoviesBtn = New System.Windows.Forms.Label()
         Me.FavoriteInd = New System.Windows.Forms.Panel()
@@ -58,6 +59,7 @@ Partial Class Main
         Me.ExitBtn = New System.Windows.Forms.PictureBox()
         Me.AppLabel = New System.Windows.Forms.Label()
         Me.TopPanel.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CommonMoviesPanel.SuspendLayout()
         Me.FavoriteInd.SuspendLayout()
         Me.HomeBtnInd.SuspendLayout()
@@ -78,6 +80,7 @@ Partial Class Main
         '
         'TopPanel
         '
+        Me.TopPanel.Controls.Add(Me.PictureBox1)
         Me.TopPanel.Controls.Add(Me.CommonMoviesPanel)
         Me.TopPanel.Controls.Add(Me.FavoriteInd)
         Me.TopPanel.Controls.Add(Me.HomeBtnInd)
@@ -88,8 +91,19 @@ Partial Class Main
         Me.TopPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.TopPanel.Location = New System.Drawing.Point(0, 24)
         Me.TopPanel.Name = "TopPanel"
-        Me.TopPanel.Size = New System.Drawing.Size(1280, 32)
+        Me.TopPanel.Size = New System.Drawing.Size(1280, 35)
         Me.TopPanel.TabIndex = 0
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = Global.IMDB.My.Resources.Resources.Indicator
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 32)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(1280, 3)
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
         '
         'CommonMoviesPanel
         '
@@ -230,9 +244,9 @@ Partial Class Main
         Me.MainPanel.Controls.Add(Me.DropPanel)
         Me.MainPanel.Controls.Add(Me.Container)
         Me.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MainPanel.Location = New System.Drawing.Point(0, 56)
+        Me.MainPanel.Location = New System.Drawing.Point(0, 59)
         Me.MainPanel.Name = "MainPanel"
-        Me.MainPanel.Size = New System.Drawing.Size(1280, 723)
+        Me.MainPanel.Size = New System.Drawing.Size(1280, 720)
         Me.MainPanel.TabIndex = 1
         '
         'FindComFavPanel
@@ -422,7 +436,7 @@ Partial Class Main
         Me.Container.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Container.Location = New System.Drawing.Point(340, 6)
         Me.Container.Name = "Container"
-        Me.Container.Size = New System.Drawing.Size(600, 700)
+        Me.Container.Size = New System.Drawing.Size(600, 697)
         Me.Container.TabIndex = 1
         Me.Container.Visible = False
         '
@@ -482,6 +496,7 @@ Partial Class Main
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.TopPanel.ResumeLayout(False)
         Me.TopPanel.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CommonMoviesPanel.ResumeLayout(False)
         Me.FavoriteInd.ResumeLayout(False)
         Me.HomeBtnInd.ResumeLayout(False)
@@ -537,4 +552,5 @@ Partial Class Main
     Friend WithEvents ShowComInfo As Label
     Friend WithEvents CommonMoviesPanel As Panel
     Friend WithEvents CommonMoviesBtn As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

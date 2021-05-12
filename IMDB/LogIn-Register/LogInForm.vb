@@ -14,12 +14,9 @@ Public Class LogInForm
 
         If My.Settings.Check Then
             RememberMe.Checked = True
-            UserName.ForeColor = Color.Black
-            Password.ForeColor = Color.Black
-            Password.PasswordChar = "*"
-            UserName.Text = My.Settings.username
-            Password.Text = My.Settings.password
-            Login_Click()
+            u = UserMod.LogIn(My.Settings.username, My.Settings.password)
+            Main.Show()
+            Close()
         End If
     End Sub
 

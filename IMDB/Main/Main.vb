@@ -105,11 +105,13 @@ Public Class Main
 
 
 
-
     'Log Out Button
     Private Sub LogOut_Click(sender As Object, e As EventArgs) Handles LogOut.Click
+        My.Settings.Check = False
+        My.Settings.username = ""
+        My.Settings.password = ""
         LogInForm.Show()
-        Close_forms(LogInForm)
+        Main.Close_forms(LogInForm)
     End Sub
 
 

@@ -43,15 +43,15 @@
 #End Region
 
 #Region " Move Form "
-    Private Sub F_mouseDown(sender As Object, e As EventArgs) Handles MovePanel.MouseDown, MovePanel.MouseDown
+    Private Sub F_mouseDown(sender As Object, e As EventArgs) Handles MovePanel.MouseDown
         MoveForm_MouseDown(sender, e)
     End Sub
 
-    Private Sub F_mouseMove(sender As Object, e As EventArgs) Handles MovePanel.MouseMove, MovePanel.MouseMove
+    Private Sub F_mouseMove(sender As Object, e As EventArgs) Handles MovePanel.MouseMove
         MoveForm_MouseMove(sender, e, Me)
     End Sub
 
-    Private Sub F_mouseUp(sender As Object, e As EventArgs) Handles MovePanel.MouseUp, MovePanel.MouseUp
+    Private Sub F_mouseUp(sender As Object, e As EventArgs) Handles MovePanel.MouseUp
         MoveForm_MouseUp(sender, e)
     End Sub
 #End Region

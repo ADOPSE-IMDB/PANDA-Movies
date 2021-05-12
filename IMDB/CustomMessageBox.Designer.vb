@@ -26,14 +26,12 @@ Partial Class CustomMessageBox
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ExitAppBtn = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.MovePanel = New System.Windows.Forms.Panel()
-        Me.Title = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.LogOut = New System.Windows.Forms.Label()
+        Me.MovePanel = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.CloseMessageBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.MovePanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'CloseMessageBox
@@ -84,38 +82,6 @@ Partial Class CustomMessageBox
         Me.Panel2.Size = New System.Drawing.Size(130, 30)
         Me.Panel2.TabIndex = 2
         '
-        'MovePanel
-        '
-        Me.MovePanel.BackColor = System.Drawing.Color.Transparent
-        Me.MovePanel.BackgroundImage = Global.IMDB.My.Resources.Resources.Indicator
-        Me.MovePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.MovePanel.Controls.Add(Me.Title)
-        Me.MovePanel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.MovePanel.Location = New System.Drawing.Point(0, 0)
-        Me.MovePanel.Name = "MovePanel"
-        Me.MovePanel.Size = New System.Drawing.Size(300, 25)
-        Me.MovePanel.TabIndex = 3
-        '
-        'Title
-        '
-        Me.Title.ForeColor = System.Drawing.Color.White
-        Me.Title.Location = New System.Drawing.Point(0, 0)
-        Me.Title.Name = "Title"
-        Me.Title.Size = New System.Drawing.Size(300, 25)
-        Me.Title.TabIndex = 0
-        Me.Title.Text = "We will miss you :/"
-        Me.Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label1
-        '
-        Me.Label1.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label1.Location = New System.Drawing.Point(0, 28)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(300, 25)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Do you want to exit or Log Out?"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'LogOut
         '
         Me.LogOut.BackColor = System.Drawing.Color.Transparent
@@ -129,6 +95,27 @@ Partial Class CustomMessageBox
         Me.LogOut.TabIndex = 1
         Me.LogOut.Text = "Log Out"
         Me.LogOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'MovePanel
+        '
+        Me.MovePanel.BackColor = System.Drawing.Color.DarkOrange
+        Me.MovePanel.ForeColor = System.Drawing.Color.White
+        Me.MovePanel.Location = New System.Drawing.Point(0, 0)
+        Me.MovePanel.Name = "MovePanel"
+        Me.MovePanel.Size = New System.Drawing.Size(300, 25)
+        Me.MovePanel.TabIndex = 0
+        Me.MovePanel.Text = "We will miss you :/"
+        Me.MovePanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label1
+        '
+        Me.Label1.ForeColor = System.Drawing.Color.DarkOrange
+        Me.Label1.Location = New System.Drawing.Point(0, 28)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(300, 25)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Do you want to exit or Log Out?"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'CustomMessageBox
         '
@@ -149,7 +136,6 @@ Partial Class CustomMessageBox
         CType(Me.CloseMessageBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
-        Me.MovePanel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -157,9 +143,9 @@ Partial Class CustomMessageBox
     Friend WithEvents CloseMessageBox As PictureBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents MovePanel As Panel
     Friend WithEvents ExitAppBtn As Label
     Friend WithEvents Title As Label
     Friend WithEvents LogOut As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents MovePanel As Label
 End Class
