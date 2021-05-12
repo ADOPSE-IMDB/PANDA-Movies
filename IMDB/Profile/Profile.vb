@@ -1,4 +1,6 @@
-﻿Public Class Profile
+﻿Imports MySql.Data.MySqlClient
+Imports System.IO
+Public Class Profile
 
     Private Sub On_load(sender As Object, e As EventArgs) Handles Me.Load
         NameL.Text = LogInForm.u.First_name
@@ -104,8 +106,10 @@
         End If
     End Sub
 
-    Private Sub UploadB_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UploadB.Click
 
 
-    End Sub
+
+
+
+
 End Class

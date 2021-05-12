@@ -6,6 +6,7 @@ Public Class User
     Private ulast_name As String
     Private uemail As String
     Private uusername As String
+    Private uprofile_pic As String
 
     Public Property Id() As Integer
         Get
@@ -45,6 +46,14 @@ Public Class User
         End Get
         Set(ByVal value As String)
             uusername = value
+        End Set
+    End Property
+    Public Property Profile_Pic() As Integer
+        Get
+            Return uprofile_pic
+        End Get
+        Set(ByVal value As Integer)
+            uprofile_pic = value
         End Set
     End Property
 

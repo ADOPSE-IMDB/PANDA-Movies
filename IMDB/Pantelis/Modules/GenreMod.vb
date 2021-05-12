@@ -1,4 +1,6 @@
 ﻿Module GenreMod
+
+    'Shows genres of the movies
     Public Function showGenres(ByVal movieID)
         Dim args() As String = {movieID}
 
@@ -39,6 +41,7 @@
 
     End Function
 
+    'Count genres of a movie
     Public Function countGenres(ByVal movieID)
 
         Dim con As New Connection

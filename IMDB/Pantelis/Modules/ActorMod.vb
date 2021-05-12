@@ -1,4 +1,6 @@
 ﻿Module ActorMod
+
+    'Showing Actos of the movie
     Public Function ShowActors(ByVal movie_id)
 
         Dim args() As String = {movie_id}
@@ -42,6 +44,7 @@
 
     End Function
 
+    'counts the actors for helping the frontend edit 
     Public Function countActors(ByVal movie_id)
 
         Dim con As New Connection

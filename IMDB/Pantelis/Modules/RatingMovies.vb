@@ -1,4 +1,5 @@
 ﻿Module RatingMovies
+    'The user rates a movie
     Public Sub RateMovie(ByVal movieID, ByVal userID, ByVal rating)
 
 
@@ -10,6 +11,7 @@
 
     End Sub
 
+    'A function that checks if the movie is already rated
     Public Function CheckIfRated(ByVal movieID, ByVal userID)
         Dim con As New Connection
         Dim args() As String = {movieID, userID}
@@ -23,7 +25,7 @@
 
         End If
     End Function
-
+    'User rating again the movie
     Public Sub UpdateRatedMovie(ByVal movieID, ByVal userID, ByVal rating)
 
 
