@@ -105,7 +105,6 @@ C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\Ubiety.Dn
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\Zstandard.Net.dll
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\Renci.SshNet.dll
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\SshNet.Security.Cryptography.dll
-C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.vbprojAssemblyReference.cache
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.LogInForm.resources
 D:\GitHub\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.LogInForm.resources
 D:\Desktop\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.LogInForm.resources
@@ -122,3 +121,4 @@ D:\Desktop\IMDB\IMDB\bin\Debug\net5.0-windows\ICSharpCode.SharpZipLib.dll
 D:\Desktop\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.SearchForm.resources
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.ResultForm.resources
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.CustomMessageBox.resources
+C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.vbprojAssemblyReference.cache

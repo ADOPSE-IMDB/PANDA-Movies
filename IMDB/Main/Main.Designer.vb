@@ -436,7 +436,7 @@ Partial Class Main
         Me.Container.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Container.Location = New System.Drawing.Point(340, 6)
         Me.Container.Name = "Container"
-        Me.Container.Size = New System.Drawing.Size(600, 697)
+        Me.Container.Size = New System.Drawing.Size(600, 698)
         Me.Container.TabIndex = 1
         Me.Container.Visible = False
         '

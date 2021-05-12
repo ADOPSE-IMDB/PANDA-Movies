@@ -17,7 +17,7 @@ Public Class Main
 
     Public Sub HomeButton_Click(sender As Object, e As EventArgs) Handles HomeBtn.Click
         If Not Application.OpenForms().OfType(Of MoviesMain).Any Then
-            ChnageWindow(MoviesMain, MainPanel, False)
+            ChnageWindow(MoviesMain, MainPanel)
             HomeBtnInd.BackgroundImage = My.Resources.Indicator
             FavoriteInd.BackgroundImage = My.Resources.GeneralBtn1
             NamebtnPanel.BackgroundImage = My.Resources.GeneralBtn1
@@ -51,7 +51,7 @@ Public Class Main
     'Open Favorite Form
     Public Sub FavoriteBtn_Click(sender As Object, e As EventArgs) Handles FavoriteBtn.Click
         If Not Application.OpenForms().OfType(Of Favorite).Any Then
-            ChnageWindow(Favorite, MainPanel, False)
+            ChnageWindow(Favorite, MainPanel)
             HomeBtnInd.BackgroundImage = My.Resources.GeneralBtn1
             FavoriteInd.BackgroundImage = My.Resources.Indicator
             NamebtnPanel.BackgroundImage = My.Resources.GeneralBtn1
@@ -95,7 +95,7 @@ Public Class Main
     'Open Profile
     Private Sub OpenProfile_Click(sender As Object, e As EventArgs) Handles OpenProfile.Click
         If Not Application.OpenForms().OfType(Of Profile).Any Then
-            ChnageWindow(Profile, Container, True)
+            ChnageWindow(Profile, MainPanel)
         End If
         If Not isCollapsed Then
             Threading.Thread.Sleep(100)
@@ -151,7 +151,7 @@ Public Class Main
             If Application.OpenForms().OfType(Of ResultForm).Any Then
                 ResultForm.Close()
             End If
-            ChnageWindow(ResultForm, MainPanel, False)
+            ChnageWindow(ResultForm, MainPanel)
             HomeBtnInd.BackgroundImage = My.Resources.GeneralBtn1
             FavoriteInd.BackgroundImage = My.Resources.GeneralBtn1
             NamebtnPanel.BackgroundImage = My.Resources.GeneralBtn1
@@ -225,7 +225,7 @@ Public Class Main
             If Application.OpenForms().OfType(Of ResultForm).Any Then
                 ResultForm.Close()
             End If
-            ChnageWindow(ResultForm, MainPanel, False)
+            ChnageWindow(ResultForm, MainPanel)
             HomeBtnInd.BackgroundImage = My.Resources.GeneralBtn1
             FavoriteInd.BackgroundImage = My.Resources.GeneralBtn1
             NamebtnPanel.BackgroundImage = My.Resources.GeneralBtn1
@@ -274,8 +274,7 @@ Public Class Main
 
 #Region "Change Form "
 
-    Private Sub ChnageWindow(newform As Form, panel As Panel, flag As Boolean)
-        Container.Visible = flag
+    Private Sub ChnageWindow(newform As Form, panel As Panel)
         Close_forms(Me)
         newform.TopLevel = False
         newform.AutoSize = False

@@ -18,18 +18,18 @@ Public Class Profile
         ConfirmTB.Text = ""
     End Sub
 
-    Private Sub EditB_Click(sender As Object, e As EventArgs) Handles EditB.Click
+    Private Sub EditB_Click(sender As Object, e As EventArgs) Handles Editbtn.Click
         NameL.Visible = False
         Surname.Visible = False
         Email.Visible = False
-        EditB.Visible = False
+        Editbtn.Visible = False
 
         PbN.Visible = True
         PbS.Visible = True
         PbE.Visible = True
         PbP.Visible = True
         PbCP.Visible = True
-        UpdateB.Visible = True
+        Savebtn.Visible = True
         NameTB.Visible = True
         SurnameTB.Visible = True
         EmailTB.Visible = True
@@ -39,14 +39,14 @@ Public Class Profile
         ConfirmTB.Visible = True
     End Sub
 
-    Private Sub Update_Click(sender As Object, e As EventArgs) Handles UpdateB.Click
+    Private Sub Update_Click(sender As Object, e As EventArgs) Handles Savebtn.Click
 
         Dim CheckE As Boolean = True
         Dim CheckP As Boolean = True
 
         If EmailTB.Text <> "" And EmailTB.Text <> LogInForm.u.Email Then
             If Email_exists(EmailTB.Text) Then
-                Me.XError.SetError(EmailTB, "Email already exists.")
+                EmailInfo.Text = "Email already exists."
                 CheckE = False
             Else
                 CheckE = True
@@ -57,12 +57,12 @@ Public Class Profile
             CheckP = False
             If ConfirmTB.Text <> "" Then
                 If NewPasswordTB.Text <> ConfirmTB.Text Then
-                    Me.XError.SetError(ConfirmTB, "Passwords are not matching.")
+                    PassInfo.Text = "Passwords are Not matching."
                 Else
                     CheckP = True
                 End If
             Else
-                Me.XError.SetError(ConfirmTB, "Please repeat your password.")
+                PassInfo.Text = "Please repeat your password."
             End If
         End If
 
@@ -85,20 +85,23 @@ Public Class Profile
 
             If NewPasswordTB.Text <> "" Then
                 UserMod.UpdatePassword(LogInForm.u.Id, NewPasswordTB.Text)
+                If My.Settings.Check Then
+                    My.Settings.password = NewPasswordTB.Text
+                End If
+                NewPasswordTB.Text = ""
             End If
 
             UserMod.UpdateUser(LogInForm.u.Id, NameTB.Text, SurnameTB.Text, EmailTB.Text)
             NameL.Visible = True
             Surname.Visible = True
             Email.Visible = True
-            EditB.Visible = True
-
+            Editbtn.Visible = True
             PbN.Visible = False
             PbS.Visible = False
             PbE.Visible = False
             PbP.Visible = False
             PbCP.Visible = False
-            UpdateB.Visible = False
+            Savebtn.Visible = False
             NameTB.Visible = False
             SurnameTB.Visible = False
             EmailTB.Visible = False
@@ -106,7 +109,7 @@ Public Class Profile
             NewPasswordTB.Visible = False
             CnP.Visible = False
             ConfirmTB.Visible = False
-            MessageBox.Show("Your profile has been updated.", "Update successful.", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            SaveInfo.Text = "Your profile has been updated."
             On_load(sender, e)
         End If
     End Sub
@@ -114,7 +117,7 @@ Public Class Profile
     Dim avatars() As String = {"https://i.ibb.co/GxtstcB/1.png", "https://i.ibb.co/5jsTXM7/2.png", "https://i.ibb.co/jwVDVTT/3.png", "https://i.ibb.co/dWZtdZn/4.png", "https://i.ibb.co/crDHbgy/5.png", "https://i.ibb.co/wrV9dcP/6.png", "https://i.ibb.co/mC6SpFY/7.png", "https://i.ibb.co/bX0MT2y/8.png"}
 
 
-    Private Sub UploadB_Click(sender As Object, e As EventArgs) Handles UploadB.Click
+    Private Sub UploadB_Click(sender As Object, e As EventArgs) Handles ChangeBtn.Click
         If ChangeAvatarPanel.Visible Then
             ChangeAvatarPanel.Visible = False
             For Each pb In ChangeAvatarPanel.Controls.OfType(Of PictureBox)().ToArray()
@@ -157,4 +160,12 @@ Public Class Profile
             pb.Dispose()
         Next
     End Sub
+
+    Public Sub Btn_Enter(sender As Object, e As EventArgs) Handles ChangeBtn.MouseEnter, Editbtn.MouseEnter, Savebtn.MouseEnter
+        btnEnter(sender.parent)
+    End Sub
+    Public Sub Btn_Leave(sender As Object, e As EventArgs) Handles ChangeBtn.MouseLeave, Editbtn.MouseLeave, Savebtn.MouseLeave
+        btnLeave(sender.parent)
+    End Sub
+
 End Class
