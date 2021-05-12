@@ -9,6 +9,8 @@ Module UserMod
         user = LogIn("marley1", "222")
         user.Print()
     End Function
+
+    'The User logs in
     Public Function LogIn(ByVal username, ByVal password)  'return an User object with fields 0 and "" if the login was unsuccessfull else return it with all the logged user's info
         Dim args() As String = {username, password}
 
@@ -26,6 +28,7 @@ Module UserMod
             loggedUser.Last_name = ""
             loggedUser.Email = ""
             loggedUser.Username = ""
+            loggedUser.Profile_Pic = ""
         Else
             Console.WriteLine("Correct Creds")
             loggedUser.Id = results.Rows(0)("id").ToString
@@ -33,11 +36,13 @@ Module UserMod
             loggedUser.Last_name = results.Rows(0)("last_name").ToString
             loggedUser.Email = results.Rows(0)("email").ToString
             loggedUser.Username = results.Rows(0)("username").ToString
+            loggedUser.Profile_Pic = results.Rows(0)("image_url").ToString
         End If
 
         Return loggedUser
     End Function
 
+    'The user registers
     Public Function Register(ByVal first_name, ByVal last_name, ByVal username, ByVal email, ByVal password)
         Dim args() As String = {first_name, last_name, username, email, password}
 
@@ -50,6 +55,7 @@ Module UserMod
     End Function
 
 
+    'checks if username already exists in database
     Public Function Username_exists(ByVal username)
         Dim args() As String = {username}
         Dim con As New Connection
@@ -64,6 +70,8 @@ Module UserMod
 
 
     End Function
+
+    'check if the email already exists in database
     Public Function Email_exists(ByVal email)
         Dim args() As String = {email}
         Dim con As New Connection
@@ -76,6 +84,8 @@ Module UserMod
         End If
 
     End Function
+
+    'If the user wants to update its credentials
     Public Function UpdateUser(ByVal id, ByVal first_name, ByVal last_name, ByVal email)
         Dim args() As String = {id, first_name, last_name, email}
 
@@ -85,6 +95,7 @@ Module UserMod
         con.RunQuery("update Users set first_name=@1, last_name=@2, email=@3 where id=@0", args, results)
     End Function
 
+    'If the user wants to change the password
     Public Function UpdatePassword(ByVal id, ByVal password)
         Dim args() As String = {id, password}
 
@@ -93,4 +104,27 @@ Module UserMod
 
         con.RunQuery("update Users set password=@1 where id=@0", args, results)
     End Function
+
+    'The User sets a profile picture
+    Public Sub SetProfilePic(ByVal id, ByVal link_image)
+        Dim args() As String = {id, link_image}
+        Dim con As New Connection
+        Dim results As New DataTable
+        con.RunQuery("Update Users SET image_url=@1 where id=@0", args, results)
+
+    End Sub
+
+    'Checks if the Users has uploaded a profile picture
+    Public Function checkImageExists(ByVal id, ByVal link_image)
+        Dim args() As String = {id, link_image}
+        Dim con As New Connection
+        Dim results As New DataTable
+        con.RunQuery("SELECT image_url FROM Users WHERE image_url IS  NULL and username=@0", args, results)
+        If (results.Rows.Count.Equals(0)) Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
 End Module
