@@ -67,21 +67,6 @@ Public Class Profile
         End If
 
         If CheckE And CheckP Then
-            If NameTB.Text = "" Then
-                NameTB.Text = LogInForm.u.First_name
-            Else
-                LogInForm.u.First_name = NameTB.Text
-            End If
-            If SurnameTB.Text = "" Then
-                SurnameTB.Text = LogInForm.u.Last_name
-            Else
-                LogInForm.u.Last_name = SurnameTB.Text
-            End If
-            If EmailTB.Text = "" Then
-                EmailTB.Text = LogInForm.u.Email
-            Else
-                LogInForm.u.Email = EmailTB.Text
-            End If
 
             If NewPasswordTB.Text <> "" Then
                 UserMod.UpdatePassword(LogInForm.u.Id, NewPasswordTB.Text)
@@ -91,26 +76,65 @@ Public Class Profile
                 NewPasswordTB.Text = ""
             End If
 
-            UserMod.UpdateUser(LogInForm.u.Id, NameTB.Text, SurnameTB.Text, EmailTB.Text)
-            NameL.Visible = True
-            Surname.Visible = True
-            Email.Visible = True
-            Editbtn.Visible = True
-            PbN.Visible = False
-            PbS.Visible = False
-            PbE.Visible = False
-            PbP.Visible = False
-            PbCP.Visible = False
-            Savebtn.Visible = False
-            NameTB.Visible = False
-            SurnameTB.Visible = False
-            EmailTB.Visible = False
-            Psw.Visible = False
-            NewPasswordTB.Visible = False
-            CnP.Visible = False
-            ConfirmTB.Visible = False
-            SaveInfo.Text = "Your profile has been updated."
-            On_load(sender, e)
+            If NameTB.Text = "" And SurnameTB.Text = "" And EmailTB.Text = "" And NewPasswordTB.Text = "" And ConfirmTB.Text = "" Then
+                NameL.Visible = True
+                Surname.Visible = True
+                Email.Visible = True
+                Editbtn.Visible = True
+                PbN.Visible = False
+                PbS.Visible = False
+                PbE.Visible = False
+                PbP.Visible = False
+                PbCP.Visible = False
+                Savebtn.Visible = False
+                NameTB.Visible = False
+                SurnameTB.Visible = False
+                EmailTB.Visible = False
+                Psw.Visible = False
+                NewPasswordTB.Visible = False
+                CnP.Visible = False
+                ConfirmTB.Visible = False
+                SaveInfo.Text = ""
+                PassInfo.Text = ""
+            Else
+                If NameTB.Text = "" Then
+                    NameTB.Text = LogInForm.u.First_name
+                Else
+                    LogInForm.u.First_name = NameTB.Text
+                End If
+                If SurnameTB.Text = "" Then
+                    SurnameTB.Text = LogInForm.u.Last_name
+                Else
+                    LogInForm.u.Last_name = SurnameTB.Text
+                End If
+                If EmailTB.Text = "" Then
+                    EmailTB.Text = LogInForm.u.Email
+                Else
+                    LogInForm.u.Email = EmailTB.Text
+                End If
+
+                UserMod.UpdateUser(LogInForm.u.Id, NameTB.Text, SurnameTB.Text, EmailTB.Text)
+                NameL.Visible = True
+                Surname.Visible = True
+                Email.Visible = True
+                Editbtn.Visible = True
+                PbN.Visible = False
+                PbS.Visible = False
+                PbE.Visible = False
+                PbP.Visible = False
+                PbCP.Visible = False
+                Savebtn.Visible = False
+                NameTB.Visible = False
+                SurnameTB.Visible = False
+                EmailTB.Visible = False
+                Psw.Visible = False
+                NewPasswordTB.Visible = False
+                CnP.Visible = False
+                ConfirmTB.Visible = False
+                SaveInfo.Text = "Your profile has been updated."
+                PassInfo.Text = ""
+                On_load(sender, e)
+            End If
         End If
     End Sub
 

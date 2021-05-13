@@ -118,7 +118,8 @@ C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\bin\Debug\net5.0-windows\Microsoft
 D:\Desktop\IMDB\IMDB\bin\Debug\net5.0-windows\Lucene.Net.dll
 D:\Desktop\IMDB\IMDB\bin\Debug\net5.0-windows\Microsoft.Azure.Amqp.dll
 D:\Desktop\IMDB\IMDB\bin\Debug\net5.0-windows\ICSharpCode.SharpZipLib.dll
-D:\Desktop\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.SearchForm.resources
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.ResultForm.resources
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.CustomMessageBox.resources
 C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.vbprojAssemblyReference.cache
+D:\Desktop\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.CustomMessageBox.resources
+D:\Desktop\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.ResultForm.resources
