@@ -149,7 +149,7 @@ Public Class Main
         If SearchBox.Text.Trim.Length > 0 Then
             Dim SearchedMovies() As Movie
             SearchedMovies = MvcLuceneSampleApp.Search.LuceneSearch.SearchMovieResults(SearchBox.Text)
-            ResultForm.Search_Movie(SearchedMovies)
+
             If Application.OpenForms().OfType(Of ResultForm).Any Then
                 ResultForm.Close()
             End If
@@ -157,8 +157,8 @@ Public Class Main
             HomeBtnInd.BackgroundImage = My.Resources.GeneralBtn1
             FavoriteInd.BackgroundImage = My.Resources.GeneralBtn1
             NamebtnPanel.BackgroundImage = My.Resources.GeneralBtn1
-            Container.Visible = False
 
+            ResultForm.Search_Movie(SearchedMovies)
         ElseIf SearchBox.Text.Trim.Length = 0 Then
             resultPanel.Visible = True
             resultPanel.Height = 20
@@ -172,6 +172,7 @@ Public Class Main
         Dim resultMovies() As Movie
         If SearchBox.Text.Trim.Length >= 3 Then
             resultPanel.Visible = True
+            ResultInfo.Visible = False
             For Each lL In resultPanel.Controls.OfType(Of LinkLabel)().ToArray()
                 lL.Dispose()
             Next
@@ -182,6 +183,7 @@ Public Class Main
                 ResultInfo.Visible = True
                 ResultInfo.Text = "No Result Found"
             Else
+
                 SearchLoad(resultPanel, resultMovies)
             End If
 

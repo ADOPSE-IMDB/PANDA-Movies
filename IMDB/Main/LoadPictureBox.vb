@@ -43,9 +43,9 @@ Module LoadPictureBox
 
     Public Sub AllMoviesCLick(movie As Movie)
         Main.SearchBox.Text = ""
-        Main.Container.Visible = True
+        Main.MovieContainer.Visible = True
         CurrentMovie.TopLevel = False
-        Main.Container.Controls.Add(CurrentMovie)
+        Main.MovieContainer.Controls.Add(CurrentMovie)
         CurrentMovie.Show()
 
         CurrentMovie.mID = movie.Id

@@ -53,7 +53,7 @@ Partial Class Main
         Me.LogOut = New System.Windows.Forms.Label()
         Me.ProfilePanel = New System.Windows.Forms.Panel()
         Me.OpenProfile = New System.Windows.Forms.Label()
-        Me.Container = New System.Windows.Forms.Panel()
+        Me.MovieContainer = New System.Windows.Forms.Panel()
         Me.Timer = New System.Windows.Forms.Timer(Me.components)
         Me.MovePanel = New System.Windows.Forms.Panel()
         Me.ExitBtn = New System.Windows.Forms.PictureBox()
@@ -241,7 +241,7 @@ Partial Class Main
         Me.MainPanel.Controls.Add(Me.FindComFavPanel)
         Me.MainPanel.Controls.Add(Me.resultPanel)
         Me.MainPanel.Controls.Add(Me.DropPanel)
-        Me.MainPanel.Controls.Add(Me.Container)
+        Me.MainPanel.Controls.Add(Me.MovieContainer)
         Me.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MainPanel.Location = New System.Drawing.Point(0, 59)
         Me.MainPanel.Name = "MainPanel"
@@ -428,17 +428,17 @@ Partial Class Main
         Me.OpenProfile.Text = "Profile"
         Me.OpenProfile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Container
+        'MovieContainer
         '
-        Me.Container.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
-        Me.Container.BackColor = System.Drawing.Color.Transparent
-        Me.Container.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Container.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Container.Location = New System.Drawing.Point(340, 6)
-        Me.Container.Name = "Container"
-        Me.Container.Size = New System.Drawing.Size(600, 698)
-        Me.Container.TabIndex = 1
-        Me.Container.Visible = False
+        Me.MovieContainer.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.MovieContainer.BackColor = System.Drawing.Color.Transparent
+        Me.MovieContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.MovieContainer.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.MovieContainer.Location = New System.Drawing.Point(340, 6)
+        Me.MovieContainer.Name = "MovieContainer"
+        Me.MovieContainer.Size = New System.Drawing.Size(600, 698)
+        Me.MovieContainer.TabIndex = 1
+        Me.MovieContainer.Visible = False
         '
         'Timer
         '
@@ -525,7 +525,7 @@ Partial Class Main
     Friend WithEvents SearchBox As TextBox
     Friend WithEvents DropPanel As Panel
     Friend WithEvents Timer As Timer
-    Friend WithEvents Container As Panel
+    Friend WithEvents MovieContainer As Panel
     Friend WithEvents HomeInticator As Panel
     Friend WithEvents MovePanel As Panel
     Friend WithEvents resultPanel As Panel

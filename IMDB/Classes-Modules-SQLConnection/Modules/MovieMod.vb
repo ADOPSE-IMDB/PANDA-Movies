@@ -1,33 +1,6 @@
 ﻿Imports System.Data
 
 Module MovieMod
-    Public Function TestMovieMod() 'A function for testing all the above functions
-        Console.WriteLine("**********Testing Methods of MovieMod**********")
-
-        Console.WriteLine("CountMovies() returns:")
-        Console.WriteLine(CountMovies())
-
-        Console.WriteLine("GetAllMovies() returns:")
-        Dim allMovies() As Movie
-        allMovies = MovieMod.GetAllMovies()
-        For i = 0 To allMovies.Length - 1
-            allMovies(i).Print()
-        Next
-
-        Console.WriteLine("GetMoviesFromTo() returns:")
-        Dim fromToMovies() As Movie
-        fromToMovies = MovieMod.GetMoviesFromTo(2, 5)
-        For i = 0 To fromToMovies.Length - 1
-            fromToMovies(i).Print()
-        Next
-
-        Console.WriteLine("GetTopMovies() returns:")
-        Dim topMovies() As Movie
-        topMovies = MovieMod.GetTopMovies()
-        For i = 0 To topMovies.Length - 1
-            topMovies(i).Print()
-        Next
-    End Function
 
     Public Function CountMovies()   'a function that returns the number of movies in the database
         Dim con As New Connection

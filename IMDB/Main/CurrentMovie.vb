@@ -93,7 +93,7 @@
 
     Private Sub CloseMovie_Click(sender As Object, e As EventArgs) Handles CloseCuMovie.Click
         Me.Close()
-        Main.Container.Visible = False
+        Main.MovieContainer.Visible = False
     End Sub
 
     Private Sub ExitBtn_Hover(sender As Object, e As EventArgs) Handles CloseCuMovie.MouseEnter
@@ -106,7 +106,7 @@
 #End Region
 
     Private Sub Form_Close() Handles Me.Closing
-        Main.Container.Visible = False
+        Main.MovieContainer.Visible = False
     End Sub
 
 End Class

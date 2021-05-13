@@ -1,7 +1,7 @@
 ﻿Imports System.Data
 
 Module ViewDataTables
-    Public Function ShowTable(ByVal table As DataTable)
+    Public Sub ShowTable(ByVal table As DataTable)
         For Each col As DataColumn In table.Columns
             Console.Write("{0,-14}", col.ColumnName)
         Next
@@ -25,11 +25,11 @@ Module ViewDataTables
         Next
 
         Console.WriteLine()
-    End Function
+    End Sub
 
-    Public Function ShowColTypes(ByVal table As DataTable)
+    Public Sub ShowColTypes(ByVal table As DataTable)
         For Each col As DataColumn In table.Columns
             Console.Write("{0,-14}", col.DataType)
         Next
-    End Function
+    End Sub
 End Module
