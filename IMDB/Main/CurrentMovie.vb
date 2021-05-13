@@ -20,14 +20,15 @@
 
         If Favorite.Visible = True Then
             Favorite.Close()
+            CloseMovie_Click(sender, e)
             Main.FavoriteBtn_Click(sender, e)
         End If
     End Sub
     Private Sub AddRem_Enter(sender As Object, e As EventArgs) Handles AddRem.MouseEnter
-        AddRemPanel.BackgroundImage = My.Resources.GeneralBtn2
+        AddRemPanel.BackgroundImage = My.Resources.BgBtnStretch2
     End Sub
     Private Sub AddRem_Leave(sender As Object, e As EventArgs) Handles AddRem.MouseLeave
-        AddRemPanel.BackgroundImage = My.Resources.GeneralBtn1
+        AddRemPanel.BackgroundImage = My.Resources.BgBtnStretch
     End Sub
 
 #End Region
@@ -101,6 +102,7 @@
     Private Sub ExitBtn_Leave(sender As Object, e As EventArgs) Handles CloseCuMovie.MouseLeave
         CloseCuMovie.Image = My.Resources.Close1
     End Sub
+
 #End Region
 
 End Class

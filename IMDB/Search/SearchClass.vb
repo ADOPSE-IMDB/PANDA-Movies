@@ -18,7 +18,8 @@
                     .Cursor = Cursors.Hand,
                     .BorderStyle = BorderStyle.FixedSingle,
                     .LinkColor = Color.Orange,
-                    .BackColor = Color.White
+                    .BackColor = Color.White,
+                    .Font = New Font("SimSun", "9.75")
             }
 
 

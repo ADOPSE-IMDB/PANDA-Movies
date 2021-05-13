@@ -2,7 +2,7 @@
 
 Public Class Register
     Private Sub On_Load() Handles Me.Load
-        BtnRegister.Select()
+        RegisterBtn.Select()
     End Sub
     Private Sub Return_Click(sender As Object, e As EventArgs) Handles ReturnBtn.Click
         LogInLink_Click(sender, e)
@@ -75,7 +75,7 @@ Public Class Register
 
 
 
-    Private Sub ButtonRegister_Click(sender As Object, e As EventArgs) Handles BtnRegister.Click
+    Private Sub ButtonRegister_Click(sender As Object, e As EventArgs) Handles RegisterBtn.Click
 
         If TextBoxFirstname.ForeColor = Color.Black And TextBoxLastname.ForeColor = Color.Black And TextBoxUsername.ForeColor = Color.Black And TextBoxEmail.ForeColor = Color.Black And TextBoxPassword.ForeColor = Color.Black And TextBoxConfirmPassword.ForeColor = Color.Black Then
             If TextBoxPassword.Text = TextBoxConfirmPassword.Text Then
@@ -98,11 +98,11 @@ Public Class Register
         End If
     End Sub
 
-    Private Sub ButtonRegister_Hover(sender As Object, e As EventArgs) Handles BtnRegister.MouseEnter
-        BtnRegister.Image = My.Resources.Register2
+    Private Sub ButtonRegister_Hover(sender As Object, e As EventArgs) Handles RegisterBtn.MouseEnter
+        btnEnter(RegisterBtn.Parent)
     End Sub
-    Private Sub ButtonRegister_Leave(sender As Object, e As EventArgs) Handles BtnRegister.MouseLeave
-        BtnRegister.Image = My.Resources.Register1
+    Private Sub ButtonRegister_Leave(sender As Object, e As EventArgs) Handles RegisterBtn.MouseLeave
+        btnLeave(RegisterBtn.Parent)
     End Sub
 
 

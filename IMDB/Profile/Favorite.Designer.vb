@@ -49,7 +49,7 @@ Partial Class Favorite
         'info
         '
         Me.info.Font = New System.Drawing.Font("SimSun", 36.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point)
-        Me.info.ForeColor = System.Drawing.Color.Black
+        Me.info.ForeColor = System.Drawing.Color.DarkOrange
         Me.info.Location = New System.Drawing.Point(12, 44)
         Me.info.Name = "info"
         Me.info.Size = New System.Drawing.Size(1256, 605)
@@ -62,7 +62,8 @@ Partial Class Favorite
         '
         Me.FavoriteLabel.BackColor = System.Drawing.Color.Transparent
         Me.FavoriteLabel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.FavoriteLabel.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.FavoriteLabel.Font = New System.Drawing.Font("SimSun", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.FavoriteLabel.ForeColor = System.Drawing.Color.DarkOrange
         Me.FavoriteLabel.Location = New System.Drawing.Point(0, 0)
         Me.FavoriteLabel.Name = "FavoriteLabel"
         Me.FavoriteLabel.Size = New System.Drawing.Size(1280, 44)

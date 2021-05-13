@@ -22,7 +22,6 @@ Partial Class Profile
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Profile))
         Me.ProfilePic = New System.Windows.Forms.PictureBox()
         Me.Na = New System.Windows.Forms.Label()
@@ -38,31 +37,28 @@ Partial Class Profile
         Me.NewPasswordTB = New System.Windows.Forms.TextBox()
         Me.ConfirmTB = New System.Windows.Forms.TextBox()
         Me.CnP = New System.Windows.Forms.Label()
-        Me.XError = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.PbN = New System.Windows.Forms.PictureBox()
         Me.PbS = New System.Windows.Forms.PictureBox()
         Me.PbE = New System.Windows.Forms.PictureBox()
         Me.PbP = New System.Windows.Forms.PictureBox()
         Me.PbCP = New System.Windows.Forms.PictureBox()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.ChangeAvatarPanel = New System.Windows.Forms.Panel()
         Me.PanelChangeBtn = New System.Windows.Forms.Panel()
         Me.ChangeBtn = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.EditSavePanel = New System.Windows.Forms.Panel()
         Me.Savebtn = New System.Windows.Forms.Label()
         Me.Editbtn = New System.Windows.Forms.Label()
         Me.SaveInfo = New System.Windows.Forms.Label()
         Me.EmailInfo = New System.Windows.Forms.Label()
         Me.PassInfo = New System.Windows.Forms.Label()
         CType(Me.ProfilePic, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XError, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PbN, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PbS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PbE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PbP, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PbCP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelChangeBtn.SuspendLayout()
-        Me.Panel1.SuspendLayout()
+        Me.EditSavePanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'ProfilePic
@@ -79,10 +75,10 @@ Partial Class Profile
         '
         Me.Na.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Na.AutoSize = True
-        Me.Na.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Na.Location = New System.Drawing.Point(463, 338)
+        Me.Na.Font = New System.Drawing.Font("SimSun", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Na.Location = New System.Drawing.Point(453, 338)
         Me.Na.Name = "Na"
-        Me.Na.Size = New System.Drawing.Size(72, 25)
+        Me.Na.Size = New System.Drawing.Size(82, 21)
         Me.Na.TabIndex = 4
         Me.Na.Text = "Name :"
         '
@@ -90,10 +86,10 @@ Partial Class Profile
         '
         Me.Su.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Su.AutoSize = True
-        Me.Su.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Su.Location = New System.Drawing.Point(463, 395)
+        Me.Su.Font = New System.Drawing.Font("SimSun", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Su.Location = New System.Drawing.Point(453, 395)
         Me.Su.Name = "Su"
-        Me.Su.Size = New System.Drawing.Size(97, 25)
+        Me.Su.Size = New System.Drawing.Size(118, 21)
         Me.Su.TabIndex = 5
         Me.Su.Text = "Surname :"
         '
@@ -101,10 +97,10 @@ Partial Class Profile
         '
         Me.EL.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.EL.AutoSize = True
-        Me.EL.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.EL.Location = New System.Drawing.Point(463, 455)
+        Me.EL.Font = New System.Drawing.Font("SimSun", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.EL.Location = New System.Drawing.Point(453, 455)
         Me.EL.Name = "EL"
-        Me.EL.Size = New System.Drawing.Size(75, 25)
+        Me.EL.Size = New System.Drawing.Size(106, 21)
         Me.EL.TabIndex = 6
         Me.EL.Text = "E-mail :"
         '
@@ -112,10 +108,10 @@ Partial Class Profile
         '
         Me.Psw.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Psw.AutoSize = True
-        Me.Psw.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Psw.Location = New System.Drawing.Point(463, 512)
+        Me.Psw.Font = New System.Drawing.Font("SimSun", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Psw.Location = New System.Drawing.Point(453, 512)
         Me.Psw.Name = "Psw"
-        Me.Psw.Size = New System.Drawing.Size(140, 25)
+        Me.Psw.Size = New System.Drawing.Size(166, 21)
         Me.Psw.TabIndex = 7
         Me.Psw.Text = "New Password:"
         Me.Psw.Visible = False
@@ -124,9 +120,11 @@ Partial Class Profile
         '
         Me.NameL.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.NameL.AutoSize = True
-        Me.NameL.Location = New System.Drawing.Point(733, 341)
+        Me.NameL.Font = New System.Drawing.Font("SimSun", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.NameL.ForeColor = System.Drawing.Color.DarkOrange
+        Me.NameL.Location = New System.Drawing.Point(743, 341)
         Me.NameL.Name = "NameL"
-        Me.NameL.Size = New System.Drawing.Size(41, 15)
+        Me.NameL.Size = New System.Drawing.Size(55, 15)
         Me.NameL.TabIndex = 9
         Me.NameL.Text = "Label1"
         '
@@ -134,9 +132,11 @@ Partial Class Profile
         '
         Me.Surname.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Surname.AutoSize = True
-        Me.Surname.Location = New System.Drawing.Point(733, 402)
+        Me.Surname.Font = New System.Drawing.Font("SimSun", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Surname.ForeColor = System.Drawing.Color.DarkOrange
+        Me.Surname.Location = New System.Drawing.Point(743, 402)
         Me.Surname.Name = "Surname"
-        Me.Surname.Size = New System.Drawing.Size(41, 15)
+        Me.Surname.Size = New System.Drawing.Size(55, 15)
         Me.Surname.TabIndex = 10
         Me.Surname.Text = "Label2"
         '
@@ -144,9 +144,11 @@ Partial Class Profile
         '
         Me.Email.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Email.AutoSize = True
-        Me.Email.Location = New System.Drawing.Point(733, 458)
+        Me.Email.Font = New System.Drawing.Font("SimSun", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Email.ForeColor = System.Drawing.Color.DarkOrange
+        Me.Email.Location = New System.Drawing.Point(743, 458)
         Me.Email.Name = "Email"
-        Me.Email.Size = New System.Drawing.Size(41, 15)
+        Me.Email.Size = New System.Drawing.Size(49, 13)
         Me.Email.TabIndex = 11
         Me.Email.Text = "Label3"
         '
@@ -155,9 +157,9 @@ Partial Class Profile
         Me.NameTB.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.NameTB.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.NameTB.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.NameTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.NameTB.Font = New System.Drawing.Font("SimSun", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.NameTB.ForeColor = System.Drawing.Color.DarkGray
-        Me.NameTB.Location = New System.Drawing.Point(696, 341)
+        Me.NameTB.Location = New System.Drawing.Point(706, 341)
         Me.NameTB.Name = "NameTB"
         Me.NameTB.Size = New System.Drawing.Size(100, 22)
         Me.NameTB.TabIndex = 14
@@ -168,9 +170,9 @@ Partial Class Profile
         Me.SurnameTB.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.SurnameTB.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.SurnameTB.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.SurnameTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.SurnameTB.Font = New System.Drawing.Font("SimSun", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.SurnameTB.ForeColor = System.Drawing.Color.DarkGray
-        Me.SurnameTB.Location = New System.Drawing.Point(696, 398)
+        Me.SurnameTB.Location = New System.Drawing.Point(706, 398)
         Me.SurnameTB.Name = "SurnameTB"
         Me.SurnameTB.Size = New System.Drawing.Size(100, 22)
         Me.SurnameTB.TabIndex = 15
@@ -181,9 +183,9 @@ Partial Class Profile
         Me.EmailTB.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.EmailTB.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.EmailTB.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.EmailTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.EmailTB.Font = New System.Drawing.Font("SimSun", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.EmailTB.ForeColor = System.Drawing.Color.DarkGray
-        Me.EmailTB.Location = New System.Drawing.Point(696, 458)
+        Me.EmailTB.Location = New System.Drawing.Point(706, 458)
         Me.EmailTB.Name = "EmailTB"
         Me.EmailTB.Size = New System.Drawing.Size(100, 22)
         Me.EmailTB.TabIndex = 16
@@ -194,9 +196,9 @@ Partial Class Profile
         Me.NewPasswordTB.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.NewPasswordTB.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.NewPasswordTB.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.NewPasswordTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.NewPasswordTB.Font = New System.Drawing.Font("SimSun", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.NewPasswordTB.ForeColor = System.Drawing.Color.DarkGray
-        Me.NewPasswordTB.Location = New System.Drawing.Point(696, 515)
+        Me.NewPasswordTB.Location = New System.Drawing.Point(706, 515)
         Me.NewPasswordTB.Name = "NewPasswordTB"
         Me.NewPasswordTB.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.NewPasswordTB.Size = New System.Drawing.Size(100, 22)
@@ -208,9 +210,9 @@ Partial Class Profile
         Me.ConfirmTB.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.ConfirmTB.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.ConfirmTB.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ConfirmTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.ConfirmTB.Font = New System.Drawing.Font("SimSun", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.ConfirmTB.ForeColor = System.Drawing.Color.DarkGray
-        Me.ConfirmTB.Location = New System.Drawing.Point(696, 566)
+        Me.ConfirmTB.Location = New System.Drawing.Point(706, 566)
         Me.ConfirmTB.Name = "ConfirmTB"
         Me.ConfirmTB.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.ConfirmTB.Size = New System.Drawing.Size(100, 22)
@@ -221,24 +223,20 @@ Partial Class Profile
         '
         Me.CnP.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.CnP.AutoSize = True
-        Me.CnP.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.CnP.Location = New System.Drawing.Point(463, 563)
+        Me.CnP.Font = New System.Drawing.Font("SimSun", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.CnP.Location = New System.Drawing.Point(453, 563)
         Me.CnP.Name = "CnP"
-        Me.CnP.Size = New System.Drawing.Size(175, 25)
+        Me.CnP.Size = New System.Drawing.Size(226, 21)
         Me.CnP.TabIndex = 19
         Me.CnP.Text = "Confirm Password :"
         Me.CnP.Visible = False
-        '
-        'XError
-        '
-        Me.XError.ContainerControl = Me
         '
         'PbN
         '
         Me.PbN.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PbN.BackColor = System.Drawing.Color.Transparent
         Me.PbN.Image = Global.IMDB.My.Resources.Resources.bgtxt
-        Me.PbN.Location = New System.Drawing.Point(676, 335)
+        Me.PbN.Location = New System.Drawing.Point(686, 335)
         Me.PbN.Name = "PbN"
         Me.PbN.Size = New System.Drawing.Size(141, 33)
         Me.PbN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -251,7 +249,7 @@ Partial Class Profile
         Me.PbS.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PbS.BackColor = System.Drawing.Color.Transparent
         Me.PbS.Image = Global.IMDB.My.Resources.Resources.bgtxt
-        Me.PbS.Location = New System.Drawing.Point(676, 392)
+        Me.PbS.Location = New System.Drawing.Point(686, 392)
         Me.PbS.Name = "PbS"
         Me.PbS.Size = New System.Drawing.Size(141, 33)
         Me.PbS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -264,7 +262,7 @@ Partial Class Profile
         Me.PbE.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PbE.BackColor = System.Drawing.Color.Transparent
         Me.PbE.Image = Global.IMDB.My.Resources.Resources.bgtxt
-        Me.PbE.Location = New System.Drawing.Point(676, 452)
+        Me.PbE.Location = New System.Drawing.Point(686, 452)
         Me.PbE.Name = "PbE"
         Me.PbE.Size = New System.Drawing.Size(141, 33)
         Me.PbE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -277,7 +275,7 @@ Partial Class Profile
         Me.PbP.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PbP.BackColor = System.Drawing.Color.Transparent
         Me.PbP.Image = Global.IMDB.My.Resources.Resources.bgtxt
-        Me.PbP.Location = New System.Drawing.Point(676, 509)
+        Me.PbP.Location = New System.Drawing.Point(686, 509)
         Me.PbP.Name = "PbP"
         Me.PbP.Size = New System.Drawing.Size(141, 33)
         Me.PbP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -290,17 +288,13 @@ Partial Class Profile
         Me.PbCP.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PbCP.BackColor = System.Drawing.Color.Transparent
         Me.PbCP.Image = Global.IMDB.My.Resources.Resources.bgtxt
-        Me.PbCP.Location = New System.Drawing.Point(676, 560)
+        Me.PbCP.Location = New System.Drawing.Point(686, 560)
         Me.PbCP.Name = "PbCP"
         Me.PbCP.Size = New System.Drawing.Size(141, 33)
         Me.PbCP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbCP.TabIndex = 24
         Me.PbCP.TabStop = False
         Me.PbCP.Visible = False
-        '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'ChangeAvatarPanel
         '
@@ -338,16 +332,16 @@ Partial Class Profile
         Me.ChangeBtn.Text = "Change Avatar"
         Me.ChangeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Panel1
+        'EditSavePanel
         '
-        Me.Panel1.BackgroundImage = Global.IMDB.My.Resources.Resources.GeneralBtn1
-        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel1.Controls.Add(Me.Savebtn)
-        Me.Panel1.Controls.Add(Me.Editbtn)
-        Me.Panel1.Location = New System.Drawing.Point(565, 629)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(150, 32)
-        Me.Panel1.TabIndex = 27
+        Me.EditSavePanel.BackgroundImage = Global.IMDB.My.Resources.Resources.GeneralBtn1
+        Me.EditSavePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.EditSavePanel.Controls.Add(Me.Savebtn)
+        Me.EditSavePanel.Controls.Add(Me.Editbtn)
+        Me.EditSavePanel.Location = New System.Drawing.Point(565, 629)
+        Me.EditSavePanel.Name = "EditSavePanel"
+        Me.EditSavePanel.Size = New System.Drawing.Size(150, 32)
+        Me.EditSavePanel.TabIndex = 27
         '
         'Savebtn
         '
@@ -393,7 +387,7 @@ Partial Class Profile
         Me.EmailInfo.BackColor = System.Drawing.Color.Transparent
         Me.EmailInfo.Font = New System.Drawing.Font("SimSun", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.EmailInfo.ForeColor = System.Drawing.Color.DarkOrange
-        Me.EmailInfo.Location = New System.Drawing.Point(823, 452)
+        Me.EmailInfo.Location = New System.Drawing.Point(833, 452)
         Me.EmailInfo.Name = "EmailInfo"
         Me.EmailInfo.Size = New System.Drawing.Size(207, 33)
         Me.EmailInfo.TabIndex = 29
@@ -404,7 +398,7 @@ Partial Class Profile
         Me.PassInfo.BackColor = System.Drawing.Color.Transparent
         Me.PassInfo.Font = New System.Drawing.Font("SimSun", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.PassInfo.ForeColor = System.Drawing.Color.DarkOrange
-        Me.PassInfo.Location = New System.Drawing.Point(823, 560)
+        Me.PassInfo.Location = New System.Drawing.Point(833, 560)
         Me.PassInfo.Name = "PassInfo"
         Me.PassInfo.Size = New System.Drawing.Size(207, 33)
         Me.PassInfo.TabIndex = 30
@@ -420,7 +414,7 @@ Partial Class Profile
         Me.ClientSize = New System.Drawing.Size(1280, 720)
         Me.Controls.Add(Me.PassInfo)
         Me.Controls.Add(Me.EmailInfo)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.EditSavePanel)
         Me.Controls.Add(Me.PanelChangeBtn)
         Me.Controls.Add(Me.ChangeAvatarPanel)
         Me.Controls.Add(Me.CnP)
@@ -448,14 +442,13 @@ Partial Class Profile
         Me.Name = "Profile"
         Me.Text = "Profile"
         CType(Me.ProfilePic, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XError, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PbN, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PbS, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PbE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PbP, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PbCP, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelChangeBtn.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
+        Me.EditSavePanel.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -475,21 +468,20 @@ Partial Class Profile
     Friend WithEvents Psw As Label
     Friend WithEvents ConfirmTB As TextBox
     Friend WithEvents CnP As Label
-    Friend WithEvents XError As ErrorProvider
     Friend WithEvents PbCP As PictureBox
     Friend WithEvents PbP As PictureBox
     Friend WithEvents PbE As PictureBox
     Friend WithEvents PbS As PictureBox
     Friend WithEvents PbN As PictureBox
-    Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents Avata As Panel
     Friend WithEvents ChangeAvatarPanel As Panel
     Friend WithEvents PanelChangeBtn As Panel
     Friend WithEvents ChangeBtn As Label
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents EditSavePanel As Panel
     Friend WithEvents Editbtn As Label
     Friend WithEvents Savebtn As Label
     Friend WithEvents SaveInfo As Label
     Friend WithEvents EmailInfo As Label
     Friend WithEvents PassInfo As Label
+    Friend WithEvents it As Panel
 End Class

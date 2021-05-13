@@ -42,8 +42,9 @@ Partial Class Register
         Me.ReturnBtn = New System.Windows.Forms.PictureBox()
         Me.MovePanel = New System.Windows.Forms.Panel()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.BtnRegister = New System.Windows.Forms.PictureBox()
         Me.info = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.RegisterBtn = New System.Windows.Forms.Label()
         CType(Me.XError, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,7 +55,7 @@ Partial Class Register
         CType(Me.ReturnBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MovePanel.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BtnRegister, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'RegisterTitle
@@ -62,9 +63,9 @@ Partial Class Register
         Me.RegisterTitle.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.RegisterTitle.BackColor = System.Drawing.Color.Transparent
         Me.RegisterTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.RegisterTitle.Location = New System.Drawing.Point(16, 32)
+        Me.RegisterTitle.Location = New System.Drawing.Point(0, 31)
         Me.RegisterTitle.Name = "RegisterTitle"
-        Me.RegisterTitle.Size = New System.Drawing.Size(504, 31)
+        Me.RegisterTitle.Size = New System.Drawing.Size(540, 31)
         Me.RegisterTitle.TabIndex = 0
         Me.RegisterTitle.Text = "Welcome to PANDA movies"
         Me.RegisterTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -80,11 +81,11 @@ Partial Class Register
         Me.TextBoxUsername.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.TextBoxUsername.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.TextBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBoxUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.TextBoxUsername.Font = New System.Drawing.Font("SimSun", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.TextBoxUsername.ForeColor = System.Drawing.Color.DarkGray
-        Me.TextBoxUsername.Location = New System.Drawing.Point(34, 312)
+        Me.TextBoxUsername.Location = New System.Drawing.Point(38, 309)
         Me.TextBoxUsername.Name = "TextBoxUsername"
-        Me.TextBoxUsername.Size = New System.Drawing.Size(471, 22)
+        Me.TextBoxUsername.Size = New System.Drawing.Size(470, 24)
         Me.TextBoxUsername.TabIndex = 4
         Me.TextBoxUsername.Text = "Username"
         Me.TextBoxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -95,11 +96,11 @@ Partial Class Register
         Me.TextBoxPassword.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.TextBoxPassword.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.TextBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBoxPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.TextBoxPassword.Font = New System.Drawing.Font("SimSun", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.TextBoxPassword.ForeColor = System.Drawing.Color.DarkGray
-        Me.TextBoxPassword.Location = New System.Drawing.Point(32, 464)
+        Me.TextBoxPassword.Location = New System.Drawing.Point(38, 448)
         Me.TextBoxPassword.Name = "TextBoxPassword"
-        Me.TextBoxPassword.Size = New System.Drawing.Size(201, 22)
+        Me.TextBoxPassword.Size = New System.Drawing.Size(201, 24)
         Me.TextBoxPassword.TabIndex = 6
         Me.TextBoxPassword.Text = "Password"
         Me.TextBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -109,10 +110,11 @@ Partial Class Register
         Me.LogInLink.ActiveLinkColor = System.Drawing.Color.DarkOrange
         Me.LogInLink.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.LogInLink.BackColor = System.Drawing.Color.Transparent
+        Me.LogInLink.Font = New System.Drawing.Font("SimSun", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.LogInLink.LinkColor = System.Drawing.Color.DarkOrange
-        Me.LogInLink.Location = New System.Drawing.Point(178, 563)
+        Me.LogInLink.Location = New System.Drawing.Point(0, 563)
         Me.LogInLink.Name = "LogInLink"
-        Me.LogInLink.Size = New System.Drawing.Size(175, 21)
+        Me.LogInLink.Size = New System.Drawing.Size(537, 21)
         Me.LogInLink.TabIndex = 8
         Me.LogInLink.TabStop = True
         Me.LogInLink.Text = "Already have an account?"
@@ -125,11 +127,11 @@ Partial Class Register
         Me.TextBoxEmail.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.TextBoxEmail.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.TextBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBoxEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.TextBoxEmail.Font = New System.Drawing.Font("SimSun", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.TextBoxEmail.ForeColor = System.Drawing.Color.DarkGray
-        Me.TextBoxEmail.Location = New System.Drawing.Point(33, 393)
+        Me.TextBoxEmail.Location = New System.Drawing.Point(38, 378)
         Me.TextBoxEmail.Name = "TextBoxEmail"
-        Me.TextBoxEmail.Size = New System.Drawing.Size(471, 22)
+        Me.TextBoxEmail.Size = New System.Drawing.Size(470, 24)
         Me.TextBoxEmail.TabIndex = 5
         Me.TextBoxEmail.Text = "Email"
         Me.TextBoxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -140,11 +142,11 @@ Partial Class Register
         Me.TextBoxFirstname.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.TextBoxFirstname.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.TextBoxFirstname.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBoxFirstname.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.TextBoxFirstname.Font = New System.Drawing.Font("SimSun", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.TextBoxFirstname.ForeColor = System.Drawing.Color.DarkGray
-        Me.TextBoxFirstname.Location = New System.Drawing.Point(33, 229)
+        Me.TextBoxFirstname.Location = New System.Drawing.Point(38, 239)
         Me.TextBoxFirstname.Name = "TextBoxFirstname"
-        Me.TextBoxFirstname.Size = New System.Drawing.Size(200, 22)
+        Me.TextBoxFirstname.Size = New System.Drawing.Size(200, 24)
         Me.TextBoxFirstname.TabIndex = 2
         Me.TextBoxFirstname.Text = "Name"
         Me.TextBoxFirstname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -155,11 +157,11 @@ Partial Class Register
         Me.TextBoxConfirmPassword.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.TextBoxConfirmPassword.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.TextBoxConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBoxConfirmPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.TextBoxConfirmPassword.Font = New System.Drawing.Font("SimSun", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.TextBoxConfirmPassword.ForeColor = System.Drawing.Color.DarkGray
-        Me.TextBoxConfirmPassword.Location = New System.Drawing.Point(303, 464)
+        Me.TextBoxConfirmPassword.Location = New System.Drawing.Point(302, 448)
         Me.TextBoxConfirmPassword.Name = "TextBoxConfirmPassword"
-        Me.TextBoxConfirmPassword.Size = New System.Drawing.Size(201, 22)
+        Me.TextBoxConfirmPassword.Size = New System.Drawing.Size(201, 24)
         Me.TextBoxConfirmPassword.TabIndex = 7
         Me.TextBoxConfirmPassword.Text = "Confirm Password"
         Me.TextBoxConfirmPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -170,11 +172,11 @@ Partial Class Register
         Me.TextBoxLastname.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.TextBoxLastname.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.TextBoxLastname.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBoxLastname.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.TextBoxLastname.Font = New System.Drawing.Font("SimSun", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.TextBoxLastname.ForeColor = System.Drawing.Color.DarkGray
-        Me.TextBoxLastname.Location = New System.Drawing.Point(303, 229)
+        Me.TextBoxLastname.Location = New System.Drawing.Point(302, 239)
         Me.TextBoxLastname.Name = "TextBoxLastname"
-        Me.TextBoxLastname.Size = New System.Drawing.Size(201, 22)
+        Me.TextBoxLastname.Size = New System.Drawing.Size(201, 24)
         Me.TextBoxLastname.TabIndex = 3
         Me.TextBoxLastname.Text = "Surname"
         Me.TextBoxLastname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -184,9 +186,9 @@ Partial Class Register
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.IMDB.My.Resources.Resources.bgtxt
-        Me.PictureBox1.Location = New System.Drawing.Point(15, 220)
+        Me.PictureBox1.Location = New System.Drawing.Point(20, 230)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(235, 40)
+        Me.PictureBox1.Size = New System.Drawing.Size(236, 40)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 12
         Me.PictureBox1.TabStop = False
@@ -196,9 +198,9 @@ Partial Class Register
         Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox2.Image = Global.IMDB.My.Resources.Resources.bgtxt
-        Me.PictureBox2.Location = New System.Drawing.Point(285, 220)
+        Me.PictureBox2.Location = New System.Drawing.Point(284, 230)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(235, 40)
+        Me.PictureBox2.Size = New System.Drawing.Size(236, 40)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 13
         Me.PictureBox2.TabStop = False
@@ -208,9 +210,9 @@ Partial Class Register
         Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox3.Image = Global.IMDB.My.Resources.Resources.bgtxt
-        Me.PictureBox3.Location = New System.Drawing.Point(285, 455)
+        Me.PictureBox3.Location = New System.Drawing.Point(284, 440)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(235, 40)
+        Me.PictureBox3.Size = New System.Drawing.Size(236, 40)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 14
         Me.PictureBox3.TabStop = False
@@ -220,9 +222,9 @@ Partial Class Register
         Me.PictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox4.Image = Global.IMDB.My.Resources.Resources.bgtxt
-        Me.PictureBox4.Location = New System.Drawing.Point(15, 455)
+        Me.PictureBox4.Location = New System.Drawing.Point(20, 440)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(235, 40)
+        Me.PictureBox4.Size = New System.Drawing.Size(236, 40)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox4.TabIndex = 15
         Me.PictureBox4.TabStop = False
@@ -231,10 +233,10 @@ Partial Class Register
         '
         Me.PictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox5.Image = Global.IMDB.My.Resources.Resources.bgtxt
-        Me.PictureBox5.Location = New System.Drawing.Point(15, 303)
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
+        Me.PictureBox5.Location = New System.Drawing.Point(20, 300)
         Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(505, 40)
+        Me.PictureBox5.Size = New System.Drawing.Size(500, 40)
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox5.TabIndex = 16
         Me.PictureBox5.TabStop = False
@@ -243,10 +245,10 @@ Partial Class Register
         '
         Me.PictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox6.Image = Global.IMDB.My.Resources.Resources.bgtxt
-        Me.PictureBox6.Location = New System.Drawing.Point(15, 384)
+        Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
+        Me.PictureBox6.Location = New System.Drawing.Point(20, 370)
         Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(505, 40)
+        Me.PictureBox6.Size = New System.Drawing.Size(500, 40)
         Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox6.TabIndex = 17
         Me.PictureBox6.TabStop = False
@@ -257,7 +259,7 @@ Partial Class Register
         Me.ReturnBtn.BackColor = System.Drawing.Color.Transparent
         Me.ReturnBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ReturnBtn.Image = Global.IMDB.My.Resources.Resources.Close1
-        Me.ReturnBtn.Location = New System.Drawing.Point(505, 3)
+        Me.ReturnBtn.Location = New System.Drawing.Point(510, 3)
         Me.ReturnBtn.Name = "ReturnBtn"
         Me.ReturnBtn.Size = New System.Drawing.Size(27, 27)
         Me.ReturnBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -271,32 +273,19 @@ Partial Class Register
         Me.MovePanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.MovePanel.Location = New System.Drawing.Point(0, 0)
         Me.MovePanel.Name = "MovePanel"
-        Me.MovePanel.Size = New System.Drawing.Size(535, 30)
+        Me.MovePanel.Size = New System.Drawing.Size(540, 30)
         Me.MovePanel.TabIndex = 19
         '
         'PictureBox7
         '
         Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox7.Image = Global.IMDB.My.Resources.Resources.Panda_movies
-        Me.PictureBox7.Location = New System.Drawing.Point(178, 68)
+        Me.PictureBox7.Location = New System.Drawing.Point(195, 77)
         Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(165, 143)
+        Me.PictureBox7.Size = New System.Drawing.Size(150, 135)
         Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox7.TabIndex = 20
         Me.PictureBox7.TabStop = False
-        '
-        'BtnRegister
-        '
-        Me.BtnRegister.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.BtnRegister.BackColor = System.Drawing.Color.Transparent
-        Me.BtnRegister.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnRegister.Image = CType(resources.GetObject("BtnRegister.Image"), System.Drawing.Image)
-        Me.BtnRegister.Location = New System.Drawing.Point(178, 527)
-        Me.BtnRegister.Name = "BtnRegister"
-        Me.BtnRegister.Size = New System.Drawing.Size(175, 35)
-        Me.BtnRegister.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.BtnRegister.TabIndex = 21
-        Me.BtnRegister.TabStop = False
         '
         'info
         '
@@ -304,11 +293,35 @@ Partial Class Register
         Me.info.BackColor = System.Drawing.Color.Transparent
         Me.info.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.info.ForeColor = System.Drawing.Color.DarkOrange
-        Me.info.Location = New System.Drawing.Point(16, 501)
+        Me.info.Location = New System.Drawing.Point(0, 499)
         Me.info.Name = "info"
-        Me.info.Size = New System.Drawing.Size(504, 23)
+        Me.info.Size = New System.Drawing.Size(540, 23)
         Me.info.TabIndex = 30
         Me.info.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.BackgroundImage = Global.IMDB.My.Resources.Resources.GeneralBtn1
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel1.Controls.Add(Me.RegisterBtn)
+        Me.Panel1.Location = New System.Drawing.Point(185, 525)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(170, 35)
+        Me.Panel1.TabIndex = 31
+        '
+        'RegisterBtn
+        '
+        Me.RegisterBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.RegisterBtn.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RegisterBtn.Font = New System.Drawing.Font("SimSun", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.RegisterBtn.ForeColor = System.Drawing.Color.White
+        Me.RegisterBtn.Location = New System.Drawing.Point(0, 0)
+        Me.RegisterBtn.Name = "RegisterBtn"
+        Me.RegisterBtn.Size = New System.Drawing.Size(170, 35)
+        Me.RegisterBtn.TabIndex = 0
+        Me.RegisterBtn.Text = "Register"
+        Me.RegisterBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Register
         '
@@ -317,10 +330,10 @@ Partial Class Register
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.CancelButton = Me.LogInLink
-        Me.ClientSize = New System.Drawing.Size(535, 591)
+        Me.ClientSize = New System.Drawing.Size(540, 590)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.info)
-        Me.Controls.Add(Me.BtnRegister)
         Me.Controls.Add(Me.PictureBox7)
         Me.Controls.Add(Me.TextBoxFirstname)
         Me.Controls.Add(Me.PictureBox1)
@@ -353,7 +366,7 @@ Partial Class Register
         CType(Me.ReturnBtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MovePanel.ResumeLayout(False)
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BtnRegister, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -377,6 +390,7 @@ Partial Class Register
     Friend WithEvents ReturnBtn As PictureBox
     Friend WithEvents MovePanel As Panel
     Friend WithEvents PictureBox7 As PictureBox
-    Friend WithEvents BtnRegister As PictureBox
     Friend WithEvents info As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents RegisterBtn As Label
 End Class

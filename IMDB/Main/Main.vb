@@ -143,11 +143,13 @@ Public Class Main
 
 #End Region
 
-#Region "Search"
+#Region "Search Movies"
 
-    Private Sub Search_Click(sender As Object, e As EventArgs) Handles Search.Click
+    Private Sub Search_Click(sender As Object, e As EventArgs) Handles SearchBtn.Click
         If SearchBox.Text.Trim.Length >= 3 Then
-            ResultForm.resultMovies = MvcLuceneSampleApp.Search.LuceneSearch.SearchMovieResults(SearchBox.Text)
+            Dim SearchedMovies() As Movie
+            SearchedMovies = MvcLuceneSampleApp.Search.LuceneSearch.SearchMovieResults(SearchBox.Text)
+            ResultForm.Search_Movie(SearchedMovies)
             If Application.OpenForms().OfType(Of ResultForm).Any Then
                 ResultForm.Close()
             End If
@@ -192,6 +194,17 @@ Public Class Main
             resultPanel.Visible = False
         End If
     End Sub
+    Private Sub Searchbutton_Hover(sender As Object, e As EventArgs) Handles SearchBtn.MouseEnter
+        SearchBtn.BackgroundImage = My.Resources.SearchbtnHover
+
+
+    End Sub
+    Private Sub SearchButton_Leave(sender As Object, e As EventArgs) Handles SearchBtn.MouseLeave
+        SearchBtn.BackgroundImage = My.Resources.Searchbtn
+
+    End Sub
+
+
 #End Region
 
 #Region "show common Favorites"
@@ -200,6 +213,7 @@ Public Class Main
         If FindComFavPanel.Visible Then
             CloseCommonSearch_click(sender, e)
         Else
+            SearchUsername.Text = ""
             FindComFavPanel.Visible = True
             CommonMoviesBtn.Parent.BackgroundImage = My.Resources.Indicator
         End If
@@ -221,18 +235,21 @@ Public Class Main
 
     Private Sub SearchCommon_Click(sender As Object, e As EventArgs) Handles SearchCommon.Click
         If Username_exists(SearchUsername.Text) Then
-            ResultForm.resultMovies = commonFavs(LogInForm.u.Username, SearchUsername.Text)
+            Dim CommonMovies() As Movie
+            CommonMovies = commonFavs(LogInForm.u.Username, SearchUsername.Text)
             If Application.OpenForms().OfType(Of ResultForm).Any Then
                 ResultForm.Close()
             End If
             ChnageWindow(ResultForm, MainPanel)
+            ResultForm.Search_common(CommonMovies, SearchUsername.Text)
+
             HomeBtnInd.BackgroundImage = My.Resources.GeneralBtn1
             FavoriteInd.BackgroundImage = My.Resources.GeneralBtn1
             NamebtnPanel.BackgroundImage = My.Resources.GeneralBtn1
-            ResultForm.SLabel.Text = "We Found those movies in common with " & SearchUsername.Text
             FindComFavPanel.Visible = False
             ShowComInfo.Text = ""
             CommonMoviesBtn.Parent.BackgroundImage = My.Resources.GeneralBtn1
+
         Else
             ShowComInfo.Text = "This username does not exist"
         End If
@@ -241,7 +258,6 @@ Public Class Main
     Private Sub CloseCommonSearch_click(sender As Object, e As EventArgs) Handles CloseCommon.Click
         CommonMoviesBtn.Parent.BackgroundImage = My.Resources.GeneralBtn1
         FindComFavPanel.Visible = False
-        SearchUsername.Text = ""
         ShowComInfo.Text = ""
     End Sub
 

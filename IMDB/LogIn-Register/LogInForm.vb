@@ -61,7 +61,7 @@ Public Class LogInForm
 
 #Region "LogIn"
     Public Shared u As User
-    Private Sub Login_Click() Handles LogInButton.Click
+    Private Sub Login_Click() Handles LogInbtn.Click
 
         If UserName.ForeColor = Color.DarkGray Then
             info.Text = "Please enter your username"
@@ -92,11 +92,11 @@ Public Class LogInForm
         End If
     End Sub
 
-    Private Sub Login_Enter(sender As Object, e As EventArgs) Handles LogInButton.MouseEnter
-        LogInButton.Image = My.Resources.btn1
+    Private Sub Login_Enter(sender As Object, e As EventArgs) Handles LogInbtn.MouseEnter
+        btnEnter(LogInbtn.Parent)
     End Sub
-    Private Sub Login_Leave(sender As Object, e As EventArgs) Handles LogInButton.MouseLeave
-        LogInButton.Image = My.Resources.btn2
+    Private Sub Login_Leave(sender As Object, e As EventArgs) Handles LogInbtn.MouseLeave
+        btnLeave(LogInbtn.Parent)
     End Sub
 
 #End Region

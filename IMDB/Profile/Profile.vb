@@ -147,7 +147,9 @@ Public Class Profile
             For Each pb In ChangeAvatarPanel.Controls.OfType(Of PictureBox)().ToArray()
                 pb.Dispose()
             Next
+            btnEnter(ChangeBtn.Parent)
         Else
+            ChangeBtn.Parent.BackgroundImage = My.Resources.Indicator
             Dim posx = 30
             Dim posy = 2
             ChangeAvatarPanel.Visible = True
@@ -179,17 +181,28 @@ Public Class Profile
         ChangeAvatarPanel.Visible = False
         LogInForm.u.Profile_Pic = sender.ImageLocation
         SetProfilePic(LogInForm.u.Id, sender.ImageLocation)
-
+        btnLeave(ChangeBtn.Parent)
         For Each pb In ChangeAvatarPanel.Controls.OfType(Of PictureBox)().ToArray()
             pb.Dispose()
         Next
     End Sub
 
-    Public Sub Btn_Enter(sender As Object, e As EventArgs) Handles ChangeBtn.MouseEnter, Editbtn.MouseEnter, Savebtn.MouseEnter
+    Public Sub Btn_Enter(sender As Object, e As EventArgs) Handles Editbtn.MouseEnter, Savebtn.MouseEnter
         btnEnter(sender.parent)
     End Sub
-    Public Sub Btn_Leave(sender As Object, e As EventArgs) Handles ChangeBtn.MouseLeave, Editbtn.MouseLeave, Savebtn.MouseLeave
+    Public Sub Btn_Leave(sender As Object, e As EventArgs) Handles Editbtn.MouseLeave, Savebtn.MouseLeave
         btnLeave(sender.parent)
     End Sub
 
+    Public Sub Avatarbtn_Enter(sender As Object, e As EventArgs) Handles ChangeBtn.MouseEnter
+        If Not ChangeAvatarPanel.Visible Then
+            btnEnter(sender.parent)
+        End If
+    End Sub
+
+    Public Sub Avatarbtn_Leave(sender As Object, e As EventArgs) Handles ChangeBtn.MouseLeave
+        If Not ChangeAvatarPanel.Visible Then
+            btnLeave(sender.parent)
+        End If
+    End Sub
 End Class

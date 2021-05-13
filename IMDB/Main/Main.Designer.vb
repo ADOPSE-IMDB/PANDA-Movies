@@ -25,6 +25,7 @@ Partial Class Main
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.TopPanel = New System.Windows.Forms.Panel()
+        Me.SearchBtn = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.CommonMoviesPanel = New System.Windows.Forms.Panel()
         Me.CommonMoviesBtn = New System.Windows.Forms.Label()
@@ -33,7 +34,6 @@ Partial Class Main
         Me.HomeBtnInd = New System.Windows.Forms.Panel()
         Me.HomeBtn = New System.Windows.Forms.Label()
         Me.AppName = New System.Windows.Forms.PictureBox()
-        Me.Search = New System.Windows.Forms.Button()
         Me.SearchBox = New System.Windows.Forms.TextBox()
         Me.NamebtnPanel = New System.Windows.Forms.Panel()
         Me.NameBtn = New System.Windows.Forms.Label()
@@ -59,6 +59,7 @@ Partial Class Main
         Me.ExitBtn = New System.Windows.Forms.PictureBox()
         Me.AppLabel = New System.Windows.Forms.Label()
         Me.TopPanel.SuspendLayout()
+        CType(Me.SearchBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CommonMoviesPanel.SuspendLayout()
         Me.FavoriteInd.SuspendLayout()
@@ -80,12 +81,12 @@ Partial Class Main
         '
         'TopPanel
         '
+        Me.TopPanel.Controls.Add(Me.SearchBtn)
         Me.TopPanel.Controls.Add(Me.PictureBox1)
         Me.TopPanel.Controls.Add(Me.CommonMoviesPanel)
         Me.TopPanel.Controls.Add(Me.FavoriteInd)
         Me.TopPanel.Controls.Add(Me.HomeBtnInd)
         Me.TopPanel.Controls.Add(Me.AppName)
-        Me.TopPanel.Controls.Add(Me.Search)
         Me.TopPanel.Controls.Add(Me.SearchBox)
         Me.TopPanel.Controls.Add(Me.NamebtnPanel)
         Me.TopPanel.Dock = System.Windows.Forms.DockStyle.Top
@@ -93,6 +94,17 @@ Partial Class Main
         Me.TopPanel.Name = "TopPanel"
         Me.TopPanel.Size = New System.Drawing.Size(1280, 35)
         Me.TopPanel.TabIndex = 0
+        '
+        'SearchBtn
+        '
+        Me.SearchBtn.BackgroundImage = CType(resources.GetObject("SearchBtn.BackgroundImage"), System.Drawing.Image)
+        Me.SearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.SearchBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SearchBtn.Location = New System.Drawing.Point(721, 4)
+        Me.SearchBtn.Name = "SearchBtn"
+        Me.SearchBtn.Size = New System.Drawing.Size(25, 25)
+        Me.SearchBtn.TabIndex = 9
+        Me.SearchBtn.TabStop = False
         '
         'PictureBox1
         '
@@ -120,7 +132,7 @@ Partial Class Main
         '
         Me.CommonMoviesBtn.BackColor = System.Drawing.Color.Transparent
         Me.CommonMoviesBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.CommonMoviesBtn.Font = New System.Drawing.Font("Adobe Fan Heiti Std B", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.CommonMoviesBtn.Font = New System.Drawing.Font("SimSun", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.CommonMoviesBtn.ForeColor = System.Drawing.Color.White
         Me.CommonMoviesBtn.Location = New System.Drawing.Point(0, 0)
         Me.CommonMoviesBtn.Name = "CommonMoviesBtn"
@@ -145,7 +157,7 @@ Partial Class Main
         '
         Me.FavoriteBtn.BackColor = System.Drawing.Color.Transparent
         Me.FavoriteBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FavoriteBtn.Font = New System.Drawing.Font("Adobe Fan Heiti Std B", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.FavoriteBtn.Font = New System.Drawing.Font("SimSun", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.FavoriteBtn.ForeColor = System.Drawing.Color.White
         Me.FavoriteBtn.Location = New System.Drawing.Point(0, 0)
         Me.FavoriteBtn.Name = "FavoriteBtn"
@@ -169,7 +181,7 @@ Partial Class Main
         '
         Me.HomeBtn.BackColor = System.Drawing.Color.Transparent
         Me.HomeBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.HomeBtn.Font = New System.Drawing.Font("Adobe Fan Heiti Std B", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.HomeBtn.Font = New System.Drawing.Font("SimSun", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.HomeBtn.ForeColor = System.Drawing.Color.White
         Me.HomeBtn.Location = New System.Drawing.Point(0, 0)
         Me.HomeBtn.Name = "HomeBtn"
@@ -188,26 +200,13 @@ Partial Class Main
         Me.AppName.TabIndex = 3
         Me.AppName.TabStop = False
         '
-        'Search
-        '
-        Me.Search.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Search.BackColor = System.Drawing.Color.Transparent
-        Me.Search.BackgroundImage = CType(resources.GetObject("Search.BackgroundImage"), System.Drawing.Image)
-        Me.Search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Search.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Search.FlatAppearance.BorderSize = 0
-        Me.Search.Location = New System.Drawing.Point(730, 6)
-        Me.Search.Name = "Search"
-        Me.Search.Size = New System.Drawing.Size(25, 25)
-        Me.Search.TabIndex = 1
-        Me.Search.UseVisualStyleBackColor = False
-        '
         'SearchBox
         '
         Me.SearchBox.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.SearchBox.Location = New System.Drawing.Point(515, 6)
+        Me.SearchBox.Font = New System.Drawing.Font("SimSun", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.SearchBox.Location = New System.Drawing.Point(515, 5)
         Me.SearchBox.Name = "SearchBox"
-        Me.SearchBox.Size = New System.Drawing.Size(200, 23)
+        Me.SearchBox.Size = New System.Drawing.Size(200, 25)
         Me.SearchBox.TabIndex = 0
         '
         'NamebtnPanel
@@ -226,7 +225,7 @@ Partial Class Main
         '
         Me.NameBtn.BackColor = System.Drawing.Color.Transparent
         Me.NameBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.NameBtn.Font = New System.Drawing.Font("Adobe Fan Heiti Std B", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.NameBtn.Font = New System.Drawing.Font("SimSun", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.NameBtn.ForeColor = System.Drawing.Color.White
         Me.NameBtn.Location = New System.Drawing.Point(0, 0)
         Me.NameBtn.Name = "NameBtn"
@@ -355,6 +354,7 @@ Partial Class Main
         '
         Me.ResultInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.ResultInfo.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ResultInfo.Font = New System.Drawing.Font("SimSun", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point)
         Me.ResultInfo.ForeColor = System.Drawing.Color.White
         Me.ResultInfo.Image = Global.IMDB.My.Resources.Resources.Indicator
         Me.ResultInfo.Location = New System.Drawing.Point(0, 0)
@@ -395,7 +395,7 @@ Partial Class Main
         '
         Me.LogOut.BackColor = System.Drawing.Color.Transparent
         Me.LogOut.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LogOut.Font = New System.Drawing.Font("Adobe Fan Heiti Std B", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.LogOut.Font = New System.Drawing.Font("SimSun", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.LogOut.ForeColor = System.Drawing.Color.White
         Me.LogOut.Location = New System.Drawing.Point(0, 0)
         Me.LogOut.Name = "LogOut"
@@ -419,7 +419,7 @@ Partial Class Main
         '
         Me.OpenProfile.BackColor = System.Drawing.Color.Transparent
         Me.OpenProfile.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.OpenProfile.Font = New System.Drawing.Font("Adobe Fan Heiti Std B", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.OpenProfile.Font = New System.Drawing.Font("SimSun", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.OpenProfile.ForeColor = System.Drawing.Color.White
         Me.OpenProfile.Location = New System.Drawing.Point(0, 0)
         Me.OpenProfile.Name = "OpenProfile"
@@ -473,10 +473,11 @@ Partial Class Main
         'AppLabel
         '
         Me.AppLabel.BackColor = System.Drawing.Color.Transparent
+        Me.AppLabel.Font = New System.Drawing.Font("SimSun", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.AppLabel.ForeColor = System.Drawing.Color.White
         Me.AppLabel.Location = New System.Drawing.Point(0, 0)
         Me.AppLabel.Name = "AppLabel"
-        Me.AppLabel.Size = New System.Drawing.Size(105, 24)
+        Me.AppLabel.Size = New System.Drawing.Size(127, 24)
         Me.AppLabel.TabIndex = 1
         Me.AppLabel.Text = "PANDA movies"
         '
@@ -496,6 +497,7 @@ Partial Class Main
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.TopPanel.ResumeLayout(False)
         Me.TopPanel.PerformLayout()
+        CType(Me.SearchBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CommonMoviesPanel.ResumeLayout(False)
         Me.FavoriteInd.ResumeLayout(False)
@@ -524,7 +526,6 @@ Partial Class Main
     Friend WithEvents DropPanel As Panel
     Friend WithEvents Timer As Timer
     Friend WithEvents Container As Panel
-    Friend WithEvents Search As Button
     Friend WithEvents HomeInticator As Panel
     Friend WithEvents MovePanel As Panel
     Friend WithEvents resultPanel As Panel
@@ -553,4 +554,5 @@ Partial Class Main
     Friend WithEvents CommonMoviesPanel As Panel
     Friend WithEvents CommonMoviesBtn As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents SearchBtn As PictureBox
 End Class

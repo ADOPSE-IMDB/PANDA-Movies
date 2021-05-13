@@ -68,6 +68,7 @@ Partial Class MoviesMain
         Me.AllMoviesLabel.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.AllMoviesLabel.Dock = System.Windows.Forms.DockStyle.Top
         Me.AllMoviesLabel.Font = New System.Drawing.Font("SimSun", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.AllMoviesLabel.ForeColor = System.Drawing.Color.DarkOrange
         Me.AllMoviesLabel.Location = New System.Drawing.Point(0, 0)
         Me.AllMoviesLabel.Name = "AllMoviesLabel"
         Me.AllMoviesLabel.Size = New System.Drawing.Size(1280, 50)
@@ -102,6 +103,7 @@ Partial Class MoviesMain
         '
         Me.TopMoviesLabel.Dock = System.Windows.Forms.DockStyle.Top
         Me.TopMoviesLabel.Font = New System.Drawing.Font("SimSun", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.TopMoviesLabel.ForeColor = System.Drawing.Color.DarkOrange
         Me.TopMoviesLabel.Location = New System.Drawing.Point(0, 0)
         Me.TopMoviesLabel.Name = "TopMoviesLabel"
         Me.TopMoviesLabel.Size = New System.Drawing.Size(1280, 55)

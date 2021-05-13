@@ -13,6 +13,7 @@ Public Class Favorite
             Pre.Parent.Visible = False
             curr.Visible = False
             info.Visible = True
+            FavoriteLabel.Visible = False
         ElseIf tFavorite <= 20 Then
 
             ne.Parent.Visible = False
