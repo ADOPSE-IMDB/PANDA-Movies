@@ -413,7 +413,6 @@ Partial Class Profile
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 720)
         Me.Controls.Add(Me.PassInfo)
-        Me.Controls.Add(Me.EmailInfo)
         Me.Controls.Add(Me.EditSavePanel)
         Me.Controls.Add(Me.PanelChangeBtn)
         Me.Controls.Add(Me.ChangeAvatarPanel)
@@ -437,6 +436,7 @@ Partial Class Profile
         Me.Controls.Add(Me.PbP)
         Me.Controls.Add(Me.PbCP)
         Me.Controls.Add(Me.SaveInfo)
+        Me.Controls.Add(Me.EmailInfo)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Profile"
