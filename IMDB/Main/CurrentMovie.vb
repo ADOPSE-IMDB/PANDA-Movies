@@ -105,4 +105,8 @@
 
 #End Region
 
+    Private Sub Form_Close() Handles Me.Closing
+        Main.Container.Visible = False
+    End Sub
+
 End Class

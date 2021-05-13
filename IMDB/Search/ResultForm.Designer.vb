@@ -30,7 +30,8 @@ Partial Class ResultForm
         '
         Me.SLabel.BackColor = System.Drawing.SystemColors.Control
         Me.SLabel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.SLabel.Font = New System.Drawing.Font("SimSun", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.SLabel.Font = New System.Drawing.Font("SimSun", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.SLabel.ForeColor = System.Drawing.Color.DarkOrange
         Me.SLabel.Location = New System.Drawing.Point(0, 0)
         Me.SLabel.Name = "SLabel"
         Me.SLabel.Size = New System.Drawing.Size(1278, 46)

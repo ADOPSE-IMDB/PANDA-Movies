@@ -146,7 +146,7 @@ Public Class Main
 #Region "Search Movies"
 
     Private Sub Search_Click(sender As Object, e As EventArgs) Handles SearchBtn.Click
-        If SearchBox.Text.Trim.Length >= 3 Then
+        If SearchBox.Text.Trim.Length > 0 Then
             Dim SearchedMovies() As Movie
             SearchedMovies = MvcLuceneSampleApp.Search.LuceneSearch.SearchMovieResults(SearchBox.Text)
             ResultForm.Search_Movie(SearchedMovies)
@@ -157,6 +157,7 @@ Public Class Main
             HomeBtnInd.BackgroundImage = My.Resources.GeneralBtn1
             FavoriteInd.BackgroundImage = My.Resources.GeneralBtn1
             NamebtnPanel.BackgroundImage = My.Resources.GeneralBtn1
+            Container.Visible = False
 
         ElseIf SearchBox.Text.Trim.Length = 0 Then
             resultPanel.Visible = True
@@ -181,7 +182,6 @@ Public Class Main
                 ResultInfo.Visible = True
                 ResultInfo.Text = "No Result Found"
             Else
-                ResultInfo.Visible = False
                 SearchLoad(resultPanel, resultMovies)
             End If
 
@@ -217,6 +217,7 @@ Public Class Main
             FindComFavPanel.Visible = True
             CommonMoviesBtn.Parent.BackgroundImage = My.Resources.Indicator
         End If
+
 
 
     End Sub
