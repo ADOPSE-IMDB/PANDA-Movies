@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\IMDB",
+    "\\IMDB\\Main",
+    "\\IMDB\\My Project",
+    "\\IMDB\\obj",
+    "\\IMDB\\Profile"
   ],
-  "SelectedNode": "\\IMDB.sln",
+  "SelectedNode": "\\IMDB\\Profile\\Profile.Designer.vb",
   "PreviewInSolutionExplorer": false
 }
