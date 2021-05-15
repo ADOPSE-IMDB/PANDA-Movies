@@ -22,10 +22,8 @@ Partial Class LogInForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.RememberMe = New System.Windows.Forms.CheckBox()
         Me.UserName = New System.Windows.Forms.TextBox()
-        Me.XError = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.LogInPic = New System.Windows.Forms.PictureBox()
         Me.AppInfo = New System.Windows.Forms.Label()
         Me.AppLogo = New System.Windows.Forms.PictureBox()
@@ -40,7 +38,6 @@ Partial Class LogInForm
         Me.info = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LogInbtn = New System.Windows.Forms.Label()
-        CType(Me.XError, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LogInPic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AppLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserPanel, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,9 +50,9 @@ Partial Class LogInForm
         '
         Me.RememberMe.Cursor = System.Windows.Forms.Cursors.Hand
         Me.RememberMe.Font = New System.Drawing.Font("SimSun", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.RememberMe.Location = New System.Drawing.Point(588, 234)
+        Me.RememberMe.Location = New System.Drawing.Point(572, 234)
         Me.RememberMe.Name = "RememberMe"
-        Me.RememberMe.Size = New System.Drawing.Size(86, 19)
+        Me.RememberMe.Size = New System.Drawing.Size(104, 19)
         Me.RememberMe.TabIndex = 1
         Me.RememberMe.Text = "Remember Me"
         Me.RememberMe.UseVisualStyleBackColor = True
@@ -75,11 +72,6 @@ Partial Class LogInForm
         Me.UserName.TabIndex = 2
         Me.UserName.Text = "Username"
         Me.UserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'XError
-        '
-        Me.XError.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
-        Me.XError.ContainerControl = Me
         '
         'LogInPic
         '
@@ -273,7 +265,6 @@ Partial Class LogInForm
         Me.Name = "LogInForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Log In"
-        CType(Me.XError, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LogInPic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AppLogo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserPanel, System.ComponentModel.ISupportInitialize).EndInit()
@@ -286,7 +277,6 @@ Partial Class LogInForm
     End Sub
     Friend WithEvents UserName As TextBox
     Friend WithEvents RememberMe As CheckBox
-    Friend WithEvents XError As ErrorProvider
     Friend WithEvents AppInfo As Label
     Friend WithEvents LogInPic As PictureBox
     Friend WithEvents PwsPanel As PictureBox

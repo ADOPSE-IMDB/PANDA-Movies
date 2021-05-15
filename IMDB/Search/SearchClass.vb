@@ -1,30 +1,24 @@
 ﻿Module SearchClass
     Public Sub SearchLoad(Panel As Panel, array() As Movie)
         Dim PosY = 0
-        Dim s As String
         Panel.Height = array.Length * 20
 
-        For index As Integer = 0 To array.Length - 1
-            If array(index).Title.Length > 33 Then
-                s = array(index).Title.Substring(0, 33) & "..."
-            Else
-                s = array(index).Title
-            End If
+        For Each movie In array
             Dim label As New LinkLabel With {
                     .Size = New Size(200, 20),
-                    .Text = s,
+                    .Text = movie.Title,
                     .TextAlign = ContentAlignment.MiddleLeft,
                     .Location = New Point(0, PosY),
                     .Cursor = Cursors.Hand,
                     .BorderStyle = BorderStyle.FixedSingle,
-                    .LinkColor = Color.Orange,
                     .BackColor = Color.White,
-                    .Font = New Font("SimSun", "9.75")
+                    .LinkColor = Color.Orange,
+                    .Font = New Font("SimSun", "9.75"),
+                    .AutoEllipsis = True
             }
 
 
-            Dim mv As Movie = array(index)
-            AddHandler label.Click, Sub() AllMoviesCLick(mv)
+            AddHandler label.Click, Sub() AllMoviesCLick(movie)
 
             Panel.Controls.Add(label)
             PosY += 20

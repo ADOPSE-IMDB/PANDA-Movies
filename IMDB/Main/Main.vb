@@ -152,7 +152,8 @@ Public Class Main
             resultPanel.Visible = True
             resultPanel.Height = 20
             ResultInfo.Visible = True
-            ResultInfo.Text = "Please type 3 or more letters"
+            ResultInfo.Text = "Type something first"
+            SearchTimer.Start()
         End If
     End Sub
 
@@ -180,7 +181,7 @@ Public Class Main
             resultPanel.Visible = True
             resultPanel.Height = 20
             ResultInfo.Visible = True
-            ResultInfo.Text = "Please type 3 or more letters"
+            ResultInfo.Text = "Type 3 or more letters"
         Else
             resultPanel.Visible = False
         End If
@@ -330,7 +331,6 @@ Public Class Main
     End Sub
 #End Region
 
-
 #Region "MouseHover"
 
     Private Sub Mouse_EnterBtn(sender As Object, e As EventArgs) Handles OpenProfile.MouseEnter, FavoriteBtn.MouseEnter, LogOut.MouseEnter, SearchCommon.MouseEnter, AboutBtn.MouseEnter
@@ -339,6 +339,13 @@ Public Class Main
 
     Private Sub Mouse_LeaveBtn(sender As Object, e As EventArgs) Handles OpenProfile.MouseLeave, FavoriteBtn.MouseLeave, LogOut.MouseLeave, SearchCommon.MouseLeave, AboutBtn.MouseLeave
         btnLeave(sender.Parent)
+    End Sub
+#End Region
+
+#Region "Timer for search button"
+    Private Sub Search_Tick() Handles SearchTimer.Tick
+        SearchTimer.Stop()
+        resultPanel.Visible = False
     End Sub
 #End Region
 End Class

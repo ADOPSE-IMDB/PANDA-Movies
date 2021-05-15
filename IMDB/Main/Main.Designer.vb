@@ -25,6 +25,8 @@ Partial Class Main
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.TopPanel = New System.Windows.Forms.Panel()
+        Me.AboutBtnPanel = New System.Windows.Forms.Panel()
+        Me.AboutBtn = New System.Windows.Forms.Label()
         Me.SearchBtn = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.CommonMoviesPanel = New System.Windows.Forms.Panel()
@@ -58,9 +60,9 @@ Partial Class Main
         Me.MovePanel = New System.Windows.Forms.Panel()
         Me.ExitBtn = New System.Windows.Forms.PictureBox()
         Me.AppLabel = New System.Windows.Forms.Label()
-        Me.AboutBtnPanel = New System.Windows.Forms.Panel()
-        Me.AboutBtn = New System.Windows.Forms.Label()
+        Me.SearchTimer = New System.Windows.Forms.Timer(Me.components)
         Me.TopPanel.SuspendLayout()
+        Me.AboutBtnPanel.SuspendLayout()
         CType(Me.SearchBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CommonMoviesPanel.SuspendLayout()
@@ -79,7 +81,6 @@ Partial Class Main
         Me.resultPanel.SuspendLayout()
         Me.MovePanel.SuspendLayout()
         CType(Me.ExitBtn, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.AboutBtnPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'TopPanel
@@ -97,6 +98,31 @@ Partial Class Main
         Me.TopPanel.Name = "TopPanel"
         Me.TopPanel.Size = New System.Drawing.Size(1280, 35)
         Me.TopPanel.TabIndex = 0
+        '
+        'AboutBtnPanel
+        '
+        Me.AboutBtnPanel.BackColor = System.Drawing.Color.Transparent
+        Me.AboutBtnPanel.BackgroundImage = CType(resources.GetObject("AboutBtnPanel.BackgroundImage"), System.Drawing.Image)
+        Me.AboutBtnPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.AboutBtnPanel.Controls.Add(Me.AboutBtn)
+        Me.AboutBtnPanel.Location = New System.Drawing.Point(212, 8)
+        Me.AboutBtnPanel.Name = "AboutBtnPanel"
+        Me.AboutBtnPanel.Size = New System.Drawing.Size(85, 23)
+        Me.AboutBtnPanel.TabIndex = 10
+        '
+        'AboutBtn
+        '
+        Me.AboutBtn.BackColor = System.Drawing.Color.Transparent
+        Me.AboutBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AboutBtn.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.AboutBtn.Font = New System.Drawing.Font("SimSun", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.AboutBtn.ForeColor = System.Drawing.Color.White
+        Me.AboutBtn.Location = New System.Drawing.Point(0, 0)
+        Me.AboutBtn.Name = "AboutBtn"
+        Me.AboutBtn.Size = New System.Drawing.Size(85, 23)
+        Me.AboutBtn.TabIndex = 0
+        Me.AboutBtn.Text = "About"
+        Me.AboutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'SearchBtn
         '
@@ -181,10 +207,10 @@ Partial Class Main
         'SearchBox
         '
         Me.SearchBox.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.SearchBox.Font = New System.Drawing.Font("SimSun", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.SearchBox.Location = New System.Drawing.Point(515, 5)
+        Me.SearchBox.Font = New System.Drawing.Font("SimSun", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.SearchBox.Location = New System.Drawing.Point(515, 6)
         Me.SearchBox.Name = "SearchBox"
-        Me.SearchBox.Size = New System.Drawing.Size(200, 25)
+        Me.SearchBox.Size = New System.Drawing.Size(200, 22)
         Me.SearchBox.TabIndex = 0
         '
         'NamebtnPanel
@@ -489,30 +515,9 @@ Partial Class Main
         Me.AppLabel.TabIndex = 1
         Me.AppLabel.Text = "PANDA movies"
         '
-        'AboutBtnPanel
+        'SearchTimer
         '
-        Me.AboutBtnPanel.BackColor = System.Drawing.Color.Transparent
-        Me.AboutBtnPanel.BackgroundImage = CType(resources.GetObject("AboutBtnPanel.BackgroundImage"), System.Drawing.Image)
-        Me.AboutBtnPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.AboutBtnPanel.Controls.Add(Me.AboutBtn)
-        Me.AboutBtnPanel.Location = New System.Drawing.Point(212, 8)
-        Me.AboutBtnPanel.Name = "AboutBtnPanel"
-        Me.AboutBtnPanel.Size = New System.Drawing.Size(85, 23)
-        Me.AboutBtnPanel.TabIndex = 10
-        '
-        'AboutBtn
-        '
-        Me.AboutBtn.BackColor = System.Drawing.Color.Transparent
-        Me.AboutBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.AboutBtn.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.AboutBtn.Font = New System.Drawing.Font("SimSun", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.AboutBtn.ForeColor = System.Drawing.Color.White
-        Me.AboutBtn.Location = New System.Drawing.Point(0, 0)
-        Me.AboutBtn.Name = "AboutBtn"
-        Me.AboutBtn.Size = New System.Drawing.Size(85, 23)
-        Me.AboutBtn.TabIndex = 0
-        Me.AboutBtn.Text = "About"
-        Me.AboutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.SearchTimer.Interval = 2000
         '
         'Main
         '
@@ -530,6 +535,7 @@ Partial Class Main
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.TopPanel.ResumeLayout(False)
         Me.TopPanel.PerformLayout()
+        Me.AboutBtnPanel.ResumeLayout(False)
         CType(Me.SearchBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CommonMoviesPanel.ResumeLayout(False)
@@ -549,7 +555,6 @@ Partial Class Main
         Me.resultPanel.ResumeLayout(False)
         Me.MovePanel.ResumeLayout(False)
         CType(Me.ExitBtn, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.AboutBtnPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -591,4 +596,5 @@ Partial Class Main
     Friend WithEvents SearchBtn As PictureBox
     Friend WithEvents AboutBtnPanel As Panel
     Friend WithEvents AboutBtn As Label
+    Friend WithEvents SearchTimer As Timer
 End Class
