@@ -7,6 +7,7 @@
 
     Private Sub CloseMessageBox_Click(sender As Object, e As EventArgs) Handles CloseMessageBox.Click
         Main.Enabled = True
+        Main.Activate()
         Close()
     End Sub
 

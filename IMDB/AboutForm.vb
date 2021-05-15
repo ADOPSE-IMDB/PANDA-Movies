@@ -1,6 +1,7 @@
 ﻿Public Class AboutForm
     Private Sub On_load() Handles Me.Load
         Main.Enabled = False
+
     End Sub
 
 
@@ -8,6 +9,7 @@
 
     Private Sub CloseAboutForm_Click(sender As Object, e As EventArgs) Handles CloseAboutForm.Click
         Main.Enabled = True
+        Main.Activate()
         Close()
     End Sub
     Private Sub CloseAboutForm_Enter(sender As Object, e As EventArgs) Handles CloseAboutForm.MouseEnter
