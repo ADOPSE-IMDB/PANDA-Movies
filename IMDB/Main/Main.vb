@@ -19,7 +19,6 @@ Public Class Main
         If Not Application.OpenForms().OfType(Of MoviesMain).Any Then
             ChnageWindow(MoviesMain, MainPanel)
             HomeBtnInd.BackgroundImage = My.Resources.Indicator
-            FavoriteInd.BackgroundImage = My.Resources.GeneralBtn1
             NamebtnPanel.BackgroundImage = My.Resources.GeneralBtn1
         End If
     End Sub
@@ -45,57 +44,54 @@ Public Class Main
 
 #End Region
 
-#Region "Favorite"
 
 
-    'Open Favorite Form
-    Public Sub FavoriteBtn_Click(sender As Object, e As EventArgs) Handles FavoriteBtn.Click
-        If Not Application.OpenForms().OfType(Of Favorite).Any Then
-            ChnageWindow(Favorite, MainPanel)
-            HomeBtnInd.BackgroundImage = My.Resources.GeneralBtn1
-            FavoriteInd.BackgroundImage = My.Resources.Indicator
-            NamebtnPanel.BackgroundImage = My.Resources.GeneralBtn1
-        End If
+    Private Sub AboutBtn_Click(sender As Object, e As EventArgs) Handles AboutBtn.Click
+        AboutForm.Show()
     End Sub
-
-    Public Sub FavoriteBtn_Enter(sender As Object, e As EventArgs) Handles FavoriteBtn.MouseEnter
-        If Not Application.OpenForms().OfType(Of Favorite).Any Then
-            btnEnter(FavoriteInd)
-        End If
-    End Sub
-
-    Public Sub FavoriteBtn_Leave(sender As Object, e As EventArgs) Handles FavoriteBtn.MouseLeave
-        If Not Application.OpenForms().OfType(Of Favorite).Any Then
-            btnLeave(FavoriteInd)
-        End If
-    End Sub
-#End Region
 
 #Region "Drop Menu"
-    'Opens DropDown menu
+
+#Region "Opens DropDown menu"
+
+
     Private Sub NameBtn_Click(sender As Object, e As EventArgs) Handles NameBtn.Click
         Timer.Start()
     End Sub
 
     Public Sub NameBtn_Enter(sender As Object, e As EventArgs) Handles NameBtn.MouseEnter
-        If isCollapsed And Not Application.OpenForms().OfType(Of Profile).Any Then
-            NamebtnPanel.BackgroundImage = My.Resources.GeneralBtn2
+        If isCollapsed Then
+            If Not Application.OpenForms().OfType(Of Profile).Any And Not Application.OpenForms().OfType(Of Favorite).Any Then
+                NamebtnPanel.BackgroundImage = My.Resources.GeneralBtn2
+            End If
         End If
     End Sub
 
     Public Sub NameBtn_Leave(sender As Object, e As EventArgs) Handles NameBtn.MouseLeave
-        If isCollapsed And Not Application.OpenForms().OfType(Of Profile).Any Then
-            NamebtnPanel.BackgroundImage = My.Resources.GeneralBtn1
+        If isCollapsed Then
+            If Not Application.OpenForms().OfType(Of Profile).Any And Not Application.OpenForms().OfType(Of Favorite).Any Then
+                NamebtnPanel.BackgroundImage = My.Resources.GeneralBtn1
+            End If
         End If
     End Sub
-
-
+#End Region
 
 
     'Open Profile
     Private Sub OpenProfile_Click(sender As Object, e As EventArgs) Handles OpenProfile.Click
         If Not Application.OpenForms().OfType(Of Profile).Any Then
             ChnageWindow(Profile, MainPanel)
+        End If
+        If Not isCollapsed Then
+            Threading.Thread.Sleep(100)
+            Timer.Start()
+        End If
+    End Sub
+
+    'Open Favorite Form
+    Public Sub FavoriteBtn_Click(sender As Object, e As EventArgs) Handles FavoriteBtn.Click
+        If Not Application.OpenForms().OfType(Of Favorite).Any Then
+            ChnageWindow(Favorite, MainPanel)
         End If
         If Not isCollapsed Then
             Threading.Thread.Sleep(100)
@@ -115,20 +111,13 @@ Public Class Main
     End Sub
 
 
-    Private Sub OpenProfile_Enter(sender As Object, e As EventArgs) Handles OpenProfile.MouseEnter, LogOut.MouseEnter
-        btnEnter(sender.Parent)
-    End Sub
-
-    Private Sub OpenProfile_Leave(sender As Object, e As EventArgs) Handles OpenProfile.MouseLeave, LogOut.MouseLeave
-        btnLeave(sender.Parent)
-    End Sub
 
 
 
 
     'check if mouse is over the buttons/DropPanel
-    Private Sub DropPanel_MouseLeave(sender As Object, e As System.EventArgs) Handles DropPanel.MouseLeave, NameBtn.MouseLeave, OpenProfile.MouseLeave, LogOut.MouseLeave
-        If Not MouseIsOverControl(OpenProfile) And Not MouseIsOverControl(LogOut) And Not MouseIsOverControl(DropPanel) And Not MouseIsOverControl(NameBtn) Then
+    Private Sub DropPanel_MouseLeave(sender As Object, e As System.EventArgs) Handles DropPanel.MouseLeave, NameBtn.MouseLeave, FavoriteBtn.MouseLeave, OpenProfile.MouseLeave, LogOut.MouseLeave
+        If Not MouseIsOverControl(DropPanel) Then
             If Not isCollapsed Then
                 Threading.Thread.Sleep(100)
                 Timer.Start()
@@ -155,7 +144,7 @@ Public Class Main
             End If
             ChnageWindow(ResultForm, MainPanel)
             HomeBtnInd.BackgroundImage = My.Resources.GeneralBtn1
-            FavoriteInd.BackgroundImage = My.Resources.GeneralBtn1
+            FavoriteBtnPanel.BackgroundImage = My.Resources.GeneralBtn1
             NamebtnPanel.BackgroundImage = My.Resources.GeneralBtn1
 
             ResultForm.Search_Movie(SearchedMovies)
@@ -247,7 +236,7 @@ Public Class Main
             ResultForm.Search_common(CommonMovies, SearchUsername.Text)
 
             HomeBtnInd.BackgroundImage = My.Resources.GeneralBtn1
-            FavoriteInd.BackgroundImage = My.Resources.GeneralBtn1
+            FavoriteBtnPanel.BackgroundImage = My.Resources.GeneralBtn1
             NamebtnPanel.BackgroundImage = My.Resources.GeneralBtn1
             FindComFavPanel.Visible = False
             ShowComInfo.Text = ""
@@ -282,9 +271,9 @@ Public Class Main
                 isCollapsed = True
                 NamebtnPanel.BackgroundImage = My.Resources.GeneralBtn1
             End If
-            If Application.OpenForms().OfType(Of Profile).Any Then
+            If Application.OpenForms().OfType(Of Profile).Any Or Application.OpenForms().OfType(Of Favorite).Any Then
                 HomeBtnInd.BackgroundImage = My.Resources.GeneralBtn1
-                FavoriteInd.BackgroundImage = My.Resources.GeneralBtn1
+                FavoriteBtnPanel.BackgroundImage = My.Resources.GeneralBtn1
                 NamebtnPanel.BackgroundImage = My.Resources.Indicator
             End If
         End If
@@ -339,7 +328,17 @@ Public Class Main
     Private Sub Closebtns_Leave(sender As Object, e As EventArgs) Handles ExitBtn.MouseLeave, CloseCommon.MouseLeave
         sender.Image = My.Resources.Close1
     End Sub
-
 #End Region
 
+
+#Region "MouseHover"
+
+    Private Sub Mouse_EnterBtn(sender As Object, e As EventArgs) Handles OpenProfile.MouseEnter, FavoriteBtn.MouseEnter, LogOut.MouseEnter, SearchCommon.MouseEnter, AboutBtn.MouseEnter
+        btnEnter(sender.Parent)
+    End Sub
+
+    Private Sub Mouse_LeaveBtn(sender As Object, e As EventArgs) Handles OpenProfile.MouseLeave, FavoriteBtn.MouseLeave, LogOut.MouseLeave, SearchCommon.MouseLeave, AboutBtn.MouseLeave
+        btnLeave(sender.Parent)
+    End Sub
+#End Region
 End Class

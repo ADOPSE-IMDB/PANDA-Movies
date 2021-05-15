@@ -23,9 +23,7 @@
         Main.Close_forms(LogInForm)
     End Sub
 
-#Region "Visual"
-
-
+#Region "Buttons hover"
     Private Sub CloseMessageBox_Enter(sender As Object, e As EventArgs) Handles CloseMessageBox.MouseEnter
         CloseMessageBox.Image = My.Resources.Close2
     End Sub

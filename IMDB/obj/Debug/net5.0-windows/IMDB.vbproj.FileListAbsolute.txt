@@ -165,3 +165,4 @@ D:\GitHub\PANDA-Movies\IMDB\obj\Debug\net5.0-windows\IMDB.AssemblyInfo.vb
 D:\GitHub\PANDA-Movies\IMDB\obj\Debug\net5.0-windows\IMDB.vbproj.CoreCompileInputs.cache
 D:\GitHub\PANDA-Movies\IMDB\obj\Debug\net5.0-windows\IMDB.vbproj.CopyComplete
 D:\GitHub\PANDA-Movies\IMDB\obj\Debug\net5.0-windows\IMDB.genruntimeconfig.cache
+C:\Users\AlexPap\Desktop\TEI\Adopse\IMDB\IMDB\obj\Debug\net5.0-windows\IMDB.AboutForm.resources

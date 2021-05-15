@@ -29,15 +29,20 @@ Partial Class Main
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.CommonMoviesPanel = New System.Windows.Forms.Panel()
         Me.CommonMoviesBtn = New System.Windows.Forms.Label()
-        Me.FavoriteInd = New System.Windows.Forms.Panel()
-        Me.FavoriteBtn = New System.Windows.Forms.Label()
         Me.HomeBtnInd = New System.Windows.Forms.Panel()
         Me.HomeBtn = New System.Windows.Forms.Label()
         Me.AppName = New System.Windows.Forms.PictureBox()
         Me.SearchBox = New System.Windows.Forms.TextBox()
         Me.NamebtnPanel = New System.Windows.Forms.Panel()
         Me.NameBtn = New System.Windows.Forms.Label()
+        Me.FavoriteBtnPanel = New System.Windows.Forms.Panel()
+        Me.FavoriteBtn = New System.Windows.Forms.Label()
         Me.MainPanel = New System.Windows.Forms.Panel()
+        Me.DropPanel = New System.Windows.Forms.Panel()
+        Me.LogOutPanel = New System.Windows.Forms.Panel()
+        Me.LogOut = New System.Windows.Forms.Label()
+        Me.ProfilePanel = New System.Windows.Forms.Panel()
+        Me.OpenProfile = New System.Windows.Forms.Label()
         Me.FindComFavPanel = New System.Windows.Forms.Panel()
         Me.ShowComInfo = New System.Windows.Forms.Label()
         Me.CloseCommon = New System.Windows.Forms.PictureBox()
@@ -48,43 +53,41 @@ Partial Class Main
         Me.InfoLabel = New System.Windows.Forms.Label()
         Me.resultPanel = New System.Windows.Forms.Panel()
         Me.ResultInfo = New System.Windows.Forms.Label()
-        Me.DropPanel = New System.Windows.Forms.Panel()
-        Me.LogOutPanel = New System.Windows.Forms.Panel()
-        Me.LogOut = New System.Windows.Forms.Label()
-        Me.ProfilePanel = New System.Windows.Forms.Panel()
-        Me.OpenProfile = New System.Windows.Forms.Label()
         Me.MovieContainer = New System.Windows.Forms.Panel()
         Me.Timer = New System.Windows.Forms.Timer(Me.components)
         Me.MovePanel = New System.Windows.Forms.Panel()
         Me.ExitBtn = New System.Windows.Forms.PictureBox()
         Me.AppLabel = New System.Windows.Forms.Label()
+        Me.AboutBtnPanel = New System.Windows.Forms.Panel()
+        Me.AboutBtn = New System.Windows.Forms.Label()
         Me.TopPanel.SuspendLayout()
         CType(Me.SearchBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CommonMoviesPanel.SuspendLayout()
-        Me.FavoriteInd.SuspendLayout()
         Me.HomeBtnInd.SuspendLayout()
         CType(Me.AppName, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NamebtnPanel.SuspendLayout()
+        Me.FavoriteBtnPanel.SuspendLayout()
         Me.MainPanel.SuspendLayout()
+        Me.DropPanel.SuspendLayout()
+        Me.LogOutPanel.SuspendLayout()
+        Me.ProfilePanel.SuspendLayout()
         Me.FindComFavPanel.SuspendLayout()
         CType(Me.CloseCommon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SearchCommonPanel.SuspendLayout()
         CType(Me.SearchUsernamePic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.resultPanel.SuspendLayout()
-        Me.DropPanel.SuspendLayout()
-        Me.LogOutPanel.SuspendLayout()
-        Me.ProfilePanel.SuspendLayout()
         Me.MovePanel.SuspendLayout()
         CType(Me.ExitBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.AboutBtnPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'TopPanel
         '
+        Me.TopPanel.Controls.Add(Me.AboutBtnPanel)
         Me.TopPanel.Controls.Add(Me.SearchBtn)
         Me.TopPanel.Controls.Add(Me.PictureBox1)
         Me.TopPanel.Controls.Add(Me.CommonMoviesPanel)
-        Me.TopPanel.Controls.Add(Me.FavoriteInd)
         Me.TopPanel.Controls.Add(Me.HomeBtnInd)
         Me.TopPanel.Controls.Add(Me.AppName)
         Me.TopPanel.Controls.Add(Me.SearchBox)
@@ -123,7 +126,7 @@ Partial Class Main
         Me.CommonMoviesPanel.BackgroundImage = Global.IMDB.My.Resources.Resources.GeneralBtn1
         Me.CommonMoviesPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.CommonMoviesPanel.Controls.Add(Me.CommonMoviesBtn)
-        Me.CommonMoviesPanel.Location = New System.Drawing.Point(921, 5)
+        Me.CommonMoviesPanel.Location = New System.Drawing.Point(1020, 5)
         Me.CommonMoviesPanel.Name = "CommonMoviesPanel"
         Me.CommonMoviesPanel.Size = New System.Drawing.Size(132, 26)
         Me.CommonMoviesPanel.TabIndex = 4
@@ -140,31 +143,6 @@ Partial Class Main
         Me.CommonMoviesBtn.TabIndex = 0
         Me.CommonMoviesBtn.Text = "Common Movies"
         Me.CommonMoviesBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'FavoriteInd
-        '
-        Me.FavoriteInd.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FavoriteInd.BackColor = System.Drawing.Color.Transparent
-        Me.FavoriteInd.BackgroundImage = CType(resources.GetObject("FavoriteInd.BackgroundImage"), System.Drawing.Image)
-        Me.FavoriteInd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.FavoriteInd.Controls.Add(Me.FavoriteBtn)
-        Me.FavoriteInd.Location = New System.Drawing.Point(1059, 5)
-        Me.FavoriteInd.Name = "FavoriteInd"
-        Me.FavoriteInd.Size = New System.Drawing.Size(95, 26)
-        Me.FavoriteInd.TabIndex = 7
-        '
-        'FavoriteBtn
-        '
-        Me.FavoriteBtn.BackColor = System.Drawing.Color.Transparent
-        Me.FavoriteBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FavoriteBtn.Font = New System.Drawing.Font("SimSun", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.FavoriteBtn.ForeColor = System.Drawing.Color.White
-        Me.FavoriteBtn.Location = New System.Drawing.Point(0, 0)
-        Me.FavoriteBtn.Name = "FavoriteBtn"
-        Me.FavoriteBtn.Size = New System.Drawing.Size(95, 28)
-        Me.FavoriteBtn.TabIndex = 0
-        Me.FavoriteBtn.Text = "Favorite"
-        Me.FavoriteBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'HomeBtnInd
         '
@@ -234,19 +212,112 @@ Partial Class Main
         Me.NameBtn.Text = "LogedUser"
         Me.NameBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'FavoriteBtnPanel
+        '
+        Me.FavoriteBtnPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FavoriteBtnPanel.BackColor = System.Drawing.Color.Transparent
+        Me.FavoriteBtnPanel.BackgroundImage = CType(resources.GetObject("FavoriteBtnPanel.BackgroundImage"), System.Drawing.Image)
+        Me.FavoriteBtnPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.FavoriteBtnPanel.Controls.Add(Me.FavoriteBtn)
+        Me.FavoriteBtnPanel.Location = New System.Drawing.Point(0, 32)
+        Me.FavoriteBtnPanel.Name = "FavoriteBtnPanel"
+        Me.FavoriteBtnPanel.Size = New System.Drawing.Size(74, 24)
+        Me.FavoriteBtnPanel.TabIndex = 7
+        '
+        'FavoriteBtn
+        '
+        Me.FavoriteBtn.BackColor = System.Drawing.Color.Transparent
+        Me.FavoriteBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FavoriteBtn.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FavoriteBtn.Font = New System.Drawing.Font("SimSun", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.FavoriteBtn.ForeColor = System.Drawing.Color.White
+        Me.FavoriteBtn.Location = New System.Drawing.Point(0, 0)
+        Me.FavoriteBtn.Name = "FavoriteBtn"
+        Me.FavoriteBtn.Size = New System.Drawing.Size(74, 24)
+        Me.FavoriteBtn.TabIndex = 0
+        Me.FavoriteBtn.Text = "Favorite"
+        Me.FavoriteBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'MainPanel
         '
         Me.MainPanel.BackColor = System.Drawing.Color.Transparent
         Me.MainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.MainPanel.Controls.Add(Me.DropPanel)
         Me.MainPanel.Controls.Add(Me.FindComFavPanel)
         Me.MainPanel.Controls.Add(Me.resultPanel)
-        Me.MainPanel.Controls.Add(Me.DropPanel)
         Me.MainPanel.Controls.Add(Me.MovieContainer)
         Me.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MainPanel.Location = New System.Drawing.Point(0, 59)
         Me.MainPanel.Name = "MainPanel"
         Me.MainPanel.Size = New System.Drawing.Size(1280, 720)
         Me.MainPanel.TabIndex = 1
+        '
+        'DropPanel
+        '
+        Me.DropPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DropPanel.BackColor = System.Drawing.Color.Transparent
+        Me.DropPanel.BackgroundImage = Global.IMDB.My.Resources.Resources.Indicator
+        Me.DropPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.DropPanel.Controls.Add(Me.LogOutPanel)
+        Me.DropPanel.Controls.Add(Me.ProfilePanel)
+        Me.DropPanel.Controls.Add(Me.FavoriteBtnPanel)
+        Me.DropPanel.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.DropPanel.Location = New System.Drawing.Point(1171, 0)
+        Me.DropPanel.MaximumSize = New System.Drawing.Size(74, 88)
+        Me.DropPanel.MinimumSize = New System.Drawing.Size(74, 0)
+        Me.DropPanel.Name = "DropPanel"
+        Me.DropPanel.Size = New System.Drawing.Size(74, 88)
+        Me.DropPanel.TabIndex = 0
+        '
+        'LogOutPanel
+        '
+        Me.LogOutPanel.BackColor = System.Drawing.Color.Transparent
+        Me.LogOutPanel.BackgroundImage = CType(resources.GetObject("LogOutPanel.BackgroundImage"), System.Drawing.Image)
+        Me.LogOutPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.LogOutPanel.Controls.Add(Me.LogOut)
+        Me.LogOutPanel.Location = New System.Drawing.Point(0, 60)
+        Me.LogOutPanel.Name = "LogOutPanel"
+        Me.LogOutPanel.Size = New System.Drawing.Size(74, 24)
+        Me.LogOutPanel.TabIndex = 9
+        '
+        'LogOut
+        '
+        Me.LogOut.BackColor = System.Drawing.Color.Transparent
+        Me.LogOut.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LogOut.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LogOut.Font = New System.Drawing.Font("SimSun", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.LogOut.ForeColor = System.Drawing.Color.White
+        Me.LogOut.Location = New System.Drawing.Point(0, 0)
+        Me.LogOut.Name = "LogOut"
+        Me.LogOut.Size = New System.Drawing.Size(74, 24)
+        Me.LogOut.TabIndex = 1
+        Me.LogOut.Text = "Log Out"
+        Me.LogOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'ProfilePanel
+        '
+        Me.ProfilePanel.BackColor = System.Drawing.Color.Transparent
+        Me.ProfilePanel.BackgroundImage = CType(resources.GetObject("ProfilePanel.BackgroundImage"), System.Drawing.Image)
+        Me.ProfilePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ProfilePanel.Controls.Add(Me.OpenProfile)
+        Me.ProfilePanel.Location = New System.Drawing.Point(0, 4)
+        Me.ProfilePanel.Name = "ProfilePanel"
+        Me.ProfilePanel.Size = New System.Drawing.Size(74, 24)
+        Me.ProfilePanel.TabIndex = 8
+        '
+        'OpenProfile
+        '
+        Me.OpenProfile.BackColor = System.Drawing.Color.Transparent
+        Me.OpenProfile.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.OpenProfile.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.OpenProfile.Font = New System.Drawing.Font("SimSun", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.OpenProfile.ForeColor = System.Drawing.Color.White
+        Me.OpenProfile.Location = New System.Drawing.Point(0, 0)
+        Me.OpenProfile.Name = "OpenProfile"
+        Me.OpenProfile.Size = New System.Drawing.Size(74, 24)
+        Me.OpenProfile.TabIndex = 1
+        Me.OpenProfile.Text = "Profile"
+        Me.OpenProfile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FindComFavPanel
         '
@@ -365,69 +436,6 @@ Partial Class Main
         Me.ResultInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ResultInfo.Visible = False
         '
-        'DropPanel
-        '
-        Me.DropPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DropPanel.BackColor = System.Drawing.Color.Transparent
-        Me.DropPanel.BackgroundImage = Global.IMDB.My.Resources.Resources.Indicator
-        Me.DropPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.DropPanel.Controls.Add(Me.LogOutPanel)
-        Me.DropPanel.Controls.Add(Me.ProfilePanel)
-        Me.DropPanel.Location = New System.Drawing.Point(1171, -1)
-        Me.DropPanel.MaximumSize = New System.Drawing.Size(74, 65)
-        Me.DropPanel.MinimumSize = New System.Drawing.Size(74, 0)
-        Me.DropPanel.Name = "DropPanel"
-        Me.DropPanel.Size = New System.Drawing.Size(74, 65)
-        Me.DropPanel.TabIndex = 0
-        '
-        'LogOutPanel
-        '
-        Me.LogOutPanel.BackColor = System.Drawing.Color.Transparent
-        Me.LogOutPanel.BackgroundImage = CType(resources.GetObject("LogOutPanel.BackgroundImage"), System.Drawing.Image)
-        Me.LogOutPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.LogOutPanel.Controls.Add(Me.LogOut)
-        Me.LogOutPanel.Location = New System.Drawing.Point(0, 39)
-        Me.LogOutPanel.Name = "LogOutPanel"
-        Me.LogOutPanel.Size = New System.Drawing.Size(74, 24)
-        Me.LogOutPanel.TabIndex = 9
-        '
-        'LogOut
-        '
-        Me.LogOut.BackColor = System.Drawing.Color.Transparent
-        Me.LogOut.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LogOut.Font = New System.Drawing.Font("SimSun", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.LogOut.ForeColor = System.Drawing.Color.White
-        Me.LogOut.Location = New System.Drawing.Point(0, 0)
-        Me.LogOut.Name = "LogOut"
-        Me.LogOut.Size = New System.Drawing.Size(74, 24)
-        Me.LogOut.TabIndex = 1
-        Me.LogOut.Text = "Log Out"
-        Me.LogOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'ProfilePanel
-        '
-        Me.ProfilePanel.BackColor = System.Drawing.Color.Transparent
-        Me.ProfilePanel.BackgroundImage = CType(resources.GetObject("ProfilePanel.BackgroundImage"), System.Drawing.Image)
-        Me.ProfilePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ProfilePanel.Controls.Add(Me.OpenProfile)
-        Me.ProfilePanel.Location = New System.Drawing.Point(0, 8)
-        Me.ProfilePanel.Name = "ProfilePanel"
-        Me.ProfilePanel.Size = New System.Drawing.Size(74, 24)
-        Me.ProfilePanel.TabIndex = 8
-        '
-        'OpenProfile
-        '
-        Me.OpenProfile.BackColor = System.Drawing.Color.Transparent
-        Me.OpenProfile.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.OpenProfile.Font = New System.Drawing.Font("SimSun", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.OpenProfile.ForeColor = System.Drawing.Color.White
-        Me.OpenProfile.Location = New System.Drawing.Point(0, 0)
-        Me.OpenProfile.Name = "OpenProfile"
-        Me.OpenProfile.Size = New System.Drawing.Size(74, 24)
-        Me.OpenProfile.TabIndex = 1
-        Me.OpenProfile.Text = "Profile"
-        Me.OpenProfile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'MovieContainer
         '
         Me.MovieContainer.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
@@ -481,6 +489,31 @@ Partial Class Main
         Me.AppLabel.TabIndex = 1
         Me.AppLabel.Text = "PANDA movies"
         '
+        'AboutBtnPanel
+        '
+        Me.AboutBtnPanel.BackColor = System.Drawing.Color.Transparent
+        Me.AboutBtnPanel.BackgroundImage = CType(resources.GetObject("AboutBtnPanel.BackgroundImage"), System.Drawing.Image)
+        Me.AboutBtnPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.AboutBtnPanel.Controls.Add(Me.AboutBtn)
+        Me.AboutBtnPanel.Location = New System.Drawing.Point(212, 8)
+        Me.AboutBtnPanel.Name = "AboutBtnPanel"
+        Me.AboutBtnPanel.Size = New System.Drawing.Size(85, 23)
+        Me.AboutBtnPanel.TabIndex = 10
+        '
+        'AboutBtn
+        '
+        Me.AboutBtn.BackColor = System.Drawing.Color.Transparent
+        Me.AboutBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AboutBtn.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.AboutBtn.Font = New System.Drawing.Font("SimSun", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.AboutBtn.ForeColor = System.Drawing.Color.White
+        Me.AboutBtn.Location = New System.Drawing.Point(0, 0)
+        Me.AboutBtn.Name = "AboutBtn"
+        Me.AboutBtn.Size = New System.Drawing.Size(85, 23)
+        Me.AboutBtn.TabIndex = 0
+        Me.AboutBtn.Text = "About"
+        Me.AboutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Main
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
@@ -500,22 +533,23 @@ Partial Class Main
         CType(Me.SearchBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CommonMoviesPanel.ResumeLayout(False)
-        Me.FavoriteInd.ResumeLayout(False)
         Me.HomeBtnInd.ResumeLayout(False)
         CType(Me.AppName, System.ComponentModel.ISupportInitialize).EndInit()
         Me.NamebtnPanel.ResumeLayout(False)
+        Me.FavoriteBtnPanel.ResumeLayout(False)
         Me.MainPanel.ResumeLayout(False)
+        Me.DropPanel.ResumeLayout(False)
+        Me.LogOutPanel.ResumeLayout(False)
+        Me.ProfilePanel.ResumeLayout(False)
         Me.FindComFavPanel.ResumeLayout(False)
         Me.FindComFavPanel.PerformLayout()
         CType(Me.CloseCommon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SearchCommonPanel.ResumeLayout(False)
         CType(Me.SearchUsernamePic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.resultPanel.ResumeLayout(False)
-        Me.DropPanel.ResumeLayout(False)
-        Me.LogOutPanel.ResumeLayout(False)
-        Me.ProfilePanel.ResumeLayout(False)
         Me.MovePanel.ResumeLayout(False)
         CType(Me.ExitBtn, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.AboutBtnPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -537,7 +571,7 @@ Partial Class Main
     Friend WithEvents NameBtn As Label
     Friend WithEvents HomeBtnInd As Panel
     Friend WithEvents HomeBtn As Label
-    Friend WithEvents FavoriteInd As Panel
+    Friend WithEvents FavoriteBtnPanel As Panel
     Friend WithEvents FavoriteBtn As Label
     Friend WithEvents ProfilePanel As Panel
     Friend WithEvents OpenProfile As Label
@@ -555,4 +589,6 @@ Partial Class Main
     Friend WithEvents CommonMoviesBtn As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents SearchBtn As PictureBox
+    Friend WithEvents AboutBtnPanel As Panel
+    Friend WithEvents AboutBtn As Label
 End Class

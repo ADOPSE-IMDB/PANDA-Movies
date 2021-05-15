@@ -4,6 +4,9 @@
     <Compile Update="CustomMessageBox.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="AboutForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Main\CurrentMovie.vb">
       <SubType>Form</SubType>
     </Compile>
