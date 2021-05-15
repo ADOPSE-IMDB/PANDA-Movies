@@ -54,7 +54,6 @@ Module LoadPictureBox
         CurrentMovie.MovieDate.Text = movie.Year
         CurrentMovie.Description.Text = movie.Description
         CurrentMovie.MoPic.ImageLocation = movie.Url
-        MessageBox.Show(movie.Url)
 
         If checkIfFavExists(movie.Id, LogInForm.u.Id) Then
             CurrentMovie.AddRem.Text = "Remove from Favorites"

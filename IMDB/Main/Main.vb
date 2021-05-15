@@ -117,7 +117,7 @@ Public Class Main
 
     'check if mouse is over the buttons/DropPanel
     Private Sub DropPanel_MouseLeave(sender As Object, e As System.EventArgs) Handles DropPanel.MouseLeave, NameBtn.MouseLeave, FavoriteBtn.MouseLeave, OpenProfile.MouseLeave, LogOut.MouseLeave
-        If Not MouseIsOverControl(DropPanel) Then
+        If Not MouseIsOverControl(DropPanel) And Not MouseIsOverControl(NameBtn) Then
             If Not isCollapsed Then
                 Threading.Thread.Sleep(100)
                 Timer.Start()
