@@ -61,10 +61,15 @@ Namespace MvcLuceneSampleApp.Search
                     sb.Append(" ").Append("or id=@").Append(j.ToString)
                 Next
 
+
+
                 'Print qstring for Debug
                 Console.WriteLine("Query String Made:")
                 Dim qstring As String = sb.ToString
                 Console.WriteLine(qstring)
+
+                'Order movies byt tittle
+                qstring += " order by title"
 
                 'Run Query
                 Dim con As New Connection
