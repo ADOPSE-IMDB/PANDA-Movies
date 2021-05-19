@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AlexPap\\Desktop\\TEI\\Adopse\\IMDB\\IMDB\\IMDB.vbproj": {}
+    "D:\\GitHub\\PANDA-Movies\\IMDB\\IMDB.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\AlexPap\\Desktop\\TEI\\Adopse\\IMDB\\IMDB\\IMDB.vbproj": {
+    "D:\\GitHub\\PANDA-Movies\\IMDB\\IMDB.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AlexPap\\Desktop\\TEI\\Adopse\\IMDB\\IMDB\\IMDB.vbproj",
+        "projectUniqueName": "D:\\GitHub\\PANDA-Movies\\IMDB\\IMDB.vbproj",
         "projectName": "IMDB",
-        "projectPath": "C:\\Users\\AlexPap\\Desktop\\TEI\\Adopse\\IMDB\\IMDB\\IMDB.vbproj",
-        "packagesPath": "C:\\Users\\AlexPap\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AlexPap\\Desktop\\TEI\\Adopse\\IMDB\\IMDB\\obj\\",
+        "projectPath": "D:\\GitHub\\PANDA-Movies\\IMDB\\IMDB.vbproj",
+        "packagesPath": "C:\\Users\\Nikolas\\.nuget\\packages\\",
+        "outputPath": "D:\\GitHub\\PANDA-Movies\\IMDB\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AlexPap\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nikolas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -79,7 +79,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
